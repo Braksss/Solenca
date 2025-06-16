@@ -1,0 +1,18 @@
+﻿# Node
+node_modules/
+.env
+dist/
+build/
+.cache/
+.pnpm-debug.log
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Strapi
+.tmp/
+public/uploads/
