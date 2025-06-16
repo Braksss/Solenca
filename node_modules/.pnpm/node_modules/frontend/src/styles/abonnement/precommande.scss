@@ -1,0 +1,110 @@
+.precommande-page {
+     display: flex;
+     justify-content: center;
+     padding: 3rem 1rem;
+     font-family: "Montserrat", sans-serif;
+     background: #f9f9f9;
+     min-height: 100vh;
+   
+     .precommande-form {
+       background: #fff;
+       padding: 3rem 2.5rem;
+       border-radius: 15px;
+       box-shadow: 0 8px 30px rgb(0 0 0 / 0.12);
+       max-width: 420px;
+       width: 100%;
+   
+       h1 {
+         font-weight: 700;
+         font-size: 2rem;
+         margin-bottom: 2rem;
+         color: #111;
+       }
+   
+       label {
+         display: block;
+         font-weight: 600;
+         margin-bottom: 0.5rem;
+         color: #333;
+         margin-top: 1.5rem;
+       }
+   
+       input[type="text"],
+       input[type="email"] {
+         width: 100%;
+         padding: 0.65rem 1rem;
+         border-radius: 8px;
+         border: 1px solid #ddd;
+         font-size: 1rem;
+         transition: border-color 0.25s;
+   
+         &:focus {
+           outline: none;
+           border-color: #ff8200;
+           box-shadow: 0 0 5px #ff8200aa;
+         }
+       }
+   
+       .plans {
+         margin-top: 2rem;
+         margin-bottom: 2rem;
+         border: none;
+         padding: 0;
+   
+         legend {
+           font-weight: 700;
+           font-size: 1.1rem;
+           margin-bottom: 1rem;
+           color: #222;
+         }
+   
+         label {
+           display: flex;
+           align-items: center;
+           margin-bottom: 0.8rem;
+           font-weight: 500;
+           font-size: 0.95rem;
+           cursor: pointer;
+   
+           input[type="radio"] {
+             margin-right: 0.75rem;
+             accent-color: #ff8200;
+             cursor: pointer;
+           }
+         }
+       }
+   
+       .total {
+         font-size: 1.25rem;
+         margin-bottom: 2rem;
+         color: #111;
+   
+         strong {
+           font-weight: 700;
+         }
+       }
+   
+       button {
+         width: 100%;
+         background-color: #ff8200;
+         border: none;
+         color: white;
+         font-weight: 700;
+         font-size: 1.125rem;
+         padding: 1rem 0;
+         border-radius: 30px;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+   
+         &:hover:not(:disabled) {
+           background-color: #e86f00;
+         }
+   
+         &:disabled {
+           opacity: 0.7;
+           cursor: not-allowed;
+         }
+       }
+     }
+   }
+   

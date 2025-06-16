@@ -1,0 +1,14 @@
+@import './hero.scss';
+@import './services.scss';
+@import './words-rain.scss';
+@import './testimonials.scss';
+@import './steps.scss';
+@import './footer.scss';
+@import './navbar.scss';
+
+.landing {
+  font-family: "Montserrat", sans-serif; // Remplace Victor Mono par Montserrat
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}

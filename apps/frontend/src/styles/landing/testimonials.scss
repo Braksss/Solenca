@@ -1,0 +1,116 @@
+.testimonials-section {
+  max-width: 85%;
+  margin: 0 auto 5%;
+  padding: 4rem 2rem;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .testimonials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .testimonials-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .testimonials-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .avatars {
+        display: flex;
+        position: relative;
+
+        img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          object-fit: cover;
+          position: relative;
+          margin-left: -12px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .clients-count {
+        font-size: 1rem;
+        color: #444;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+
+    .testimonial-card {
+      flex: 1 1 30%;
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+
+      .message {
+        font-size: 1.05rem;
+        color: #555;
+        line-height: 1.6;
+        font-style: italic;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          font-weight: 600;
+          color: #111;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .testimonials-grid {
+      flex-direction: column;
+
+      .testimonial-card {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}

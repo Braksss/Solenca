@@ -1,0 +1,147 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0; // aucun espace au-dessus
+  background: #fff;
+
+  &__container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px; // hauteur fixe pour un alignement propre
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      height: 150px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    ul.navbar__links {
+      display: flex;
+      list-style: none;
+      background: #fff;
+      border-radius: 20px;
+      padding: 0.5rem 2.5rem;
+      gap: 1.5rem;
+
+      li a {
+        text-decoration: none;
+        color: #333;
+        padding: 0.5rem 0.75rem;
+        font-family: "Montserrat", sans-serif;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #ff8200;
+        }
+      }
+    }
+
+    &.open {
+      display: flex;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      padding: 1rem;
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        background: none;
+        padding: 0;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      font-family: "Montserrat", sans-serif;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+
+      &.navbar__login {
+        background: #fff;
+        color: #333;
+        border: 1px solid #ccc;
+
+        &:hover {
+          color: #ff8200;
+        }
+      }
+
+      &.navbar__cta {
+        background: #ff8200;
+        color: #fff;
+        transition: background 0.3s;
+
+        &:hover {
+          background: darken(#ff8200, 10%);
+        }
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 2px 0;
+      transition: all 0.3s;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__center {
+      display: none;
+
+      &.open {
+        display: flex;
+      }
+    }
+
+    &__burger {
+      display: flex;
+    }
+
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    &__right {
+      gap: 0.5rem;
+    }
+  }
+}
