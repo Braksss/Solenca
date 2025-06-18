@@ -1,0 +1,47 @@
+.services-page {
+     max-width: 85%;
+     margin: 4rem auto;
+     padding: 2rem;
+     background: #f9f9f9;
+     border-radius: 30px;
+     font-family: "Montserrat", sans-serif;
+   
+     h1 {
+       font-size: 3rem;
+       margin-bottom: 2rem;
+       color: #111;
+     }
+   
+     .services-list {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 2rem;
+   
+       .service-card {
+         flex: 1 1 30%;
+         background: white;
+         padding: 2rem;
+         border-radius: 20px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+   
+         h2 {
+           font-size: 1.5rem;
+           color: #ff8200;
+           margin-bottom: 1rem;
+         }
+   
+         p {
+           color: #555;
+           font-size: 1rem;
+           line-height: 1.6;
+         }
+       }
+     }
+   
+     @media (max-width: 768px) {
+       .services-list {
+         flex-direction: column;
+       }
+     }
+   }
+   

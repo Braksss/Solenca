@@ -1,7 +1,10 @@
-// src/pages/abonnement.tsx
-import React, { useEffect, useState } from 'react';
+// apps/frontend/src/pages/abonnement/index.tsx
+
+import { useEffect, useState } from 'react';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
+import SubscriptionConfigurator from '../components/abonnement/SubscriptionConfigurator';
+import Banniere from '../components/shared/Banniere';
 import '../styles/abonnement/abonnement.scss';
 
 type Option = {
@@ -10,11 +13,17 @@ type Option = {
   price: number;
 };
 
+type Feature = {
+  id: number;
+  label: string;
+};
+
 type Abonnement = {
   id: string;
   name: string;
   basePrice: number;
   description: string;
+  features: Feature[];
   options: Option[];
 };
 
@@ -22,65 +31,60 @@ const AbonnementPage = () => {
   const [abonnements, setAbonnements] = useState<Abonnement[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, boolean>>({});
+  const [showConfigurator, setShowConfigurator] = useState(false);
 
   useEffect(() => {
     async function fetchAbonnements() {
       try {
         const API_URL = import.meta.env.VITE_API_URL;
-        const API_TOKEN = import.meta.env.VITE_API_TOKEN;
+        if (!API_URL) throw new Error('VITE_API_URL non défini');
 
-        const res = await fetch(`${API_URL}/api/abonnements?populate=options`, {
-          headers: {
-            Authorization: `Bearer ${API_TOKEN}`,
-            'Content-Type': 'application/json'
-          }
-        });
-
+        const res = await fetch(`${API_URL}/api/abonnements?populate[feature]=*`);
         const data = await res.json();
 
         const abonnementsData: Abonnement[] = data.data.map((item: any) => ({
-          id: item.id,
-          name: item.attributes.name,
-          basePrice: item.attributes.basePrice,
-          description: item.attributes.description,
-          options: item.attributes.options.data.map((opt: any) => ({
-            id: opt.id,
-            label: opt.attributes.label,
-            price: opt.attributes.price,
-          })),
+          id: String(item.id),
+          name: item.title ?? 'Sans titre',
+          basePrice: item.price ?? 0,
+          description: item.description?.[0]?.children?.[0]?.text ?? '',
+          features: [], // à remplir si tu ajoutes des features séparées
+          options:
+            item.feature?.map((opt: any) => ({
+              id: String(opt.id),
+              label: opt.label,
+              price: opt.price,
+            })) ?? [],
         }));
 
         setAbonnements(abonnementsData);
-        if (abonnementsData.length) setSelectedId(abonnementsData[0].id);
       } catch (error) {
-        console.error('Erreur fetch abonnements Strapi:', error);
+        console.error('Erreur lors du chargement des abonnements :', error);
       }
     }
 
     fetchAbonnements();
   }, []);
 
-  const abonnement = abonnements.find(a => a.id === selectedId) ?? null;
+  const abonnement = abonnements.find((a) => a.id === selectedId) ?? null;
 
-  const toggleOption = (optionId: string) => {
-    setSelectedOptions(prev => ({
+  const toggleOption = (id: string) => {
+    setSelectedOptions((prev) => ({
       ...prev,
-      [optionId]: !prev[optionId],
+      [id]: !prev[id],
     }));
   };
 
   const totalPrice = abonnement
     ? abonnement.basePrice +
-      abonnement.options.reduce((acc, option) => acc + (selectedOptions[option.id] ? option.price : 0), 0)
+      abonnement.options.reduce((acc, opt) => acc + (selectedOptions[opt.id] ? opt.price : 0), 0)
     : 0;
-
-  if (!abonnement) return <div>Chargement...</div>;
 
   return (
     <>
       <Navbar />
+      <Banniere title="Abonnements" subtitle="Configurez votre accompagnement Solenca sur mesure." />
       <main className="abonnement-page">
-        <h1>Nos abonnements</h1>
+        <h2>Nos formules</h2>
         <div className="abonnement-cards">
           {abonnements.map(({ id, name, basePrice, description }) => (
             <div
@@ -89,6 +93,7 @@ const AbonnementPage = () => {
               onClick={() => {
                 setSelectedId(id);
                 setSelectedOptions({});
+                setShowConfigurator(true);
               }}
             >
               <div className="card-header">{name}</div>
@@ -98,24 +103,18 @@ const AbonnementPage = () => {
           ))}
         </div>
 
-        <div className="abonnement-details">
-          <h2>{abonnement.name}</h2>
-          <p>{abonnement.description}</p>
-          <div className="options-list">
-            {abonnement.options.map(opt => (
-              <label key={opt.id} className="option-item">
-                <input
-                  type="checkbox"
-                  checked={!!selectedOptions[opt.id]}
-                  onChange={() => toggleOption(opt.id)}
-                />
-                {opt.label} + {opt.price} €
-              </label>
-            ))}
-          </div>
-          <div className="total-price">Total : {totalPrice.toFixed(2)} €</div>
-          <button className="subscribe-btn">Souscrire à {totalPrice.toFixed(2)} €</button>
-        </div>
+        {showConfigurator && abonnement && (
+          <SubscriptionConfigurator
+            abonnement={abonnement}
+            selectedOptions={selectedOptions}
+            toggleOption={toggleOption}
+            totalPrice={totalPrice}
+            onClose={() => {
+              setShowConfigurator(false);
+              setSelectedId(null);
+            }}
+          />
+        )}
       </main>
       <Footer />
     </>

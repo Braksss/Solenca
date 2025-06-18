@@ -4,7 +4,6 @@
   width: 100%;
   z-index: 1000;
   padding: 0; // aucun espace au-dessus
-  background: #fff;
 
   &__container {
     max-width: 1500px;
@@ -21,7 +20,7 @@
     align-items: center;
 
     &-img {
-      height: 150px;
+      height: 70px;
       object-fit: contain;
       display: block;
     }
