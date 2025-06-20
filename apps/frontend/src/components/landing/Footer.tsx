@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/landing/footer.scss';
-import logo from '../../assets/SOLENCA-Logo.png'; // ← ton logo réel
+import logo from '../../assets/solenca-logo.png'; // ← ton logo réel
 
 const Footer = () => {
   return (

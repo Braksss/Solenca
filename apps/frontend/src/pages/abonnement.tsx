@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import SubscriptionConfigurator from '../components/abonnement/SubscriptionConfigurator';
-import Banniere from '../components/shared/Banniere';
 import '../styles/abonnement/abonnement.scss';
 
 type Option = {
@@ -82,7 +81,6 @@ const AbonnementPage = () => {
   return (
     <>
       <Navbar />
-      <Banniere title="Abonnements" subtitle="Configurez votre accompagnement Solenca sur mesure." />
       <main className="abonnement-page">
         <h2>Nos formules</h2>
         <div className="abonnement-cards">

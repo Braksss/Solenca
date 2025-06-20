@@ -12,9 +12,8 @@ const About = () => {
       <div className="about-top">
         <div className="about-top__left">
           <h2>
-            Une solution pensée<br />
-            pour les propriétaires<br />
-            exigeants
+            Une solution pensée
+            pour les <br />propriétaires<br />
           </h2>
         </div>
         <div className="about-top__right">

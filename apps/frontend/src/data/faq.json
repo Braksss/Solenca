@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "title": "Suivi d’intervention",
+      "description": "Recevez des comptes rendus photo détaillés après chaque mission.",
+      "buttonLabel": "Learn more →",
+      "icon": "intervention.png",
+      "active": true
+    },
+    {
+      "title": "Accès partenaires",
+      "description": "Une interface dédiée aux pros pour planifier, confirmer et dialoguer.",
+      "buttonLabel": "Learn more →",
+      "icon": "partner-access.png",
+      "active": false
+    },
+    {
+      "title": "Transactions fluides",
+      "description": "Pas d’avance, pas de surprise. Vous êtes facturé uniquement après validation.",
+      "buttonLabel": "Learn more →",
+      "icon": "transactions.png",
+      "active": false
+    },
+    {
+      "title": "Historique centralisé",
+      "description": "Gardez la trace complète de vos demandes, actions et paiements.",
+      "buttonLabel": "Learn more →",
+      "icon": "history.png",
+      "active": false
+    }
+  ]
+}

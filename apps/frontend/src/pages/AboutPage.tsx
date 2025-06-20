@@ -1,94 +1,143 @@
+// apps/frontend/src/pages/AboutPage.tsx
 import React from 'react';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/pages/aboutpage.scss';
-import Banniere from '../components/shared/Banniere';
 
-import team1 from '../assets/about/team1.png';
-import team2 from '../assets/about/team2.png';
-import team3 from '../assets/about/team3.png';
-import houseImage from '../assets/about/house.png';
-import brandsImage from '../assets/about/brands.png';
-import reviewsImage from '../assets/about/reviews.png';
+import heroImg from '../assets/about/solenca-hero.png';
+import avatar1 from '../assets/avatars/avatar1.png';
+import logo1 from '../assets/partners/stripe.svg';
+import logo2 from '../assets/partners/segway.svg';
+import logo3 from '../assets/partners/qonto.svg';
+import logo4 from '../assets/partners/airbnb.svg';
+import logo5 from '../assets/partners/booking.svg';
 
-const AboutPage = () => {
-  return (
-    <>
-      <Navbar />
-      <Banniere title="À propos de Solenca" subtitle="Tranquillité. Confiance. Simplicité." />
+import kpiHome from '../assets/icons/home.png';
+import kpiInvest from '../assets/icons/euro.png';
+import kpiSmile from '../assets/icons/smile.png';
+import kpiClock from '../assets/icons/clock.png';
 
-      <main className="aboutpage">
-        {/* Hero */}
-        <section className="aboutpage__hero">
-          <div className="aboutpage__text">
-            <h1>Confiez votre bien en toute confiance</h1>
-            <p>
-              Grâce à une technologie propriétaire et un suivi humain,
-              Solenca protège, entretient et optimise les résidences secondaires.
-            </p>
-            <button className="cta-button">Je précommande</button>
-            <p className="note">⭐️ 4.9 / 5 par nos clients</p>
-          </div>
-          <div className="aboutpage__image">
-            <img src={houseImage} alt="Villa gérée par Solenca" />
-          </div>
-        </section>
+import iconSecure from '../assets/icons/securite.png';
+import iconAlert from '../assets/icons/securite.png';
+import iconReport from '../assets/icons/securite.png';
+import iconWeather from '../assets/icons/securite.png';
+import iconSmart from '../assets/icons/securite.png';
 
-        {/* Marques clients */}
-        <section className="aboutpage__brands">
-          <img src={brandsImage} alt="Clients et partenaires" />
-        </section>
+const partnerLogos = [logo1, logo2, logo3, logo4, logo5];
 
-        {/* Stats */}
-        <section className="aboutpage__stats">
-          <div className="stat">
-            <h2>1K+</h2>
-            <p>Maisons gérées</p>
-          </div>
-          <div className="stat">
-            <h2>98%</h2>
-            <p>de satisfaction</p>
-          </div>
-          <div className="stat">
-            <h2>50+</h2>
-            <p>Zones couvertes</p>
-          </div>
-          <div className="stat">
-            <h2>365j</h2>
-            <p>de tranquillité</p>
-          </div>
-        </section>
+const kpis = [
+  { icon: kpiHome, number: '75+', label: 'Résidences suivies' },
+  { icon: kpiInvest, number: '1.2M€', label: 'Biens valorisés' },
+  { icon: kpiSmile, number: '98%', label: 'Satisfaction client' },
+  { icon: kpiClock, number: '24/7', label: 'Présence locale' }
+];
 
-        {/* Équipe */}
-        <section className="aboutpage__team">
-          <h2>Votre interlocuteur local, pas un robot</h2>
-          <div className="team-cards">
-            <div className="team-card">
-              <img src={team1} alt="Responsable local 1" />
-              <h4>Benjamin Brassart</h4>
-              <p>Fondateur & Référent local</p>
-            </div>
-            <div className="team-card">
-              <img src={team2} alt="Responsable local 2" />
-              <h4>Responsable partenaire</h4>
-              <p>Gestion quotidienne</p>
-            </div>
-            <div className="team-card">
-              <img src={team3} alt="Expert technique" />
-              <h4>Expert technique</h4>
-              <p>Maintenance & suivi qualité</p>
-            </div>
-          </div>
-        </section>
+const testimonials = [
+  {
+    content: 'Solenca m\'a permis de garder un œil sur ma maison depuis la France. Je reçois des comptes-rendus réguliers et visuels, c\'est top !',
+    author: 'Ralph Edwards',
+    email: 'ralph.e@client.com',
+    avatar: avatar1
+  }
+];
 
-        {/* Témoignages */}
-        <section className="aboutpage__testimonials">
-          <img src={reviewsImage} alt="Avis clients Solenca" />
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
-};
+const ecosystemIcons = [
+  { icon: iconSecure, label: 'Sécurité' },
+  { icon: iconAlert, label: 'Alertes' },
+  { icon: iconReport, label: 'Rapports' },
+  { icon: iconWeather, label: 'Météo' },
+  { icon: iconSmart, label: 'Suivi digital' }
+];
+
+const AboutPage: React.FC = () => (
+  <>
+    <Navbar />
+
+    {/* SECTION 1 — Hero principal */}
+    <section className="about-hero">
+      <div className="hero-content">
+        <h1>
+          Suivez vos&nbsp;
+          <span className="gradient">résidences</span> à distance
+        </h1>
+        <p>
+          Solenca digitalise le suivi de votre maison secondaire en Espagne : rapports visuels, comptes-rendus, alertes. Pour une tranquillité continue, toute l'année.
+        </p>
+        <div className="cta-row">
+          <button className="primary-btn">Découvrir l'offre</button>
+          <span className="rating">
+            <i className="star">★</i> 4.9
+          </span>
+        </div>
+      </div>
+      <div className="hero-visual">
+        <div className="hero-image">
+          <img src={heroImg} alt="Vue d'une villa méditerranéenne" />
+        </div>
+        <div className="user-badge">
+          <div className="avatar-stack">
+            <img src={avatar1} alt="user" style={{ left: '0px' }} />
+          </div>
+          <span>Déjà utilisé par des propriétaires exigeants</span>
+        </div>
+      </div>
+    </section>
+
+    {/* SECTION 2 — Logos partenaires */}
+    <section className="about-logos">
+      {partnerLogos.map((logo, idx) => (
+        <img key={idx} src={logo} alt="partner logo" />
+      ))}
+    </section>
+
+    {/* SECTION 3 — Indicateurs clés */}
+    <section className="about-kpis">
+      {kpis.map(({ icon, number, label }) => (
+        <div key={label} className="kpi">
+          <img src={icon} alt="kpi icon" />
+          <span className="number">{number}</span>
+          <span className="label">{label}</span>
+        </div>
+      ))}
+    </section>
+
+    
+
+    {/* SECTION 4 — Témoignage global */}
+    <section className="about-quote">
+      <p>
+        <span className="highlight">Solenca</span> n’est pas un prestataire de plus. C’est un véritable copilote local, conçu pour les propriétaires de résidences secondaires en Espagne. Nous inspectons votre bien, envoyons des comptes-rendus visuels, déclenchons des alertes si besoin, et restons votre contact de confiance sur place. Vous gardez un œil sur tout, même à distance — avec l’assurance d’un suivi sérieux, humain et structuré.
+      </p>
+    </section>
+
+    {/* SECTION 5 — Bloc CTA unifié */}
+    <section className="about-cta about-team ecosystem-platform">
+      <div className="cta-inner ecosystem-center">
+        <h2>
+          Gardez le contrôle sur votre maison, <span className="fade">simplifiez votre quotidien</span>
+        </h2>
+        <p>
+          Solenca suit pour vous ce qui se passe sur place. Vous recevez des rapports, des alertes, et des conseils personnalisés. Moins de stress, plus de maîtrise. L’interface Solenca centralise les éléments-clés de votre maison. Rien ne vous échappe, même à distance.
+        </p>
+        <div className="cta-buttons">
+          <button className="primary-btn">Essayer Solenca</button>
+          <button className="secondary-btn">En savoir plus</button>
+        </div>
+      </div>
+      <div className="ecosystem-preview">
+        <div className="card-preview left-top">Rapport mensuel</div>
+        <div className="card-preview right-top">Alerte détection</div>
+        <div className="card-preview left-bottom">Checklist entretien</div>
+        <div className="card-preview right-bottom">Historique visites</div>
+        <div className="card-preview center-float">Température actuelle</div>
+<div className="card-preview top-float">Dernier passage</div>
+
+      </div>
+    </section>
+
+
+    <Footer />
+  </>
+);
 
 export default AboutPage;
