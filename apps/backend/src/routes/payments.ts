@@ -1,4 +1,8 @@
 // apps/backend/src/routes/payments.ts
-export default (req, res) => {
-  res.send('Payments route');
+import { Request, Response } from 'express';
+
+const paymentsRoute = (req: Request, res: Response) => {
+  res.send('Payments route OK');
 };
+
+export default paymentsRoute;

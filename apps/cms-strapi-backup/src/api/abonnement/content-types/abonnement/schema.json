@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abonnements",
+  "info": {
+    "singularName": "abonnement",
+    "pluralName": "abonnements",
+    "displayName": "Abonnement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "visitsPerMonth": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "feature": {
+      "type": "component",
+      "component": "description.features",
+      "repeatable": true
+    }
+  }
+}

@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import AbonnementPage from './pages/abonnement'; // <- gardé
+import AbonnementPage from './pages/abonnement';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import MagazinePage from './pages/MagazinePage';
 import LoginPage from './pages/LoginPage';
+import PrecommandePage from './pages/precommande'; // ✅ ajout ici
 
 import './styles/landing/landing.scss';
 
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/magazine" element={<MagazinePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/precommande" element={<PrecommandePage />} /> {/* ✅ ajout ici */}
       </Routes>
     </BrowserRouter>
   );

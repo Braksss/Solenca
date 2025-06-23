@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import Navbar from '../components/landing/NavBar';
+import Footer from '../components/landing/Footer';
 import '../styles/abonnement/precommande.scss';
 
 const PRICES = {
-  monthly: 540, // exemple prix initial mensuel avant réduction
-  annual: 432,  // prix annuel mensuel équivalent après 20% de réduction
+  tranquilo: { monthly: 129, annual: 99 },
+  confianza: { monthly: 229, annual: 189 },
+  serenidad: { monthly: 349, annual: 299 },
 };
 
 const Precommande = () => {
   const [form, setForm] = useState({ name: '', email: '' });
-  const [plan, setPlan] = useState<'monthly' | 'annual'>('annual');
+  const [selectedPlan, setSelectedPlan] = useState<'tranquilo' | 'confianza' | 'serenidad'>('confianza');
+  const [duration, setDuration] = useState<'monthly' | 'annual'>('annual');
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,87 +20,143 @@ const Precommande = () => {
   };
 
   const handlePlanChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPlan(e.target.value as 'monthly' | 'annual');
+    setSelectedPlan(e.target.value as 'tranquilo' | 'confianza' | 'serenidad');
   };
 
-  const totalPrice = plan === 'monthly' ? PRICES.monthly : PRICES.annual;
+  const handleDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDuration(e.target.value as 'monthly' | 'annual');
+  };
+
+  const totalPrice = PRICES[selectedPlan][duration];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // Ici tu envoies les données au backend / CMS
-    // Exemple : fetch('/api/precommande', { method: 'POST', body: JSON.stringify(form + plan) })
-
     setTimeout(() => {
       setSubmitting(false);
       alert('Précommande validée, merci !');
       setForm({ name: '', email: '' });
-      setPlan('annual');
+      setSelectedPlan('confianza');
+      setDuration('annual');
     }, 1500);
   };
 
   return (
-    <main className="precommande-page">
-      <form className="precommande-form" onSubmit={handleSubmit}>
-        <h1>Je précommande - Offre spéciale lancement</h1>
+    <>
+      <Navbar />
+      <main className="precommande-grid">
+        <section className="precommande-form">
+          <h1>Je précommande Solenca</h1>
+          <p className="subtitle">Bénéficiez des meilleures conditions en précommandant maintenant.</p>
 
-        <label htmlFor="name">Nom complet</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Ton nom complet"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
+          <label htmlFor="name">Nom complet</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Ton nom complet"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
 
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Ton email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Ton email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
 
-        <fieldset className="plans">
-          <legend>Choisissez votre plan</legend>
+          <div className="footer-buttons">
+            <button type="button" className="cancel">Annuler</button>
+            <button type="submit" className="subscribe" disabled={submitting} onClick={handleSubmit}>
+              {submitting ? 'Validation en cours…' : 'Valider et précommander'}
+            </button>
+          </div>
 
-          <label>
-            <input
-              type="radio"
-              name="plan"
-              value="monthly"
-              checked={plan === 'monthly'}
-              onChange={handlePlanChange}
-            />
-            Paiement mensuel - 20% de réduction pendant 6 mois
-          </label>
+          <p className="disclaimer">
+            Aucun paiement immédiat. Vous serez recontacté(e) avant le lancement officiel.
+          </p>
+        </section>
 
-          <label>
-            <input
-              type="radio"
-              name="plan"
-              value="annual"
-              checked={plan === 'annual'}
-              onChange={handlePlanChange}
-            />
-            Paiement annuel - 20% de réduction
-          </label>
-        </fieldset>
+        <aside className="precommande-summary">
+          <h2>Choisissez votre abonnement</h2>
+          <div className="plan-options">
+            <label className={selectedPlan === 'tranquilo' ? 'active' : ''}>
+              <input
+                type="radio"
+                name="plan"
+                value="tranquilo"
+                checked={selectedPlan === 'tranquilo'}
+                onChange={handlePlanChange}
+              />
+              Tranquilo — {PRICES.tranquilo[duration]}€/mois
+            </label>
 
-        <p className="total">
-          Total : <strong>{totalPrice.toFixed(2)} € / mois</strong>
-        </p>
+            <label className={selectedPlan === 'confianza' ? 'active' : ''}>
+              <input
+                type="radio"
+                name="plan"
+                value="confianza"
+                checked={selectedPlan === 'confianza'}
+                onChange={handlePlanChange}
+              />
+              Confianza — {PRICES.confianza[duration]}€/mois
+            </label>
 
-        <button type="submit" disabled={submitting}>
-          {submitting ? 'Validation en cours...' : 'Valider et précommander'}
-        </button>
-      </form>
-    </main>
+            <label className={selectedPlan === 'serenidad' ? 'active' : ''}>
+              <input
+                type="radio"
+                name="plan"
+                value="serenidad"
+                checked={selectedPlan === 'serenidad'}
+                onChange={handlePlanChange}
+              />
+              Serenidad — {PRICES.serenidad[duration]}€/mois
+            </label>
+          </div>
+
+          <div className="duration-options">
+            <label className={duration === 'monthly' ? 'active' : ''}>
+              <input
+                type="radio"
+                name="duration"
+                value="monthly"
+                checked={duration === 'monthly'}
+                onChange={handleDurationChange}
+              />
+              Paiement mensuel
+            </label>
+
+            <label className={duration === 'annual' ? 'active' : ''}>
+              <input
+                type="radio"
+                name="duration"
+                value="annual"
+                checked={duration === 'annual'}
+                onChange={handleDurationChange}
+              />
+              Engagement 1 an (réduction spéciale)
+            </label>
+          </div>
+
+          <div className="total-section">
+            <p>Total</p>
+            <h3>{totalPrice.toFixed(2)} € / mois</h3>
+            <p className="secure">🔒 Sans engagement immédiat – paiement à l'ouverture</p>
+          </div>
+
+          <div className="summary-visual">
+            <img src="/assets/illus-cube.png" alt="Illustration Solenca" />
+          </div>
+        </aside>
+      </main>
+      <Footer />
+    </>
   );
 };
 
