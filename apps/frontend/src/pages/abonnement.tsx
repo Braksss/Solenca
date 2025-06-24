@@ -1,29 +1,24 @@
-// apps/frontend/src/pages/abonnement/index.tsx
-
 import { useEffect, useState } from 'react';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import SubscriptionConfigurator from '../components/abonnement/SubscriptionConfigurator';
 import '../styles/abonnement/abonnement.scss';
-
-type Option = {
-  id: string;
-  label: string;
-  price: number;
-};
+import heroImg from '../assets/hero-abonnement.jpg';
+import avatar1 from '../assets/avatars/avatar1.png';
 
 type Feature = {
-  id: number;
+  id: string;
   label: string;
+  included: boolean;
+  price?: number;
 };
 
 type Abonnement = {
   id: string;
   name: string;
   basePrice: number;
-  description: string;
+  tagline: string;
   features: Feature[];
-  options: Option[];
 };
 
 const AbonnementPage = () => {
@@ -45,13 +40,13 @@ const AbonnementPage = () => {
           id: String(item.id),
           name: item.title ?? 'Sans titre',
           basePrice: item.price ?? 0,
-          description: item.description?.[0]?.children?.[0]?.text ?? '',
-          features: [], // à remplir si tu ajoutes des features séparées
-          options:
+          tagline: item.description ?? '',
+          features:
             item.feature?.map((opt: any) => ({
               id: String(opt.id),
               label: opt.label,
-              price: opt.price,
+              included: opt.included,
+              price: opt.included ? undefined : opt.price ?? 0,
             })) ?? [],
         }));
 
@@ -75,31 +70,82 @@ const AbonnementPage = () => {
 
   const totalPrice = abonnement
     ? abonnement.basePrice +
-      abonnement.options.reduce((acc, opt) => acc + (selectedOptions[opt.id] ? opt.price : 0), 0)
+      abonnement.features.reduce(
+        (acc, opt) => acc + (!opt.included && selectedOptions[opt.id] ? opt.price ?? 0 : 0),
+        0
+      )
     : 0;
 
   return (
     <>
       <Navbar />
       <main className="abonnement-page">
-        <h2>Nos formules</h2>
-        <div className="abonnement-cards">
-          {abonnements.map(({ id, name, basePrice, description }) => (
-            <div
-              key={id}
-              className={`card ${id === selectedId ? 'selected' : ''}`}
-              onClick={() => {
-                setSelectedId(id);
-                setSelectedOptions({});
-                setShowConfigurator(true);
-              }}
-            >
-              <div className="card-header">{name}</div>
-              <div className="card-price">{basePrice} €</div>
-              <div className="card-desc">{description}</div>
+        {/* SECTION HERO INTRO */}
+        <section className="about-hero">
+          <div className="hero-content">
+            <h1>
+              Des formules conçues pour votre&nbsp;
+              <span className="gradient">tranquillité</span>
+            </h1>
+            <p>
+              Choisissez un abonnement adapté à vos besoins, avec un suivi digitalisé, des alertes automatiques et des prestations claires.
+            </p>
+            <div className="cta-row">
+              <button className="primary-btn">Comparer les offres</button>
+              <span className="rating">
+                <i className="star">★</i> 4.9
+              </span>
             </div>
-          ))}
-        </div>
+          </div>
+          <div className="hero-visual">
+            <div className="hero-image">
+              <img src={heroImg} alt="Vue d'une villa méditerranéenne" />
+            </div>
+            <div className="user-badge">
+              <div className="avatar-stack">
+                <img src={avatar1} alt="user" style={{ left: '0px' }} />
+              </div>
+              <span>Déjà adopté par des propriétaires exigeants</span>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION OFFRES ABONNEMENT */}
+        <section className="about-cta about-team ecosystem-platform">
+          <div className="cta-inner ecosystem-center">
+            <h2>
+              Gardez le contrôle sur votre maison, <span className="fade">simplifiez votre quotidien</span>
+            </h2>
+            <p>
+              Solenca suit pour vous ce qui se passe sur place. Vous recevez des rapports, des alertes, et des conseils personnalisés. Moins de stress, plus de maîtrise. L’interface Solenca centralise les éléments-clés de votre maison. Rien ne vous échappe, même à distance.
+            </p>
+          </div>
+
+          <div className="abonnement-cards">
+            {abonnements.map(({ id, name, basePrice, tagline }) => (
+              <div
+                key={id}
+                className={`card ${id === selectedId ? 'selected' : ''}`}
+                onClick={() => {
+                  setSelectedId(id);
+                  setSelectedOptions({});
+                  setShowConfigurator(true);
+                }}
+              >
+                <div className="card-header">{name}</div>
+                <div className="card-price">{basePrice} €</div>
+                <div className="card-desc">{tagline}</div>
+              </div>
+            ))}
+          </div>
+
+<div className="cta-buttons">
+  <button className="vip-btn">Faire une demande VIP</button>
+</div>
+
+
+        </section>
+
 
         {showConfigurator && abonnement && (
           <SubscriptionConfigurator

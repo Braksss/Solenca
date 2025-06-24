@@ -1,23 +1,18 @@
 import '../../styles/abonnement/abonnement.scss';
 
-type Option = {
+type Feature = {
   id: string;
   label: string;
-  price: number;
-};
-
-type Feature = {
-  id: number;
-  label: string;
+  included: boolean;
+  price?: number;
 };
 
 type Abonnement = {
   id: string;
   name: string;
   basePrice: number;
-  description: string;
+  tagline: string;
   features: Feature[];
-  options: Option[];
 };
 
 type Props = {
@@ -45,29 +40,33 @@ const SubscriptionConfigurator = ({
         <div className="configurator-right">
           <button className="close-btn" onClick={onClose}>✕</button>
           <h2 className="configurator-title">{abonnement.name}</h2>
-          <p className="configurator-desc">{abonnement.description}</p>
+          <p className="configurator-desc">{abonnement.tagline}</p>
 
           <div className="features-section">
-            {abonnement.features.map((f) => (
-              <div key={f.id} className="feature-item">✅ {f.label}</div>
+            {Array.isArray(abonnement.features) && abonnement.features.map((f) => (
+              <div
+                key={f.id}
+                className={`feature-item ${f.included ? 'included' : 'upsell'}`}
+              >
+                {f.included ? (
+                  <>✅ {f.label}</>
+                ) : (
+                  <label className="option-checkbox">
+                    <input
+                      type="checkbox"
+                      checked={!!selectedOptions[f.id]}
+                      onChange={() => toggleOption(f.id)}
+                    />
+                    {f.label} <span className="option-price">+{f.price} €</span>
+                  </label>
+                )}
+              </div>
             ))}
           </div>
 
-          <div className="options-section">
-            <p className="options-label">Options supplémentaires :</p>
-            {abonnement.options.map((opt) => (
-              <label key={opt.id} className="option-checkbox">
-                <input
-                  type="checkbox"
-                  checked={!!selectedOptions[opt.id]}
-                  onChange={() => toggleOption(opt.id)}
-                />
-                {opt.label} <span className="option-price">+{opt.price} €</span>
-              </label>
-            ))}
-          </div>
-
-          <button className="pay-btn">Souscrire à {totalPrice.toFixed(2)} € / mois</button>
+          <button className="pay-btn">
+            Souscrire à {totalPrice.toFixed(2)} € / mois
+          </button>
         </div>
       </div>
     </div>
