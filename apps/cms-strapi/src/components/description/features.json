@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_description_features",
+  "info": {
+    "displayName": "features"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "included": {
+      "type": "boolean"
+    },
+    "price": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}
