@@ -1,0 +1,82 @@
+.planning-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+  min-height: 220px;
+}
+
+.planning-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .small {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.3rem;
+  }
+
+  .planning-card__slot {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111;
+    white-space: nowrap;
+  }
+}
+
+.planning-card__progress {
+  display: flex;
+  gap: 4px;
+  margin: 1.5rem 0;
+
+  .bar {
+    width: 5%;
+    height: 24px;
+    background: #e6e6e6;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .filled {
+    background: #6ca942;
+  }
+}
+
+.planning-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 0.85rem;
+    color: #333;
+    margin: 0;
+  }
+
+  button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    border: none;
+    background: #111;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background: #333;
+    }
+  }
+}

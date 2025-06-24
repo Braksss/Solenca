@@ -1,0 +1,106 @@
+.hydro-card {
+  display: flex;
+  justify-content: space-between;
+  background: #a9d7e7;
+  border-radius: 32px;
+  padding: 2rem;
+  color: white;
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.hydro-card__left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hydro-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hydro-card__text {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.hydro-card__badge {
+  display: inline-block;
+  background: #eaff00;
+  color: #111;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.hydro-card__selectors {
+  display: flex;
+  gap: 0.5rem;
+  span {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+
+  .selected {
+    background: white;
+    color: #111;
+  }
+}
+
+.hydro-card__right {
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.hydro-card__cups {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+
+  .cup {
+    width: 20px;
+    height: 30px;
+    background: #e2f6fc;
+    border-radius: 5px;
+    opacity: 0.4;
+  }
+
+  .full {
+    background: #356a7e;
+    opacity: 1;
+  }
+}
+
+.hydro-card__litres {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: right;
+
+  span {
+    font-size: 1rem;
+    display: block;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,14 @@
+@import './layout/sidebar.scss';
+@import './layout/header.scss';
+@import './components/dashboard/rapport-card.scss';
+@import './components/dashboard/hydrometrie-card.scss';
+@import './components/dashboard/planning-card.scss';
+@import './components/dashboard/intervention-stats.scss';
+@import './components/dashboard/poids-maison-card.scss';
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f5fcff;
+  color: #111;
+}

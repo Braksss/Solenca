@@ -1,0 +1,65 @@
+.rapport-card {
+  height: 80%;
+  border-radius: 32px;
+  background-color: #ff8200;
+  color: white;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // ← force à coller haut + bas
+  grid-column: span 2;
+}
+
+.rapport-card__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.rapport-card__subtitle {
+  font-size: 0.95rem;
+  color: #fff7e6;
+}
+
+.rapport-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; // ← important si jamais le parent n'est pas stretché
+}
+
+.rapport-card__avatars {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  .rapport-card__members {
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    color: white;
+  }
+}
+
+.rapport-card__cta {
+  background: white;
+  color: #111;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #eee;
+  }
+}
