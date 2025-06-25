@@ -1,32 +1,32 @@
 import React from 'react';
 import '../../styles/components/dashboard/intervention-stats.scss';
+import { AlertTriangle, CheckCircle, FileText } from 'lucide-react';
 
 const InterventionStats = () => {
   return (
     <div className="intervention-card">
-      <div className="intervention-card__top">
-        <div>
-          <h4>Interventions</h4>
-          <p className="info">30 derniers jours</p>
+      <div className="intervention-card__header">
+        <h4>Suivi des interventions</h4>
+        <p className="sub">Dernière visite : 20 juin</p>
+      </div>
+
+      <div className="intervention-card__info">
+        <div className="intervention-item">
+          <CheckCircle size={18} />
+          <span>5 interventions ce mois-ci</span>
         </div>
-        <div className="intervention-card__ref">12 total</div>
+        <div className="intervention-item alert">
+          <AlertTriangle size={18} />
+          <span>1 anomalie détectée</span>
+        </div>
+        <div className="intervention-item">
+          <FileText size={18} />
+          <button className="intervention-card__cta">Voir le rapport</button>
+        </div>
       </div>
 
-      <div className="intervention-card__graph">
-        <svg viewBox="0 0 100 30" preserveAspectRatio="none">
-          <path
-            d="M0,20 C20,10 40,30 60,15 C80,5 100,20 100,20"
-            fill="none"
-            stroke="#3db8ff"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      <div className="intervention-card__bottom">
-        <div className="score">2 ponctuelles</div>
-        <div className="sub">Réponses rapides</div>
+      <div className="intervention-card__footer">
+        <span className="status-tag">Maison en bon état</span>
       </div>
     </div>
   );

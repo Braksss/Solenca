@@ -1,82 +1,64 @@
-.planning-card {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 1.8rem;
+.planning-card-modern {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  gap: 1.2rem;
   font-family: 'Inter', sans-serif;
-  min-height: 220px;
-}
+  transition: all 0.2s ease;
+  min-height: 240px;
 
-.planning-card__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  h4 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #111;
+  &:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
   }
 
-  .small {
+  &__section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    svg {
+      color: #ff8200;
+      flex-shrink: 0;
+    }
+
+    .text-block {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        font-size: 0.75rem;
+        color: #999;
+        margin-bottom: 0.2rem;
+      }
+
+      .value {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #111;
+      }
+    }
+  }
+
+  &__cta {
+    margin-top: auto;
+    align-self: flex-end;
+    background: transparent;
+    border: 1px solid #111;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
     font-size: 0.75rem;
-    color: #888;
-    margin-top: 0.3rem;
-  }
-
-  .planning-card__slot {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #111;
-    white-space: nowrap;
-  }
-}
-
-.planning-card__progress {
-  display: flex;
-  gap: 4px;
-  margin: 1.5rem 0;
-
-  .bar {
-    width: 5%;
-    height: 24px;
-    background: #e6e6e6;
-    border-radius: 4px;
-    transition: background 0.3s;
-  }
-
-  .filled {
-    background: #6ca942;
-  }
-}
-
-.planning-card__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  p {
-    font-size: 0.85rem;
-    color: #333;
-    margin: 0;
-  }
-
-  button {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 10px;
-    border: none;
-    background: #111;
-    color: white;
+    font-weight: 500;
     cursor: pointer;
-    transition: background 0.2s ease-in-out;
+    color: #111;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-      background: #333;
+      background: #111;
+      color: white;
     }
   }
 }

@@ -10,17 +10,25 @@ const HydrometrieCard = () => {
           Dernière analyse le <strong>20 juin</strong> — tout est parfait.
         </p>
         <div className="hydro-card__badge">👍 Parfait</div>
-        <div className="hydro-card__summary">
-          Chlore : <span className="hydro-card__value">1.5 mg/L</span>
+
+        <div className="hydro-card__metrics">
+          <span>Chlore</span>
+          <div className="hydro-card__progress">
+            <div className="hydro-card__bar" style={{ width: '75%' }}></div>
+          </div>
+          <span className="hydro-card__value">1.5 mg/L</span>
         </div>
       </div>
+
       <div className="hydro-card__right">
-        <div className="hydro-card__tubes">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div key={i} className={`tube ${i < 14 ? 'full' : ''}`} />
+        <div className="hydro-card__cups">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div key={i} className={`cup ${i < 7 ? 'full' : ''}`} />
           ))}
         </div>
-        <div className="hydro-card__litres">Volume :<br /><strong>2.15L</strong></div>
+        <div className="hydro-card__litres">
+          2.15L <span>d’eau traitée</span>
+        </div>
       </div>
     </div>
   );

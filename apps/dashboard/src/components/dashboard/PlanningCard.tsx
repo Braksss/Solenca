@@ -1,32 +1,35 @@
 import React from 'react';
 import '../../styles/components/dashboard/planning-card.scss';
+import { Calendar, Clock, UserRound } from 'lucide-react';
 
 const PlanningCard = () => {
   return (
-    <div className="planning-card">
-      <div className="planning-card__header">
-        <div>
-          <h4>Prochaine visite</h4>
-          <p className="small">Planifiée automatiquement</p>
+    <div className="planning-card-modern">
+      <div className="planning-card-modern__section">
+        <Calendar size={18} />
+        <div className="text-block">
+          <span className="label">Date prévue</span>
+          <span className="value">Mercredi 26 juin</span>
         </div>
-        <div className="planning-card__slot">26 juin à 10h30</div>
       </div>
 
-      <div className="planning-card__progress">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div
-            key={i}
-            className={`bar ${i < 13 ? 'filled' : ''}`}
-          />
-        ))}
+      <div className="planning-card-modern__section">
+        <Clock size={18} />
+        <div className="text-block">
+          <span className="label">Heure</span>
+          <span className="value">10h30</span>
+        </div>
       </div>
 
-      <div className="planning-card__footer">
-        <div>
-          <p><strong>Technicien :</strong> Marta</p>
+      <div className="planning-card-modern__section">
+        <UserRound size={18} />
+        <div className="text-block">
+          <span className="label">Technicien</span>
+          <span className="value">Marta (Solenca)</span>
         </div>
-        <button>Voir le planning</button>
       </div>
+
+      <button className="planning-card-modern__cta">Voir le planning complet</button>
     </div>
   );
 };

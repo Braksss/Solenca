@@ -6,7 +6,14 @@ const RapportCard = () => {
     <div className="rapport-card">
       <div>
         <h2 className="rapport-card__title">Votre maison a été visitée !</h2>
-        <p className="rapport-card__subtitle">Le 20 juin par Jean (technicien Solenca)</p>
+        <p className="rapport-card__subtitle">Le 20 juin à Platja d’Aro par Jean (technicien Solenca)</p>
+
+        <span className="rapport-card__status rapport-card__status--ok">✅ Aucun problème détecté</span>
+
+        <div className="rapport-card__photos">
+          <img src="/maison1.jpg" alt="Photo 1" />
+          <img src="/maison2.jpg" alt="Photo 2" />
+        </div>
       </div>
 
       <div className="rapport-card__footer">

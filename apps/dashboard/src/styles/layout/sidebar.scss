@@ -42,32 +42,24 @@
     transition: all 0.2s ease;
 
     &:hover {
-      background: #f3f3f3;
-    }
-
-    &--active {
-      background: #96c11f;
-      color: white;
-      box-shadow: 0 2px 8px rgba(150, 193, 31, 0.4);
+      background: #ffe3c4;
+      color: #ff8200;
     }
   }
 
-  &__icon--user {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #96c11f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-  }
-
+  // Avatar utilisateur (en bas)
   &__avatar {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 2px solid #96c11f;
+    border: 2px solid #ff8200;
     margin-top: 0.5rem;
   }
+}
+
+/* Icône active via React Router (NavLink automatique) */
+.sidebar__icon.router-link-active {
+  background: #ff8200;
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 130, 0, 0.4);
 }

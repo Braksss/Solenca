@@ -60,12 +60,7 @@ input {
   background: white;
 }
 
-.dashboard__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  gap: 2rem;
-}
+
 
 .dashboard__main {
   padding: 2rem;
@@ -78,6 +73,11 @@ input {
 .dashboard__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
   gap: 2rem;
-  flex: 1;
+  align-items: stretch;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
