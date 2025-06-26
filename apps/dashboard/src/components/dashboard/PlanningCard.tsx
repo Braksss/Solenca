@@ -1,35 +1,35 @@
 import React from 'react';
 import '../../styles/components/dashboard/planning-card.scss';
-import { Calendar, Clock, UserRound } from 'lucide-react';
 
 const PlanningCard = () => {
   return (
-    <div className="planning-card-modern">
-      <div className="planning-card-modern__section">
-        <Calendar size={18} />
-        <div className="text-block">
-          <span className="label">Date prévue</span>
-          <span className="value">Mercredi 26 juin</span>
+    <div className="glass-card">
+      <div className="glass-card__header">
+        <button className="glass-card__toggle glass-card__toggle--active">Weekly</button>
+        <button className="glass-card__toggle">Monthly</button>
+        <div className="glass-card__settings">
+          <span>⚙️</span>
         </div>
       </div>
 
-      <div className="planning-card-modern__section">
-        <Clock size={18} />
-        <div className="text-block">
-          <span className="label">Heure</span>
-          <span className="value">10h30</span>
-        </div>
+      <div className="glass-card__date">
+        <span className="glass-card__month">August</span>
+        <span className="glass-card__day">23</span>
       </div>
 
-      <div className="planning-card-modern__section">
-        <UserRound size={18} />
-        <div className="text-block">
-          <span className="label">Technicien</span>
-          <span className="value">Marta (Solenca)</span>
-        </div>
+      <div className="glass-card__week">
+        {['Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'].map((day, i) => (
+          <div key={day} className={`glass-card__weekday ${i === 3 ? 'active' : ''}`}>
+            <span>{day}</span>
+            <span>{20 + i}</span>
+          </div>
+        ))}
       </div>
 
-      <button className="planning-card-modern__cta">Voir le planning complet</button>
+      <div className="glass-card__footer">
+        <input type="text" placeholder="✏️ Add a note..." className="glass-card__note" />
+        <button className="glass-card__event">+ New Event</button>
+      </div>
     </div>
   );
 };
