@@ -3,31 +3,37 @@ import '../../styles/components/dashboard/hydrometrie-card.scss';
 
 const HydrometrieCard = () => {
   return (
-    <div className="hydro-card">
-      <div className="hydro-card__left">
-        <h4 className="hydro-card__title">État de la piscine</h4>
-        <p className="hydro-card__text">
-          Dernière analyse le <strong>20 juin</strong> — tout est parfait.
-        </p>
-        <div className="hydro-card__badge">👍 Parfait</div>
-
-        <div className="hydro-card__metrics">
-          <span>Chlore</span>
-          <div className="hydro-card__progress">
-            <div className="hydro-card__bar" style={{ width: '75%' }}></div>
-          </div>
-          <span className="hydro-card__value">1.5 mg/L</span>
-        </div>
+    <div className="hydro-modern-card">
+      <div className="hydro-modern-card__top">
+        <div className="hydro-modern-card__title">Piscine</div>
+        <div className="hydro-modern-card__status">👍 Parfait</div>
       </div>
 
-      <div className="hydro-card__right">
-        <div className="hydro-card__cups">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <div key={i} className={`cup ${i < 7 ? 'full' : ''}`} />
-          ))}
+      <div className="hydro-modern-card__main-value">
+        1.5 mg/L
+        <span>Chlore</span>
+      </div>
+
+      <div className="hydro-modern-card__subtext">
+        Dernière mesure le 20 juin à 15h
+      </div>
+
+      <div className="hydro-modern-card__grid">
+        <div className="hydro-modern-card__cell">
+          <div className="hydro-modern-card__cell-value">7.3</div>
+          <div className="hydro-modern-card__cell-label">pH</div>
         </div>
-        <div className="hydro-card__litres">
-          2.15L <span>d’eau traitée</span>
+        <div className="hydro-modern-card__cell">
+          <div className="hydro-modern-card__cell-value">22°C</div>
+          <div className="hydro-modern-card__cell-label">Température</div>
+        </div>
+        <div className="hydro-modern-card__cell">
+          <div className="hydro-modern-card__cell-value">80%</div>
+          <div className="hydro-modern-card__cell-label">Remplissage</div>
+        </div>
+        <div className="hydro-modern-card__cell">
+          <div className="hydro-modern-card__cell-value">✔️</div>
+          <div className="hydro-modern-card__cell-label">Filtration</div>
         </div>
       </div>
     </div>

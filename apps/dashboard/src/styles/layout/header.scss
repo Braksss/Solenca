@@ -1,89 +1,91 @@
 .dashboard-header {
-  width: 90%;
+  width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2.5rem 1rem;
+  padding: 1rem 2rem;
 
-  &__intro {
+
+  &__left {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
-    h1 {
-      font-size: 1.75rem;
+    .dashboard-header__welcome {
+      font-size: 1.25rem;
       font-weight: 600;
       margin: 0;
+      color: #111;
     }
 
-    p {
-      font-size: 0.95rem;
-      color: #666;
-      margin-top: 0.25rem;
+    .dashboard-header__summary {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 0.15rem;
     }
   }
 
-  &__actions {
+  &__right {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-  }
-
-  &__search-wrapper {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-    font-size: 0.9rem;
-    color: #999;
-
-    svg {
-      margin-right: 0.5rem;
-      color: #999;
-    }
+    gap: 1rem;
   }
 
   &__search {
-    border: none;
-    outline: none;
-    font-size: 0.9rem;
-    background: transparent;
-    width: 180px;
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #666;
 
-    &::placeholder {
-      color: #999;
+    svg {
+      margin-right: 0.5rem;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 0.85rem;
+      color: #333;
+
+      &::placeholder {
+        color: #999;
+      }
     }
   }
 
-  &__btn {
+  &__icon-button {
+    width: 38px;
+    height: 38px;
     border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    justify-content: center;
     cursor: pointer;
     transition: background 0.2s ease;
 
-    svg {
-      color: white;
-    }
-
-    &--home {
+    &.orange {
       background: #ff8200;
-      color: white;
+
+      svg {
+        color: white;
+      }
 
       &:hover {
-        background: #e97300;
+        background: #e96e00;
       }
     }
 
-    &--alert {
+    &.dark {
       background: #111;
-      color: #ff8200;
+
+      svg {
+        color: #ff8200;
+      }
 
       &:hover {
         background: #222;

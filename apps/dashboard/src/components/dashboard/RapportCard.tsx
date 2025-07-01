@@ -1,29 +1,34 @@
 import React from 'react';
 import '../../styles/components/dashboard/rapport-card.scss';
+import maison from '../../assets/mock-maison.png'; // image fond de maison
 
 const RapportCard = () => {
   return (
     <div className="rapport-card">
-      <div>
-        <h2 className="rapport-card__title">Votre maison a été visitée !</h2>
-        <p className="rapport-card__subtitle">Le 20 juin à Platja d’Aro par Jean (technicien Solenca)</p>
+      <img src={maison} alt="Maison" className="rapport-card__image" />
 
-        <span className="rapport-card__status rapport-card__status--ok">✅ Aucun problème détecté</span>
-
-        <div className="rapport-card__photos">
-          <img src="/maison1.jpg" alt="Photo 1" />
-          <img src="/maison2.jpg" alt="Photo 2" />
+      <div className="rapport-card__overlay">
+        <div className="rapport-card__top">
+          <div className="rapport-card__status">● Live</div>
+          <div className="rapport-card__metrics">
+            <span>🌡️ 24°C</span>
+            <span>💧 50%</span>
+            <span>⚡ 350W</span>
+            <span>🔋 80%</span>
+          </div>
         </div>
-      </div>
 
-      <div className="rapport-card__footer">
-        <div className="rapport-card__avatars">
-          <img src="/avatar1.png" alt="Client 1" />
-          <img src="/avatar2.png" alt="Client 2" />
-          <img src="/avatar3.png" alt="Client 3" />
-          <span className="rapport-card__members">5.8k+ clients</span>
+        <div className="rapport-card__bottom">
+          <div className="rapport-card__date">Dernière visite : 25 juin</div>
+          <div className="rapport-card__summary">
+            Aucun problème détecté. Portail fermé, clim éteinte, alarme activée.
+          </div>
+          <div className="rapport-card__details">
+            <span>🔎 14 points vérifiés</span>
+            <span>📸 12 photos</span>
+            <span>🕒 Durée : 42 min</span>
+          </div>
         </div>
-        <button className="rapport-card__cta">Voir le rapport</button>
       </div>
     </div>
   );

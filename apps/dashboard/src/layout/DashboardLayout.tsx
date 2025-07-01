@@ -16,11 +16,15 @@ const DashboardLayout = () => {
       <main className="dashboard__main">
         <Header />
         <div className="dashboard__grid">
-          <RapportCard />
-          <HydrometrieCard />
-          <PlanningCard />
-          <InterventionStats />
-          <PoidsMaisonCard />
+          <div className="dashboard__row dashboard__row--2">
+            <RapportCard />
+            <HydrometrieCard />
+          </div>
+          <div className="dashboard__row dashboard__row--3">
+            <PlanningCard />
+            <InterventionStats />
+            <PoidsMaisonCard />
+          </div>
         </div>
       </main>
     </div>

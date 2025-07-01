@@ -5,28 +5,21 @@ import { Search, Bell, Home } from 'lucide-react';
 const Header = () => {
   return (
     <header className="dashboard-header">
-      <div className="dashboard-header__intro">
-        <h1 className="dashboard-header__title">Bienvenue, Benjamin</h1>
-        <p className="dashboard-header__subtitle">
-          Voici le résumé de votre propriété aujourd’hui.
-        </p>
+      <div className="dashboard-header__left">
+        <h1 className="dashboard-header__welcome">Bonjour Benjamin</h1>
+        <p className="dashboard-header__summary">Résumé de votre propriété</p>
       </div>
-      <div className="dashboard-header__actions">
-        <div className="dashboard-header__search-wrapper">
+
+      <div className="dashboard-header__right">
+        <div className="dashboard-header__search">
           <Search size={16} />
-          <input
-            type="text"
-            placeholder="Rechercher une donnée"
-            className="dashboard-header__search"
-          />
+          <input type="text" placeholder="Rechercher..." />
         </div>
-        <button className="dashboard-header__btn dashboard-header__btn--home">
+        <button className="dashboard-header__icon-button orange">
           <Home size={16} />
-          <span>Mes maisons</span>
         </button>
-        <button className="dashboard-header__btn dashboard-header__btn--alert">
+        <button className="dashboard-header__icon-button dark">
           <Bell size={16} />
-          <span>Alertes</span>
         </button>
       </div>
     </header>
