@@ -260,11 +260,18 @@ $card-radius: 20px;
     .faq-item {
       border-top: 1px solid $grey-300;
       padding: 1rem 0;
+      transition: background 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        background: $grey-100;
+      }
 
       .faq-question {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 1rem;
 
         .faq-number {
           width: 1.5rem;
@@ -276,11 +283,11 @@ $card-radius: 20px;
           place-items: center;
           font-weight: bold;
           font-size: 0.8rem;
+          color: $grey-500;
         }
 
         .faq-text {
           flex: 1;
-          margin-left: 1rem;
           font: 600 1rem "Montserrat";
           color: $secondary;
         }
@@ -295,18 +302,62 @@ $card-radius: 20px;
           height: 1.5rem;
           display: grid;
           place-items: center;
+          transition: transform 0.3s ease;
+
+          &.open {
+            transform: rotate(45deg);
+          }
         }
       }
 
       .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        margin-top: 0;
+        background: transparent;
+      }
+
+      &.active .faq-answer {
+        max-height: 300px;
+        opacity: 1;
         margin-top: 0.75rem;
         background: $grey-100;
         padding: 1rem;
         border-radius: 10px;
         font-size: 0.95rem;
         color: #444;
+        line-height: 1.6;
       }
     }
+    .faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  padding: 0 1rem;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  &.visible {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 0.75rem;
+    background: $grey-100;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+  }
+}
+
+.faq-toggle.open {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
   }
 
   @media (max-width: 576px) {
@@ -321,6 +372,8 @@ $card-radius: 20px;
     }
   }
 }
+
+
 
 .about-bridge {
   padding: 4rem 2rem;

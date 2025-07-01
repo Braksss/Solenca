@@ -3,161 +3,142 @@ import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/abonnement/precommande.scss';
 
-const PRICES = {
-  tranquilo: { monthly: 129, annual: 99 },
-  confianza: { monthly: 229, annual: 189 },
-  serenidad: { monthly: 349, annual: 299 },
-};
+const BASE_PRICE = 99;
 
-const Precommande = () => {
-  const [form, setForm] = useState({ name: '', email: '' });
-  const [selectedPlan, setSelectedPlan] = useState<'tranquilo' | 'confianza' | 'serenidad'>('confianza');
-  const [duration, setDuration] = useState<'monthly' | 'annual'>('annual');
-  const [submitting, setSubmitting] = useState(false);
+const OPTIONS = [
+  { id: 'piscine', label: 'Piscine', price: 89 },
+  { id: 'jardin', label: 'Jardin', price: 89 },
+  { id: 'hiver', label: 'Hiver+', price: 29 },
+  { id: 'surveillance', label: 'Surveillance+', price: 19 },
+];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+const PrecommandePage = () => {
+  const [form, setForm] = useState({ name: '', email: '', isPro: false, message: '' });
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+
+  const toggleOption = (id: string) => {
+    setSelectedOptions(prev =>
+      prev.includes(id) ? prev.filter(opt => opt !== id) : [...prev, id]
+    );
   };
 
-  const handlePlanChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedPlan(e.target.value as 'tranquilo' | 'confianza' | 'serenidad');
-  };
+  const fullPrice = BASE_PRICE + selectedOptions.reduce((sum, id) => {
+    const option = OPTIONS.find(opt => opt.id === id);
+    return sum + (option ? option.price : 0);
+  }, 0);
 
-  const handleDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDuration(e.target.value as 'monthly' | 'annual');
-  };
+  const discount = 0.3;
+  const finalPrice = (fullPrice * (1 - discount)).toFixed(2);
 
-  const totalPrice = PRICES[selectedPlan][duration];
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type, checked } = e.target;
+    setForm(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      alert('Précommande validée, merci !');
-      setForm({ name: '', email: '' });
-      setSelectedPlan('confianza');
-      setDuration('annual');
-    }, 1500);
+    alert('Précommande envoyée avec succès !');
   };
 
   return (
     <>
       <Navbar />
-      <main className="precommande-grid">
-        <section className="precommande-form">
-          <h1>Je précommande Solenca</h1>
-          <p className="subtitle">Bénéficiez des meilleures conditions en précommandant maintenant.</p>
-
-          <label htmlFor="name">Nom complet</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Ton nom complet"
-            value={form.name}
-            onChange={handleChange}
-            required
-          />
-
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Ton email"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-
-          <div className="footer-buttons">
-            <button type="button" className="cancel">Annuler</button>
-            <button type="submit" className="subscribe" disabled={submitting} onClick={handleSubmit}>
-              {submitting ? 'Validation en cours…' : 'Valider et précommander'}
-            </button>
-          </div>
-
-          <p className="disclaimer">
-            Aucun paiement immédiat. Vous serez recontacté(e) avant le lancement officiel.
+      <main className="precommande-container">
+        <div className="precommande-card">
+          <h1>Précommandez Solenca One</h1>
+          <p className="intro">
+            Bénéficiez de <strong>-30 %</strong> la première année. Offre limitée aux précommandes.
           </p>
-        </section>
 
-        <aside className="precommande-summary">
-          <h2>Choisissez votre abonnement</h2>
-          <div className="plan-options">
-            <label className={selectedPlan === 'tranquilo' ? 'active' : ''}>
-              <input
-                type="radio"
-                name="plan"
-                value="tranquilo"
-                checked={selectedPlan === 'tranquilo'}
-                onChange={handlePlanChange}
-              />
-              Tranquilo — {PRICES.tranquilo[duration]}€/mois
-            </label>
+          <section className="section-box">
+            <h2 className="section-title">Inclus avec Solenca One</h2>
+            <ul className="included-list">
+              <li>✅ 2 visites par mois</li>
+              <li>✅ Rapport photo après chaque passage</li>
+              <li>✅ Vérification des accès, volets, humidité</li>
+              <li>✅ Alerte immédiate en cas d’anomalie</li>
+            </ul>
+            <div className="price-row">
+              <span className="old-price">99 €/mois</span>
+              <span className="new-price">69,30 €/mois</span>
+            </div>
+          </section>
 
-            <label className={selectedPlan === 'confianza' ? 'active' : ''}>
-              <input
-                type="radio"
-                name="plan"
-                value="confianza"
-                checked={selectedPlan === 'confianza'}
-                onChange={handlePlanChange}
-              />
-              Confianza — {PRICES.confianza[duration]}€/mois
-            </label>
+          <section className="section-box">
+            <h2 className="section-title">Modules supplémentaires</h2>
+            <div className="options-grid">
+              {OPTIONS.map(opt => (
+                <div
+                  key={opt.id}
+                  className={`option-card ${selectedOptions.includes(opt.id) ? 'selected' : ''}`}
+                  onClick={() => toggleOption(opt.id)}
+                >
+                  <h3>{opt.label}</h3>
+                  <p>{opt.price} €/mois</p>
+                </div>
+              ))}
+            </div>
+            {selectedOptions.length >= 2 && (
+              <p className="reduction-msg">💡 Réduction automatique appliquée</p>
+            )}
+          </section>
 
-            <label className={selectedPlan === 'serenidad' ? 'active' : ''}>
+          <section className="section-box">
+            <h2 className="section-title">Vos informations</h2>
+            <form onSubmit={handleSubmit} className="form-grid">
               <input
-                type="radio"
-                name="plan"
-                value="serenidad"
-                checked={selectedPlan === 'serenidad'}
-                onChange={handlePlanChange}
+                type="text"
+                name="name"
+                placeholder="Nom complet"
+                value={form.name}
+                onChange={handleChange}
+                required
               />
-              Serenidad — {PRICES.serenidad[duration]}€/mois
-            </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Message (optionnel)"
+                value={form.message}
+                onChange={handleChange}
+              />
+              <label className="checkbox-row">
+                <input
+                  type="checkbox"
+                  name="isPro"
+                  checked={form.isPro}
+                  onChange={handleChange}
+                />
+                Je suis un professionnel
+              </label>
+              <button type="submit" className="cta-button">
+                Valider ma précommande
+              </button>
+            </form>
+          </section>
+
+          <div className="recap-box">
+            <p>Total estimé :</p>
+            <p>
+              <span className="old-price">{fullPrice.toFixed(2)} €</span>{' '}
+              <span className="final-price">{finalPrice} € / mois</span>
+            </p>
+            <small>Sans engagement immédiat. Paiement à l’activation.</small>
           </div>
-
-          <div className="duration-options">
-            <label className={duration === 'monthly' ? 'active' : ''}>
-              <input
-                type="radio"
-                name="duration"
-                value="monthly"
-                checked={duration === 'monthly'}
-                onChange={handleDurationChange}
-              />
-              Paiement mensuel
-            </label>
-
-            <label className={duration === 'annual' ? 'active' : ''}>
-              <input
-                type="radio"
-                name="duration"
-                value="annual"
-                checked={duration === 'annual'}
-                onChange={handleDurationChange}
-              />
-              Engagement 1 an (réduction spéciale)
-            </label>
-          </div>
-
-          <div className="total-section">
-            <p>Total</p>
-            <h3>{totalPrice.toFixed(2)} € / mois</h3>
-            <p className="secure">🔒 Sans engagement immédiat – paiement à l'ouverture</p>
-          </div>
-
-          <div className="summary-visual">
-            <img src="/assets/illus-cube.png" alt="Illustration Solenca" />
-          </div>
-        </aside>
+        </div>
       </main>
       <Footer />
     </>
   );
 };
 
-export default Precommande;
+export default PrecommandePage;

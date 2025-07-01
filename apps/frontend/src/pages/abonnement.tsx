@@ -1,179 +1,168 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
-import SubscriptionConfigurator from '../components/abonnement/SubscriptionConfigurator';
 import '../styles/abonnement/abonnement.scss';
 import heroImg from '../assets/hero-abonnement.jpg';
 import avatar1 from '../assets/avatars/avatar1.png';
-import { API_URL } from '../../config.ts';
 
-type Feature = {
-  id: string;
-  label: string;
-  included: boolean;
-  price?: number;
-};
+const SubscriptionModal = ({ onClose }: { onClose: () => void }) => {
+  const [step, setStep] = useState(1);
+  const [selectedModules, setSelectedModules] = useState<string[]>([]);
+  const [additionalVisits, setAdditionalVisits] = useState(0);
 
-type Abonnement = {
-  id: string;
-  name: string;
-  basePrice: number;
-  tagline: string;
-  features: Feature[];
-};
+  const modules = [
+    { id: 'piscine', label: 'Surveillance piscine', price: 89 },
+    { id: 'jardin', label: 'Entretien jardin', price: 89 },
+    { id: 'courrier', label: 'Gestion du courrier', price: 49 },
+    { id: 'nettoyage', label: 'Ménage ponctuel', price: 69 },
+    { id: 'aeration', label: 'Aération mensuelle', price: 39 },
+  ];
 
-type AbonnementRaw = {
-  id: number | string;
-  title?: string;
-  price?: number;
-  description?: string;
-  feature?: {
-    id: number | string;
-    label: string;
-    included: boolean;
-    price?: number;
-  }[];
+  const basePrice = 89;
+  const modulePrice = selectedModules.reduce((acc, id) => {
+    const m = modules.find(mod => mod.id === id);
+    return acc + (m ? m.price : 0);
+  }, 0);
+  const reduction = selectedModules.length >= 2 ? 0.2 : 0;
+  const visitsPrice = additionalVisits * 30;
+  const total = Math.round((basePrice + modulePrice * (1 - reduction) + visitsPrice) * 100) / 100;
+
+  const toggleModule = (id: string) => {
+    setSelectedModules(prev =>
+      prev.includes(id) ? prev.filter(m => m !== id) : [...prev, id]
+    );
+  };
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        {step > 1 && (
+          <button className="back-button" onClick={() => setStep(s => s - 1)}>
+            ← Retour
+          </button>
+        )}
+        <button className="close-button" onClick={onClose}>
+          ×
+        </button>
+
+        {step === 1 && (
+          <div className="step">
+            <h2>Solenca One</h2>
+            <p>Deux visites de surveillance par mois</p>
+            <ul className="module-list">
+              <li>✔ Rapport photo envoyé par email</li>
+              <li>✔ Intervention d’urgence incluse</li>
+              <li>✔ Gestion des clefs et accès</li>
+            </ul>
+            <p className="price">89 € / mois</p>
+            <button onClick={() => setStep(2)} className="next-button">Suivant</button>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="step">
+            <h2>Modules supplémentaires</h2>
+            <ul className="module-list">
+              {modules.map(mod => (
+                <li key={mod.id}>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={selectedModules.includes(mod.id)}
+                      onChange={() => toggleModule(mod.id)}
+                    />
+                    {mod.label}
+                    <span className="price">+{mod.price} €</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+            {reduction > 0 && <p className="reduction">20 % de réduction appliquée</p>}
+            <button onClick={() => setStep(3)} className="next-button">Suivant</button>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="step">
+            <h2>Visites supplémentaires</h2>
+            <label>
+              Fréquence : {additionalVisits} {additionalVisits === 1 ? 'passage' : 'passages'} / mois
+              <input
+                type="range"
+                min={0}
+                max={6}
+                value={additionalVisits}
+                onChange={e => setAdditionalVisits(parseInt(e.target.value))}
+              />
+            </label>
+            <button onClick={() => setStep(4)} className="next-button">Voir mon devis</button>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="step">
+            <h2>Votre devis personnalisé</h2>
+            <p><strong>Base Solenca One</strong> : 89 €</p>
+            <p><strong>Modules choisis</strong> :</p>
+            <ul className="module-list">
+              {selectedModules.length === 0 && <li>Aucun</li>}
+              {selectedModules.map(id => {
+                const mod = modules.find(m => m.id === id);
+                return (
+                  <li key={id}>
+                    {mod?.label} — <span className="price">{Math.round(mod.price * (1 - reduction))} €</span>
+                  </li>
+                );
+              })}
+            </ul>
+            <p><strong>Passages supplémentaires</strong> : {visitsPrice} €</p>
+            <hr />
+            <p className="total">Total mensuel : {total} €</p>
+            <button className="pay-button">Souscrire maintenant</button>
+            <br />
+            <button className="pay-button" style={{ backgroundColor: '#444', marginTop: '1rem' }}>
+              Je suis un professionnel
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 const AbonnementPage = () => {
-  const [abonnements, setAbonnements] = useState<Abonnement[]>([]);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [selectedOptions, setSelectedOptions] = useState<Record<string, boolean>>({});
-  const [showConfigurator, setShowConfigurator] = useState(false);
-
-useEffect(() => {
-  async function fetchAbonnements() {
-    try {
-      console.log('API_URL utilisé:', API_URL);
-
-      const res = await fetch(`${API_URL}/api/abonnements?populate=*`);
-
-      if (!res.ok) {
-        throw new Error(`Erreur HTTP ${res.status}`);
-      }
-
-      const data = await res.json();
-
-      const abonnementsData: Abonnement[] = data.data.map((item: AbonnementRaw) => ({
-        id: String(item.id),
-        name: item.title ?? 'Sans titre',
-        basePrice: item.price ?? 0,
-        tagline: item.description ?? '',
-        features:
-          item.feature?.map((opt) => ({
-            id: String(opt.id),
-            label: opt.label,
-            included: opt.included,
-            price: opt.included ? undefined : opt.price ?? 0,
-          })) ?? [],
-      }));
-
-      setAbonnements(abonnementsData);
-    } catch (error) {
-      console.error('Erreur lors du chargement des abonnements :', error);
-    }
-  }
-
-  fetchAbonnements();
-}, []);
-
-  const abonnement = abonnements.find((a) => a.id === selectedId) ?? null;
-
-  const toggleOption = (id: string) => {
-    setSelectedOptions((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
-  const totalPrice = abonnement
-    ? abonnement.basePrice +
-      abonnement.features.reduce(
-        (acc, opt) => acc + (!opt.included && selectedOptions[opt.id] ? opt.price ?? 0 : 0),
-        0
-      )
-    : 0;
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <Navbar />
       <main className="abonnement-page">
-        {/* SECTION HERO INTRO */}
         <section className="about-hero">
           <div className="hero-content">
-            <h1>
-              Des formules conçues pour votre tranquillité
-            </h1>
+            <h1>Découvrez Solenca One</h1>
             <p>
-              Choisissez un abonnement adapté à vos besoins, avec un suivi digitalisé, des alertes automatiques et des prestations claires.
+              Une formule simple, efficace et abordable pour protéger votre résidence secondaire à distance.
             </p>
             <div className="cta-row">
-              <button className="primary-btn">Comparer les offres</button>
-              <span className="rating">
-                <i className="star">★</i> 4.9
-              </span>
+              <button className="primary-btn" onClick={() => setShowModal(true)}>
+                Créer mon devis en 1 minute
+              </button>
+              <span className="rating"><i className="star">★</i> 4.9/5</span>
             </div>
           </div>
           <div className="hero-visual">
             <div className="hero-image">
-              <img src={heroImg} alt="Vue d'une villa méditerranéenne" />
+              <img src={heroImg} alt="Maison Solenca" />
             </div>
             <div className="user-badge">
               <div className="avatar-stack">
-                <img src={avatar1} alt="user" style={{ left: '0px' }} />
+                <img src={avatar1} alt="client" />
               </div>
-              <span>Déjà adopté par des propriétaires exigeants</span>
+              <span>+100 propriétaires déjà convaincus</span>
             </div>
           </div>
         </section>
-
-        {/* SECTION OFFRES ABONNEMENT */}
-        <section className="about-cta about-team ecosystem-platform">
-          <div className="cta-inner ecosystem-center">
-            <h2>
-              Gardez le contrôle sur votre maison, <span className="fade">simplifiez votre quotidien</span>
-            </h2>
-            <p>
-              Solenca suit pour vous ce qui se passe sur place. Vous recevez des rapports, des alertes, et des conseils personnalisés.
-              Moins de stress, plus de maîtrise. L’interface Solenca centralise les éléments-clés de votre maison. Rien ne vous échappe, même à distance.
-            </p>
-          </div>
-
-          <div className="abonnement-cards">
-            {abonnements.map(({ id, name, basePrice, tagline }) => (
-              <div
-                key={id}
-                className={`card ${id === selectedId ? 'selected' : ''}`}
-                onClick={() => {
-                  setSelectedId(id);
-                  setSelectedOptions({});
-                  setShowConfigurator(true);
-                }}
-              >
-                <div className="card-header">{name}</div>
-                <div className="card-price">{basePrice} €</div>
-                <div className="card-desc">{tagline}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="cta-buttons">
-            <button className="vip-btn">Faire une demande VIP</button>
-          </div>
-        </section>
-
-        {showConfigurator && abonnement && (
-          <SubscriptionConfigurator
-            abonnement={abonnement}
-            selectedOptions={selectedOptions}
-            toggleOption={toggleOption}
-            totalPrice={totalPrice}
-            onClose={() => {
-              setShowConfigurator(false);
-              setSelectedId(null);
-            }}
-          />
-        )}
+        {showModal && <SubscriptionModal onClose={() => setShowModal(false)} />}
       </main>
       <Footer />
     </>

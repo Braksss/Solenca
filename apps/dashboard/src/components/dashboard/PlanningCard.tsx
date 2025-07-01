@@ -1,37 +1,45 @@
 import React from 'react';
 import '../../styles/components/dashboard/planning-card.scss';
 
-const PlanningCard = () => {
+const ClientPlanningCard = () => {
+  const upcomingVisit = {
+    date: 'Jeudi 27 juin',
+    heure: '14h30',
+    technicien: 'Marta',
+    type: 'Surveillance + Piscine'
+  };
+
+  const pastVisits = [
+    { date: 'Lun. 17 juin', type: 'Entretien jardin', statut: 'fait' },
+    { date: 'Jeu. 13 juin', type: 'Piscine', statut: 'fait' },
+    { date: 'Mar. 11 juin', type: 'Check maison', statut: 'fait' }
+  ];
+
   return (
-    <div className="glass-card">
-      <div className="glass-card__header">
-        <button className="glass-card__toggle glass-card__toggle--active">Weekly</button>
-        <button className="glass-card__toggle">Monthly</button>
-        <div className="glass-card__settings">
-          <span>⚙️</span>
-        </div>
-      </div>
-
-      <div className="glass-card__date">
-        <span className="glass-card__month">August</span>
-        <span className="glass-card__day">23</span>
-      </div>
-
-      <div className="glass-card__week">
-        {['Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'].map((day, i) => (
-          <div key={day} className={`glass-card__weekday ${i === 3 ? 'active' : ''}`}>
-            <span>{day}</span>
-            <span>{20 + i}</span>
+    <div className="client-planning-card">
+      <div className="grid-header">
+        <div className="big-block">
+          <h4>📅 Prochaine visite</h4>
+          <div className="upcoming">
+            <span className="date">{upcomingVisit.date}</span>
+            <span className="time">{upcomingVisit.heure}</span>
+            <span className="type">{upcomingVisit.type}</span>
+            <span className="tech">👷‍♀️ {upcomingVisit.technicien}</span>
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div className="glass-card__footer">
-        <input type="text" placeholder="✏️ Add a note..." className="glass-card__note" />
-        <button className="glass-card__event">+ New Event</button>
+        <div className="small-blocks">
+          {pastVisits.map((visit, index) => (
+            <div key={index} className="past">
+              <span className="label">{visit.date}</span>
+              <span className="desc">{visit.type}</span>
+              <span className="status done">✔️ {visit.statut}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default PlanningCard;
+export default ClientPlanningCard;

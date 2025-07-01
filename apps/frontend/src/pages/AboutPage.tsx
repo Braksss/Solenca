@@ -26,11 +26,12 @@ import iconSmart from '../assets/icons/securite.png';
 const partnerLogos = [logo1, logo2, logo3, logo4, logo5];
 
 const kpis = [
-  { icon: kpiHome, number: '75+', label: 'Résidences suivies' },
-  { icon: kpiInvest, number: '1.2M€', label: 'Biens valorisés' },
-  { icon: kpiSmile, number: '98%', label: 'Satisfaction client' },
-  { icon: kpiClock, number: '24/7', label: 'Présence locale' }
+  { icon: kpiHome, number: '75+', label: 'Maisons sous veille' },
+  { icon: kpiInvest, number: '1.2M€', label: 'Patrimoines protégés' },
+  { icon: kpiSmile, number: '98%', label: 'Clients sereins' },
+  { icon: kpiClock, number: '24/7', label: 'Présence réactive' }
 ];
+
 
 const testimonials = [
   {
@@ -56,13 +57,13 @@ const AboutPage: React.FC = () => (
     {/* SECTION 1 — Hero principal */}
     <section className="about-hero">
       <div className="hero-content">
-        <h1>
-          Suivez vos&nbsp;
-          <span className="gradient">résidences</span> à distance
-        </h1>
-        <p>
-          Solenca digitalise le suivi de votre maison secondaire en Espagne : rapports visuels, comptes-rendus, alertes. Pour une tranquillité continue, toute l'année.
-        </p>
+<h1>
+  Votre résidence secondaire, sous haute vigilance
+</h1>
+<p>
+  Solenca vous permet de suivre votre maison à distance, où que vous soyez. Alertes, rapports visuels, suivi régulier : votre tranquillité ne prend plus de pause.
+</p>
+
         <div className="cta-row">
           <button className="primary-btn">Découvrir l'offre</button>
           <span className="rating">
@@ -106,19 +107,23 @@ const AboutPage: React.FC = () => (
     {/* SECTION 4 — Témoignage global */}
     <section className="about-quote">
       <p>
-        <span className="highlight">Solenca</span> n’est pas un prestataire de plus. C’est un véritable copilote local, conçu pour les propriétaires de résidences secondaires en Espagne. Nous inspectons votre bien, envoyons des comptes-rendus visuels, déclenchons des alertes si besoin, et restons votre contact de confiance sur place. Vous gardez un œil sur tout, même à distance — avec l’assurance d’un suivi sérieux, humain et structuré.
+      <p>
+  <span className="highlight">Solenca</span> est plus qu’un service de surveillance. C’est une solution complète, pensée pour les propriétaires de résidences secondaires en Espagne — d’abord en Costa Brava, bientôt au-delà. Inspections, rapports visuels, alertes intelligentes : tout est centralisé, pour que vous gardiez la maîtrise à distance, sans stress ni surprise.
+</p>
+
       </p>
     </section>
 
     {/* SECTION 5 — Bloc CTA unifié */}
     <section className="about-cta about-team ecosystem-platform">
       <div className="cta-inner ecosystem-center">
-        <h2>
-          Gardez le contrôle sur votre maison, <span className="fade">simplifiez votre quotidien</span>
-        </h2>
-        <p>
-          Solenca suit pour vous ce qui se passe sur place. Vous recevez des rapports, des alertes, et des conseils personnalisés. Moins de stress, plus de maîtrise. L’interface Solenca centralise les éléments-clés de votre maison. Rien ne vous échappe, même à distance.
-        </p>
+<h2>
+  Gardez la main sur votre bien, <span className="fade">même à des centaines de kilomètres</span>
+</h2>
+<p>
+  Solenca vous envoie automatiquement les informations essentielles : passages effectués, anomalies détectées, météo locale, historique complet. Depuis Platja d’Aro, notre équipe veille pour vous, en toute discrétion. L’interface digitale centralise tout ce qui compte. 
+</p>
+
         <div className="cta-buttons">
           <button className="primary-btn">Essayer Solenca</button>
           <button className="secondary-btn">En savoir plus</button>
@@ -129,7 +134,6 @@ const AboutPage: React.FC = () => (
         <div className="card-preview right-top">Alerte détection</div>
         <div className="card-preview left-bottom">Checklist entretien</div>
         <div className="card-preview right-bottom">Historique visites</div>
-        <div className="card-preview center-float">Température actuelle</div>
 <div className="card-preview top-float">Dernier passage</div>
 
       </div>

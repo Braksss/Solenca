@@ -23,7 +23,7 @@ export default function ServicesPage() {
 
   return (
     <div>
-      <h1>Nos services</h1>
+      <h1>Ce que nous faisons pour vous</h1>
       {services.map(({ id, attributes }) => (
         <div key={id} className="service-card">
           <h2>{attributes.title}</h2>

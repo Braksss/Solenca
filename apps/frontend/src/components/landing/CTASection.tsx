@@ -51,13 +51,13 @@ const CTASection = () => {
   return (
     <section className="cta-section" ref={sectionRef}>
       <div className="cta-section__content" ref={contentRef}>
-        <h2 className="cta-section__title">
-          Gagnez du temps,<br />profitez pleinement de votre bien en Espagne
-        </h2>
+<h2 className="cta-section__title">
+  Confiez-nous votre tranquillité, <br />on s’occupe du reste.
+</h2>
         <p className="cta-section__text">
-          Solenca s’occupe de tout pour votre maison secondaire : gestion, surveillance, vente ou location.
+          Solenca veille sur votre résidence secondaire : visites, alertes, rapports, coordination locale. Moins de stress, plus de sérénité.
         </p>
-        <button className="cta-section__btn">Je passe à l’action</button>
+        <button className="cta-section__btn">Je réserve ma tranquillité</button>
       </div>
       <div className="cta-section__image" ref={imageRef}>
         <img src={catIllustration} alt="Illustration Solenca" />

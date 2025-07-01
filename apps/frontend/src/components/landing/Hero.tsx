@@ -42,14 +42,14 @@ const Hero = () => {
     <section className="hero" id="hero">
       <div className="hero__container">
         <div className="hero__left" ref={contentRef}>
-          <h1 className="hero__headline">
-          Votre maison en Espagne, entre de bonnes mains
-          </h1>
-          <p>
-          Confiez-nous la gestion de votre résidence secondaire : surveillance, entretien, location ou vente, Solenca s’occupe de tout, même quand vous êtes loin.
+<h1 className="hero__headline">
+  La tranquillité, toute l’année.
+</h1>
+<p>
+  Solenca veille sur votre résidence secondaire sur la Costa Brava, à Platja d’Aro et alentours. Visites régulières, alertes, rapports photo et services sur-mesure pour une gestion sans stress.
+</p>
+<a href="#cta" className="hero__button">Réservez votre tranquillité →</a>
 
-          </p>
-          <a href="#cta" className="hero__button">Je précommande →</a>
         </div>
         <div className="hero__right">
           <img ref={imageRef} src={catCard} alt="Carte Solenca flottante" className="hero__image" />

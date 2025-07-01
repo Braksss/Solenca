@@ -3,21 +3,22 @@ import '../../styles/landing/testimonials.scss';
 
 const testimonials = [
   {
-    name: 'Jean Dupont',
-    message: "Grâce à Solenca, ma maison à Cadaqués est entre de bonnes mains. Je reçois des rapports clairs et tout est géré sans stress.",
+    name: 'Émilie Garnier',
+    message: "J’étais inquiète de laisser notre maison vide plusieurs mois. Solenca nous envoie des photos et alertes dès qu’il y a un souci. Très rassurant.",
     avatar: 'https://i.pravatar.cc/150?img=3',
   },
   {
-    name: 'Claire Bernard',
-    message: "Je ne pensais pas pouvoir gérer une location saisonnière à distance, mais l'équipe Solenca est ultra réactive et professionnelle.",
+    name: 'Thierry M.',
+    message: "Service impeccable à Platja d’Aro. L’équipe est sérieuse, discrète, et leur interface est claire. On sent qu’ils ont pensé à tout.",
     avatar: 'https://i.pravatar.cc/150?img=5',
   },
   {
-    name: 'Marc Leclerc',
-    message: "Service impeccable. Le cockpit digital est super intuitif, et j’ai pu planifier des travaux à distance facilement.",
+    name: 'Sophie & Lucas',
+    message: "On a pu faire intervenir un artisan pendant notre absence grâce à Solenca. C’est un vrai soulagement de savoir qu’on peut compter sur eux.",
     avatar: 'https://i.pravatar.cc/150?img=7',
   },
 ];
+
 
 const Testimonials: React.FC = () => {
   return (

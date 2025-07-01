@@ -17,34 +17,33 @@ const About = () => {
           </h2>
         </div>
         <div className="about-top__right">
-          <p>
-            Solenca simplifie la gestion des résidences secondaires en Espagne, à distance,
-            en toute confiance. Une plateforme digitale et humaine qui vous libère des
-            contraintes, pour que vous puissiez enfin profiter.
-          </p>
+<p>
+  Solenca accompagne les propriétaires de résidences secondaires à Platja d’Aro et ses environs. Notre mission : vous offrir la tranquillité toute l’année grâce à une approche structurée, digitale et humaine à la fois.
+</p>
+
           <button className="about-btn">En savoir plus →</button>
         </div>
       </div>
 
       <div className="about-cards">
         <div className="about-card">
-          <h3>Réactivité garantie</h3>
-          <p>Notre équipe locale intervient dès que nécessaire</p>
+          <h3>Interventions rapides</h3>
+          <p>Un imprévu ? Notre présence locale permet d’agir sans délai.</p>
           <img src={Icon1} alt="Réactivité garantie" />
         </div>
         <div className="about-card">
-          <h3>Suivi digitalisé</h3>
-          <p>Une interface claire pour tout suivre depuis la France</p>
+          <h3>Suivi centralisé</h3>
+          <p>Une interface claire et intuitive pour tout suivre à distance.</p>
           <img src={Icon2} alt="Suivi digitalisé" />
         </div>
         <div className="about-card">
-          <h3>Contrôle & sécurité</h3>
-          <p>Rapports, photos et alertes en temps réel</p>
+          <h3>Preuves & alertes</h3>
+          <p>Photos, rapports et notifications en temps réel sur l’état du bien.</p>
           <img src={Icon3} alt="Contrôle & sécurité" />
         </div>
         <div className="about-card">
-          <h3>Experts locaux</h3>
-          <p>Des professionnels de confiance sur place</p>
+          <h3>Fiabilité locale</h3>
+          <p>Des professionnels présents sur place.</p>
           <img src={Icon4} alt="Experts locaux" />
         </div>
       </div>

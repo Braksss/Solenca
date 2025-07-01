@@ -46,7 +46,7 @@
 
       .clients-count {
         font-size: 1rem;
-        color: #444;
+        color: #ff8700;
         font-weight: 500;
         white-space: nowrap;
       }
@@ -113,4 +113,9 @@
       }
     }
   }
+}
+.clients-count {
+  font-size: 1rem;
+  color: #ff8700; // au lieu de #444
+  font-weight: 600;
 }
