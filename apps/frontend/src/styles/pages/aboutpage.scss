@@ -149,19 +149,26 @@ $grey-300: #e4e7ec;    // Bordures & traits
   }
 }
 
-/* === 2. Logos partenaires ====================================== */
+/* === 3. LOGOS ==================================================== */
+
 .about-logos {
-  padding: 48px 24px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 68px 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 100px 68px;
+  gap: 40px;
+  box-sizing: border-box;
 
   img {
-    max-height: 28px;
+    height: 30px;
+    max-width: 120px;
+    object-fit: contain;
     opacity: 0.45;
     filter: grayscale(1);
-    transition: 0.2s;
+    transition: opacity 0.2s, filter 0.2s;
 
     &:hover {
       opacity: 1;

@@ -1,289 +1,87 @@
-@import '../variables'; // si tu utilises un fichier de variables SCSS
+/* apps/frontend/src/styles/pages/abonnementpage.scss */
 
-.abonnement-page {
-  font-family: 'Montserrat', sans-serif;
-  color: #111;
-  padding: 2rem 1rem;
+.abonnement-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 96px 24px;
 
-  .about-hero {
+  .hero-content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 4rem 0;
+    flex-direction: column;
+    justify-content: center;
 
-    .hero-content {
-      flex: 1 1 500px;
-
-      h1 {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.1rem;
-        color: #555;
-        max-width: 520px;
-        margin-bottom: 2rem;
-      }
-
-      .cta-row {
-        display: flex;
-        gap: 1rem;
-
-        .primary-btn {
-          background-color: #ff8200;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border-radius: 12px;
-          font-weight: 600;
-          border: none;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #e97300;
-          }
-        }
-
-        .rating {
-          font-size: 1rem;
-          color: #333;
-
-          .star {
-            color: #f5a623;
-            margin-right: 4px;
-          }
-        }
-      }
-    }
-
-    .hero-visual {
-      flex: 1 1 400px;
-      max-width: 480px;
-
-      .hero-image {
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      .user-badge {
-        margin-top: 1rem;
-        text-align: center;
-        font-size: 0.9rem;
-        color: #444;
-
-        .avatar-stack {
-          display: flex;
-          justify-content: center;
-
-          img {
-            width: 40px;
-            border-radius: 50%;
-            margin-right: 0.5rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-// ---------------- MODALE ------------------
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 20px;
-  max-width: 520px;
-  width: 90%;
-  position: relative;
-  font-family: 'Montserrat', sans-serif;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-
-  .step {
-    text-align: center;
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+    h1 {
+      font: 700 48px/1.2 "Montserrat", sans-serif;
+      max-width: 540px;
     }
 
     p {
-      margin: 0.5rem 0;
+      margin-top: 16px;
+      font: 18px/1.6 "Montserrat", sans-serif;
+      color: #69707d;
+      max-width: 420px;
     }
 
-    .price {
-      font-weight: bold;
-      color: #ff8700;
-    }
-
-    .reduction {
-      color: green;
-      font-weight: 600;
-    }
-
-    .total {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-
-    .next-button,
-    .pay-button {
-      margin-top: 1.5rem;
-      background: #ff8200;
-      border: none;
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease;
-
-      &:hover {
-        background: #e97300;
-      }
-    }
-
-    // 🔶 Étape 4 : Récapitulatif façon devis
-    &.final-step {
-      text-align: left;
-
-      .summary-block {
-        background: #f9f9f9;
-        padding: 1.5rem;
-        border-radius: 12px;
-        border: 1px solid #ddd;
-
-        h3 {
-          color: #111;
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
-        }
-
-        ul {
-          list-style: none;
-          padding-left: 0;
-
-          li {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.4rem 0;
-
-            .label {
-              color: #555;
-            }
-
-            .value {
-              font-weight: 600;
-              color: #ff8700;
-            }
-          }
-        }
-
-        .divider {
-          margin: 1rem 0;
-          border-top: 1px solid #ddd;
-        }
-
-        .total-line {
-          display: flex;
-          justify-content: space-between;
-          font-size: 1.4rem;
-          font-weight: bold;
-          color: #ff8700;
-        }
-      }
-
-      .buttons {
-        margin-top: 2rem;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-
-        .pay-button,
-        .pro-button {
-          background: #ff8200;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border: none;
-          border-radius: 30px;
-          font-weight: 600;
-          cursor: pointer;
-
-          &:hover {
-            background: #e97300;
-          }
-        }
-
-        .pro-button {
-          background: #444;
-
-          &:hover {
-            background: #333;
-          }
-        }
-      }
+    .cta-buttons {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
     }
   }
 
-  .module-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 1rem;
-    text-align: left;
+  .hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    li {
-      margin-bottom: 0.5rem;
+    img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+  }
 
-      label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    text-align: center;
 
-        input {
-          margin-right: 0.5rem;
-        }
-      }
+    .hero-image {
+      margin-top: 48px;
     }
   }
 }
 
-.close-button,
-.back-button {
-  position: absolute;
-  top: 1rem;
-  font-size: 1.2rem;
-  background: none;
-  border: none;
+.primary-btn,
+.secondary-btn {
+  font: 600 15px "Montserrat", sans-serif;
+  padding: 12px 24px;
+  border-radius: 22px;
   cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.close-button {
-  right: 1rem;
+.primary-btn {
+  background: #ff8200;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
 }
 
-.back-button {
-  left: 1rem;
+.secondary-btn {
+  background: transparent;
+  color: #ff8200;
+  border: 2px solid #ff8200;
+
+  &:hover {
+    background: #fff3e6;
+  }
 }

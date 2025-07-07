@@ -4,10 +4,12 @@ import Footer from '../components/landing/Footer';
 import '../styles/pages/servicespage.scss';
 
 import heroImg from '../assets/hero.png';
-import iconPlan from '../assets/icons/home.png';
-import iconReport from '../assets/icons/home.png';
-import iconSecure from '../assets/icons/home.png';
-import iconExpert from '../assets/icons/home.png';
+import {
+  Calendar,
+  Camera,
+  AlertTriangle,
+  Users
+} from 'react-feather';
 
 const faqData = [
   {
@@ -120,24 +122,24 @@ const ServicesPage: React.FC = () => (
 
           <div className="about-cards">
             <div className="about-card">
+              <Calendar size={40} color="#ff8700" />
               <h3>Visites sur-mesure</h3>
               <p>Ouvertures, contrôles, arrosage : vous choisissez, nous exécutons.</p>
-              <img src={iconPlan} alt="Interventions planifiées" />
             </div>
             <div className="about-card">
+              <Camera size={40} color="#ff8700" />
               <h3>Comptes-rendus visuels</h3>
               <p>Photos et checklist détaillée envoyées après chaque passage.</p>
-              <img src={iconReport} alt="Rapports visuels" />
             </div>
             <div className="about-card">
+              <AlertTriangle size={40} color="#ff8700" />
               <h3>Alertes instantanées</h3>
               <p>Fuite, intrusion ? Notification instantanée et action proposée.</p>
-              <img src={iconSecure} alt="Alerte et sécurité" />
             </div>
             <div className="about-card">
+              <Users size={40} color="#ff8700" />
               <h3>Artisans de confiance</h3>
               <p>Jardinier, pisciniste, homme de confiance : pros sélectionnés.</p>
-              <img src={iconExpert} alt="Réseau local" />
             </div>
           </div>
         </section>
@@ -170,24 +172,24 @@ const ServicesPage: React.FC = () => (
 
           <div className="about-cards">
             <div className="about-card">
+              <Calendar size={40} color="#ff8700" />
               <h3>Suivi complet délégué</h3>
               <p>Solenca prend en charge le suivi des logements confiés, de A à Z.</p>
-              <img src={iconPlan} alt="Gestion externalisée" />
             </div>
             <div className="about-card">
+              <Camera size={40} color="#ff8700" />
               <h3>Outils pros intégrés</h3>
               <p>Suivi client + back-office dédié aux pros pour tout piloter simplement.</p>
-              <img src={iconReport} alt="Interface partagée" />
             </div>
             <div className="about-card">
+              <AlertTriangle size={40} color="#ff8700" />
               <h3>Marque blanche</h3>
               <p>Proposez nos services sous votre nom avec vos propres tarifs.</p>
-              <img src={iconSecure} alt="Marque blanche" />
             </div>
             <div className="about-card">
+              <Users size={40} color="#ff8700" />
               <h3>Équipe locale dédiée</h3>
               <p>Des pros de confiance pour intervenir en votre nom sur le terrain.</p>
-              <img src={iconExpert} alt="Équipe locale dédiée" />
             </div>
           </div>
         </section>

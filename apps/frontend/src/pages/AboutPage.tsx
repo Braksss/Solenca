@@ -1,4 +1,3 @@
-// apps/frontend/src/pages/AboutPage.tsx
 import React from 'react';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
@@ -11,6 +10,7 @@ import logo2 from '../assets/partners/segway.svg';
 import logo3 from '../assets/partners/qonto.svg';
 import logo4 from '../assets/partners/airbnb.svg';
 import logo5 from '../assets/partners/booking.svg';
+import logo6 from '../assets/partners/sabadell.svg';
 
 import kpiHome from '../assets/icons/home.png';
 import kpiInvest from '../assets/icons/euro.png';
@@ -23,7 +23,7 @@ import iconReport from '../assets/icons/securite.png';
 import iconWeather from '../assets/icons/securite.png';
 import iconSmart from '../assets/icons/securite.png';
 
-const partnerLogos = [logo1, logo2, logo3, logo4, logo5];
+const partnerLogos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 const kpis = [
   { icon: kpiHome, number: '75+', label: 'Maisons sous veille' },
@@ -31,7 +31,6 @@ const kpis = [
   { icon: kpiSmile, number: '98%', label: 'Clients sereins' },
   { icon: kpiClock, number: '24/7', label: 'Présence réactive' }
 ];
-
 
 const testimonials = [
   {
@@ -50,6 +49,14 @@ const ecosystemIcons = [
   { icon: iconSmart, label: 'Suivi digital' }
 ];
 
+const avatars = [
+  'https://i.pravatar.cc/150?img=12',
+  'https://i.pravatar.cc/150?img=31',
+  'https://i.pravatar.cc/150?img=47',
+  'https://i.pravatar.cc/150?img=64',
+  'https://i.pravatar.cc/150?img=56',
+];
+
 const AboutPage: React.FC = () => (
   <>
     <Navbar />
@@ -57,29 +64,28 @@ const AboutPage: React.FC = () => (
     {/* SECTION 1 — Hero principal */}
     <section className="about-hero">
       <div className="hero-content">
-<h1>
-  Votre résidence secondaire, sous haute vigilance
-</h1>
-<p>
-  Solenca vous permet de suivre votre maison à distance, où que vous soyez. Alertes, rapports visuels, suivi régulier : votre tranquillité ne prend plus de pause.
-</p>
+        <h1>Votre résidence secondaire, sous haute vigilance</h1>
+        <p>
+          Solenca vous permet de suivre votre maison à distance, où que vous soyez. Alertes, rapports visuels, suivi régulier : votre tranquillité ne prend plus de pause.
+        </p>
 
         <div className="cta-row">
           <button className="primary-btn">Découvrir l'offre</button>
-          <span className="rating">
-            <i className="star">★</i> 4.9
-          </span>
+        
         </div>
       </div>
+
       <div className="hero-visual">
         <div className="hero-image">
           <img src={heroImg} alt="Vue d'une villa méditerranéenne" />
         </div>
         <div className="user-badge">
           <div className="avatar-stack">
-            <img src={avatar1} alt="user" style={{ left: '0px' }} />
+            {avatars.map((src, i) => (
+              <img key={i} src={src} alt={`user ${i + 1}`} style={{ left: `${i * 20}px`, zIndex: 10 - i }} />
+            ))}
           </div>
-          <span>Déjà utilisé par des propriétaires exigeants</span>
+          <span className="user-badge-text">Déjà utilisé par des propriétaires exigeants</span>
         </div>
       </div>
     </section>
@@ -102,27 +108,22 @@ const AboutPage: React.FC = () => (
       ))}
     </section>
 
-    
-
     {/* SECTION 4 — Témoignage global */}
     <section className="about-quote">
       <p>
-      <p>
-  <span className="highlight">Solenca</span> est plus qu’un service de surveillance. C’est une solution complète, pensée pour les propriétaires de résidences secondaires en Espagne — d’abord en Costa Brava, bientôt au-delà. Inspections, rapports visuels, alertes intelligentes : tout est centralisé, pour que vous gardiez la maîtrise à distance, sans stress ni surprise.
-</p>
-
+        <span className="highlight">Solenca</span> est plus qu’un service de surveillance. C’est une solution complète, pensée pour les propriétaires de résidences secondaires en Espagne — d’abord en Costa Brava, bientôt au-delà. Inspections, rapports visuels, alertes intelligentes : tout est centralisé, pour que vous gardiez la maîtrise à distance, sans stress ni surprise.
       </p>
     </section>
 
     {/* SECTION 5 — Bloc CTA unifié */}
     <section className="about-cta about-team ecosystem-platform">
       <div className="cta-inner ecosystem-center">
-<h2>
-  Gardez la main sur votre bien, <span className="fade">même à des centaines de kilomètres</span>
-</h2>
-<p>
-  Solenca vous envoie automatiquement les informations essentielles : passages effectués, anomalies détectées, météo locale, historique complet. Depuis Platja d’Aro, notre équipe veille pour vous, en toute discrétion. L’interface digitale centralise tout ce qui compte. 
-</p>
+        <h2>
+          Gardez la main sur votre bien, <span className="fade">même à des centaines de kilomètres</span>
+        </h2>
+        <p>
+          Solenca vous envoie automatiquement les informations essentielles : passages effectués, anomalies détectées, météo locale, historique complet. Depuis Platja d’Aro, notre équipe veille pour vous, en toute discrétion. L’interface digitale centralise tout ce qui compte.
+        </p>
 
         <div className="cta-buttons">
           <button className="primary-btn">Essayer Solenca</button>
@@ -134,11 +135,9 @@ const AboutPage: React.FC = () => (
         <div className="card-preview right-top">Alerte détection</div>
         <div className="card-preview left-bottom">Checklist entretien</div>
         <div className="card-preview right-bottom">Historique visites</div>
-<div className="card-preview top-float">Dernier passage</div>
-
+        <div className="card-preview top-float">Dernier passage</div>
       </div>
     </section>
-
 
     <Footer />
   </>

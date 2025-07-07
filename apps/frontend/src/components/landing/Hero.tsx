@@ -5,6 +5,11 @@ import '../../styles/landing/hero.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import catCard from '../../assets/hero-illustration.jpg'; // remplace par ton image
+import qontoLogo from '../../assets/partners/qonto.svg';
+import booking from '../../assets/partners/booking.svg';
+import stripe from '../../assets/partners/stripe.svg';
+import revolut from '../../assets/partners/Revolut.svg';
+import sabadell from '../../assets/partners/sabadell.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,12 +48,22 @@ const Hero = () => {
       <div className="hero__container">
         <div className="hero__left" ref={contentRef}>
 <h1 className="hero__headline">
-  La tranquillité, toute l’année.
+  La tranquilité, toute l’année.
 </h1>
 <p>
   Solenca veille sur votre résidence secondaire sur la Costa Brava, à Platja d’Aro et alentours. Visites régulières, alertes, rapports photo et services sur-mesure pour une gestion sans stress.
 </p>
 <a href="#cta" className="hero__button">Réservez votre tranquillité →</a>
+
+<div className="hero__proof hero__proof--logos">
+  <div className="hero__logos">
+    <img src={qontoLogo} alt="Qonto" />
+    <img src={booking} alt="Trustpilot" />
+    <img src={stripe} alt="Mairie de Platja d'Aro" />
+    <img src={revolut} alt="Mairie de Platja d'Aro" />
+    <img src={sabadell} alt="Mairie de Platja d'Aro" />
+  </div>
+</div>
 
         </div>
         <div className="hero__right">

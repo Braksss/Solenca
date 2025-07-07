@@ -11,9 +11,8 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://super-duper-system-v6pv9pwrj954hw9pw-3000.app.github.dev',
+  origin: '*', // ⛔️ à sécuriser plus tard !
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
 }));
 
 app.use(express.json());
