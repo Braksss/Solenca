@@ -8,13 +8,13 @@ dotenv.config();
 
 const router = express.Router();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: '2024-04-10',
+  apiVersion: '2024-04-10' as Stripe.LatestApiVersion,
 });
 
 // Utilitaire pour générer un ID de devis unique
 const generateQuoteReference = (): string => {
   const today = new Date();
-  return `SOL365-${today.toLocaleDateString('fr-FR').replaceAll('/', '')}`;
+  return `SOL365-${today.toLocaleDateString('fr-FR').split('/').join('')}`;
 };
 
 // Création de session de paiement Stripe

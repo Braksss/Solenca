@@ -6,6 +6,7 @@ import ServicesPage from './pages/ServicesPage';
 import MagazinePage from './pages/MagazinePage';
 import LoginPage from './pages/LoginPage';
 import PrecommandePage from './pages/precommande'; // ✅ ajout ici
+import CataloguePage from './pages/catalogue';
 
 import './styles/landing/landing.scss';
 
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/magazine" element={<MagazinePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/precommande" element={<PrecommandePage />} /> {/* ✅ ajout ici */}
+        <Route path="/catalogue" element={<CataloguePage />} />
       </Routes>
     </BrowserRouter>
   );

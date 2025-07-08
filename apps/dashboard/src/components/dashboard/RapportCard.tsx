@@ -1,34 +1,45 @@
 import React from 'react';
 import '../../styles/components/dashboard/rapport-card.scss';
-import maison from '../../assets/mock-maison.png'; // image fond de maison
+import imageLeft from '../../assets/image-left.jpg';
+import { FaLeaf, FaSwimmingPool, FaHome, FaLock, FaMapMarkerAlt } from 'react-icons/fa';
 
 const RapportCard = () => {
+  const upcomingVisit = {
+    date: 'Jeudi 4 juillet',
+    heure: '09h00',
+    technicien: 'Marta',
+    type: 'Surveillance + Piscine'
+  };
+
+  const nextDates = [
+    { date: 'Lun. 8 juillet', type: 'Entretien jardin', tech: 'Julien' },
+    { date: 'Ven. 12 juillet', type: 'Piscine', tech: 'Marta' },
+    { date: 'Mar. 16 juillet', type: 'Check maison', tech: 'Marta' }
+  ];
+
   return (
     <div className="rapport-card">
-      <img src={maison} alt="Maison" className="rapport-card__image" />
+      <div className="rapport-card__image-container">
+        <img src={imageLeft} alt="Maison" />
+      </div>
 
-      <div className="rapport-card__overlay">
-        <div className="rapport-card__top">
-          <div className="rapport-card__status">● Live</div>
-          <div className="rapport-card__metrics">
-            <span>🌡️ 24°C</span>
-            <span>💧 50%</span>
-            <span>⚡ 350W</span>
-            <span>🔋 80%</span>
-          </div>
+      <div className="rapport-card__content">
+        <div className="rapport-card__header">
+          <h3 className="rapport-card__title">Dernier rapport</h3>
+          <button className="rapport-card__edit">Télécharger</button>
         </div>
 
-        <div className="rapport-card__bottom">
-          <div className="rapport-card__date">Dernière visite : 25 juin</div>
-          <div className="rapport-card__summary">
-            Aucun problème détecté. Portail fermé, clim éteinte, alarme activée.
-          </div>
-          <div className="rapport-card__details">
-            <span>🔎 14 points vérifiés</span>
-            <span>📸 12 photos</span>
-            <span>🕒 Durée : 42 min</span>
-          </div>
-        </div>
+        <p className="rapport-card__location">
+          <FaMapMarkerAlt style={{ marginRight: '6px' }} />
+          Platja d'Aro, Espagne
+        </p>
+
+<div className="rapport-card__features">
+  <div className="rapport-card__feature"><FaLeaf /></div>
+  <div className="rapport-card__feature"><FaSwimmingPool /></div>
+  <div className="rapport-card__feature"><FaHome /></div>
+  <div className="rapport-card__feature"><FaLock /></div>
+</div>
       </div>
     </div>
   );

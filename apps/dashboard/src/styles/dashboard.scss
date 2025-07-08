@@ -1,65 +1,446 @@
-@import './layout/sidebar.scss';
-@import './layout/header.scss';
-@import './components/dashboard/rapport-card.scss';
-@import './components/dashboard/hydrometrie-card.scss';
-@import './components/dashboard/planning-card.scss';
-@import './components/dashboard/intervention-stats.scss';
-@import './components/dashboard/poids-maison-card.scss';
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f5fcff;
-  color: #1e1e1e;
-  height: 100vh;
-  overflow: hidden;
+.header-background {
+  position: fixed; // passe en fixed pour ne pas être poussé
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #FF8700 0%, #FFD1DC 100%);
+  z-index: -10; // derrière tout
+  filter: blur(80px);
 }
-
-.dashboard {
+// Centrage de la section profil avec un conteneur dédié
+.profile-container {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.dashboard__main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding: 1rem 2rem;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.dashboard__grid {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
 }
-
-.dashboard__row {
-  display: grid;
-  gap: 1.5rem;
-
-  &--2 {
-    grid-template-columns: repeat(2, 1fr);
-    height: 47%; // Presque la moitié
-  }
-
-  &--3 {
-    grid-template-columns: repeat(3, 1fr);
-    height: 43%; // L'autre moitié
-  }
-}
-
-.card {
-  background: white;
+// Styles pour la photo de profil (corrigée)
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
   border-radius: 20px;
-  padding: 1.2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+// Badge PRO aligné avec le nom
+.pro-badge {
+  background-color: #FF8700;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+}
+// Badges circulaires des stats
+.stats-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+.stats-badge.orange { background-color: #FF8700; }
+.stats-badge.black { background-color: #000000; }
+// Carte projet revue
+.project-card {
+  border-radius: 20px;
   overflow: hidden;
-  height: 100%; // Pour forcer le remplissage des cellules
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    margin-top: 16px;
+    margin-bottom: 4px;
+  }
+
+  .tags {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 8px;
+  }
+}
+
+.project-card__media {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+}
+
+.project-card__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #FF8700;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card__stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+
+  .likes,
+  .views {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+// Typo globale
+body {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  color: #111;
+  background-color: #FFFFFF;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  color: #111;
+}
+
+p {
+  color: #666;
+}
+.dashboard-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+// Header
+// Supprime le fond du header (déjà géré par .header-background)
+.dashboard-header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  padding: 0 20px;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .logo-icon {
+      color: #FF8700;
+      font-size: 12px;
+    }
+
+    .logo-text {
+      color: #000;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  .header-menu {
+    display: flex;
+    gap: 32px;
+
+    span {
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+
+      &.active {
+        border-bottom: 2px solid #000;
+      }
+
+      .bolt {
+        color: #FF8700;
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+      color: #000;
+    }
+
+    .upload-btn {
+      background-color: #FF8700;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 8px 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+// Nouveau layout profil (à la place de .profile-section)
+// Corrige le positionnement de la barre de profil
+.profile-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: 0; // supprime le chevauchement
+}
+
+.profile-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0 40px; // ↑ top-padding augmenté
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.profile-meta {
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0 16px;
+  }
+
+  .profile-actions {
+    display: flex;
+    gap: 16px;
+
+    .btn-follow {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+
+    .btn-contact {
+      background-color: transparent;
+      color: #000;
+      border: 1px solid #000;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+  }
+}
+
+.profile-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  .badges {
+    display: flex;
+    gap: 8px;
+  }
+
+  .numbers {
+    display: flex;
+    gap: 32px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      label {
+        font-size: 12px;
+        color: #999;
+      }
+
+      strong {
+        font-size: 20px;
+        color: #111;
+      }
+    }
+  }
+}
+
+// Secondary Nav
+.secondary-nav {
+  display: flex;
+  gap: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 32px;
+
+  span.active {
+    border-bottom: 2px solid #000;
+  }
+}
+
+// Grille responsive pour projets
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+// Section Interventions
+.interventions-section {
+  margin-top: 48px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #111;
+  }
+
+  .intervention-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      background: #fff8f1;
+      border: 1px solid #ffe1c4;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #444;
+    }
+  }
+}
+
+// Section Photos
+.photos-section {
+  margin-top: 48px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #111;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+  }
+}
+
+// Section Support
+.support-section {
+  margin-top: 48px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #111;
+  }
+
+  p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 16px;
+  }
+
+  .support-actions {
+    .upload-btn {
+      background-color: #FF8700;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .ticket-list {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: #f6f6f6;
+        margin-bottom: 10px;
+        font-size: 14px;
+
+        strong {
+          color: #FF8700;
+        }
+      }
+    }
+  }
 }

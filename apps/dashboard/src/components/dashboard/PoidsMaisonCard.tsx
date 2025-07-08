@@ -10,7 +10,7 @@ const PoidsMaisonCard = () => {
       <div className="solenca-note-card__note" style={{ color }}>
         {note}/100
       </div>
-      <div className="solenca-note-card__label">Évaluation Solenca</div>
+      <span className="solenca-note-card__tag">Indice Tranquillité</span>
     </div>
   );
 };

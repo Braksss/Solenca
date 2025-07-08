@@ -1,0 +1,55 @@
+
+
+
+.urgence-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: #ff8700;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__level {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #28a745;
+  }
+
+  &__detail {
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.4rem;
+  }
+}

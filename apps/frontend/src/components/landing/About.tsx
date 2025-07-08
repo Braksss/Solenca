@@ -12,43 +12,42 @@ const About = () => {
       <div className="about-top">
         <div className="about-top__left">
           <h2>
-            Une solution pensée
-            pour les <br />propriétaires<br />
+            Votre maison est loin ? <br />
+            Nous, on est là.
           </h2>
         </div>
         <div className="about-top__right">
-<p>
-  Solenca accompagne les propriétaires de résidences secondaires à Platja d’Aro et ses environs. Notre mission : vous offrir la tranquillité toute l’année grâce à une approche structurée, digitale et humaine à la fois.
-</p>
-
-          <button className="about-btn">En savoir plus →</button>
+          <p>
+            Une présence humaine, des preuves concrètes, un suivi digital. La tranquillité, 365 jours par an.
+          </p>
+          <button className="about-btn">Découvrir la tranquillité 365 →</button>
         </div>
       </div>
 
       <div className="about-cards">
         <div className="about-card">
-          <h3>Interventions rapides</h3>
-          <p>Un imprévu ? Notre présence locale permet d’agir sans délai.</p>
+          <h3>Interventions immédiates</h3>
+          <p>Sur place, sans délai. On agit comme si c’était chez nous.</p>
           <img src={Icon1} alt="Réactivité garantie" />
         </div>
         <div className="about-card">
-          <h3>Suivi centralisé</h3>
-          <p>Une interface claire et intuitive pour tout suivre à distance.</p>
+          <h3>Suivi digital en temps réel</h3>
+          <p>Rapports, photos, alertes. Tout est là, en un clic.</p>
           <img src={Icon2} alt="Suivi digitalisé" />
         </div>
         <div className="about-card">
-          <h3>Preuves & alertes</h3>
-          <p>Photos, rapports et notifications en temps réel sur l’état du bien.</p>
+          <h3>Des preuves, pas des promesses</h3>
+          <p>Vous voyez tout, à chaque passage.</p>
           <img src={Icon3} alt="Contrôle & sécurité" />
         </div>
         <div className="about-card">
-          <h3>Fiabilité locale</h3>
-          <p>Des professionnels présents sur place.</p>
+          <h3>Présence locale engagée</h3>
+          <p>On vit ici. Pas de sous-traitance.</p>
           <img src={Icon4} alt="Experts locaux" />
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default About;

@@ -1,0 +1,169 @@
+.dashboard-technicien {
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #ff8700;
+  }
+
+  .form-section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+      &:focus {
+        border-color: #ff8700;
+        outline: none;
+      }
+    }
+
+    .button-submit {
+      background-color: #ff8700;
+      color: white;
+      font-weight: 600;
+      padding: 0.9rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #e26f00;
+      }
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: #222;
+    }
+  }
+
+  .success-message {
+    color: #00a86b;
+    font-weight: 600;
+    background-color: #e8f5e9;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .error-message {
+    color: #d32f2f;
+    font-weight: 600;
+    background-color: #fdecea;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+.technicien-dashboard {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.task-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s ease;
+
+  h3 {
+    margin-bottom: 8px;
+  }
+
+  .adresse {
+    color: #777;
+    margin-bottom: 4px;
+  }
+
+  .detail {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.mission-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  textarea,
+  input,
+  select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+
+  &.btn-primary {
+    background-color: #ff8700;
+    color: white;
+  }
+
+  &.btn-secondary {
+    background-color: #ddd;
+    color: #333;
+  }
+}

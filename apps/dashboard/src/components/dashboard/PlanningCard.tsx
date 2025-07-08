@@ -17,29 +17,25 @@ const ClientPlanningCard = () => {
 
   return (
     <div className="planning-card">
-      <div className="planning-card__header">
-        <h3>🛠️ Prochains passages</h3>
-        <span className="planning-card__badge">Maison surveillée</span>
+      <div className="planning-card__image-container">
+        <img src="/assets/image-left.jpg" alt="Maison" />
+        <button className="planning-card__like-btn">❤️</button>
       </div>
 
-      <div className="planning-card__next">
-        <div className="planning-card__next-date">
-          <span className="planning-card__label">⏰ Prochain :</span>
-          <span className="planning-card__date">{upcomingVisit.date}</span>
-          <span className="planning-card__time">{upcomingVisit.heure}</span>
-          <span className="planning-card__type">{upcomingVisit.type}</span>
-          <span className="planning-card__tech">👷 {upcomingVisit.technicien}</span>
+      <div className="planning-card__content">
+        <div className="planning-card__header">
+          <h3 className="planning-card__title">Dernier rapport</h3>
+          <button className="planning-card__edit">Télécharger</button>
         </div>
-      </div>
 
-      <div className="planning-card__grid">
-        {nextDates.map((visit, index) => (
-          <div className="planning-card__item" key={index}>
-            <span className="planning-card__item-date">{visit.date}</span>
-            <span className="planning-card__item-type">{visit.type}</span>
-            <span className="planning-card__item-tech">👷 {visit.tech}</span>
-          </div>
-        ))}
+        <p className="planning-card__location">📍Platja d'Aro, Espagne</p>
+
+        <div className="planning-card__features">
+          <div className="planning-card__feature">🌿</div>
+          <div className="planning-card__feature">🏊</div>
+          <div className="planning-card__feature">🏠</div>
+          <div className="planning-card__feature">🔐</div>
+        </div>
       </div>
     </div>
   );

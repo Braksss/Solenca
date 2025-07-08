@@ -24,14 +24,14 @@ const AbonnementPage: React.FC = () => {
 
       <section className="abonnement-hero">
         <div className="hero-content">
-          <h1>Votre tranquillité annuelle, en toute simplicité</h1>
-          <p>Solenca 365 est l'abonnement unique pour gérer, surveiller et entretenir votre résidence secondaire, sans compromis.</p>
+          <h1>Votre maison. Notre priorité. 365 jours par an.</h1>
+          <p>Solenca surveille, entretient et protège votre résidence secondaire, automatiquement.</p>
           <div className="cta-buttons">
             <button className="primary-btn" onClick={() => handleClick(false)}>
-              Accéder à mon devis digital
+              Créer mon devis
             </button>
             <button className="secondary-btn" onClick={() => handleClick(true)}>
-              Espace Professionnel
+              Vous êtes pro ? 
             </button>
           </div>
         </div>

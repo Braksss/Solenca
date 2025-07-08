@@ -48,12 +48,14 @@ const Hero = () => {
       <div className="hero__container">
         <div className="hero__left" ref={contentRef}>
 <h1 className="hero__headline">
-  La tranquilité, toute l’année.
+  Votre maison, comme si c’était la nôtre.
 </h1>
 <p>
-  Solenca veille sur votre résidence secondaire sur la Costa Brava, à Platja d’Aro et alentours. Visites régulières, alertes, rapports photo et services sur-mesure pour une gestion sans stress.
+  365 jours de sérénité, même à distance. Visites régulières, alertes en temps réel, rapports photo, clés sécurisées… Solenca s’occupe de tout, vous ne gérez plus rien.
 </p>
-<a href="#cta" className="hero__button">Réservez votre tranquillité →</a>
+<div className="hero__cta-buttons">
+  <a href="#cta" className="hero__button hero__button--main">Réservez votre tranquillité →</a>
+</div>
 
 <div className="hero__proof hero__proof--logos">
   <div className="hero__logos">

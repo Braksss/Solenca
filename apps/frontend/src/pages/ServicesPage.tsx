@@ -87,13 +87,13 @@ const ServicesPage: React.FC = () => (
       {/* HERO */}
       <section className="services-hero">
         <div className="hero-content">
-          <h1>Votre maison, toujours sous contrôle</h1>
+          <h1>Tranquillité totale, 365 jours par an</h1>
           <p>
-            Solenca prend en charge votre résidence secondaire depuis la Costa Brava,
-            avec rigueur, transparence et efficacité. Vous gérez à distance, nous agissons sur place.
+            Avec Solenca, votre résidence secondaire est entre de bonnes mains. Visites régulières, alertes instantanées,
+            rapports photo : tout est automatisé, vous gardez le contrôle où que vous soyez.
           </p>
           <div className="cta-row">
-            <button className="primary-btn">Découvrir nos packs</button>
+            <button className="primary-btn">Obtenir votre devis en 1 minute →</button>
           </div>
         </div>
 
@@ -109,37 +109,35 @@ const ServicesPage: React.FC = () => (
         <section className="about-section features-block">
           <div className="about-top">
             <div className="about-top__left">
-              <h2>Une prise en charge complète<br />de votre résidence secondaire</h2>
+              <h2>Des services pour votre sérénité</h2>
             </div>
             <div className="about-top__right">
               <p>
-                Inspections régulières, remontée d’alertes, suivi des interventions :
-                Solenca vous offre un pilotage sans friction. Tout est tracé, organisé, centralisé, pour votre tranquillité.
+                Inspections, alertes, rapports : Solenca simplifie la gestion de votre résidence. Tout est centralisé dans votre espace client.
               </p>
               <button className="about-btn">Demander un devis →</button>
             </div>
           </div>
-
           <div className="about-cards">
             <div className="about-card">
               <Calendar size={40} color="#ff8700" />
-              <h3>Visites sur-mesure</h3>
-              <p>Ouvertures, contrôles, arrosage : vous choisissez, nous exécutons.</p>
-            </div>
-            <div className="about-card">
-              <Camera size={40} color="#ff8700" />
-              <h3>Comptes-rendus visuels</h3>
-              <p>Photos et checklist détaillée envoyées après chaque passage.</p>
+              <h3>Visites régulières</h3>
+              <p>Contrôle intérieur et extérieur, avec rapport photo à chaque passage.</p>
             </div>
             <div className="about-card">
               <AlertTriangle size={40} color="#ff8700" />
-              <h3>Alertes instantanées</h3>
-              <p>Fuite, intrusion ? Notification instantanée et action proposée.</p>
+              <h3>Urgences</h3>
+              <p>Intervention rapide en cas de problème signalé.</p>
             </div>
             <div className="about-card">
               <Users size={40} color="#ff8700" />
-              <h3>Artisans de confiance</h3>
-              <p>Jardinier, pisciniste, homme de confiance : pros sélectionnés.</p>
+              <h3>Gestion des clefs</h3>
+              <p>Stockage sécurisé pour remise à un proche ou un pro.</p>
+            </div>
+            <div className="about-card">
+              <Camera size={40} color="#ff8700" />
+              <h3>Options à la carte</h3>
+              <p>Piscine, jardin, ménage... activez selon vos besoins.</p>
             </div>
           </div>
         </section>

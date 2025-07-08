@@ -1,60 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   Home,
   BarChart,
   MessageSquareText,
-  CalendarDays,
-  Bell,
   Settings,
-  LogOut,
-  Info
+  Menu,
+  X
 } from 'lucide-react';
 
 import '../styles/layout/sidebar.scss';
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
-    <aside className="sidebar">
-      <div className="sidebar__top">
-        <img src="/logo-fitbit.png" alt="Solenca" className="sidebar__logo" />
-
-        <NavLink to="/" className="sidebar__icon">
-          <Home size={20} />
-        </NavLink>
-
-        <NavLink to="/stats" className="sidebar__icon">
-          <BarChart size={20} />
-        </NavLink>
-
-        <NavLink to="/messages" className="sidebar__icon">
-          <MessageSquareText size={20} />
-        </NavLink>
-
-        <NavLink to="/calendar" className="sidebar__icon">
-          <CalendarDays size={20} />
-        </NavLink>
-
-        <hr className="sidebar__separator" />
-
-        <NavLink to="/alerts" className="sidebar__icon">
-          <Bell size={20} />
-        </NavLink>
-
-        <NavLink to="/settings" className="sidebar__icon">
-          <Settings size={20} />
-        </NavLink>
+    <aside className={`sidebar ${isOpen ? 'sidebar--open' : 'sidebar--closed'}`}>
+      <div className="sidebar__header">
+        <div className="sidebar__logo-wrapper">
+          <img
+            src="/logo-solenca.png"
+            alt="Solenca"
+            className="sidebar__logo"
+          />
+        </div>
+        <button onClick={() => setIsOpen(!isOpen)} className="sidebar__toggle">
+          {isOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
       </div>
 
-      <div className="sidebar__bottom">
-        <div className="sidebar__icon">
-          <LogOut size={20} />
-        </div>
-        <hr className="sidebar__separator" />
-        <NavLink to="/about" className="sidebar__icon">
-          <Info size={20} />
+      <nav className="sidebar__nav">
+        <NavLink to="/" className="sidebar__link">
+          <Home size={20} />
+          {isOpen && <span>Accueil</span>}
         </NavLink>
-        <img src="/avatar1.png" alt="User avatar" className="sidebar__avatar" />
+        <NavLink to="/stats" className="sidebar__link">
+          <BarChart size={20} />
+          {isOpen && <span>Statistiques</span>}
+        </NavLink>
+        <NavLink to="/messages" className="sidebar__link">
+          <MessageSquareText size={20} />
+          {isOpen && <span>Messages</span>}
+        </NavLink>
+        <NavLink to="/settings" className="sidebar__link">
+          <Settings size={20} />
+          {isOpen && <span>Paramètres</span>}
+        </NavLink>
+      </nav>
+
+      <div className="sidebar__footer">
+        <img
+          src="/avatar1.png"
+          alt="Utilisateur"
+          className="sidebar__avatar"
+        />
       </div>
     </aside>
   );

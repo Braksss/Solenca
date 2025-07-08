@@ -14,8 +14,8 @@
     "framer-motion": "^12.20.1",
     "gsap": "^3.13.0",
     "matter-js": "^0.20.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-router-dom": "^7.6.2"
   },

@@ -34,7 +34,7 @@ const kpis = [
 
 const testimonials = [
   {
-    content: 'Solenca m\'a permis de garder un œil sur ma maison depuis la France. Je reçois des comptes-rendus réguliers et visuels, c\'est top !',
+    content: 'Une fois, ils ont détecté une fuite extérieure avant que ça dégénère. J’ai eu le rapport et les photos dans la journée. Service très sérieux.',
     author: 'Ralph Edwards',
     email: 'ralph.e@client.com',
     avatar: avatar1
@@ -64,13 +64,13 @@ const AboutPage: React.FC = () => (
     {/* SECTION 1 — Hero principal */}
     <section className="about-hero">
       <div className="hero-content">
-        <h1>Votre résidence secondaire, sous haute vigilance</h1>
+        <h1>Votre maison sous contrôle</h1>
         <p>
-          Solenca vous permet de suivre votre maison à distance, où que vous soyez. Alertes, rapports visuels, suivi régulier : votre tranquillité ne prend plus de pause.
+          Recevez des alertes, rapports photo et infos clés, automatiquement. Depuis la France ou ailleurs, gardez l’œil sur ce qui compte, sans stress ni surprise.
         </p>
 
         <div className="cta-row">
-          <button className="primary-btn">Découvrir l'offre</button>
+          <button className="primary-btn">Recevoir mon devis gratuit</button>
         
         </div>
       </div>
@@ -111,7 +111,7 @@ const AboutPage: React.FC = () => (
     {/* SECTION 4 — Témoignage global */}
     <section className="about-quote">
       <p>
-        <span className="highlight">Solenca</span> est plus qu’un service de surveillance. C’est une solution complète, pensée pour les propriétaires de résidences secondaires en Espagne — d’abord en Costa Brava, bientôt au-delà. Inspections, rapports visuels, alertes intelligentes : tout est centralisé, pour que vous gardiez la maîtrise à distance, sans stress ni surprise.
+        <span className="highlight">Solenca</span> c’est bien plus qu’une veille. C’est une présence fiable, réactive, et connectée. Depuis Platja d’Aro, notre équipe surveille votre bien et vous envoie ce qu’il faut : anomalies, météo, historique, passages. Vous avez tout. Et surtout, la tranquillité.
       </p>
     </section>
 
@@ -119,10 +119,10 @@ const AboutPage: React.FC = () => (
     <section className="about-cta about-team ecosystem-platform">
       <div className="cta-inner ecosystem-center">
         <h2>
-          Gardez la main sur votre bien, <span className="fade">même à des centaines de kilomètres</span>
+          La vigilance continue, même quand vous êtes loin
         </h2>
         <p>
-          Solenca vous envoie automatiquement les informations essentielles : passages effectués, anomalies détectées, météo locale, historique complet. Depuis Platja d’Aro, notre équipe veille pour vous, en toute discrétion. L’interface digitale centralise tout ce qui compte.
+          Chaque semaine, nos techniciens vérifient votre maison. Vous recevez un rapport visuel, les alertes en cas d’anomalie, et un historique clair. En un mot : vous restez maître de votre bien, même à distance.
         </p>
 
         <div className="cta-buttons">

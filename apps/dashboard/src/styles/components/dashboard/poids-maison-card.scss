@@ -1,44 +1,30 @@
-.poids-card {
-  background: #fff;
+
+.solenca-note-card {
+  background: #ffffff;
   border-radius: 20px;
-  padding: 1.4rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e0e0e0;
   min-height: 200px;
 
-  &__avatars {
-    gap: 0.4rem;
-    margin-bottom: 0.8rem;
-
-    img {
-      width: 28px;
-      height: 28px;
-    }
-  }
-
-  &__title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-  }
-
-  &__badge {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.8rem;
-  }
-
-  &__desc {
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
   &__note {
-    font-size: 1.4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
   }
 
-  &__pagination button {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.9rem;
+  &__tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #f3f3f3;
+    color: #444;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 }

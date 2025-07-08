@@ -1,32 +1,34 @@
 import React from 'react';
 import '../../styles/components/dashboard/intervention-stats.scss';
-import { AlertTriangle, CheckCircle, FileText } from 'lucide-react';
+import { Home, TreePalm, Waves, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const InterventionStats = () => {
   return (
-    <div className="intervention-card">
+    <div className="card intervention-card">
+      <div className="intervention-card__tag">État général</div>
+
       <div className="intervention-card__header">
-        <h4>Suivi des interventions</h4>
-        <p className="sub">Dernière visite : 20 juin</p>
+        <h4 className="intervention-card__title">DERNIER PASSAGE</h4>
+        <p className="intervention-card__subtitle">Le 20 juin à 11h34</p>
       </div>
 
-      <div className="intervention-card__info">
-        <div className="intervention-item">
-          <CheckCircle size={18} />
-          <span>5 interventions ce mois-ci</span>
+      <div className="intervention-card__status row">
+        <div className="status-icon ok">
+          <Home size={16} />
         </div>
-        <div className="intervention-item alert">
-          <AlertTriangle size={18} />
-          <span>1 anomalie détectée</span>
+        <div className="status-icon ok">
+          <TreePalm size={16} />
         </div>
-        <div className="intervention-item">
-          <FileText size={18} />
-          <button className="intervention-card__cta">Voir le rapport</button>
+        <div className="status-icon alert">
+          <Waves size={16} />
         </div>
       </div>
 
       <div className="intervention-card__footer">
-        <span className="status-tag">Maison en bon état</span>
+        <button className="intervention-card__cta">
+          <CheckCircle size={18} style={{ marginRight: '6px' }} />
+          Voir les détails
+        </button>
       </div>
     </div>
   );
