@@ -1,0 +1,74 @@
+{
+  "navbar": {
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "abonnements": "Abonnements",
+    "magazine": "Magazin",
+    "catalogue": "Katalog",
+    "login": "Anmelden",
+    "club": "Solenca Club"
+  },
+  "hero": {
+    "headline": "Ihr Zuhause, als wäre es unseres.",
+    "description": "365 Tage Seelenfrieden – auch aus der Ferne. Regelmäßige Besuche, Echtzeit-Warnungen, Fotoberichte, gesicherte Schlüssel… Solenca kümmert sich um alles.",
+    "cta": "Sichern Sie sich Ihre Ruhe →"
+  },
+  "about": {
+    "title": "Solenca passt täglich auf.",
+    "description": "Lokale menschliche Präsenz, visuelle Berichte nach jedem Besuch, Warnmeldungen in Echtzeit. Mehr als ein Service: Ruhe für Eigentümer an der Costa Brava.",
+    "cta": "Jetzt vorbestellen -20% →",
+    "card1": {
+      "title": "Soforteinsätze",
+      "text": "Sofort vor Ort. Für uns ist es persönlich. Garten, Pool, Innenräume – wir handeln schnell, als wäre es unser eigenes Zuhause."
+    },
+    "card2": {
+      "title": "Echtzeit-Überwachung",
+      "text": "Jeder Besuch dokumentiert. Fotos, Warnungen, Zusammenfassungen. Alles in Echtzeit, ohne Nachfragen."
+    },
+    "card3": {
+      "title": "Beweise statt Versprechen",
+      "text": "Keine leeren Versprechen. Sie erhalten bei jedem Besuch Beweise. Konkrete, überprüfbare Sicherheit."
+    },
+    "card4": {
+      "title": "Engagierte lokale Präsenz",
+      "text": "Wir leben hier. Wir kennen jede Straße, jeden Handwerker. Keine Subunternehmen. Nur wir – engagiert, 365 Tage im Jahr."
+    }
+  },
+  "testimonials": {
+    "title": "Bereits überzeugt von Solenca",
+    "subtitle": "Über 100 Eigentümer und Agenturen an der Costa Brava haben sich bereits für Ruhe entschieden.",
+    "badge": "Tranquilidad 365 🧡",
+    "test1": "Ich freue mich auf November – Solenca wird meine Villa in Platja d'Aro betreuen, als wäre es ihre eigene. Absolute Gelassenheit in Sicht!",
+    "test2": "Spannender Vorstart für Agenturen wie meine. Garten-/Poolpflege sorgenfrei – Solenca bringt uns voran.",
+    "test3": "Wir freuen uns auf die wöchentlichen Fotoberichte. Solenca bringt Seelenfrieden für unser Zweitdomizil – perfektes Timing im November."
+  },
+  "cta": {
+    "title": "Solenca kümmert sich um alles.",
+    "description": "Abwesend? Wir übernehmen für Sie. Regelmäßige Kontrollen, Fotoberichte, Pool- und Gartenpflege, Notfalleinsätze. Von Platja d’Aro aus kümmern wir uns um Ihre Villa, als wäre sie unsere.\n\n🎯 Gründungsangebot: -20 % auf jede Vorbestellung bis November 2025.",
+    "button": "Jetzt vorbestellen →"
+  },
+  "footer": {
+    "baseline": "Tranquilidad 365 für Ihr Zuhause in Spanien. Start im November 2025 – exklusives Vorverkaufsangebot!",
+    "privateTitle": "Für Privatkunden",
+    "private": {
+      "why": "Warum Solenca",
+      "services": "Unsere Leistungen",
+      "how": "Wie es funktioniert",
+      "reviews": "Kundenstimmen",
+      "cta": "Ich bestelle vor"
+    },
+    "proTitle": "Für Profis",
+    "pro": {
+      "access": "Partnerzugang",
+      "offer": "B2B-Angebot",
+      "press": "Presse & Medien",
+      "contact": "Kontakt für Profis"
+    },
+    "connectTitle": "Bleiben Sie verbunden",
+    "emailPlaceholder": "Ihre geschäftliche E-Mail",
+    "rights": "Alle Rechte vorbehalten.",
+    "legal": "Impressum",
+    "terms": "AGB",
+    "privacy": "Datenschutz"
+  }
+}

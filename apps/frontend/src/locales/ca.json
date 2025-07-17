@@ -1,0 +1,74 @@
+{
+  "navbar": {
+    "about": "Sobre nosaltres",
+    "services": "Serveis",
+    "abonnements": "Subscripcions",
+    "magazine": "Revista",
+    "catalogue": "Catàleg",
+    "login": "Iniciar sessió",
+    "club": "Solenca Club"
+  },
+  "hero": {
+    "headline": "Casa teva, com si fos la nostra.",
+    "description": "365 dies de tranquil·litat, encara que siguis lluny. Visites regulars, alertes en temps real, informes amb fotos, claus segures... Solenca s’encarrega de tot, tu no has de gestionar res.",
+    "cta": "Reserva la teva tranquil·litat →"
+  },
+  "about": {
+    "title": "Solenca vetlla cada dia.",
+    "description": "Presència local, informes visuals després de cada visita, alertes en temps real. Més que un servei: pau mental per als propietaris de la Costa Brava.",
+    "cta": "Precomanda ara -20% →",
+    "card1": {
+      "title": "Intervencions immediates",
+      "text": "Presència in situ sense demora. Per a nosaltres és personal. Jardí, piscina, interior – actuem ràpid, com si fos casa nostra."
+    },
+    "card2": {
+      "title": "Seguiment en temps real",
+      "text": "Cada visita documentada. Fotos, alertes, resums. Ho tens tot en temps real, sense haver de demanar-ho."
+    },
+    "card3": {
+      "title": "Proves, no promeses",
+      "text": "Cap promesa buida. Reps la prova a cada visita. És concret, verificable i tranquil·litzador."
+    },
+    "card4": {
+      "title": "Presència local compromesa",
+      "text": "Vivim aquí. Coneixem cada carrer, cada artesà. Zero subcontractació. Només nosaltres, implicats, 365 dies l’any."
+    }
+  },
+  "testimonials": {
+    "title": "Ja confien en Solenca",
+    "subtitle": "Més de 100 propietaris i agències a la Costa Brava ja han triat la tranquil·litat.",
+    "badge": "Tranquil·litat 365 🧡",
+    "test1": "Estic esperant novembre amb ganes – Solenca gestionarà la meva vila a Platja d’Aro com si fos seva. Tranquil·litat total a l’horitzó!",
+    "test2": "Pre-llançament emocionant per a agències com la meva. Manteniment de jardí/piscina sense preocupacions – Solenca impulsarà el nostre negoci.",
+    "test3": "Esperem amb il·lusió els informes fotogràfics setmanals. Solenca és la pau mental per al nostre segon habitatge – el llançament al novembre és el moment perfecte."
+  },
+  "cta": {
+    "title": "Solenca s’encarrega de tot.",
+    "description": "Absents? Vetllem per tu. Controls regulars, informes fotogràfics, gestió de piscina i jardí, intervencions d’urgència. Des de Platja d’Aro, ens ocupem de la teva vila com si fos la nostra.\n\n🎯 Oferta fundacional: -20% en totes les precomandes abans del novembre 2025.",
+    "button": "Precomanda ara →"
+  },
+  "footer": {
+    "baseline": "Tranquil·litat 365 per a casa teva a Espanya. Llançament al novembre 2025 – oferta especial de precomanda!",
+    "privateTitle": "Per a particulars",
+    "private": {
+      "why": "Per què Solenca",
+      "services": "Els nostres serveis",
+      "how": "Funcionament",
+      "reviews": "Opinions dels clients",
+      "cta": "Vull precomandar"
+    },
+    "proTitle": "Per a professionals",
+    "pro": {
+      "access": "Accés socis",
+      "offer": "Oferta B2B",
+      "press": "Premsa i mitjans",
+      "contact": "Contacte professional"
+    },
+    "connectTitle": "Estigues connectat",
+    "emailPlaceholder": "El teu correu electrònic professional",
+    "rights": "Tots els drets reservats.",
+    "legal": "Avís legal",
+    "terms": "Condicions generals",
+    "privacy": "Privacitat"
+  }
+}

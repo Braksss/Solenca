@@ -1,43 +1,44 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import '../../styles/landing/footer.scss';
 import logo from '../../assets/solenca-logo.png';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer__top">
         <div className="footer__col footer__brand">
           <img src={logo} alt="Solenca logo" className="footer__logo-img" />
-          <p className="footer__baseline">
-            Tranquilidad 365 pour votre maison en Espagne.
-          </p>
+          <p className="footer__baseline">{t('footer.baseline')}</p>
         </div>
 
         <div className="footer__col">
-          <h4>Pour les particuliers</h4>
+          <h4>{t('footer.privateTitle')}</h4>
           <ul>
-            <li><a href="/about">Pourquoi Solenca</a></li>
-            <li><a href="/services">Nos services</a></li>
-            <li><a href="/fonctionnement">Fonctionnement</a></li>
-            <li><a href="/avis">Avis clients</a></li>
-            <li><a href="/precommande">Je précommande</a></li>
+            <li><a href="/about">{t('footer.private.why')}</a></li>
+            <li><a href="/services">{t('footer.private.services')}</a></li>
+            <li><a href="/fonctionnement">{t('footer.private.how')}</a></li>
+            <li><a href="/avis">{t('footer.private.reviews')}</a></li>
+            <li><a href="/precommande">{t('footer.private.cta')}</a></li>
           </ul>
         </div>
 
         <div className="footer__col">
-          <h4>Pour les pros</h4>
+          <h4>{t('footer.proTitle')}</h4>
           <ul>
-            <li><a href="/pro">Accès partenaires</a></li>
-            <li><a href="/b2b">Offre B2B</a></li>
-            <li><a href="/presse">Presse & médias</a></li>
-            <li><a href="/contact">Contact pro</a></li>
+            <li><a href="/pro">{t('footer.pro.access')}</a></li>
+            <li><a href="/b2b">{t('footer.pro.offer')}</a></li>
+            <li><a href="/presse">{t('footer.pro.press')}</a></li>
+            <li><a href="/contact">{t('footer.pro.contact')}</a></li>
           </ul>
         </div>
 
         <div className="footer__col">
-          <h4>Restez connectés</h4>
+          <h4>{t('footer.connectTitle')}</h4>
           <form className="footer__newsletter">
-            <input type="email" placeholder="Votre email professionnel" />
+            <input type="email" placeholder={t('footer.emailPlaceholder')} />
             <button type="submit">→</button>
           </form>
           <div className="footer__socials">
@@ -49,11 +50,11 @@ const Footer = () => {
       </div>
 
       <div className="footer__bottom">
-        <p>© {new Date().getFullYear()} Solenca. Tous droits réservés.</p>
+        <p>© {new Date().getFullYear()} Solenca. {t('footer.rights')}</p>
         <ul>
-          <li><a href="/mentions-legales">Mentions légales</a></li>
-          <li><a href="/cgv">CGV</a></li>
-          <li><a href="/confidentialite">Confidentialité</a></li>
+          <li><a href="/mentions-legales">{t('footer.legal')}</a></li>
+          <li><a href="/cgv">{t('footer.terms')}</a></li>
+          <li><a href="/confidentialite">{t('footer.privacy')}</a></li>
         </ul>
       </div>
     </footer>

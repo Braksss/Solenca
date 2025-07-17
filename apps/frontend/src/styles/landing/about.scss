@@ -1,54 +1,51 @@
 .about-section {
-  padding: 3rem 2rem;
+  padding: 3rem 1rem; // Petit padding mobile
   background: #fff;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  max-width: 80%;
+  gap: 2rem;
+  max-width: 100%; // Full-width mobile
   background-color: #52494011;
   border-radius: 30px;
   margin: auto;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 5%;
 
-
   .about-top {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column; // Vertical mobile
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
 
     &__left {
-      flex: 1;
       h2 {
-        font-size: 3.5rem;
+        font-size: 2rem; // Petit mobile
         font-weight: 700;
         line-height: 1.2;
         color: #111;
+        min-width: 500px;
       }
     }
 
     &__right {
-      flex: 1;
-      max-width: 500px;
-
       p {
-        font-size: 1.1rem;
-        line-height: 1.7;
+        font-size: 1rem;
+        line-height: 1.6;
         color: #444;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       .about-btn {
         background: #ff8200;
         color: #fff;
-        padding: 1rem 2rem;
+        padding: 0.8rem 1.5rem;
         border: none;
         border-radius: 30px;
         font-weight: 300;
         cursor: pointer;
         transition: all 0.2s ease;
+        width: 100%; // Tappable mobile
 
         &:hover {
           background: #2c2c2c;
@@ -59,61 +56,71 @@
 
   .about-cards {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column; // Vertical mobile
+    gap: 1.5rem;
 
     .about-card {
-      flex: 1 1 220px;
       border-radius: 20px;
       text-align: center;
-      padding: 2rem 1rem;
-      height: 250px;
+      padding: 1.5rem 1rem;
+      height: auto; // Auto height to prevent overflow
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 1rem;
 
       &:hover {
         background-color: #fff;
       }
+
       h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 700;
         color: #111;
       }
 
       p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         color: #555;
       }
 
       img {
-        width: 130px;
-        height: 130px;
+        width: 100%; // Contained mobile
+        max-width: 100px;
+        height: auto;
         margin: 0 auto;
       }
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 4rem 2rem;
+  // Media min-width desktop
+  @media (min-width: 769px) {
+    padding: 3rem 2rem;
+    max-width: 80%;
+    gap: 4rem;
 
     .about-top {
-      flex-direction: column;
+      flex-direction: row;
+      text-align: left;
+      gap: 2rem;
 
-      &__left,
-      &__right {
-        width: 100%;
-      }
+      &__left h2 { font-size: 3.5rem; }
+      &__right .about-btn { width: auto; }
     }
 
     .about-cards {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
 
       .about-card {
-        width: 100%;
-        max-width: 350px;
+        flex: 1 1 220px;
+        padding: 2rem 1.5rem; // Plus padding desktop to contain icons
+        height: auto; // Auto to avoid overflow
+
+        h3 { font-size: 1.1rem; }
+        p { font-size: 0.95rem; }
+        img { max-width: 130px; height: auto; } // Contained, no overflow
       }
     }
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/pages/aboutpage.scss';
@@ -26,15 +27,15 @@ import iconSmart from '../assets/icons/securite.png';
 const partnerLogos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 const kpis = [
-  { icon: kpiHome, number: '75+', label: 'Maisons sous veille' },
-  { icon: kpiInvest, number: '1.2M€', label: 'Patrimoines protégés' },
-  { icon: kpiSmile, number: '98%', label: 'Clients sereins' },
-  { icon: kpiClock, number: '24/7', label: 'Présence réactive' }
+  { icon: kpiHome, number: '24' },
+  { icon: kpiInvest, number: '98%' },
+  { icon: kpiSmile, number: '100%' },
+  { icon: kpiClock, number: '-20%' }
 ];
 
 const testimonials = [
   {
-    content: 'Une fois, ils ont détecté une fuite extérieure avant que ça dégénère. J’ai eu le rapport et les photos dans la journée. Service très sérieux.',
+    content: 'Excité pour novembre – Solenca va gérer ma villa en Costa Brava avec sérieux total. Pré-réservé pour la paix d’esprit !',
     author: 'Ralph Edwards',
     email: 'ralph.e@client.com',
     avatar: avatar1
@@ -57,90 +58,91 @@ const avatars = [
   'https://i.pravatar.cc/150?img=56',
 ];
 
-const AboutPage: React.FC = () => (
-  <>
-    <Navbar />
+const AboutPage = () => {
+  const { t } = useTranslation();
 
-    {/* SECTION 1 — Hero principal */}
-    <section className="about-hero">
-      <div className="hero-content">
-        <h1>Votre maison sous contrôle</h1>
-        <p>
-          Recevez des alertes, rapports photo et infos clés, automatiquement. Depuis la France ou ailleurs, gardez l’œil sur ce qui compte, sans stress ni surprise.
-        </p>
+  return (
+    <>
+      <Navbar />
 
-        <div className="cta-row">
-          <button className="primary-btn">Recevoir mon devis gratuit</button>
-        
-        </div>
-      </div>
+      {/* SECTION 1 — Hero principal */}
+      <section className="about-hero">
+        <div className="hero-content">
+          <h1>{t('aboutPage.hero.title')}</h1>
+          <p>
+            {t('aboutPage.hero.description')}
+          </p>
 
-      <div className="hero-visual">
-        <div className="hero-image">
-          <img src={heroImg} alt="Vue d'une villa méditerranéenne" />
-        </div>
-        <div className="user-badge">
-          <div className="avatar-stack">
-            {avatars.map((src, i) => (
-              <img key={i} src={src} alt={`user ${i + 1}`} style={{ left: `${i * 20}px`, zIndex: 10 - i }} />
-            ))}
+          <div className="cta-row">
+            <button className="primary-btn">{t('aboutPage.hero.cta')}</button>
           </div>
-          <span className="user-badge-text">Déjà utilisé par des propriétaires exigeants</span>
         </div>
-      </div>
-    </section>
 
-    {/* SECTION 2 — Logos partenaires */}
-    <section className="about-logos">
-      {partnerLogos.map((logo, idx) => (
-        <img key={idx} src={logo} alt="partner logo" />
-      ))}
-    </section>
-
-    {/* SECTION 3 — Indicateurs clés */}
-    <section className="about-kpis">
-      {kpis.map(({ icon, number, label }) => (
-        <div key={label} className="kpi">
-          <img src={icon} alt="kpi icon" />
-          <span className="number">{number}</span>
-          <span className="label">{label}</span>
+        <div className="hero-visual">
+          <div className="hero-image">
+            <img src={heroImg} alt="Vue d'une villa méditerranéenne en Costa Brava" />
+          </div>
+          <div className="user-badge">
+            <div className="avatar-stack">
+              {avatars.map((src, i) => (
+                <img key={i} src={src} alt={`user ${i + 1}`} style={{ left: `${i * 20}px`, zIndex: 10 - i }} />
+              ))}
+            </div>
+            <span className="user-badge-text">{t('aboutPage.hero.badge')}</span>
+          </div>
         </div>
-      ))}
-    </section>
+      </section>
 
-    {/* SECTION 4 — Témoignage global */}
-    <section className="about-quote">
-      <p>
-        <span className="highlight">Solenca</span> c’est bien plus qu’une veille. C’est une présence fiable, réactive, et connectée. Depuis Platja d’Aro, notre équipe surveille votre bien et vous envoie ce qu’il faut : anomalies, météo, historique, passages. Vous avez tout. Et surtout, la tranquillité.
-      </p>
-    </section>
+      {/* SECTION 2 — Logos partenaires */}
+      <section className="about-logos">
+        {partnerLogos.map((logo, idx) => (
+          <img key={idx} src={logo} alt="partner logo" />
+        ))}
+      </section>
 
-    {/* SECTION 5 — Bloc CTA unifié */}
-    <section className="about-cta about-team ecosystem-platform">
-      <div className="cta-inner ecosystem-center">
-        <h2>
-          La vigilance continue, même quand vous êtes loin
-        </h2>
+      {/* SECTION 3 — Indicateurs clés */}
+      <section className="about-kpis">
+        {kpis.map(({ icon, number }, index) => (
+          <div key={index} className="kpi">
+            <img src={icon} alt="kpi icon" />
+            <span className="number">{number}</span>
+            <span className="label">{t(`aboutPage.kpi.${index}`)}</span>
+          </div>
+        ))}
+      </section>
+
+      {/* SECTION 4 — Témoignage global */}
+      <section className="about-quote">
         <p>
-          Chaque semaine, nos techniciens vérifient votre maison. Vous recevez un rapport visuel, les alertes en cas d’anomalie, et un historique clair. En un mot : vous restez maître de votre bien, même à distance.
+          <span className="highlight">Solenca</span> {t('aboutPage.quote')}
         </p>
+      </section>
 
-        <div className="cta-buttons">
-          <button className="primary-btn">Essayer Solenca</button>
-          <button className="secondary-btn">En savoir plus</button>
+      {/* SECTION 5 — Bloc CTA unifié */}
+      <section className="about-cta about-team ecosystem-platform">
+        <div className="cta-inner ecosystem-center">
+          <h2>{t('aboutPage.cta.title')}</h2>
+          <p>
+            {t('aboutPage.cta.description')}
+          </p>
+
+          <div className="cta-buttons">
+            <button className="primary-btn">{t('aboutPage.cta.primary')}</button>
+            <button className="secondary-btn">{t('aboutPage.cta.secondary')}</button>
+          </div>
         </div>
-      </div>
-      <div className="ecosystem-preview">
-        <div className="card-preview left-top">Rapport mensuel</div>
-        <div className="card-preview right-top">Alerte détection</div>
-        <div className="card-preview left-bottom">Checklist entretien</div>
-        <div className="card-preview right-bottom">Historique visites</div>
-        <div className="card-preview top-float">Dernier passage</div>
-      </div>
-    </section>
+        <div className="ecosystem-preview">
+          <div className="card-preview left-top">{t('aboutPage.cards.monthlyReport')}</div>
+          <div className="card-preview right-top">{t('aboutPage.cards.alert')}</div>
+          <div className="card-preview left-bottom">{t('aboutPage.cards.checklist')}</div>
+          <div className="card-preview right-bottom">{t('aboutPage.cards.history')}</div>
+          <div className="card-preview top-float">{t('aboutPage.cards.lastVisit')}</div>
+        </div>
+      </section>
 
-    <Footer />
-  </>
-);
+      <Footer />
+    </>
+  );
+};
 
 export default AboutPage;

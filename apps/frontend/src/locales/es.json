@@ -1,0 +1,193 @@
+{
+  "navbar": {
+    "about": "Sobre nosotros",
+    "services": "Servicios",
+    "abonnements": "Suscripciones",
+    "magazine": "Revista",
+    "catalogue": "Catálogo",
+    "login": "Iniciar sesión",
+    "club": "Club Solenca"
+  },
+  "hero": {
+    "headline": "Tu casa, como si fuera la nuestra.",
+    "description": "365 días de tranquilidad, incluso desde lejos. Visitas regulares, alertas en tiempo real, informes fotográficos, llaves seguras… Solenca se encarga de todo, tú ya no tienes que preocuparte por nada.",
+    "cta": "Reserva tu tranquilidad →"
+  },
+  "about": {
+    "title": "Solenca vigila, cada día.",
+    "description": "Presencia humana local, informes visuales tras cada visita, alertas en tiempo real. Más que un servicio: tranquilidad mental para propietarios en la Costa Brava.",
+    "cta": "Reserva anticipada ahora -20% →",
+    "card1": {
+      "title": "Intervenciones inmediatas",
+      "text": "Presencia in situ sin demora. Para nosotros, es personal. Jardín, piscina, interior – actuamos rápido, como si fuera nuestro hogar."
+    },
+    "card2": {
+      "title": "Seguimiento en tiempo real",
+      "text": "Cada visita documentada. Fotos, alertas, resumen. Lo tienes todo, en tiempo real, sin necesidad de preguntar."
+    },
+    "card3": {
+      "title": "Pruebas, no promesas",
+      "text": "Ninguna promesa vacía. Recibes pruebas tras cada visita. Concreto, verificable, tranquilizador."
+    },
+    "card4": {
+      "title": "Presencia local comprometida",
+      "text": "Vivimos aquí. Conocemos cada calle, cada profesional. Cero subcontratación. Solo nosotros, implicados, 365 días al año."
+    }
+  },
+  "testimonials": {
+    "title": "Ya convencidos por Solenca",
+    "subtitle": "Más de 100 propietarios y agencias en la Costa Brava ya han elegido la tranquilidad.",
+    "badge": "Tranquilidad 365 🧡",
+    "test1": "Espero noviembre con impaciencia – Solenca gestionará mi villa en Platja d'Aro como si fuera suya. ¡Tranquilidad total a la vista!",
+    "test2": "Prelanzamiento emocionante para agencias de alquiler como la mía. Mantenimiento de jardín/piscina sin preocupaciones – Solenca impulsará nuestro negocio.",
+    "test3": "Estamos impacientes por los informes fotográficos semanales. Solenca es paz mental para nuestra segunda residencia – lanzamiento en noviembre, momento perfecto."
+  },
+  "cta": {
+    "title": "Solenca se encarga de todo.",
+    "description": "¿Ausente? Nosotros vigilamos por ti. Inspecciones regulares, informes fotográficos, gestión de piscina y jardín, intervenciones de urgencia. Desde Platja d’Aro, cuidamos tu villa como si fuera nuestra.\n\n🎯 Oferta fundadora: -20% por reserva anticipada antes de noviembre de 2025.",
+    "button": "Reserva ahora →"
+  },
+  "footer": {
+    "baseline": "Tranquilidad 365 para tu casa en España. Lanzamiento noviembre 2025 – ¡oferta especial de preventa!",
+    "privateTitle": "Para particulares",
+    "private": {
+      "why": "¿Por qué Solenca?",
+      "services": "Nuestros servicios",
+      "how": "Funcionamiento",
+      "reviews": "Opiniones de clientes",
+      "cta": "Quiero reservar"
+    },
+    "proTitle": "Para profesionales",
+    "pro": {
+      "access": "Acceso partners",
+      "offer": "Oferta B2B",
+      "press": "Prensa y medios",
+      "contact": "Contacto profesional"
+    },
+    "connectTitle": "Mantente conectado",
+    "emailPlaceholder": "Tu correo profesional",
+    "rights": "Todos los derechos reservados.",
+    "legal": "Aviso legal",
+    "terms": "Condiciones generales",
+    "privacy": "Privacidad"
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Tu villa protegida. Todo el año.",
+      "description": "Informes fotográficos, alertas inmediatas, seguimiento digital y meteorología; mantente al mando de tu segunda residencia desde Francia o cualquier parte. Solenca, tranquilidad premium para propietarios exigentes. Reserva con -20% antes de noviembre 2025.",
+      "cta": "Reservar mi tranquilidad →",
+      "badge": "Ya adoptado por propietarios exigentes y agencias locales."
+    },
+    "kpi": {
+      "0": "villas ya bajo vigilancia",
+      "1": "clientes satisfechos",
+      "2": "visitas realizadas a tiempo",
+      "3": "hasta el 1 de nov. 2025"
+    },
+    "quote": "no nos limitamos a vigilar. Inspeccionamos, alertamos, informamos. Recibes pruebas visuales, datos meteorológicos, historial claro. Tu propiedad en buenas manos. Desde Platja d’Aro, para toda la Costa Brava.",
+    "cta": {
+      "title": "Tranquilidad, estés donde estés",
+      "description": "Cada semana, nuestros equipos revisan tu villa: fotos, checklist, alertas si hace falta. Accedes a todo, en tiempo real. Ya no hay duda: todo está bajo control.",
+      "primary": "Reservar ahora -20% →",
+      "secondary": "Ver servicios"
+    },
+    "cards": {
+      "monthlyReport": "Informe mensual",
+      "alert": "Alerta de detección",
+      "checklist": "Checklist de mantenimiento",
+      "history": "Historial de visitas",
+      "lastVisit": "Última visita"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Solenca toma el relevo. Tú te vas tranquilo.",
+      "description": "Visitas, alertas, informes: tu villa bajo control 365 días al año. Seguimiento fotográfico, presencia local, urgencias. Todo desde una interfaz clara, a distancia. Reserva antes de noviembre y obtén -20%.",
+      "cta": "Reservar -20% →"
+    },
+    "private": {
+      "title": "Un servicio pensado para ausentes exigentes",
+      "description": "Vigilamos, actuamos, informamos. Recibes pruebas concretas: fotos, historial, alertas. No más llamadas al vecino o rezar por lo mejor.",
+      "cta": "Descubre Solenca →",
+      "card1": {
+        "title": "Visitas regulares",
+        "text": "Control interior y exterior, con informe fotográfico en cada visita en Costa Brava."
+      },
+      "card2": {
+        "title": "Urgencias",
+        "text": "Intervención rápida en caso de problema – tranquilidad para propietarios ausentes."
+      },
+      "card3": {
+        "title": "Gestión de llaves",
+        "text": "Almacenamiento seguro para entrega a un familiar o profesional local."
+      },
+      "card4": {
+        "title": "Opciones a la carta",
+        "text": "Piscina, jardín, limpieza... actívalas según tus necesidades en Costa Brava."
+      }
+    },
+    "quote": "Solenca se ha concebido como un estándar premium, simple, estructurante. Es la herramienta que me hubiera gustado encontrar como propietario.",
+    "quoteAuthor": "El fundador",
+    "pro": {
+      "title": "Para profesionales que quieren ganar tiempo",
+      "description": "Agencias, conserjerías, gestores: Solenca actúa tras bastidores en tu nombre. Marca blanca, back-office, fiabilidad en el terreno. Tú consigues los clientes, nosotros operamos.",
+      "cta": "Accede al espacio pro →",
+      "card1": {
+        "title": "Seguimiento completo delegado",
+        "text": "Solenca se encarga del seguimiento de las propiedades confiadas, de la A a la Z en Costa Brava."
+      },
+      "card2": {
+        "title": "Herramientas pro integradas",
+        "text": "Seguimiento cliente + back-office dedicado para pilotar fácilmente – ideal para agencias de alquiler."
+      },
+      "card3": {
+        "title": "Marca blanca",
+        "text": "Ofrece nuestros servicios con tu nombre y tarifas – una colaboración beneficiosa."
+      },
+      "card4": {
+        "title": "Equipo local dedicado",
+        "text": "Profesionales de confianza que intervienen en tu nombre sobre el terreno en Costa Brava."
+      }
+    }
+  },
+  "subscription": {
+    "hero": {
+      "title": "Tu casa en la Costa Brava. Nuestra prioridad. 365 días al año.",
+      "description": "Solenca vigila, mantiene y protege tu segunda residencia automáticamente. Para propietarios o agencias – prelanzamiento noviembre 2025, ¡reserva anticipadamente y obtén un 20% de descuento!",
+      "cta": "Crear mi presupuesto gratuito",
+      "pro": "¿Eres profesional/agencia?"
+    }
+  },
+  "catalogue": {
+    "hero": {
+      "title": "Módulos a la carta",
+      "description": "Añade servicios puntuales o regulares a tu suscripción. Jardín, piscina, limpieza, etc. Cada módulo se ejecuta en menos de 7 días según tus instrucciones.",
+      "searchPlaceholder": "Buscar un servicio..."
+    },
+    "filters": {
+      "label": "Filtrar por categoría"
+    },
+    "price": "Desde {{price}}€",
+    "book": "Reservar este servicio →",
+    "upsell": "Prefiero una suscripción regular",
+    "cta": {
+      "title": "¿Necesitas un servicio específico?",
+      "description": "Solenca te acompaña a medida. Rellena nuestro formulario y te contactaremos rápidamente.",
+      "button": "Hacer una solicitud personalizada"
+    },
+    "modal": {
+      "date": "Elige una fecha",
+      "specs": "Especificaciones",
+      "details": "Detalles",
+      "city": "Ciudad de intervención",
+      "name": "Nombre y apellidos",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "address": "Dirección exacta",
+      "adjustedPrice": "Total ajustado: {{price}}€ IVA incluido",
+      "pay": "Confirmar reserva →",
+      "cancel": "Cancelar",
+      "switchToSub": "¿Prefieres una suscripción mensual?"
+    }
+  }
+}

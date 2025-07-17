@@ -1,7 +1,7 @@
-// src/components/landing/CTASection.tsx
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/landing/cta.scss';
@@ -10,6 +10,7 @@ import catIllustration from '../../assets/solencea-cat.png';
 gsap.registerPlugin(ScrollTrigger);
 
 const CTASection = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -51,13 +52,9 @@ const CTASection = () => {
   return (
     <section className="cta-section" ref={sectionRef}>
       <div className="cta-section__content" ref={contentRef}>
-<h2 className="cta-section__title">
-  Confiez-nous votre tranquillité, <br />on s’occupe du reste.
-</h2>
-        <p className="cta-section__text">
-          Solenca veille sur votre résidence secondaire : visites, alertes, rapports, coordination locale. Moins de stress, plus de sérénité.
-        </p>
-        <button className="cta-section__btn">Je réserve ma tranquillité</button>
+        <h2 className="cta-section__title">{t('cta.title')}</h2>
+        <p className="cta-section__text">{t('cta.description')}</p>
+        <button className="cta-section__btn">{t('cta.button')}</button>
       </div>
       <div className="cta-section__image" ref={imageRef}>
         <img src={catIllustration} alt="Illustration Solenca" />

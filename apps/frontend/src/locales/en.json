@@ -1,0 +1,193 @@
+{
+  "navbar": {
+    "about": "About",
+    "services": "Services",
+    "abonnements": "Plans",
+    "magazine": "Magazine",
+    "catalogue": "Catalog",
+    "login": "Login",
+    "club": "Solenca Club"
+  },
+  "hero": {
+    "headline": "Your home, as if it were ours.",
+    "description": "365 days of peace of mind, even remotely. Regular visits, real-time alerts, photo reports, secured keys... Solenca handles everything so you don’t have to.",
+    "cta": "Book your peace of mind →"
+  },
+  "about": {
+    "title": "Solenca watches over, every day.",
+    "description": "Local human presence, visual reports after every visit, real-time alerts. More than a service: peace of mind for homeowners on the Costa Brava.",
+    "cta": "Pre-order now -20% →",
+    "card1": {
+      "title": "Immediate interventions",
+      "text": "On-site presence without delay. To us, it’s personal. Garden, pool, interior – we act fast, like it’s our own."
+    },
+    "card2": {
+      "title": "Real-time monitoring",
+      "text": "Every visit documented. Photos, alerts, summaries. You get everything, in real time, without asking."
+    },
+    "card3": {
+      "title": "Proof, not promises",
+      "text": "No empty claims. You receive proof after each visit. It’s tangible, verifiable, reassuring."
+    },
+    "card4": {
+      "title": "Committed local presence",
+      "text": "We live here. We know every street, every contractor. Zero outsourcing. Just us, involved, 365 days a year."
+    }
+  },
+  "testimonials": {
+    "title": "Already convinced by Solenca",
+    "subtitle": "Over 100 owners and agencies on the Costa Brava have already chosen peace of mind.",
+    "badge": "Tranquilidad 365 🧡",
+    "test1": "Looking forward to November – Solenca will manage my villa in Platja d’Aro like it’s their own. Total peace ahead!",
+    "test2": "Exciting pre-launch for rental agencies like mine. Garden/pool maintenance hassle-free – Solenca will boost our business.",
+    "test3": "Can’t wait for the weekly photo reports. Solenca means peace of mind for our second home – perfect timing for the launch in November."
+  },
+  "cta": {
+    "title": "Solenca handles it all.",
+    "description": "Away? We watch over for you. Regular checks, photo reports, pool and garden care, emergency interventions. From Platja d’Aro, we care for your villa like it’s our own.\n\n🎯 Founding offer: -20% for all pre-orders before November 2025.",
+    "button": "Pre-order now →"
+  },
+  "footer": {
+    "baseline": "Tranquilidad 365 for your home in Spain. Launching November 2025 – special pre-sale offer!",
+    "privateTitle": "For Individuals",
+    "private": {
+      "why": "Why Solenca",
+      "services": "Our Services",
+      "how": "How It Works",
+      "reviews": "Client Reviews",
+      "cta": "I want to pre-order"
+    },
+    "proTitle": "For Professionals",
+    "pro": {
+      "access": "Partner Access",
+      "offer": "B2B Offer",
+      "press": "Press & Media",
+      "contact": "Pro Contact"
+    },
+    "connectTitle": "Stay Connected",
+    "emailPlaceholder": "Your professional email",
+    "rights": "All rights reserved.",
+    "legal": "Legal Notice",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy"
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Your villa protected. All year long.",
+      "description": "Photo reports, instant alerts, weather and digital tracking; stay in control of your second home from France or anywhere else. Solenca is premium peace of mind for discerning owners. Pre-order -20% before November 2025.",
+      "cta": "Pre-order my peace of mind →",
+      "badge": "Already adopted by discerning homeowners and local agencies."
+    },
+    "kpi": {
+      "0": "villas already monitored",
+      "1": "happy clients",
+      "2": "visits completed on time",
+      "3": "until Nov 1st, 2025"
+    },
+    "quote": "We don’t just watch. We inspect, alert, report. You receive visual proof, weather data, clear history. Your property is in good hands. From Platja d’Aro, across the Costa Brava.",
+    "cta": {
+      "title": "Stay serene, wherever you are",
+      "description": "Every week, our teams check your villa: photos, checklist, alerts if needed. You access everything in real time. No more doubts – everything is under control.",
+      "primary": "Pre-order now -20% →",
+      "secondary": "Discover the services"
+    },
+    "cards": {
+      "monthlyReport": "Monthly report",
+      "alert": "Detection alert",
+      "checklist": "Maintenance checklist",
+      "history": "Visit history",
+      "lastVisit": "Last visit"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Solenca takes over. You leave with peace of mind.",
+      "description": "Visits, alerts, reports: your villa stays under control 365 days a year. Photo tracking, local presence, emergencies. All from a clear interface, remotely. Pre-order before November and enjoy -20%.",
+      "cta": "Pre-order -20% →"
+    },
+    "private": {
+      "title": "A service designed for demanding absentees",
+      "description": "We watch, we act, we inform. You receive tangible proof: photos, history, alerts. No more calling a neighbor or hoping for the best.",
+      "cta": "Discover Solenca →",
+      "card1": {
+        "title": "Regular visits",
+        "text": "Interior and exterior check, with a photo report at each visit in Costa Brava."
+      },
+      "card2": {
+        "title": "Emergencies",
+        "text": "Quick intervention in case of issues – peace of mind for absent owners."
+      },
+      "card3": {
+        "title": "Key management",
+        "text": "Secure storage for handover to a relative or local pro."
+      },
+      "card4": {
+        "title": "À la carte options",
+        "text": "Pool, garden, cleaning... activate as needed in Costa Brava."
+      }
+    },
+    "quote": "Solenca was designed as a high-end, simple, and structured standard. It’s the tool I wish I had as a homeowner.",
+    "quoteAuthor": "The Founder",
+    "pro": {
+      "title": "For professionals who want to save time",
+      "description": "Agencies, conciergeries, managers: Solenca works behind the scenes under your name. White label, back-office, field reliability. You keep the clients, we handle the operations.",
+      "cta": "Access pro space →",
+      "card1": {
+        "title": "Full delegated monitoring",
+        "text": "Solenca handles the monitoring of entrusted properties from A to Z in Costa Brava."
+      },
+      "card2": {
+        "title": "Built-in pro tools",
+        "text": "Client tracking + dedicated back-office to manage easily – ideal for rental agencies."
+      },
+      "card3": {
+        "title": "White label",
+        "text": "Offer our services under your name with your pricing – win-win partnership."
+      },
+      "card4": {
+        "title": "Dedicated local team",
+        "text": "Trusted pros to act in your name on the ground in Costa Brava."
+      }
+    }
+  },
+  "subscription": {
+    "hero": {
+      "title": "Your home in Costa Brava. Our priority. 365 days a year.",
+      "description": "Solenca monitors, maintains, and protects your second home automatically. For owners or rental agencies – pre-launch November 2025, reserve early for 20% off!",
+      "cta": "Create my free estimate",
+      "pro": "Are you a pro/rental agency?"
+    }
+  },
+  "catalogue": {
+    "hero": {
+      "title": "À la carte modules",
+      "description": "Add one-off or recurring services to your plan. Garden, pool, cleaning, etc. Each module can be fulfilled within 7 days based on your instructions.",
+      "searchPlaceholder": "Search for a service..."
+    },
+    "filters": {
+      "label": "Filter by category"
+    },
+    "price": "From {{price}}€",
+    "book": "Book this service →",
+    "upsell": "I prefer a regular plan",
+    "cta": {
+      "title": "Need a specific service?",
+      "description": "Solenca supports you with tailored solutions. Fill out our form and we’ll get back to you quickly.",
+      "button": "Make a custom request"
+    },
+    "modal": {
+      "date": "Choose a date",
+      "specs": "Specifications",
+      "details": "Details",
+      "city": "City of intervention",
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "address": "Exact address",
+      "adjustedPrice": "Adjusted total: {{price}}€ incl. VAT",
+      "pay": "Confirm booking →",
+      "cancel": "Cancel",
+      "switchToSub": "Prefer to subscribe to a monthly plan?"
+    }
+  }
+}

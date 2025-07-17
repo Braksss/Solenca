@@ -1,109 +1,420 @@
-/* catalogue.scss */
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap');
 
 .catalogue-page {
-  max-width: 1200px;
+  padding: 0 3rem 8rem;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  background: #fff;
-  color: #333;
+  font-family: 'SF Pro Display', sans-serif;
+  background: #fafafa;
+  color: #1d1d1f;
 }
 
-.catalogue-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ff8200;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1.125rem;
-    color: #555;
-  }
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap: 2rem;
-}
-
-.service-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.catalogue-hero {
+  position: relative;
+  height: 60vh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-  }
-
-  img {
+  margin-bottom: 4rem;
+  .hero-image {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
   }
-}
-
-.card-content {
-  padding: 1.5rem 2rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: #222;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 1rem;
-  }
-
-  .price {
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: #ff8200;
-    margin-bottom: 1rem;
-  }
-
-  .buy-button {
-    background-color: #ff8200;
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 12px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: darken(#ff8200, 8%);
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    .catalogue-title {
+      font-size: clamp(3rem, 6vw, 4rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .catalogue-subtitle {
+      font-size: 1.25rem;
+      color: #ddd;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+    .search-bar {
+      width: 60%;
+      padding: 1rem;
+      border-radius: 30px;
+      border: none;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      text-align: center;
+      background: #fff;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+      &:focus {
+        opacity: 1;
+      }
     }
   }
 }
 
-/* Responsive */
+.catalogue-filters {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  label {
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+  select {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+}
 
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+.catalogue-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  max-width: 380px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .catalogue-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    .catalogue-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  .catalogue-content {
+    padding: 2rem 2.5rem;
+    text-align: left;
+    .catalogue-heading {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .catalogue-description {
+      font-size: 1.1rem;
+      color: #6e6e73;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .catalogue-pricing {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2rem;
+      .catalogue-price {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ff8200;
+      }
+      .catalogue-extra {
+        font-size: 0.95rem;
+        color: #86868b;
+      }
+    }
+    .catalogue-button {
+      background: linear-gradient(135deg, #ff8200, #e67600);
+      color: #fff;
+      border: none;
+      border-radius: 16px;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      width: 100%;
+      &:hover {
+        background: linear-gradient(135deg, #e67600, #d66900);
+      }
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+    .catalogue-upsell {
+      display: block;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #ff8200;
+      text-align: center;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #e67600;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.catalogue-cta {
+  margin-top: 8rem;
+  padding: 4rem 0;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+    color: #6e6e73;
+    margin-bottom: 2rem;
+  }
+  .cta-button {
+    width: auto;
+    padding: 1rem 4rem;
+    background: linear-gradient(135deg, #ff8200, #e67600);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    &:hover {
+      background: linear-gradient(135deg, #e67600, #d66900);
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 900px;
+  width: 95%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'SF Pro Display', sans-serif;
+  color: #1d1d1f;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #000;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 1.25rem 0 0.75rem;
+    color: #6e6e73;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 2rem;
+    flex-grow: 1;
+    .full-width {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    input, select, textarea {
+      padding: 0.9rem 1.2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      background: #fafafa;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      &:focus {
+        border-color: #ff8200;
+        box-shadow: 0 0 0 3px rgba(255, 130, 0, 0.1);
+      }
+    }
+    textarea {
+      height: 70px;
+      resize: none;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ff8200;
+    margin: 1.25rem 0;
+    text-align: center;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  button {
+    background: #ff8200;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    &:hover {
+      background: #e67600;
+    }
+    &:nth-child(2) {
+      background: #f5f5f7;
+      color: #ff8200;
+      &:hover {
+        background: #e0e0e0;
+      }
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #ff8200;
+    }
+  }
+
+  .modal-upsell {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #ff8200;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Datepicker custom
+  .datepicker-wrapper {
+    width: 100%;
+  }
+  .datepicker-custom {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    &:focus {
+      border-color: #ff8200;
+    }
+  }
+  .react-datepicker {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'SF Pro Display';
+  }
+  .react-datepicker__day--selected {
+    background: #ff8200;
+    color: #fff;
+  }
+  .react-datepicker__day--disabled {
+    color: #ccc;
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .services-grid {
+  .catalogue-page {
+    padding: 0 1.5rem 6rem;
+  }
+  .catalogue-hero {
+    height: 40vh;
+    .hero-overlay .search-bar {
+      width: 90%;
+    }
+  }
+  .catalogue-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2.5rem;
+  }
+  .catalogue-card {
+    max-width: 100%;
+  }
+  .modal-content {
+    padding: 1.75rem;
+    max-height: 90vh;
+    form {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .form-field textarea {
+      height: 60px;
+    }
   }
 }

@@ -177,24 +177,8 @@ $card-radius: 20px;
         margin-bottom: 1rem;
       }
 
-      img {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
-        margin: 0 auto;
-      }
-
-      &.pro::after {
-        content: "PRO";
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        background: #000;
-        color: #fff;
-        font-size: 10px;
-        font-weight: bold;
-        padding: 4px 8px;
-        border-radius: 12px;
+      svg { // For Feather icons
+        margin: 0 auto 1rem;
       }
     }
   }
@@ -317,47 +301,21 @@ $card-radius: 20px;
         transition: all 0.3s ease;
         margin-top: 0;
         background: transparent;
-      }
+        padding: 0 1rem;
 
-      &.active .faq-answer {
-        max-height: 300px;
-        opacity: 1;
-        margin-top: 0.75rem;
-        background: $grey-100;
-        padding: 1rem;
-        border-radius: 10px;
-        font-size: 0.95rem;
-        color: #444;
-        line-height: 1.6;
+        &.visible {
+          max-height: 300px;
+          opacity: 1;
+          margin-top: 0.75rem;
+          background: $grey-100;
+          padding: 1rem;
+          border-radius: 10px;
+          font-size: 0.95rem;
+          color: #444;
+          line-height: 1.6;
+        }
       }
     }
-    .faq-answer {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  padding: 0 1rem;
-  background: transparent;
-  transition: all 0.3s ease;
-
-  &.visible {
-    max-height: 300px;
-    opacity: 1;
-    margin-top: 0.75rem;
-    background: $grey-100;
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.6;
-  }
-}
-
-.faq-toggle.open {
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
-}
-
   }
 
   @media (max-width: 576px) {
@@ -367,13 +325,11 @@ $card-radius: 20px;
       font-size: 0.95rem;
     }
 
-    .faq-answer {
+    .faq-answer.visible {
       font-size: 0.9rem;
     }
   }
 }
-
-
 
 .about-bridge {
   padding: 4rem 2rem;
@@ -404,12 +360,12 @@ $card-radius: 20px;
     position: absolute;
     top: 10px;
     right: 20px;
-    background: $primary;
-    color: white;
-    padding: 8px 18px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 24px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
     z-index: 10;
     font-family: "Montserrat", sans-serif;
   }

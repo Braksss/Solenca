@@ -1,5 +1,5 @@
-// apps/frontend/src/components/landing/About.tsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import '../../styles/landing/about.scss';
 import Icon1 from '../../assets/icons/reactivite.png';
 import Icon2 from '../../assets/icons/suivi.png';
@@ -7,42 +7,39 @@ import Icon3 from '../../assets/icons/securite.png';
 import Icon4 from '../../assets/icons/experts.png';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="about-section">
       <div className="about-top">
         <div className="about-top__left">
-          <h2>
-            Votre maison est loin ? <br />
-            Nous, on est là.
-          </h2>
+          <h2>{t('about.title')}</h2>
         </div>
         <div className="about-top__right">
-          <p>
-            Une présence humaine, des preuves concrètes, un suivi digital. La tranquillité, 365 jours par an.
-          </p>
-          <button className="about-btn">Découvrir la tranquillité 365 →</button>
+          <p>{t('about.description')}</p>
+          <button className="about-btn">{t('about.cta')}</button>
         </div>
       </div>
 
       <div className="about-cards">
         <div className="about-card">
-          <h3>Interventions immédiates</h3>
-          <p>Sur place, sans délai. On agit comme si c’était chez nous.</p>
+          <h3>{t('about.card1.title')}</h3>
+          <p>{t('about.card1.text')}</p>
           <img src={Icon1} alt="Réactivité garantie" />
         </div>
         <div className="about-card">
-          <h3>Suivi digital en temps réel</h3>
-          <p>Rapports, photos, alertes. Tout est là, en un clic.</p>
+          <h3>{t('about.card2.title')}</h3>
+          <p>{t('about.card2.text')}</p>
           <img src={Icon2} alt="Suivi digitalisé" />
         </div>
         <div className="about-card">
-          <h3>Des preuves, pas des promesses</h3>
-          <p>Vous voyez tout, à chaque passage.</p>
+          <h3>{t('about.card3.title')}</h3>
+          <p>{t('about.card3.text')}</p>
           <img src={Icon3} alt="Contrôle & sécurité" />
         </div>
         <div className="about-card">
-          <h3>Présence locale engagée</h3>
-          <p>On vit ici. Pas de sous-traitance.</p>
+          <h3>{t('about.card4.title')}</h3>
+          <p>{t('about.card4.text')}</p>
           <img src={Icon4} alt="Experts locaux" />
         </div>
       </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/pages/servicespage.scss';
+import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 
 import heroImg from '../assets/hero.png';
 import {
@@ -14,35 +16,35 @@ import {
 const faqData = [
   {
     question: "Puis-je souscrire depuis l’étranger ?",
-    answer: "Absolument ! Solenca est conçu pour une gestion 100 % à distance via web et mobile.",
+    answer: "Absolument ! Solenca est conçu pour une gestion 100 % à distance via web et mobile – parfait pour proprios en France ou ailleurs, pré-lancement novembre 2025.",
   },
   {
     question: "Sous quel délai intervenez-vous ?",
-    answer: "Nous intervenons sous 24 h (4 h en cas d’urgence signalée).",
+    answer: "Nous intervenons sous 24 h (4 h en cas d’urgence). Dès lancement novembre, sérénité garantie en Costa Brava.",
   },
   {
     question: "Comment suis-je informé après une visite ?",
-    answer: "Vous recevez un rapport photo horodaté, disponible dans votre espace client sécurisé.",
+    answer: "Vous recevez un rapport photo horodaté dans votre espace – clair et simple pour proprios ou agences loc.",
   },
   {
     question: "Que se passe-t-il en cas d’anomalie détectée ?",
-    answer: "Vous recevez une alerte instantanée. Nous vous proposons ensuite une solution adaptée ou une mise en relation avec un professionnel local.",
+    answer: "Alerte instantanée, puis solution adaptée ou pro local. Pré-réservez pour early accès novembre.",
   },
   {
     question: "Puis-je personnaliser le contenu de mes visites ?",
-    answer: "Oui, chaque client peut définir ses besoins spécifiques, ou activer des options à la carte.",
+    answer: "Oui, options à la carte (jardin, piscine...) – personnalisé pour votre bien en Costa Brava.",
   },
   {
     question: "Travaillez-vous avec les agences immobilières ?",
-    answer: "Oui. Nous proposons une offre professionnelle dédiée en marque blanche pour les agences, syndics et conciergeries.",
+    answer: "Oui, offre dédiée en marque blanche pour agences loc – gestion hors-saison sans effort, lancement novembre.",
   },
   {
     question: "Mon logement est-il éligible à Solenca ?",
-    answer: "Nous couvrons les résidences secondaires sur la Costa Brava (Platja d’Aro, S’Agaró...). Chaque bien est validé individuellement.",
+    answer: "Nous couvrons résidences secondaires en Costa Brava – validation individuelle, pré-lancement ouvert.",
   },
   {
     question: "Puis-je arrêter ou suspendre mon abonnement ?",
-    answer: "Oui, nos offres sont sans engagement long terme. Vous êtes libre de modifier ou suspendre selon vos besoins.",
+    answer: "Oui, sans engagement long – flexible pour proprios ou agences, dès novembre 2025.",
   }
 ];
 
@@ -56,7 +58,7 @@ const ServicesFAQ = () => {
     <section className="services-faq">
       <h2>Questions fréquentes</h2>
       <p className="faq-intro">
-        Vous hésitez ? Voici les réponses aux questions les plus courantes.
+        Vous hésitez ? Voici les réponses aux questions les plus courantes – pré-lancement novembre 2025, réservez early pour 20% off !
       </p>
 
       <div className="faq-list">
@@ -79,126 +81,131 @@ const ServicesFAQ = () => {
   );
 };
 
-const ServicesPage: React.FC = () => (
-  <>
-    <Navbar />
+const ServicesPage = () => {
+  const { t } = useTranslation();
 
-    <main className="services-page">
-      {/* HERO */}
-      <section className="services-hero">
-        <div className="hero-content">
-          <h1>Tranquillité totale, 365 jours par an</h1>
-          <p>
-            Avec Solenca, votre résidence secondaire est entre de bonnes mains. Visites régulières, alertes instantanées,
-            rapports photo : tout est automatisé, vous gardez le contrôle où que vous soyez.
-          </p>
-          <div className="cta-row">
-            <button className="primary-btn">Obtenir votre devis en 1 minute →</button>
-          </div>
-        </div>
+  return (
+    <>
+      <Helmet>
+        <title>Solenca : Services - Gestion Biens Secondaires Costa Brava</title>
+        <meta name="description" content="Découvrez nos services Solenca : visites régulières, alertes, rapports photo pour sérénité totale en Costa Brava. Pré-lancement novembre 2025, réservez early pour 20% off !" />
+        {/* Ajoute keywords, OG */}
+      </Helmet>
+      <Navbar />
 
-        <div className="hero-visual">
-          <div className="hero-image">
-            <img src={heroImg} alt="Aperçu application Solenca" />
-          </div>
-        </div>
-      </section>
-
-      <section className="mobile-swap">
-        {/* BLOC PARTICULIERS */}
-        <section className="about-section features-block">
-          <div className="about-top">
-            <div className="about-top__left">
-              <h2>Des services pour votre sérénité</h2>
-            </div>
-            <div className="about-top__right">
-              <p>
-                Inspections, alertes, rapports : Solenca simplifie la gestion de votre résidence. Tout est centralisé dans votre espace client.
-              </p>
-              <button className="about-btn">Demander un devis →</button>
+      <main className="services-page">
+        {/* HERO */}
+        <section className="services-hero">
+          <div className="hero-content">
+            <h1>{t('services.hero.title')}</h1>
+            <p>
+              {t('services.hero.description')}
+            </p>
+            <div className="cta-row">
+              <button className="primary-btn">{t('services.hero.cta')}</button>
             </div>
           </div>
-          <div className="about-cards">
-            <div className="about-card">
-              <Calendar size={40} color="#ff8700" />
-              <h3>Visites régulières</h3>
-              <p>Contrôle intérieur et extérieur, avec rapport photo à chaque passage.</p>
-            </div>
-            <div className="about-card">
-              <AlertTriangle size={40} color="#ff8700" />
-              <h3>Urgences</h3>
-              <p>Intervention rapide en cas de problème signalé.</p>
-            </div>
-            <div className="about-card">
-              <Users size={40} color="#ff8700" />
-              <h3>Gestion des clefs</h3>
-              <p>Stockage sécurisé pour remise à un proche ou un pro.</p>
-            </div>
-            <div className="about-card">
-              <Camera size={40} color="#ff8700" />
-              <h3>Options à la carte</h3>
-              <p>Piscine, jardin, ménage... activez selon vos besoins.</p>
+
+          <div className="hero-visual">
+            <div className="hero-image">
+              <img src={heroImg} alt="Aperçu application Solenca" />
             </div>
           </div>
         </section>
 
-        {/* QUOTE */}
-        <section className="about-quote">
-          <p>
-            “Nous avons conçu Solenca pour créer un nouveau standard dans la gestion de résidences secondaires.
-            C’est aujourd’hui un outil structurant pour particuliers comme professionnels.”<br />
-            <span className="highlight">— Le fondateur de Solenca</span>
-          </p>
+        <section className="mobile-swap">
+          {/* BLOC PARTICULIERS */}
+          <section className="about-section features-block">
+            <div className="about-top">
+              <div className="about-top__left">
+                <h2>{t('services.private.title')}</h2>
+              </div>
+              <div className="about-top__right">
+                <p>
+                  {t('services.private.description')}
+                </p>
+                <button className="about-btn">{t('services.private.cta')}</button>
+              </div>
+            </div>
+            <div className="about-cards">
+              <div className="about-card">
+                <Calendar size={40} color="#ff8700" />
+                <h3>{t('services.private.card1.title')}</h3>
+                <p>{t('services.private.card1.text')}</p>
+              </div>
+              <div className="about-card">
+                <AlertTriangle size={40} color="#ff8700" />
+                <h3>{t('services.private.card2.title')}</h3>
+                <p>{t('services.private.card2.text')}</p>
+              </div>
+              <div className="about-card">
+                <Users size={40} color="#ff8700" />
+                <h3>{t('services.private.card3.title')}</h3>
+                <p>{t('services.private.card3.text')}</p>
+              </div>
+              <div className="about-card">
+                <Camera size={40} color="#ff8700" />
+                <h3>{t('services.private.card4.title')}</h3>
+                <p>{t('services.private.card4.text')}</p>
+              </div>
+            </div>
+          </section>
+
+          {/* QUOTE */}
+          <section className="about-quote">
+            <p>
+              “{t('services.quote')}”<br />
+              <span className="highlight">— {t('services.quoteAuthor')}</span>
+            </p>
+          </section>
+
+          {/* BLOC PRO */}
+          <section className="about-section features-block">
+            <div className="pro-badge">PRO</div>
+            <div className="about-top">
+              <div className="about-top__left">
+                <h2>{t('services.pro.title')}</h2>
+              </div>
+              <div className="about-top__right">
+                <p>
+                  {t('services.pro.description')}
+                </p>
+                <button className="about-btn">{t('services.pro.cta')}</button>
+              </div>
+            </div>
+
+            <div className="about-cards">
+              <div className="about-card">
+                <Calendar size={40} color="#ff8700" />
+                <h3>{t('services.pro.card1.title')}</h3>
+                <p>{t('services.pro.card1.text')}</p>
+              </div>
+              <div className="about-card">
+                <Camera size={40} color="#ff8700" />
+                <h3>{t('services.pro.card2.title')}</h3>
+                <p>{t('services.pro.card2.text')}</p>
+              </div>
+              <div className="about-card">
+                <AlertTriangle size={40} color="#ff8700" />
+                <h3>{t('services.pro.card3.title')}</h3>
+                <p>{t('services.pro.card3.text')}</p>
+              </div>
+              <div className="about-card">
+                <Users size={40} color="#ff8700" />
+                <h3>{t('services.pro.card4.title')}</h3>
+                <p>{t('services.pro.card4.text')}</p>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <ServicesFAQ />
         </section>
+      </main>
 
-        {/* BLOC PRO */}
-        <section className="about-section features-block">
-          <div className="pro-badge">PRO</div>
-          <div className="about-top">
-            <div className="about-top__left">
-              <h2>Un partenaire opérationnel<br />pour les professionnels</h2>
-            </div>
-            <div className="about-top__right">
-              <p>
-                Vous gérez des biens à distance ou pour le compte de clients ?
-                Solenca vous apporte une solution prête à l’emploi, en marque blanche,
-                avec suivi, réactivité et interface dédiée.
-              </p>
-              <button className="about-btn">Accéder à l’offre pro →</button>
-            </div>
-          </div>
-
-          <div className="about-cards">
-            <div className="about-card">
-              <Calendar size={40} color="#ff8700" />
-              <h3>Suivi complet délégué</h3>
-              <p>Solenca prend en charge le suivi des logements confiés, de A à Z.</p>
-            </div>
-            <div className="about-card">
-              <Camera size={40} color="#ff8700" />
-              <h3>Outils pros intégrés</h3>
-              <p>Suivi client + back-office dédié aux pros pour tout piloter simplement.</p>
-            </div>
-            <div className="about-card">
-              <AlertTriangle size={40} color="#ff8700" />
-              <h3>Marque blanche</h3>
-              <p>Proposez nos services sous votre nom avec vos propres tarifs.</p>
-            </div>
-            <div className="about-card">
-              <Users size={40} color="#ff8700" />
-              <h3>Équipe locale dédiée</h3>
-              <p>Des pros de confiance pour intervenir en votre nom sur le terrain.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <ServicesFAQ />
-      </section>
-    </main>
-
-    <Footer />
-  </>
-);
+      <Footer />
+    </>
+  );
+};
 
 export default ServicesPage;
