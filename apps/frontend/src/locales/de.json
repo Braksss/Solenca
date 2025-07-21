@@ -70,5 +70,124 @@
     "legal": "Impressum",
     "terms": "AGB",
     "privacy": "Datenschutz"
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Ihre Villa. Geschützt. Das ganze Jahr.",
+      "description": "Fotoberichte, Sofortwarnungen, Wetterdaten und digitales Monitoring – behalten Sie die Kontrolle über Ihr Ferienhaus, egal wo Sie sind. Solenca steht für Premium-Sicherheit für anspruchsvolle Eigentümer. Jetzt vorbestellen und -20 % sichern – bis November 2025.",
+      "cta": "Meine Ruhe vorbestellen →",
+      "badge": "Bereits gewählt von anspruchsvollen Eigentümern und lokalen Agenturen."
+    },
+    "kpi": {
+      "0": "Villen bereits unter Aufsicht",
+      "1": "zufriedene Kunden",
+      "2": "Besuche pünktlich durchgeführt",
+      "3": "bis zum 1. Nov. 2025"
+    },
+    "quote": "Wir überwachen nicht nur. Wir inspizieren, melden, dokumentieren. Sie erhalten visuelle Beweise, Wetterdaten, ein klares Protokoll. Ihr Zuhause ist in guten Händen – aus Platja d’Aro, für die ganze Costa Brava.",
+    "cta": {
+      "title": "Bleiben Sie entspannt – egal wo Sie sind",
+      "description": "Wöchentlich kontrollieren unsere Teams Ihre Villa: Fotos, Checklisten, Warnungen bei Bedarf. Alles in Echtzeit. Keine Zweifel mehr, alles ist unter Kontrolle.",
+      "primary": "Jetzt vorbestellen -20% →",
+      "secondary": "Leistungen entdecken"
+    },
+    "cards": {
+      "monthlyReport": "Monatsbericht",
+      "alert": "Warnmeldung",
+      "checklist": "Wartungscheckliste",
+      "history": "Besuchsverlauf",
+      "lastVisit": "Letzter Besuch"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Solenca übernimmt. Sie reisen entspannt ab.",
+      "description": "Besuche, Warnungen, Berichte – Ihre Villa bleibt 365 Tage im Jahr unter Kontrolle. Fotodokumentation, lokale Präsenz, Notfallreaktion – alles über ein klares Dashboard, auch aus der Ferne. Vorbestellen und -20 % sichern.",
+      "cta": "Jetzt vorbestellen -20% →"
+    },
+    "private": {
+      "title": "Ein Service für anspruchsvolle Abwesende",
+      "description": "Wir kümmern uns, handeln und informieren. Sie erhalten konkrete Beweise: Fotos, Verlauf, Warnungen. Kein Nachbaranruf mehr nötig.",
+      "cta": "Solenca entdecken →",
+      "card1": {
+        "title": "Regelmäßige Besuche",
+        "text": "Innen- und Außenkontrolle mit Fotobericht bei jedem Besuch in der Costa Brava."
+      },
+      "card2": {
+        "title": "Notfälle",
+        "text": "Schnelle Reaktion bei Problemen – Ruhe für abwesende Eigentümer."
+      },
+      "card3": {
+        "title": "Schlüsselverwaltung",
+        "text": "Sichere Aufbewahrung zur Übergabe an Bekannte oder lokale Profis."
+      },
+      "card4": {
+        "title": "Optionale Zusatzmodule",
+        "text": "Pool, Garten, Reinigung... individuell aktivierbar nach Ihren Bedürfnissen."
+      }
+    },
+    "quote": "Solenca ist ein hochwertiger, strukturierter Premium-Standard. Das Tool, das ich mir selbst als Eigentümer gewünscht hätte.",
+    "quoteAuthor": "Der Gründer",
+    "pro": {
+      "title": "Für Profis, die Zeit sparen wollen",
+      "description": "Agenturen, Concierge-Services, Verwalter: Solenca agiert im Hintergrund in Ihrem Namen. White Label, Backoffice, zuverlässige Ausführung. Sie bringen die Kunden, wir liefern den Service.",
+      "cta": "Zum Profi-Bereich →",
+      "card1": {
+        "title": "Vollständige Ausführung",
+        "text": "Solenca übernimmt das komplette Monitoring für Ihre Objekte in der Costa Brava."
+      },
+      "card2": {
+        "title": "Integrierte Profi-Tools",
+        "text": "Kundenverfolgung + dediziertes Backoffice – ideal für Vermietagenturen."
+      },
+      "card3": {
+        "title": "White Label möglich",
+        "text": "Bieten Sie unsere Leistungen unter Ihrem Namen und Preis an – Win-Win-Partnerschaft."
+      },
+      "card4": {
+        "title": "Lokales Einsatzteam",
+        "text": "Vertrauensvolle Profis handeln in Ihrem Namen direkt vor Ort in der Costa Brava."
+      }
+    }
+  },
+  "subscription": {
+    "hero": {
+      "title": "Ihr Haus an der Costa Brava. Unsere Priorität. 365 Tage im Jahr.",
+      "description": "Solenca überwacht, pflegt und schützt Ihre Zweitresidenz automatisch. Für Eigentümer und Vermietagenturen – Vorstart im November 2025. Früh buchen = 20% Rabatt!",
+      "cta": "Mein kostenloses Angebot erstellen",
+      "pro": "Sind Sie Profi/Vermietagentur?"
+    }
+  },
+  "catalogue": {
+    "hero": {
+      "title": "Zusatzmodule nach Maß",
+      "description": "Ergänzen Sie Ihr Abo um individuelle Leistungen. Garten, Pool, Reinigung… Alles binnen 7 Tagen nach Ihren Vorgaben.",
+      "searchPlaceholder": "Dienstleistung suchen..."
+    },
+    "filters": {
+      "label": "Nach Kategorie filtern"
+    },
+    "price": "Ab {{price}}€",
+    "book": "Diesen Service buchen →",
+    "upsell": "Lieber ein regelmäßiges Abo",
+    "cta": {
+      "title": "Benötigen Sie eine individuelle Leistung?",
+      "description": "Solenca bietet maßgeschneiderte Lösungen. Füllen Sie unser Formular aus, wir melden uns kurzfristig.",
+      "button": "Personalisierte Anfrage stellen"
+    },
+    "modal": {
+      "date": "Datum auswählen",
+      "specs": "Spezifikationen",
+      "details": "Details",
+      "city": "Einsatzort",
+      "name": "Vor- und Nachname",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "address": "Genaue Adresse",
+      "adjustedPrice": "Gesamtpreis: {{price}}€ inkl. MwSt.",
+      "pay": "Reservierung bestätigen →",
+      "cancel": "Abbrechen",
+      "switchToSub": "Lieber ein Monatsabo?"
+    }
   }
 }

@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom'; // Ajoute pour navigation
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
-import SubscriptionModal from '../components/abonnement/SubscriptionModal';
-import SubscriptionModalPro from '../components/abonnement/SubscriptionModalPro';
-import '../styles/abonnement/abonnement.scss';
+import '../styles/pages/abonnement.scss';
 import { Helmet } from 'react-helmet';
 
 import heroImg from '../assets/villa-solenca.jpg';
 
 const AbonnementPage = () => {
   const { t } = useTranslation();
-  const [showModal, setShowModal] = useState(false);
-  const [isPro, setIsPro] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = (pro: boolean) => {
-    setIsPro(pro);
-    setShowModal(true);
+    navigate(pro ? '/conversion-pro' : '/conversion');
   };
 
   return (
@@ -46,14 +43,6 @@ const AbonnementPage = () => {
           <img src={heroImg} alt="Villa méditerranéenne en Costa Brava" />
         </div>
       </section>
-
-      {showModal && (
-        isPro ? (
-          <SubscriptionModalPro onClose={() => setShowModal(false)} />
-        ) : (
-          <SubscriptionModal onClose={() => setShowModal(false)} />
-        )
-      )}
 
       <Footer />
     </>

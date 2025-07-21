@@ -9,46 +9,45 @@
     "club": "Solenca Club"
   },
   "hero": {
-    "headline": "Votre maison, comme si c’était la nôtre.",
-    "description": "365 jours de sérénité, même à distance. Visites régulières, alertes en temps réel, rapports photo, clés sécurisées… Solenca s’occupe de tout, vous ne gérez plus rien.",
-    "cta": "Réservez votre tranquillité →"
+    "headline": "Vous partez ? On veille.",
+    "description": "Solenca protège votre maison sur la Costa Brava comme si vous y étiez. Visites hebdomadaires, alertes immédiates, rapports visuels, gestion piscine et jardin. Rien à faire, tout est sous contrôle.",
+    "cta": "Précommandez -20% avant le lancement →"
   },
-  "about": {
-  "title": "Solenca veille, chaque jour.",
-  "description": "Présence humaine locale, rapports visuels après chaque passage, alertes en temps réel. Plus qu’un service : une tranquillité de l’esprit pour propriétaires de la Costa Brava.",
-  "cta": "Précommander maintenant -20% →",
+"about": {
+  "title": "Solenca veille sur votre villa, 365 jours par an.",
+  "description": "Solenca est né d’un besoin simple : pouvoir s’absenter sans s’inquiéter. Depuis Platja d’Aro, nous protégeons votre résidence secondaire avec une présence humaine, des preuves visuelles, et une réactivité totale. Profitez de -20% avant le lancement officiel.",
+  "cta": "Obtenez votre devis gratuit",
   "card1": {
-    "title": "Interventions immédiates",
-    "text": "Présence sur place sans délai. Pour nous, c’est personnel. Jardin, piscine, intérieur – on agit vite, comme si c’était chez nous."
+    "title": "Présence locale à Platja d’Aro",
+    "text": "Implantés sur la Costa Brava, nous connaissons chaque villa, chaque artisan. Pas de sous-traitance, juste une équipe dédiée qui agit comme chez elle."
   },
   "card2": {
-    "title": "Suivi en temps réel",
-    "text": "Chaque passage documenté. Photos, alertes, synthèse. Vous avez tout, en temps réel, sans avoir besoin de demander."
+    "title": "Rapports visuels instantanés",
+    "text": "Chaque visite est documentée : photos horodatées, alertes en temps réel. Vous savez tout, où que vous soyez, sans lever le petit doigt."
   },
   "card3": {
-    "title": "Des preuves, pas des promesses",
-    "text": "Aucune promesse creuse. Vous recevez la preuve à chaque passage. C’est concret, vérifiable, rassurant."
+    "title": "Interventions sans délai",
+    "text": "Problème détecté ? Nous agissons vite – jardin, piscine, intérieur – avec la rigueur et l’efficacité d’un service premium."
   },
   "card4": {
-    "title": "Présence locale engagée",
-    "text": "On vit ici. On connaît chaque rue, chaque artisan. Zéro sous-traitance. Juste nous, impliqués, 365 jours par an."
+    "title": "Tranquilidad 365",
+    "text": "Votre villa protégée toute l’année, comme si vous y étiez. Un service sur-mesure, pensé par des propriétaires pour des propriétaires."
+  },
+  "testimonials": {
+    "title": "Prêts à rejoindre Solenca",
+    "subtitle": "Propriétaires et agences sur la Costa Brava attendent avec impatience notre lancement officiel le 1er novembre 2025.",
+    "test1": "J’ai pré-réservé pour ma villa à Platja d’Aro. Solenca promet une gestion sans stress, et l’offre à -20% est imbattable !",
+    "test2": "En tant qu’agence immobilière, Solenca va simplifier notre gestion locative. Hâte de voir les rapports photo en action dès novembre !",
+    "test3": "Français expatrié, je cherchais une solution fiable pour ma maison à Begur. Solenca est la réponse parfaite, vivement le lancement !"
   }
 },
-"testimonials": {
-  "title": "Déjà convaincus par Solenca",
-  "subtitle": "Plus de 100 propriétaires et agences sur la Costa Brava ont déjà choisi la tranquillité.",
-  "badge": "Tranquilidad 365 🧡",
-  "test1": "J'attends novembre avec impatience – Solenca va gérer ma villa à Platja d'Aro comme si c'était la leur. Sérénité totale en vue !",
-  "test2": "Pré-lancement excitant pour agences loc comme la mienne. Entretien jardin/piscine sans souci – Solenca va booster notre business.",
-  "test3": "On a hâte pour les rapports photo hebdo. Solenca, c'est la paix d'esprit pour notre bien secondaire – lancement novembre parfait timing."
-},
 "cta": {
-  "title": "Solenca s’occupe de tout.",
-  "description": "Absents ? Nous veillons à votre place. Contrôles réguliers, rapports photo, gestion piscine et jardin, interventions d’urgence. Depuis Platja d’Aro, on s’occupe de votre villa comme si c’était la nôtre.\n\n🎯 Offre fondatrice : -20% pour toute précommande avant novembre 2025.",
+  "title": "Ne vous inquiétez plus pour votre maison.",
+  "description": "Vous partez, on reste. Solenca effectue les vérifications, gère les imprévus, et vous envoie des preuves claires. Depuis Platja d’Aro, nous sommes les yeux et les bras de votre villa.",
   "button": "Précommandez maintenant →"
 },
-"footer": {
-  "baseline": "Tranquilidad 365 pour votre maison en Espagne. Lancement novembre 2025 – offre spéciale prévente !",
+  "footer": {
+  "baseline": "Votre tranquillité sur la Costa Brava commence ici. Lancement novembre 2025 – précommandez -20%.",
   "privateTitle": "Pour les particuliers",
   "private": {
     "why": "Pourquoi Solenca",
@@ -69,12 +68,20 @@
   "rights": "Tous droits réservés.",
   "legal": "Mentions légales",
   "terms": "CGV",
-  "privacy": "Confidentialité"
-},
+    "privacy": "Confidentialité"
+  },
+  "testimonials": {
+    "title": "Ils ont précommandé",
+    "subtitle": "En attendant le lancement, ils témoignent.",
+    "badge": "Précommandes ouvertes jusqu’au 1er novembre",
+    "test1": "Solenca m’a été recommandé par un ami. J’ai précommandé pour ma maison à Calonge. Tout est clair, professionnel, et bien expliqué. Il me tarde de tester les rapports dès le lancement.",
+    "test2": "J’ai réservé dès l’ouverture des précommandes. Le concept est rassurant, surtout quand on vit à distance. Je sens qu’on va enfin pouvoir souffler.",
+    "test3": "Le positionnement m’a convaincu : humain, structuré, sérieux. J’ai hâte que ça commence pour ne plus dépendre des voisins ou artisans hasardeux."
+  },
 "aboutPage": {
   "hero": {
     "title": "Votre villa protégée. Toute l’année.",
-    "description": "Rapports photo, alertes immédiates, météo et suivi digital ; restez maître de votre maison secondaire depuis la France ou ailleurs. Solenca, c’est la tranquillité premium pour propriétaires exigeants. Précommandez -20% avant novembre 2025.",
+    "description": "Rapports photo, alertes immédiates, météo et suivi digital ; restez maître de votre maison secondaire depuis la France ou ailleurs. Solenca, c’est la tranquillité premium pour propriétaires exigeants. ",
     "cta": "Précommander ma tranquillité →",
     "badge": "Déjà adopté par des propriétaires exigeants et des agences locales."
   },
@@ -188,6 +195,77 @@
     "pay": "Valider la réservation →",
     "cancel": "Annuler",
     "switchToSub": "Plutôt souscrire un abonnement mensuel ?"
+  }
+},
+"conversion": {
+  "metaTitle": "Obtenez votre devis Solenca",
+  "metaDescription": "Un devis personnalisé en 2 minutes. Tranquillité 365 sur la Costa Brava, avec -20% en précommande.",
+  "headline": "Votre tranquillité commence ici.",
+  "description": "Obtenez un devis clair et personnalisé pour l’entretien de votre maison secondaire.",
+  "promo": " -20% pour toute précommande avant le 1er novembre.",
+  "faq": "Voir la FAQ",
+  "back": "Retour",
+
+  "step1": {
+    "title": "Informations sur votre bien",
+    "firstname": "Prénom",
+    "lastname": "Nom",
+    "email": "Adresse email",
+    "street": "Adresse (rue)",
+    "zip": "Code postal",
+    "city": "Ville",
+    "houseSurface": "Surface de la maison (m²)",
+    "gardenSurface": "Surface du jardin (m²)",
+    "hasPool": "Piscine présente ?",
+    "poolSize": "Surface de la piscine (m²)",
+    "next": "Suivant"
+  },
+
+  "step2": {
+    "title": "Modules complémentaires",
+    "quote": "Générer le devis"
+  },
+
+  "step3": {
+    "title": "Génération du devis",
+    "description": "Nous analysons les données pour vous proposer l'offre idéale..."
+  },
+
+  "step4": {
+    "quoteNumber": "Devis N° {{number}}",
+    "client": "Client",
+    "description": "Prestation",
+    "unitPrice": "Prix unitaire",
+    "quantity": "Quantité",
+    "totalHT": "Total HT",
+    "base": "Tranquilidad 365 (forfait de base)",
+    "addonDiscount": "Remise modules complémentaires",
+    "subtotal": "Sous-total",
+    "vat": "TVA (21%)",
+    "total": "Total TTC",
+    "paymentInfo": "Informations de paiement",
+    "bankTransfer": "Paiement par virement bancaire",
+    "account": "Compte : 0123 4567 8901",
+    "date": "Date",
+    "signature": "Signature",
+    "validity": "Ce devis est valable 1 mois à compter de la date d’émission.",
+    "pay": "Confirmer et payer",
+    "pdf": "Télécharger le PDF"
+  },
+
+  "addon": {
+    "garden": "Entretien jardin",
+    "gardenInfo": "Tonte, arrosage, taille… jardin impeccable sans effort.",
+    "pool": "Entretien piscine",
+    "poolInfo": "Nettoyage, équilibre de l’eau, adapté à la taille.",
+    "house": "Gestion maison",
+    "houseInfo": "Ménage + maintenance, maison toujours prête.",
+    "rental": "Gestion locative",
+    "rentalInfo": "Check-in/out, coordination locataires, gestion planning.",
+    "arrival": "Préparation arrivée",
+    "arrivalInfo": "Courses, lits prêts, ambiance accueillante.",
+    "alarm": "Intégration alarme",
+    "alarmInfo": "Connexion système alarme, alertes temps réel."
   }
 }
 }

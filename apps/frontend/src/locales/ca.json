@@ -70,5 +70,124 @@
     "legal": "Avís legal",
     "terms": "Condicions generals",
     "privacy": "Privacitat"
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "La teva vila protegida. Tot l’any.",
+      "description": "Informes fotogràfics, alertes immediates, clima i seguiment digital; controla la teva casa secundària des de França o des d’on siguis. Solenca és la tranquil·litat premium per a propietaris exigents. Precomanda -20% abans de novembre 2025.",
+      "cta": "Precomanda la meva tranquil·litat →",
+      "badge": "Ja adoptat per propietaris exigents i agències locals."
+    },
+    "kpi": {
+      "0": "viles ja sota vigilància",
+      "1": "clients satisfets",
+      "2": "visites realitzades a temps",
+      "3": "fins a l’1 de nov. 2025"
+    },
+    "quote": "no ens limitem a vigilar. Inspeccionem, alertem, informem. Reps proves visuals, informació meteorològica, un historial clar. El teu bé està en bones mans. Des de Platja d’Aro, per a tota la Costa Brava.",
+    "cta": {
+      "title": "Estigues tranquil, siguis on siguis",
+      "description": "Cada setmana, els nostres equips comproven la teva vila: fotos, checklist, alertes si cal. Hi accedeixes tot en temps real. No cal dubtar, tot està sota control.",
+      "primary": "Precomanda ara -20% →",
+      "secondary": "Descobreix les prestacions"
+    },
+    "cards": {
+      "monthlyReport": "Informe mensual",
+      "alert": "Alerta de detecció",
+      "checklist": "Checklist de manteniment",
+      "history": "Historial de visites",
+      "lastVisit": "Darrera visita"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Solenca pren el relleu. Tu marxes tranquil.",
+      "description": "Visites, alertes, informes: la teva vila sota control tot l’any. Seguiment fotogràfic, presència local, urgències. Tot des d’una interfície clara, a distància. Precomanda abans de novembre i gaudeix d’un -20%.",
+      "cta": "Precomanda -20% →"
+    },
+    "private": {
+      "title": "Un servei pensat per als absents exigents",
+      "description": "Vetllem, actuem, informem. Reps proves concretes: fotos, historial, alertes. No cal molestar veïns o esperar el millor.",
+      "cta": "Descobreix Solenca →",
+      "card1": {
+        "title": "Visites regulars",
+        "text": "Control interior i exterior amb informe fotogràfic a cada pas a la Costa Brava."
+      },
+      "card2": {
+        "title": "Urgències",
+        "text": "Intervenció ràpida si hi ha cap problema – tranquil·litat per a absents."
+      },
+      "card3": {
+        "title": "Gestió de claus",
+        "text": "Emmagatzematge segur per a familiars o professionals locals."
+      },
+      "card4": {
+        "title": "Opcions a mida",
+        "text": "Piscina, jardí, neteja... activa segons les teves necessitats."
+      }
+    },
+    "quote": "Solenca ha estat pensat com un estàndard premium, senzill i estructurat. És l’eina que hauria volgut trobar com a propietari.",
+    "quoteAuthor": "El fundador",
+    "pro": {
+      "title": "Per a professionals que volen estalviar temps",
+      "description": "Agències, consergeries, gestors: Solenca actua entre bambolines amb el teu nom. Marca blanca, back-office, fiabilitat. A tu els clients, a nosaltres l’operativa.",
+      "cta": "Accedeix a l’espai pro →",
+      "card1": {
+        "title": "Seguiment complet delegat",
+        "text": "Solenca gestiona el seguiment complet dels habitatges, de la A a la Z a la Costa Brava."
+      },
+      "card2": {
+        "title": "Eines pro integrades",
+        "text": "Seguiment de clients i back-office dedicat – ideal per a agències de lloguer."
+      },
+      "card3": {
+        "title": "Marca blanca",
+        "text": "Ofereix els nostres serveis amb el teu nom i els teus preus – col·laboració guanya-guanya."
+      },
+      "card4": {
+        "title": "Equip local dedicat",
+        "text": "Professionals de confiança per actuar en el teu nom a la Costa Brava."
+      }
+    }
+  },
+  "subscription": {
+    "hero": {
+      "title": "La teva casa a la Costa Brava. La nostra prioritat. 365 dies a l’any.",
+      "description": "Solenca vigila, manté i protegeix la teva segona residència automàticament. Per a propietaris o agències – prellançament novembre 2025, reserva anticipada amb 20% de descompte!",
+      "cta": "Crea el meu pressupost gratuït",
+      "pro": "Ets pro o agència de lloguer?"
+    }
+  },
+  "catalogue": {
+    "hero": {
+      "title": "Mòduls a mida",
+      "description": "Afegeix serveis puntuals o recurrents al teu abonament. Jardí, piscina, neteja, etc. Cada mòdul s’executa en menys de 7 dies segons les teves instruccions.",
+      "searchPlaceholder": "Cercar un servei..."
+    },
+    "filters": {
+      "label": "Filtrar per categoria"
+    },
+    "price": "Des de {{price}}€",
+    "book": "Reservar aquest servei →",
+    "upsell": "Prefereixo una subscripció regular",
+    "cta": {
+      "title": "Necessites un servei a mida?",
+      "description": "Solenca t’acompanya amb solucions personalitzades. Omple el formulari i et contactarem aviat.",
+      "button": "Fer una sol·licitud personalitzada"
+    },
+    "modal": {
+      "date": "Selecciona una data",
+      "specs": "Especificacions",
+      "details": "Detalls",
+      "city": "Ciutat d’intervenció",
+      "name": "Nom i cognoms",
+      "email": "Correu electrònic",
+      "phone": "Telèfon",
+      "address": "Adreça exacta",
+      "adjustedPrice": "Total ajustat: {{price}}€ IVA inclòs",
+      "pay": "Confirmar reserva →",
+      "cancel": "Cancel·lar",
+      "switchToSub": "Preferiu una subscripció mensual?"
+    }
   }
 }
