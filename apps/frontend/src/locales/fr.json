@@ -9,13 +9,13 @@
     "club": "Solenca Club"
   },
   "hero": {
-    "headline": "Vous partez ? On veille.",
-    "description": "Solenca protège votre maison sur la Costa Brava comme si vous y étiez. Visites hebdomadaires, alertes immédiates, rapports visuels, gestion piscine et jardin. Rien à faire, tout est sous contrôle.",
+    "headline": "Tranquillidad 365",
+    "description": "Gestion premium de votre résidence secondaire sur la Costa Brava, toute l’année.",
     "cta": "Précommandez -20% avant le lancement →"
   },
 "about": {
   "title": "Solenca veille sur votre villa, 365 jours par an.",
-  "description": "Solenca est né d’un besoin simple : pouvoir s’absenter sans s’inquiéter. Depuis Platja d’Aro, nous protégeons votre résidence secondaire avec une présence humaine, des preuves visuelles, et une réactivité totale. Profitez de -20% avant le lancement officiel.",
+  "description": "Solenca est né d’un besoin simple : pouvoir s’absenter sans s’inquiéter. Depuis Platja d’Aro, nous protégeons votre résidence secondaire avec une présence humaine, des preuves visuelles, et une réactivité totale.",
   "cta": "Obtenez votre devis gratuit",
   "card1": {
     "title": "Présence locale à Platja d’Aro",
@@ -81,17 +81,17 @@
 "aboutPage": {
   "hero": {
     "title": "Votre villa protégée. Toute l’année.",
-    "description": "Rapports photo, alertes immédiates, météo et suivi digital ; restez maître de votre maison secondaire depuis la France ou ailleurs. Solenca, c’est la tranquillité premium pour propriétaires exigeants. ",
+    "description": "Une équipe humaine, une technologie intelligente, une promesse : votre tranquillité sur la Costa Brava et au-delà.",
     "cta": "Précommander ma tranquillité →",
     "badge": "Déjà adopté par des propriétaires exigeants et des agences locales."
   },
   "kpi": {
-    "0": "villas déjà sous surveillance",
-    "1": "clients satisfaits",
-    "2": "visites honorées à temps",
-    "3": "jusqu’au 1er nov. 2025"
+"0": "Précommandes",
+"1": "Satisfaction",
+"2": "Visites",
+"3": "Délai"
   },
-  "quote": "ne se contente pas de surveiller. Nous inspectons, alertons, rapportons. Vous recevez des preuves visuelles, météo, historique clair. Votre bien est entre de bonnes mains. Depuis Platja d’Aro, pour toute la Costa Brava.",
+"quote": "est née d'une conviction simple : votre résidence secondaire mérite une gestion sans faille, humaine et intelligente",
   "cta": {
     "title": "Restez serein, où que vous soyez",
     "description": "Chaque semaine, nos équipes vérifient votre villa : photos, checklist, alertes si besoin. Vous accédez à tout, en temps réel. Plus besoin de douter, tout est sous contrôle.",
@@ -108,9 +108,9 @@
 },
 "services": {
   "hero": {
-    "title": "Solenca prend le relais. Vous partez tranquille.",
-    "description": "Visites, alertes, rapports : votre villa reste sous contrôle 365 jours par an. Suivi photo, présence locale, urgences. Le tout depuis une interface claire, à distance. Précommandez avant novembre et profitez de -20%.",
-    "cta": "Précommander -20% →"
+    "title": "Services pour une tranquillité absolue",
+    "description": "Technologie et humanité au service de votre bien : visites proactives, notifications ciblées, historiques clairs. Pour une paix d'esprit quotidienne.",
+    "cta": "Précommander ma tranquilité →"
   },
   "private": {
     "title": "Un service pensé pour les absents exigeants",
@@ -159,8 +159,8 @@
 },
 "subscription": {
   "hero": {
-    "title": "Votre maison en Costa Brava. Notre priorité. 365 jours par an.",
-    "description": "Solenca surveille, entretient et protège votre résidence secondaire automatiquement. Pour proprios ou agences loc – pré-lancement novembre 2025, réservez early pour 20% off !",
+    "title": "Abonnements pour une tranquillité sur mesure",
+    "description": "Sélectionnez le plan qui s'adapte à votre résidence secondaire : accès exclusif à notre plateforme tech-humaine, inspections régulières, rapports détaillés. Une sérénité préservée, toute l'année, avec flexibilité et excellence.",
     "cta": "Créer mon devis gratuit",
     "pro": "Vous êtes pro/agence loc ?"
   }

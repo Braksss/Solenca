@@ -370,3 +370,157 @@ $card-radius: 20px;
     font-family: "Montserrat", sans-serif;
   }
 }
+
+
+$primary: #ff8200;     // Orange Solenca
+$secondary: #111111;   // Texte principal
+$grey-700: #69707d;    // Texte secondaire
+$grey-500: #8b8f96;    // Texte fade
+$grey-300: #e4e7ec;    // Bordures & traits
+
+/* === Utilitaires (réutilisables) === */
+@mixin gradient-text {
+  background: linear-gradient(90deg, $primary, lighten($primary, 15%));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@mixin button-base {
+  font: 600 15px "Montserrat", sans-serif;
+  padding: 12px 24px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-btn {
+  @include button-base;
+  background: $primary;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.secondary-btn {
+  @include button-base;
+  background: transparent;
+  color: $primary;
+  border: 2px solid $primary;
+
+  &:hover {
+    background: #fff3e6;
+  }
+}
+
+/* === 1. Hero (style exemple par défaut, réutilisable) ================== */
+.hero-default {  // Renommé pour modularité – extend sur autres pages
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: 1200px;
+  padding: 96px 24px 0;
+  margin: 0 auto;
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font: 700 48px/1.2 "Montserrat", sans-serif;
+      max-width: 540px;
+      @include gradient-text;  // Ajout pour punch branding (optionnel, retire si trop)
+    }
+
+    p {
+      margin-top: 16px;
+      font: 18px/1.6 "Montserrat", sans-serif;
+      color: $grey-700;
+      max-width: 420px;
+    }
+
+    .cta-row {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .rating {
+        font-size: 15px;
+
+        .star {
+          color: #ffc93a;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .hero-image {
+      width: 500px;
+      height: 400px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;  // Ajout pour dynamisme (hover scale)
+
+      &:hover {
+        transform: scale(1.02);  // Subtil, engage sans distraire
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .user-badge {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+
+      .avatar-stack {
+        position: relative;
+        width: 96px;
+        height: 32px;
+
+        img {
+          position: absolute;
+          top: 0;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 2px solid #fff;
+        }
+      }
+
+      span {
+        margin-left: 60px;
+        font-size: 14px;
+        color: $secondary;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    padding: 64px 16px 0;  // Réduit pour mobile respiration
+
+    .hero-visual {
+      align-items: center;
+      margin-top: 32px;  // Moins d'espace pour fluidité
+    }
+
+    text-align: center;
+  }
+}

@@ -13,7 +13,11 @@ import ConversionPage from './pages/conversion';
 import './i18n';
 import './styles/landing/landing.scss';
 
-class ErrorBoundary extends React.Component {
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+}
+
+class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
   state = { hasError: false };
 
   static getDerivedStateFromError() {

@@ -5,7 +5,7 @@ import '../styles/pages/servicespage.scss';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import heroImg from '../assets/hero.png';
+import heroImg from '../assets/hero-service.jpg';
 import {
   Calendar,
   Camera,

@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
 
@@ -16,7 +16,7 @@ const generateQuoteReference = (): string => {
 };
 
 // Création de session de paiement Stripe
-router.post('/create-checkout-session', async (req: Request, res: Response) => {
+router.post('/create-checkout-session', async (req: Request<{}, {}, { isPro: boolean; email: string; total: number; billingPeriod: string }>, res: Response) => {
   const { isPro, email, total, billingPeriod } = req.body;
 
   if (!total || !billingPeriod) {

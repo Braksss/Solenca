@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
@@ -58,7 +58,7 @@ const services = [
       if (values.fenetres > 10) base += (values.fenetres - 10) * 8;
       if (values.hauteur > 1) base += 20 * (values.hauteur - 1);
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 30;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -76,7 +76,7 @@ const services = [
       let base = 89;
       if (values.surface > 300) base += (values.surface - 300) * 0.2;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 30;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -94,7 +94,7 @@ const services = [
       let base = 109;
       if (values.surface > 30) base += (values.surface - 30) * 3;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 30;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -112,7 +112,7 @@ const services = [
       let base = 119;
       if (values.surface > 200) base += (values.surface - 200) * 0.5;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 40;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -130,7 +130,7 @@ const services = [
       let base = 69;
       if (values.surface > 150) base += (values.surface - 150) * 0.3;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 20;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -148,7 +148,7 @@ const services = [
       let base = 49;
       if (values.surface > 200) base += (values.surface - 200) * 0.1;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 15;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -166,7 +166,7 @@ const services = [
       let base = 59;
       if (values.nombreColis > 1) base += (values.nombreColis - 1) * 10;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 20;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -184,7 +184,7 @@ const services = [
       let base = 59;
       if (values.duree > 30) base += ((values.duree - 30) / 60) * 49;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 20;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -202,7 +202,7 @@ const services = [
       let base = 69;
       if (values.surface > 50) base += (values.surface - 50) * 0.5;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 30;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -220,7 +220,7 @@ const services = [
       let base = 39;
       if (values.types === 'Tous (+10€)') base += 10;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 10;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -238,7 +238,7 @@ const services = [
       let base = 79;
       if (values.distance > 5) base += (values.distance - 5) * 5;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 40;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -256,7 +256,7 @@ const services = [
       let base = 99;
       if (values.surface > 50) base += (values.surface - 50) * 2;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 40;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -276,7 +276,7 @@ const services = [
       if (values.surface > 50) base += (values.surface - 50) * 3;
       if (values.moisEteinte > 3) base += (values.moisEteinte - 3) * 20;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 50;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -294,7 +294,7 @@ const services = [
       let base = 79;
       if (values.surface > 200) base += (values.surface - 200) * 0.3;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 25;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -312,7 +312,7 @@ const services = [
       let base = 149;
       if (values.surface > 150) base += (values.surface - 150) * 1;
       if (values.selectedDate && isUrgent(values.selectedDate)) base += 40;
-      if (values.ville && !coreZones.some(z => values.ville.toLowerCase().includes(z))) base += 15;
+      if ((values.ville ?? '') && !coreZones.some(z => (values.ville ?? '').toLowerCase().includes(z))) base += 15;
       return Math.round(base * priceMultiplier);
     },
   },
@@ -322,7 +322,8 @@ const CataloguePage: React.FC = () => {
   const { t } = useTranslation();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
-  const [formValues, setFormValues] = useState<Record<string, any>>({});
+  type FormValues = Record<string, string | number | undefined>;
+  const [formValues, setFormValues] = useState<FormValues>({});
   const [adjustedPrice, setAdjustedPrice] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('Tous');
   const [searchQuery, setSearchQuery] = useState('');
@@ -375,18 +376,20 @@ const CataloguePage: React.FC = () => {
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-    if (!formValues.nom || formValues.nom.length < 3) newErrors.nom = 'Nom requis (min 3)';
+    if (typeof formValues.nom !== 'string' || formValues.nom.length < 3) newErrors.nom = 'Nom requis (min 3)';
     const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    if (!formValues.email || !emailRegex.test(formValues.email)) newErrors.email = 'Email invalide';
-    if (!formValues.telephone || formValues.telephone.length < 10) newErrors.telephone = 'Téléphone requis (min 10)';
-    if (!formValues.adresse || formValues.adresse.length < 5) newErrors.adresse = 'Adresse invalide (min 5)';
-    if (!formValues.ville || formValues.ville.length < 3) newErrors.ville = 'Ville invalide (min 3)';
+    if (typeof formValues.email !== 'string' || !emailRegex.test(formValues.email)) newErrors.email = 'Email invalide';
+    if (typeof formValues.telephone !== 'string' || formValues.telephone.length < 10) newErrors.telephone = 'Téléphone requis (min 10)';
+    if (typeof formValues.adresse !== 'string' || formValues.adresse.length < 5) newErrors.adresse = 'Adresse invalide (min 5)';
+    if (typeof formValues.ville !== 'string' || formValues.ville.length < 3) newErrors.ville = 'Ville invalide (min 3)';
     if (!selectedDate) newErrors.date = 'Date requise';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     if (!selectedService) return;
     const { name, value } = e.target;
     const parsedValue = e.target.type === 'number' ? parseFloat(value) || 0 : value;
@@ -395,17 +398,24 @@ const CataloguePage: React.FC = () => {
     updatePrice(newValues, selectedService);
   };
 
-  const handleDateChange = (date: Date) => {
+  const handleDateChange = (date: Date | null) => {
+    if (!date) return;
     setSelectedDate(date);
     const { slots, priceMultiplier } = mockAvailability.getSlots(date);
     setSlotsLeft(slots);
-    const newValues = { ...formValues, selectedDate: date };
+    const newValues = { ...formValues };
     setFormValues(newValues);
-    updatePrice(newValues, selectedService!, priceMultiplier);
+    updatePrice(newValues, selectedService!, priceMultiplier, date);
   };
 
-  const updatePrice = (values: Record<string, any>, service: typeof services[0], priceMultiplier = 1.0) => {
-    let price = service.priceCalculator(values, priceMultiplier);
+  const updatePrice = (
+    values: FormValues,
+    service: typeof services[0],
+    priceMultiplier = 1.0,
+    selectedDateOverride?: Date
+  ) => {
+    const fullValues = { ...values, selectedDate: selectedDateOverride ?? selectedDate ?? undefined };
+    let price = service.priceCalculator(fullValues, priceMultiplier);
     if (slotsLeft < 2 && slotsLeft > 0) price *= 1.1; // Surcharge pour créneaux limités
     setAdjustedPrice(Math.round(price));
   };
@@ -548,14 +558,26 @@ const CataloguePage: React.FC = () => {
                 <div key={field.name} className="form-field">
                   <label>{field.label}</label>
                   {field.type === 'select' ? (
-                    <select name={field.name} value={formValues[field.name]} onChange={handleInputChange}>
-                      {(field.options || []).map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+                    <select
+                      name={field.name}
+                      value={typeof formValues[field.name] === 'string' || typeof formValues[field.name] === 'number'
+                        ? formValues[field.name]
+                        : ''}
+                      onChange={handleInputChange}
+                    >
+                      {'options' in field && (field.options as string[]).map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
                     </select>
                   ) : (
                     <input
                       type={field.type}
                       name={field.name}
-                      value={formValues[field.name]}
+                      value={
+                        typeof formValues[field.name] === 'string' || typeof formValues[field.name] === 'number'
+                          ? formValues[field.name]
+                          : ''
+                      }
                       onChange={handleInputChange}
                     />
                   )}
@@ -566,7 +588,11 @@ const CataloguePage: React.FC = () => {
                 <input
                   type="text"
                   name="ville"
-                  value={formValues.ville}
+                  value={
+                    typeof formValues.ville === 'string' || typeof formValues.ville === 'number'
+                      ? formValues.ville
+                      : ''
+                  }
                   onChange={handleInputChange}
                   placeholder="Ex: Platja d'Aro"
                   className={errors.ville ? 'error' : ''}
@@ -580,7 +606,11 @@ const CataloguePage: React.FC = () => {
                   <input
                     type="text"
                     name="nom"
-                    value={formValues.nom}
+                    value={
+                      typeof formValues.nom === 'string' || typeof formValues.nom === 'number'
+                        ? formValues.nom
+                        : ''
+                    }
                     onChange={handleInputChange}
                     placeholder="Votre nom complet"
                     className={errors.nom ? 'error' : ''}
@@ -592,7 +622,11 @@ const CataloguePage: React.FC = () => {
                   <input
                     type="email"
                     name="email"
-                    value={formValues.email}
+                    value={
+                      typeof formValues.email === 'string' || typeof formValues.email === 'number'
+                        ? formValues.email
+                        : ''
+                    }
                     onChange={handleInputChange}
                     placeholder="votre@email.com"
                     className={errors.email ? 'error' : ''}
@@ -604,7 +638,11 @@ const CataloguePage: React.FC = () => {
                   <input
                     type="tel"
                     name="telephone"
-                    value={formValues.telephone}
+                    value={
+                      typeof formValues.telephone === 'string' || typeof formValues.telephone === 'number'
+                        ? formValues.telephone
+                        : ''
+                    }
                     onChange={handleInputChange}
                     placeholder="+33..."
                     className={errors.telephone ? 'error' : ''}
@@ -615,7 +653,11 @@ const CataloguePage: React.FC = () => {
                   <label>{t('catalogue.modal.address')}</label>
                   <textarea
                     name="adresse"
-                    value={formValues.adresse}
+                    value={
+                      typeof formValues.adresse === 'string' || typeof formValues.adresse === 'number'
+                        ? formValues.adresse
+                        : ''
+                    }
                     onChange={handleInputChange}
                     placeholder="Ex: 22 Carrer Palmeres, Platja d'Aro"
                     className={errors.adresse ? 'error' : ''}

@@ -4,7 +4,7 @@ import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/pages/aboutpage.scss';
 
-import heroImg from '../assets/about/solenca-hero.png';
+import heroImg from '../assets/hero-about.jpg';
 import avatar1 from '../assets/avatars/avatar1.png';
 import logo1 from '../assets/partners/stripe.svg';
 import logo2 from '../assets/partners/segway.svg';
@@ -27,10 +27,10 @@ import iconSmart from '../assets/icons/securite.png';
 const partnerLogos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 const kpis = [
-  { icon: kpiHome, number: '24' },
-  { icon: kpiInvest, number: '98%' },
-  { icon: kpiSmile, number: '100%' },
-  { icon: kpiClock, number: '-20%' }
+  { icon: kpiHome, number: '23' },
+  { icon: kpiInvest, number: '100%' },
+  { icon: kpiSmile, number: '14' },
+  { icon: kpiClock, number: '1/11'}
 ];
 
 const testimonials = [

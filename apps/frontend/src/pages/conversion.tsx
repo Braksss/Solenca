@@ -1,18 +1,40 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import Footer from '../components/landing/Footer';
 import Navbar from '../components/landing/NavBar';
 import solencaLogo from '../assets/solenca-logo.png';
 import '../styles/pages/conversion.scss';
 
+interface InfosState {
+  prenom: string;
+  nom: string;
+  email: string;
+  adresseStreet: string;
+  codePostal: string;
+  ville: string;
+  surfaceMaison: number;
+  surfaceJardin: number;
+  piscine: boolean;
+  taillePiscine: number;
+}
+
+interface AddOnsState {
+  jardin: boolean;
+  piscine: boolean;
+  gestionMaison: boolean;
+  gestionLocative: boolean;
+  preparationArrivee: boolean;
+  integrationAlarme: boolean;
+}
+
 const ConversionPage = () => {
-  const { t } = useTranslation();
   const today = new Date().toLocaleDateString('fr-FR');
   const [step, setStep] = useState(1);
   const [billingPeriod, setBillingPeriod] = useState('monthly'); // monthly, semiannual, once
-  const [infos, setInfos] = useState({
+  const [infos, setInfos] = useState<InfosState>({
     prenom: '',
     nom: '',
     email: '',
@@ -24,7 +46,7 @@ const ConversionPage = () => {
     piscine: false,
     taillePiscine: 0,
   });
-  const [addOns, setAddOns] = useState({
+  const [addOns, setAddOns] = useState<AddOnsState>({
     jardin: false,
     piscine: false,
     gestionMaison: false,
@@ -32,7 +54,7 @@ const ConversionPage = () => {
     preparationArrivee: false,
     integrationAlarme: false,
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Partial<Record<keyof InfosState, string>>>({});
   const [timeLeft, setTimeLeft] = useState('');
 
   useEffect(() => {
@@ -54,9 +76,6 @@ const ConversionPage = () => {
 
   useEffect(() => {
     if (step === 3) {
-      const villeLower = infos.ville.toLowerCase();
-      const simulatedKm = villeLower.includes('pals') || villeLower.includes('lloret') ? 20 : 0;
-      const surcharge = simulatedKm > 10 ? (simulatedKm - 10) * 0.5 : 0;
       const timer = setTimeout(() => setStep(4), 3000);
       return () => clearTimeout(timer);
     }
@@ -79,7 +98,8 @@ const ConversionPage = () => {
   };
 
   const calculateDynamicPrice = useMemo(() => {
-    let base = 99;
+    const isPrecommande = new Date() < new Date('2025-08-31T23:59:59');
+    const base = 99;
     let addonsSum = 0;
     const addons = [];
     if (addOns.jardin) addons.push({ name: 'Entretien jardin', price: Math.min(Math.max(infos.surfaceJardin * 0.04, 50), 500) });
@@ -90,17 +110,41 @@ const ConversionPage = () => {
     if (addOns.integrationAlarme) addons.push({ name: 'Intégration alarme', price: 29 });
     addonsSum = addons.reduce((sum, item) => sum + item.price, 0);
     const activeAddons = addons.length;
-    let discountRate = activeAddons >= 3 ? (activeAddons === 3 ? 0.10 : activeAddons === 4 ? 0.15 : 0.20) : 0;
+    const discountRate = activeAddons >= 3 ? (activeAddons === 3 ? 0.10 : activeAddons === 4 ? 0.15 : 0.20) : 0;
     const discountAmount = addonsSum * discountRate;
     addonsSum -= discountAmount;
-    let subtotal = base + addonsSum;
-    const tva = subtotal * 0.21;
-    let finalPrice = subtotal + tva;
+    let subtotalMonthly = base + addonsSum;
+    let tvaMonthly = subtotalMonthly * 0.21;
+    let totalMonthly = subtotalMonthly + tvaMonthly;
 
-    if (billingPeriod === 'once') {
-      finalPrice *= 0.8; // 20% de réduction pour annuel
-    } else if (billingPeriod === 'semiannual') {
-      finalPrice *= 0.9; // 10% de réduction supplémentaire pour semestriel
+    if (isPrecommande) {
+      subtotalMonthly *= 0.8; // 20% off first year
+      tvaMonthly = subtotalMonthly * 0.21;
+      totalMonthly = subtotalMonthly + tvaMonthly;
+    }
+
+    let subtotal = subtotalMonthly;
+    let tva = tvaMonthly;
+    let total = totalMonthly;
+    let savings = 0;
+    let periodMultiplier = 1;
+    let periodLabel = '/mois';
+    let promoNote = isPrecommande ? ' (20% precommande inclus)' : '';
+
+    if (billingPeriod === 'semiannual') {
+      periodMultiplier = 6;
+      subtotal *= periodMultiplier;
+      tva *= periodMultiplier;
+      total = (subtotal + tva) * 0.9; // 10% reduc
+      savings = (subtotal + tva) * 0.1;
+      periodLabel = ' pour 6 mois';
+    } else if (billingPeriod === 'once') {
+      periodMultiplier = 12;
+      subtotal *= periodMultiplier;
+      tva *= periodMultiplier;
+      total = (subtotal + tva) * 0.8; // 20% reduc
+      savings = (subtotal + tva) * 0.2;
+      periodLabel = ' pour 12 mois';
     }
 
     return {
@@ -108,11 +152,17 @@ const ConversionPage = () => {
       addons,
       discountAmount: Math.round(discountAmount),
       discountRate,
+      subtotalMonthly: Math.round(subtotalMonthly),
+      tvaMonthly: Math.round(tvaMonthly),
+      totalMonthly: Math.round(totalMonthly),
       subtotal: Math.round(subtotal),
       tva: Math.round(tva),
-      total: Math.round(finalPrice),
-      annualSavings: billingPeriod === 'once' ? Math.round((subtotal + tva) * 0.2) : 0,
-      semiannualSavings: billingPeriod === 'semiannual' ? Math.round((subtotal + tva) * 0.1) : 0,
+      total: Math.round(total),
+      savings: Math.round(savings),
+      periodMultiplier,
+      periodLabel,
+      promoNote,
+      isPrecommande,
     };
   }, [addOns, infos, billingPeriod]);
 
@@ -137,6 +187,44 @@ const ConversionPage = () => {
     } catch (error) {
       console.error('Erreur paiement :', error);
     }
+  };
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    doc.addImage(solencaLogo, 'PNG', 10, 10, 50, 20);
+    doc.setFontSize(16);
+    doc.text('Devis Solenca', 70, 20);
+    doc.setFontSize(12);
+    doc.text(`N° SO-${Date.now().toString().slice(-6)}`, 70, 30);
+    doc.text(`Date: ${today}`, 70, 40);
+    doc.text(`${infos.prenom} ${infos.nom}`, 10, 50);
+    doc.text(`${infos.adresseStreet}, ${infos.codePostal} ${infos.ville}`, 10, 60);
+    doc.text(`${infos.email}`, 10, 70);
+
+    const tableData = [
+      ['Description', 'Prix HT', 'Quantité', 'Total HT'],
+      ['Tranquilidad 365', `${calculateDynamicPrice.base} €`, '1', `${calculateDynamicPrice.base} €`],
+      ...calculateDynamicPrice.addons.map(addon => [addon.name, `${addon.price} €`, '1', `${addon.price} €`]),
+    ];
+    if (calculateDynamicPrice.discountAmount > 0) {
+      tableData.push(['Réduction modules', '-', '-', `-${calculateDynamicPrice.discountAmount} €`]);
+    }
+    doc.autoTable({
+      startY: 80,
+      head: [tableData[0]],
+      body: tableData.slice(1),
+      theme: 'grid',
+      headStyles: { fillColor: [255, 130, 0] },
+      styles: { fontSize: 10, cellPadding: 5 },
+    });
+
+    const finalY = doc.previousAutoTable.finalY + 10;
+    doc.text(`Subtotal HT: ${calculateDynamicPrice.subtotal} €`, 10, finalY);
+    doc.text(`TVA (21%): ${calculateDynamicPrice.tva} €`, 10, finalY + 10);
+    doc.text(`Total TTC: ${calculateDynamicPrice.total} € ${calculateDynamicPrice.periodLabel}${calculateDynamicPrice.promoNote}`, 10, finalY + 20);
+    doc.text(`Économie: ${calculateDynamicPrice.savings} €`, 10, finalY + 30);
+    doc.text('Paiement sécurisé via Stripe.', 10, finalY + 40);
+    doc.save(`devis-solenca-${Date.now()}.pdf`);
   };
 
   const renderProgressBar = () => (
@@ -317,25 +405,28 @@ const ConversionPage = () => {
                   { id: 'gestionLocative', label: 'Gestion locative', tooltip: 'Coordination locations, check-in/out.' },
                   { id: 'preparationArrivee', label: 'Préparation arrivée', tooltip: 'Lits faits, courses – 2/mois inclus.' },
                   { id: 'integrationAlarme', label: 'Intégration alarme', tooltip: 'Connexion alarme/app, notifications en temps réel.' },
-                ].map((addon) => (
-                  <motion.div
-                    key={addon.id}
-                    className={`addon-card ${addOns[addon.id] ? 'selected' : ''}`}
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="addon-header">
-                      <label htmlFor={addon.id}>{addon.label}</label>
-                      <div className="info-icon" data-tooltip={addon.tooltip}>?</div>
-                    </div>
-                    <input
-                      id={addon.id}
-                      type="checkbox"
-                      checked={addOns[addon.id]}
-                      onChange={() => setAddOns({ ...addOns, [addon.id]: !addOns[addon.id] })}
-                    />
-                  </motion.div>
-                ))}
+                ].map((addon) => {
+                  const id = addon.id as keyof AddOnsState;
+                  return (
+                    <motion.div
+                      key={id}
+                      className={`addon-card ${addOns[id] ? 'selected' : ''}`}
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="addon-header">
+                        <label htmlFor={id}>{addon.label}</label>
+                        <div className="info-icon" data-tooltip={addon.tooltip}>?</div>
+                      </div>
+                      <input
+                        id={id}
+                        type="checkbox"
+                        checked={addOns[id]}
+                        onChange={() => setAddOns({ ...addOns, [id]: !addOns[id] })}
+                      />
+                    </motion.div>
+                  );
+                })}
               </div>
               <div className="step-footer">
                 <motion.button
@@ -413,7 +504,7 @@ const ConversionPage = () => {
                       checked={billingPeriod === 'monthly'}
                       onChange={() => setBillingPeriod('monthly')}
                     />
-                    Mensuel ({calculateDynamicPrice.total} €/mois)
+                    Mensuel : {calculateDynamicPrice.totalMonthly} € /mois (total TTC {calculateDynamicPrice.total} €{calculateDynamicPrice.promoNote}, sans économie supplémentaire)
                   </label>
                   <label className={`billing-option ${billingPeriod === 'semiannual' ? 'selected' : ''}`}>
                     <input
@@ -423,7 +514,7 @@ const ConversionPage = () => {
                       checked={billingPeriod === 'semiannual'}
                       onChange={() => setBillingPeriod('semiannual')}
                     />
-                    Semestriel ({Math.round(calculateDynamicPrice.total * 6)} €/6 mois, économisez {calculateDynamicPrice.semiannualSavings} €)
+                    Semestriel : {calculateDynamicPrice.total} € total pour 6 mois{calculateDynamicPrice.promoNote} (économisez {calculateDynamicPrice.savings} €, soit 10%)
                   </label>
                   <label className={`billing-option ${billingPeriod === 'once' ? 'selected' : ''}`}>
                     <input
@@ -433,7 +524,7 @@ const ConversionPage = () => {
                       checked={billingPeriod === 'once'}
                       onChange={() => setBillingPeriod('once')}
                     />
-                    Annuel ({Math.round(calculateDynamicPrice.total * 12)} €/an, économisez {calculateDynamicPrice.annualSavings} €)
+                    Annuel : {calculateDynamicPrice.total} € total pour 12 mois{calculateDynamicPrice.promoNote} (économisez {calculateDynamicPrice.savings} €, soit 20%)
                   </label>
                 </div>
               </div>
@@ -453,7 +544,7 @@ const ConversionPage = () => {
                     <td>1</td>
                     <td>{calculateDynamicPrice.base} €</td>
                   </tr>
-                  {calculateDynamicPrice.addons && calculateDynamicPrice.addons.map((item, index) => (
+                  {calculateDynamicPrice.addons.map((item, index) => (
                     <tr key={index}>
                       <td>{item.name}</td>
                       <td>{item.price} €</td>
@@ -469,35 +560,23 @@ const ConversionPage = () => {
                       <td>-{calculateDynamicPrice.discountAmount} €</td>
                     </tr>
                   )}
-                  {billingPeriod !== 'monthly' && (
-                    <tr>
-                      <td>Réduction {billingPeriod === 'once' ? 'annuelle (20%)' : 'semestrielle (10%)'}</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-{billingPeriod === 'once' ? calculateDynamicPrice.annualSavings : calculateDynamicPrice.semiannualSavings} €</td>
-                    </tr>
-                  )}
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td colSpan="3">Subtotal HT</td>
+                    <td colSpan={3}>Subtotal HT</td>
                     <td>{calculateDynamicPrice.subtotal} €</td>
                   </tr>
                   <tr>
-                    <td colSpan="3">TVA (21%)</td>
+                    <td colSpan={3}>TVA (21%)</td>
                     <td>{calculateDynamicPrice.tva} €</td>
                   </tr>
                   <tr className="total-row">
-                    <td colSpan="3">Total TTC</td>
-                    <td>{calculateDynamicPrice.total} € {billingPeriod === 'monthly' ? '/mois' : billingPeriod === 'semiannual' ? '/6 mois' : '/an'}</td>
+                    <td colSpan={3}>Total TTC à payer {calculateDynamicPrice.periodLabel}</td>
+                    <td>{calculateDynamicPrice.total} € (économie {calculateDynamicPrice.savings} €{calculateDynamicPrice.promoNote})</td>
                   </tr>
                 </tfoot>
               </table>
-              <div className="invoice-terms">
-                <p><strong>Paiement :</strong> Virement bancaire ou carte</p>
-                <p><strong>Compte :</strong> ES12 3456 7890 1234 5678 9012</p>
-                <p><strong>Valable :</strong> 30 jours à compter de {today}</p>
-              </div>
+              <p>Paiement sécurisé via Stripe – immédiat et sans frais cachés.</p>
               <div className="summary-actions">
                 <motion.button
                   className="button-outline"
@@ -515,15 +594,14 @@ const ConversionPage = () => {
                 >
                   Confirmer et payer
                 </motion.button>
-                <motion.a
+                <motion.button
                   className="button-outline"
-                  href="/devis.pdf"
-                  download
+                  onClick={generatePDF}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Télécharger PDF
-                </motion.a>
+                </motion.button>
               </div>
             </motion.section>
           )}
