@@ -1,10 +1,13 @@
 import React from 'react';
 import '../../styles/landing/banner.scss';
+import { useTranslation } from 'react-i18next';
 
 const Banner = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="banner-fixed">
-      <span>Pré-lancement – Lancement Solenca le 1er novembre 2025 - Réservez maintenant et bénéficiez d’une offre exclusive 20% off premier mois !</span>
+      <span>{t('banner.text')}</span>
     </div>
   );
 };

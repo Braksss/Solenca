@@ -1,5 +1,5 @@
 .cta-section {
-  padding: 3rem 1rem; // Petit padding mobile
+  padding: 3rem 1rem; // Base mobile
   background: #fff;
   background-color: #52494011;
   display: flex;
@@ -12,14 +12,14 @@
   margin: auto;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 5%;
-  gap: 1.5rem; // Gap mobile
+  gap: 1.5rem; // Base mobile
 
   &__content {
     order: 2; // Text below image mobile
     text-align: center;
 
     .cta-section__title {
-      font-size: 2rem; // Petit mobile
+      font-size: 2rem; // Base mobile
       font-weight: 700;
       line-height: 1.2;
       color: #111;
@@ -44,8 +44,11 @@
       cursor: pointer;
       transition: background 0.2s ease;
       width: 100%; // Tappable mobile
+      min-height: 48px; // Accessibilité touch
+      display: inline-block; // Centre si needed
 
-      &:hover {
+      &:hover,
+      &:active { // Support touch
         background: #2c2c2c;
       }
     }
@@ -62,6 +65,7 @@
       width: 100%;
       max-width: 300px; // Scaled mobile
       height: auto;
+      object-fit: contain; // Pas de crop
       animation: float 3s ease-in-out infinite;
     }
   }
@@ -72,7 +76,23 @@
     100% { transform: translateY(0); }
   }
 
-  // Media min-width desktop
+  /* Tablette (min-width: 481px) */
+  @media (min-width: 481px) {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+
+    &__content {
+      .cta-section__title { font-size: 2.5rem; margin-bottom: 1.5rem; }
+      .cta-section__text { font-size: 1.05rem; margin-bottom: 1.5rem; }
+      .cta-section__btn { width: auto; padding: 0.9rem 1.8rem; }
+    }
+
+    &__image {
+      img { max-width: 350px; }
+    }
+  }
+
+  /* Desktop (min-width: 769px) */
   @media (min-width: 769px) {
     padding: 3rem 2rem;
     max-width: 80%;
@@ -86,7 +106,7 @@
 
       .cta-section__title { font-size: 3.5rem; margin-bottom: 2rem; }
       .cta-section__text { font-size: 1.1rem; margin-bottom: 2rem; }
-      .cta-section__btn { width: auto; } // Auto width desktop, not too wide
+      .cta-section__btn { width: auto; padding: 1rem 2rem; }
     }
 
     &__image {

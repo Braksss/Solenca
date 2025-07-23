@@ -10,6 +10,50 @@ $light-bg: #f9f9f9;
 $card-bg: #fff;
 $card-radius: 20px;
 
+$primary: #ff8200;     // Orange Solenca
+$secondary: #111111;   // Texte principal
+$grey-700: #69707d;    // Texte secondaire
+$grey-500: #8b8f96;    // Texte fade
+$grey-300: #e4e7ec;    // Bordures & traits
+
+/* === Utilitaires (réutilisables) === */
+@mixin gradient-text {
+  background: linear-gradient(90deg, $primary, lighten($primary, 15%));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@mixin button-base {
+  font: 600 15px "Montserrat", sans-serif;
+  padding: 12px 24px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-btn {
+  @include button-base;
+  background: $primary;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.secondary-btn {
+  @include button-base;
+  background: transparent;
+  color: $primary;
+  border: 2px solid $primary;
+
+  &:hover {
+    background: #fff3e6;
+  }
+}
+
 /* === Page Wrapper === */
 .services-page {
   font-family: "Montserrat", sans-serif;
@@ -68,17 +112,38 @@ $card-radius: 20px;
     }
   }
 
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    text-align: center;
-
-    .hero-visual {
-      margin-top: 48px;
-    }
+  /* Tablette (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    gap: 48px;
+    padding: 72px 20px 48px;
 
     .hero-content {
-      align-items: center;
+      h1 { font-size: 40px; }
+      p { font-size: 16px; max-width: 100%; }
     }
+
+    .hero-visual .hero-image { width: 100%; height: 320px; }
+  }
+
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: calc(56px + 32px) 16px 32px; // Navbar fix + air
+    text-align: center;
+
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 15px; }
+
+    .hero-visual .hero-image { width: 100%; height: 240px; }
+  }
+
+  /* Mobile petit (max-width: 480px) */
+  @media (max-width: 480px) {
+    padding: calc(56px + 24px) 12px 24px;
+
+    .hero-content h1 { font-size: 28px; }
+    .hero-visual .hero-image { height: 200px; }
   }
 }
 
@@ -132,6 +197,7 @@ $card-radius: 20px;
         font-weight: 500;
         cursor: pointer;
         transition: all 0.2s ease;
+        min-height: 48px; // Touch-friendly
 
         &:hover {
           background: #2c2c2c;
@@ -183,8 +249,30 @@ $card-radius: 20px;
     }
   }
 
-  @media (max-width: 992px) {
+  /* Tablette (max-width: 1024px) */
+  @media (max-width: 1024px) {
     padding: 3.5rem 1.5rem;
+    gap: 2.5rem;
+
+    .about-top {
+      gap: 1.5rem;
+
+      &__left h2 { font-size: 2.2rem; }
+      &__right p { font-size: 1rem; }
+      .about-btn { padding: 0.9rem 1.8rem; }
+    }
+
+    .about-cards {
+      gap: 1.5rem;
+
+      .about-card { padding: 1.75rem 1rem; h3 { font-size: 1rem; } p { font-size: 0.9rem; } }
+    }
+  }
+
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+    gap: 2rem;
 
     .about-top {
       flex-direction: column;
@@ -195,27 +283,27 @@ $card-radius: 20px;
       &__right {
         width: 100%;
       }
+
+      &__left h2 { font-size: 2rem; }
+      &__right p { font-size: 0.95rem; }
+      .about-btn { width: 100%; }
     }
 
     .about-cards {
-      justify-content: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
 
-      .about-card {
-        max-width: 320px;
-      }
+      .about-card { width: 100%; max-width: 90vw; padding: 1.5rem 1rem; min-height: auto; h3 { font-size: 1rem; } p { font-size: 0.9rem; } }
     }
   }
 
-  @media (max-width: 576px) {
-    .about-cards {
-      flex-direction: column;
-      align-items: center;
+  /* Mobile petit (max-width: 480px) */
+  @media (max-width: 480px) {
+    padding: 2.5rem 0.75rem;
 
-      .about-card {
-        width: 100%;
-        max-width: 90vw;
-      }
-    }
+    .about-top &__left h2 { font-size: 1.8rem; }
+    .about-cards .about-card { padding: 1.25rem 0.75rem; }
   }
 }
 
@@ -318,105 +406,38 @@ $card-radius: 20px;
     }
   }
 
-  @media (max-width: 576px) {
-    padding: 4rem 1.25rem;
+  /* Tablette (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    padding: 4.5rem 1.5rem;
 
-    .faq-text {
-      font-size: 0.95rem;
-    }
+    h2 { font-size: 2rem; }
+    .faq-intro { font-size: 0.95rem; max-width: 100%; }
 
-    .faq-answer.visible {
-      font-size: 0.9rem;
-    }
+    .faq-list .faq-item .faq-text { font-size: 0.95rem; }
+    .faq-answer.visible { font-size: 0.9rem; }
+  }
+
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+
+    h2 { font-size: 1.8rem; }
+    .faq-intro { font-size: 0.9rem; }
+
+    .faq-list .faq-item { padding: 0.75rem 0; .faq-question { gap: 0.75rem; } .faq-text { font-size: 0.9rem; } .faq-toggle { width: 1.25rem; height: 1.25rem; font-size: 0.9rem; } }
+    .faq-answer.visible { padding: 0.75rem; font-size: 0.85rem; }
+  }
+
+  /* Mobile petit (max-width: 480px) */
+  @media (max-width: 480px) {
+    padding: 3.5rem 0.75rem;
+
+    h2 { font-size: 1.6rem; }
+    .faq-list .faq-item .faq-text { font-size: 0.85rem; }
   }
 }
 
-.about-bridge {
-  padding: 4rem 2rem;
-  text-align: center;
-
-  .bridge-inner {
-    max-width: 720px;
-    margin: 0 auto;
-
-    h3 {
-      font-size: 2rem;
-      font-weight: 600;
-      color: $secondary;
-    }
-
-    p {
-      margin-top: 1rem;
-      font: 16px/1.6 "Montserrat";
-      color: $grey-700;
-    }
-  }
-}
-
-.features-block {
-  position: relative;
-
-  .pro-badge {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background: #000;
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 12px;
-    z-index: 10;
-    font-family: "Montserrat", sans-serif;
-  }
-}
-
-
-$primary: #ff8200;     // Orange Solenca
-$secondary: #111111;   // Texte principal
-$grey-700: #69707d;    // Texte secondaire
-$grey-500: #8b8f96;    // Texte fade
-$grey-300: #e4e7ec;    // Bordures & traits
-
-/* === Utilitaires (réutilisables) === */
-@mixin gradient-text {
-  background: linear-gradient(90deg, $primary, lighten($primary, 15%));
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-@mixin button-base {
-  font: 600 15px "Montserrat", sans-serif;
-  padding: 12px 24px;
-  border-radius: 22px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.primary-btn {
-  @include button-base;
-  background: $primary;
-  color: #fff;
-  border: none;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
-}
-
-.secondary-btn {
-  @include button-base;
-  background: transparent;
-  color: $primary;
-  border: 2px solid $primary;
-
-  &:hover {
-    background: #fff3e6;
-  }
-}
-
-/* === 1. Hero (style exemple par défaut, réutilisable) ================== */
+/* === 4. HERO (style exemple par défaut, réutilisable) ================== */
 .hero-default {  // Renommé pour modularité – extend sur autres pages
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -512,15 +533,112 @@ $grey-300: #e4e7ec;    // Bordures & traits
     }
   }
 
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    padding: 64px 16px 0;  // Réduit pour mobile respiration
+  /* Tablette (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    gap: 48px;
+    padding: 72px 20px 0;
 
-    .hero-visual {
-      align-items: center;
-      margin-top: 32px;  // Moins d'espace pour fluidité
+    .hero-content {
+      h1 { font-size: 40px; max-width: 100%; }
+      p { font-size: 16px; max-width: 100%; }
     }
 
+    .hero-visual .hero-image { width: 100%; height: 320px; }
+  }
+
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: calc(56px + 32px) 16px 0; // Navbar fix + air
     text-align: center;
+
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 15px; }
+
+    .hero-visual .hero-image { width: 100%; height: 240px; }
+  }
+
+  /* Mobile petit (max-width: 480px) */
+  @media (max-width: 480px) {
+    padding: calc(56px + 24px) 12px 0;
+
+    .hero-content h1 { font-size: 28px; }
+    .hero-visual .hero-image { height: 200px; }
+  }
+}
+
+/* === 5. About Bridge === */
+.about-bridge {
+  padding: 4rem 2rem;
+  text-align: center;
+
+  .bridge-inner {
+    max-width: 720px;
+    margin: 0 auto;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $secondary;
+    }
+
+    p {
+      margin-top: 1rem;
+      font: 16px/1.6 "Montserrat";
+      color: $grey-700;
+    }
+  }
+
+  /* Tablette (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    padding: 3.5rem 1.5rem;
+
+    .bridge-inner h3 { font-size: 1.8rem; }
+    p { font-size: 15px; }
+  }
+
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+
+    .bridge-inner h3 { font-size: 1.6rem; }
+    p { font-size: 14px; }
+  }
+
+  /* Mobile petit (max-width: 480px) */
+  @media (max-width: 480px) {
+    padding: 2.5rem 0.75rem;
+
+    .bridge-inner h3 { font-size: 1.4rem; }
+  }
+}
+
+/* === 6. Features Block === */
+.features-block {
+  position: relative;
+
+  .pro-badge {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+    z-index: 10;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  /* Tablette (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    .pro-badge { top: 8px; right: 16px; font-size: 9px; padding: 3px 6px; }
+  }
+
+  /* Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    .pro-badge { top: 6px; right: 12px; font-size: 8px; padding: 2px 4px; }
   }
 }

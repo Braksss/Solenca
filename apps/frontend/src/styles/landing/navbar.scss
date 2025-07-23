@@ -3,8 +3,8 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0; // aucun espace au-dessus
-  background: #fff; // Assure fond blanc mobile
+  padding: 0; // Aucun espace au-dessus
+  background: #fff; // Fond blanc pour cohérence
 
   &__container {
     max-width: 1500px;
@@ -12,8 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem; // Plus petit padding mobile
-    height: 56px; // Hauteur mobile-friendly
+    padding: 0 1rem; // Base mobile
+    height: 56px; // Hauteur touch-friendly
   }
 
   &__logo {
@@ -21,7 +21,7 @@
     align-items: center;
 
     &-img {
-      height: 50px; // Plus petit mobile
+      height: 50px; // Base mobile
       object-fit: contain;
       display: block;
     }
@@ -35,7 +35,7 @@
       flex-direction: column; // Stack vertical mobile
       list-style: none;
       background: #fff;
-      border-radius: 0; // No round mobile for full-width
+      border-radius: 0; // Full-width mobile
       padding: 1rem 0;
       gap: 1rem;
       width: 100%;
@@ -46,9 +46,11 @@
         padding: 1rem;
         font-family: "Montserrat", sans-serif;
         transition: color 0.3s;
-        display: block; // Full-width tappable
+        display: block; // Full tappable
+        font-size: 1rem; // Lisibilité mobile
 
-        &:hover {
+        &:hover,
+        &:active { // Support touch
           color: #ff8200;
         }
       }
@@ -63,28 +65,30 @@
       background: #fff;
       flex-direction: column;
       padding: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Subtil shadow mobile
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Shadow subtil
     }
   }
 
   &__right {
     display: flex;
     align-items: center;
-    gap: 0.5rem; // Plus serré mobile
+    gap: 0.5rem; // Serré mobile
 
     a {
       font-family: "Montserrat", sans-serif;
       text-decoration: none;
       padding: 0.5rem 1rem;
       border-radius: 20px;
-      font-size: 0.9rem; // Plus petit mobile
+      font-size: 0.9rem; // Base mobile
+      min-height: 40px; // Touch-friendly
 
       &.navbar__login {
         background: #fff;
         color: #333;
         border: 1px solid #ccc;
 
-        &:hover {
+        &:hover,
+        &:active {
           color: #ff8200;
         }
       }
@@ -94,20 +98,21 @@
         color: #fff;
         transition: background 0.3s;
 
-        &:hover {
-          background: darken(#ff8700, 10%);
+        &:hover,
+        &:active {
+          background: darken(#ff8200, 10%);
         }
       }
     }
   }
 
   &__burger {
-    display: flex; // Visible base (mobile)
+    display: flex; // Visible mobile
     flex-direction: column;
     cursor: pointer;
 
     span {
-      width: 20px; // Plus petit mobile
+      width: 20px; // Base mobile
       height: 2px;
       background: #333;
       margin: 2px 0;
@@ -115,7 +120,51 @@
     }
   }
 
-  // Media min-width for desktop
+  /* Tablette (min-width: 481px) */
+  @media (min-width: 481px) {
+    &__container {
+      padding: 0 1.5rem;
+      height: 60px; // Légèrement plus haut
+    }
+
+    &__logo-img {
+      height: 60px;
+    }
+
+    &__center {
+      &.open {
+        padding: 1.25rem;
+        gap: 1.25rem;
+      }
+
+      ul.navbar__links {
+        padding: 1.25rem 0;
+        gap: 1.25rem;
+      }
+
+      li a {
+        padding: 1.25rem;
+      }
+    }
+
+    &__right {
+      gap: 0.75rem;
+
+      a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    &__burger {
+      span {
+        width: 24px;
+        margin: 3px 0;
+      }
+    }
+  }
+
+  /* Desktop (min-width: 769px) */
   @media (min-width: 769px) {
     &__container {
       padding: 0 2rem;
@@ -127,8 +176,8 @@
     }
 
     &__center {
-      display: flex !important; // Always visible desktop
-      &.open { position: static; box-shadow: none; }
+      display: flex !important; // Visible desktop
+      &.open { position: static; box-shadow: none; padding: 0; }
 
       ul.navbar__links {
         flex-direction: row;
@@ -137,6 +186,10 @@
         padding: 0.5rem 2.5rem;
         gap: 1.5rem;
         width: auto;
+      }
+
+      li a {
+        padding: 0.5rem 1rem; // Horizontal desktop
       }
     }
 

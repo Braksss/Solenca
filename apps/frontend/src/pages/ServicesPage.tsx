@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/pages/servicespage.scss';
-import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next';
-
-import heroImg from '../assets/hero-service.jpg';
 import {
   Calendar,
   Camera,
@@ -13,46 +11,16 @@ import {
   Users
 } from 'react-feather';
 
-const faqData = [
-  {
-    question: "Puis-je souscrire depuis l’étranger ?",
-    answer: "Absolument ! Solenca est conçu pour une gestion 100 % à distance via web et mobile – parfait pour proprios en France ou ailleurs, pré-lancement novembre 2025.",
-  },
-  {
-    question: "Sous quel délai intervenez-vous ?",
-    answer: "Nous intervenons sous 24 h (4 h en cas d’urgence). Dès lancement novembre, sérénité garantie en Costa Brava.",
-  },
-  {
-    question: "Comment suis-je informé après une visite ?",
-    answer: "Vous recevez un rapport photo horodaté dans votre espace – clair et simple pour proprios ou agences loc.",
-  },
-  {
-    question: "Que se passe-t-il en cas d’anomalie détectée ?",
-    answer: "Alerte instantanée, puis solution adaptée ou pro local. Pré-réservez pour early accès novembre.",
-  },
-  {
-    question: "Puis-je personnaliser le contenu de mes visites ?",
-    answer: "Oui, options à la carte (jardin, piscine...) – personnalisé pour votre bien en Costa Brava.",
-  },
-  {
-    question: "Travaillez-vous avec les agences immobilières ?",
-    answer: "Oui, offre dédiée en marque blanche pour agences loc – gestion hors-saison sans effort, lancement novembre.",
-  },
-  {
-    question: "Mon logement est-il éligible à Solenca ?",
-    answer: "Nous couvrons résidences secondaires en Costa Brava – validation individuelle, pré-lancement ouvert.",
-  },
-  {
-    question: "Puis-je arrêter ou suspendre mon abonnement ?",
-    answer: "Oui, sans engagement long – flexible pour proprios ou agences, dès novembre 2025.",
-  }
-];
+import heroImg from '../assets/hero-service.jpg';
 
 const ServicesFAQ = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const toggle = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  const faqData = t('services.faq', { returnObjects: true }); // Array from JSON
 
   return (
     <section className="services-faq">
@@ -62,7 +30,7 @@ const ServicesFAQ = () => {
       </p>
 
       <div className="faq-list">
-        {faqData.map((faq, index) => (
+        {faqData.map((faq: { question: string; answer: string }, index: number) => (
           <div className="faq-item" key={index}>
             <div className="faq-question" onClick={() => toggle(index)}>
               <span className="faq-number">{index + 1}</span>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom'; // Ajout pour internal nav
 import '../../styles/landing/footer.scss';
 import logo from '../../assets/solenca-logo.png';
 
@@ -17,21 +18,21 @@ const Footer = () => {
         <div className="footer__col">
           <h4>{t('footer.privateTitle')}</h4>
           <ul>
-            <li><a href="/about">{t('footer.private.why')}</a></li>
-            <li><a href="/services">{t('footer.private.services')}</a></li>
-            <li><a href="/fonctionnement">{t('footer.private.how')}</a></li>
-            <li><a href="/avis">{t('footer.private.reviews')}</a></li>
-            <li><a href="/precommande">{t('footer.private.cta')}</a></li>
+            <li><Link to="/about">{t('footer.private.why')}</Link></li>
+            <li><Link to="/services">{t('footer.private.services')}</Link></li>
+            <li><Link to="/fonctionnement">{t('footer.private.how')}</Link></li>
+            <li><Link to="/avis">{t('footer.private.reviews')}</Link></li>
+            <li><Link to="/precommande">{t('footer.private.cta')}</Link></li>
           </ul>
         </div>
 
         <div className="footer__col">
           <h4>{t('footer.proTitle')}</h4>
           <ul>
-            <li><a href="/pro">{t('footer.pro.access')}</a></li>
-            <li><a href="/b2b">{t('footer.pro.offer')}</a></li>
-            <li><a href="/presse">{t('footer.pro.press')}</a></li>
-            <li><a href="/contact">{t('footer.pro.contact')}</a></li>
+            <li><Link to="/pro">{t('footer.pro.access')}</Link></li>
+            <li><Link to="/b2b">{t('footer.pro.offer')}</Link></li>
+            <li><Link to="/presse">{t('footer.pro.press')}</Link></li>
+            <li><Link to="/contact">{t('footer.pro.contact')}</Link></li>
           </ul>
         </div>
 
@@ -52,9 +53,9 @@ const Footer = () => {
       <div className="footer__bottom">
         <p>© {new Date().getFullYear()} Solenca. {t('footer.rights')}</p>
         <ul>
-          <li><a href="/mentions-legales">{t('footer.legal')}</a></li>
-          <li><a href="/cgv">{t('footer.terms')}</a></li>
-          <li><a href="/confidentialite">{t('footer.privacy')}</a></li>
+          <li><Link to="/mentions-legales">{t('footer.legal')}</Link></li>
+          <li><Link to="/cgv">{t('footer.terms')}</Link></li>
+          <li><Link to="/confidentialite">{t('footer.privacy')}</Link></li>
         </ul>
       </div>
     </footer>

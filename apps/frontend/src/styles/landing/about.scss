@@ -1,5 +1,5 @@
 .about-section {
-  padding: 3rem 1rem; // Petit padding mobile
+  padding: 3rem 1rem; // Base mobile
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -20,11 +20,11 @@
 
     &__left {
       h2 {
-        font-size: 2rem; // Petit mobile
+        font-size: 2rem; // Base mobile
         font-weight: 700;
         line-height: 1.2;
         color: #111;
-        min-width: 500px;
+        min-width: auto; // Pas de min fixe mobile pour éviter overflow
       }
     }
 
@@ -45,9 +45,12 @@
         font-weight: 300;
         cursor: pointer;
         transition: all 0.2s ease;
-        width: 100%; // Tappable mobile
+        width: 100%; // Full tappable mobile
+        min-height: 48px; // Accessibilité touch
+        display: inline-block; // Centre si needed
 
-        &:hover {
+        &:hover,
+        &:active { // Support touch
           background: #2c2c2c;
         }
       }
@@ -63,7 +66,7 @@
       border-radius: 20px;
       text-align: center;
       padding: 1.5rem 1rem;
-      height: auto; // Auto height to prevent overflow
+      height: auto; // Auto pour fluidité
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -89,11 +92,52 @@
         max-width: 100px;
         height: auto;
         margin: 0 auto;
+        object-fit: contain; // Pas de crop
       }
     }
   }
 
-  // Media min-width desktop
+  /* Tablette (min-width: 481px) */
+  @media (min-width: 481px) {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+
+    .about-top {
+      gap: 2rem;
+
+      &__left h2 {
+        font-size: 2.5rem;
+      }
+
+      &__right {
+        p {
+          font-size: 1.05rem;
+        }
+
+        .about-btn {
+          width: auto; // Pas full sur tablette
+          padding: 0.9rem 1.8rem;
+        }
+      }
+    }
+
+    .about-cards {
+      flex-direction: row; // Horizontal tablette si espace
+      flex-wrap: wrap;
+      gap: 1.75rem;
+
+      .about-card {
+        flex: 1 1 180px; // Flexible
+        padding: 1.75rem 1.25rem;
+
+        h3 { font-size: 1.05rem; }
+        p { font-size: 0.95rem; }
+        img { max-width: 110px; }
+      }
+    }
+  }
+
+  /* Desktop (min-width: 769px) */
   @media (min-width: 769px) {
     padding: 3rem 2rem;
     max-width: 80%;
@@ -103,9 +147,10 @@
       flex-direction: row;
       text-align: left;
       gap: 2rem;
+      align-items: flex-start; // Align top pour équilibre
 
       &__left h2 { font-size: 3.5rem; }
-      &__right .about-btn { width: auto; }
+      &__right .about-btn { width: auto; padding: 1rem 2rem; }
     }
 
     .about-cards {
@@ -115,12 +160,12 @@
 
       .about-card {
         flex: 1 1 220px;
-        padding: 2rem 1.5rem; // Plus padding desktop to contain icons
-        height: auto; // Auto to avoid overflow
+        padding: 2rem 1.5rem;
+        height: auto;
 
         h3 { font-size: 1.1rem; }
         p { font-size: 0.95rem; }
-        img { max-width: 130px; height: auto; } // Contained, no overflow
+        img { max-width: 130px; height: auto; }
       }
     }
   }

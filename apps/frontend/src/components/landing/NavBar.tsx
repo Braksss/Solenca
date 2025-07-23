@@ -24,7 +24,6 @@ const Navbar = () => {
             <li><Link to="/about" onClick={() => setIsOpen(false)}>{t('navbar.about')}</Link></li>
             <li><Link to="/services" onClick={() => setIsOpen(false)}>{t('navbar.services')}</Link></li>
             <li><Link to="/abonnement" onClick={() => setIsOpen(false)}>{t('navbar.abonnements')}</Link></li>
-            <li><Link to="/magazine" onClick={() => setIsOpen(false)}>{t('navbar.magazine')}</Link></li>
             <li><Link to="/catalogue" onClick={() => setIsOpen(false)}>{t('navbar.catalogue')}</Link></li>
           </ul>
         </div>

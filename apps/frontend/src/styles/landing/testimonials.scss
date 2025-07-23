@@ -1,19 +1,19 @@
 .testimonials-section {
   max-width: 100%; // Full-width mobile
   margin: 0 auto 5%;
-  padding: 3rem 1rem; // Plus petit padding mobile
+  padding: 3rem 1rem; // Base mobile
   border-radius: 30px;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 2rem; // Réduit gap mobile
+  gap: 2rem; // Base mobile
 
   .hero__crew {
-    margin-top: 1.5rem; // Plus petit mobile
+    margin-top: 1.5rem; // Base mobile
     padding: 1.5rem 1rem;
     border-radius: 24px;
     display: flex;
-    flex-direction: column; // Stack vertical mobile
+    flex-direction: column; // Vertical mobile
     align-items: center;
     gap: 1rem;
 
@@ -21,7 +21,7 @@
       text-align: center;
 
       .hero__crew-title {
-        font-size: 2rem; // Plus petit mobile
+        font-size: 2rem; // Base mobile
         font-weight: 600;
         color: #111;
         margin-bottom: 0.3rem;
@@ -40,10 +40,11 @@
 
       .hero__crew-avatars {
         img {
-          width: 35px; // Plus petit mobile
+          width: 35px; // Base mobile
           height: 35px;
           margin-left: -8px;
           border-radius: 50%;
+          object-fit: cover; // Pas de distortion
         }
       }
 
@@ -56,7 +57,7 @@
 
   .testimonials-grid {
     display: flex;
-    flex-direction: column; // Stack vertical mobile
+    flex-direction: column; // Vertical mobile
     gap: 1.5rem;
 
     .testimonial-card {
@@ -83,6 +84,7 @@
           width: 35px;
           height: 35px;
           border-radius: 50%;
+          object-fit: cover;
         }
 
         span {
@@ -92,7 +94,47 @@
     }
   }
 
-  // Media min-width desktop
+  /* Tablette (min-width: 481px) */
+  @media (min-width: 481px) {
+    padding: 3.5rem 1.5rem;
+    gap: 2.5rem;
+
+    .hero__crew {
+      margin-top: 2rem;
+      padding: 1.75rem 1.5rem;
+      gap: 1.5rem;
+
+      .hero__crew-left {
+        .hero__crew-title { font-size: 2.2rem; }
+        .hero__crew-subtext { font-size: 0.9rem; }
+      }
+
+      .hero__crew-right {
+        gap: 0.75rem;
+
+        .hero__crew-avatars img { width: 38px; height: 38px; margin-left: -9px; }
+        .hero__crew-badge { padding: 0.35rem 0.7rem; font-size: 0.75rem; }
+      }
+    }
+
+    .testimonials-grid {
+      flex-direction: row; // Horizontal tablette
+      flex-wrap: wrap;
+      gap: 1.75rem;
+
+      .testimonial-card {
+        flex: 1 1 45%; // 2 columns tablette
+        padding: 1.75rem 1.25rem;
+        gap: 1.25rem;
+
+        .message { font-size: 1rem; line-height: 1.55; }
+        .user img { width: 38px; height: 38px; }
+        span { font-size: 0.95rem; }
+      }
+    }
+  }
+
+  /* Desktop (min-width: 769px) */
   @media (min-width: 769px) {
     max-width: 85%;
     padding: 4rem 2rem;
