@@ -3,537 +3,245 @@
     "about": "Sobre nosaltres",
     "services": "Serveis",
     "abonnements": "Subscripcions",
-    "magazine": "Revista",
-    "catalogue": "Catàleg",
-    "login": "Iniciar sessió",
-    "club": "Club Solenca"
-  },
-  "hero": {
-    "headline": "Tranquillidad 365",
-    "description": "La vostra residència secundària a la Costa Brava protegida i mantinguda tot l’any, sense que moveu un dit.",
-    "cta": "Precomanda -20% abans del llançament →"
-  },
-  "about": {
-    "title": "La vostra vila protegida 365 dies l’any, sense estrès ni sorpreses.",
-    "description": "Absenteu-vos tranquil·lament: rebeu proves visuals regulars, alertes immediates i intervencions ràpides per a qualsevol imprevist. El vostre bé roman impecable, valorat i llest per a l’ús.",
-    "cta": "Obteniu el vostre pressupost gratuït",
-    "card1": {
-      "title": "Visites locals regulars",
-      "text": "La vostra vila controlada interior/exterior cada setmana: fotos i llistes de verificació perquè ho sàpigueu tot en temps real, sense dependre de veïns o artesans aleatoris."
-    },
-    "card2": {
-      "title": "Proves visuals instantànies",
-      "text": "Fotos horodatatades i alertes push: visualitzeu l’estat exacte del vostre bé des del vostre telèfon, evitant dubtes i costos imprevistos."
-    },
-    "card3": {
-      "title": "Intervencions immediates",
-      "text": "Problema detectat? Resolt en 24h (jardí, piscina, interior): estalvieu temps i diners, amb una vila sempre operativa."
-    },
-    "card4": {
-      "title": "Tranquillidad 365",
-      "text": "Protecció contínua a mida: marxeu amb l’esperit lliure, sabent que la vostra inversió està segura i valorada tot l’any."
-    },
-    "testimonials": {
-      "title": "Propietaris i agències preparats per començar",
-      "subtitle": "Han precomandat per a una gestió sense estrès des de novembre de 2025.",
-      "test1": "Pre-reservat per a la meva vila a Platja d’Aro: finalment una solució que em lliura de l’estrès diari, amb -20% de regal!",
-      "test2": "Per a la meva agència, Solenca impulsarà la nostra eficiència locativa: informes fotogràfics fiables, menys queixes de clients.",
-      "test3": "Expatriat francès, asseguro la meva casa a Begur sense esforç: esperant les alertes en temps real des del llançament."
+    "club": "Solenca Club",
+    "aria": {
+      "primary_nav": "Navegació principal",
+      "open_menu": "Obrir el menú",
+      "close_menu": "Tancar el menú",
+      "logo_home": "Solenca - Inici",
+      "language_select": "Triar idioma"
     }
   },
-  "cta": {
-    "title": "Oblideu els problemes de la vostra casa secundària.",
-    "description": "Marxeu, la vostra vila roman sota control: verificacions setmanals, gestió d’urgències, proves clares enviades directament. Resultat: pau d’esperit total, estalvis en reparacions tardanes.",
-    "button": "Precomanda ara →"
+
+  "hero": {
+    "headline": "Tranquil·litat 365",
+    "description": "Gestió completa de residències secundàries a la Costa Brava. La vostra casa en bones mans, tot l'any.",
+    "cta": "Demanar un pressupost en 24h"
   },
-  "footer": {
-    "baseline": "La vostra tranquil·litat a la Costa Brava: llançament novembre 2025 – precomanda -20% i allibereu-vos de les limitacions.",
-    "privateTitle": "Per a particulars",
-    "private": {
-      "why": "Per què triar Solenca",
-      "services": "Serveis que us simplifiquen la vida",
-      "how": "Com us protegeix",
-      "reviews": "Opinions de propietaris tranquils",
-      "cta": "Precomando"
-    },
-    "proTitle": "Per a professionals",
-    "pro": {
-      "access": "Accés per a socis",
-      "offer": "Oferta B2B que impulsa els vostres ingressos",
-      "press": "Premsa i mitjans",
-      "contact": "Contacte professional"
-    },
-    "connectTitle": "Mantingueu-vos informat",
-    "emailPlaceholder": "El vostre correu electrònic",
-    "rights": "Tots els drets reservats.",
-    "legal": "Mencions legals",
-    "terms": "CGV",
-    "privacy": "Confidencialitat"
+
+  "about": {
+    "title": "Per què Solenca?",
+    "description": "Gestionem la vostra residència secundària a la Costa Brava, tot l'any.",
+    "cta": "Demanar un pressupost",
+    "card1": { "title": "Reactivitat", "text": "Intervenim ràpidament en cas de problema." },
+    "card2": { "title": "Seguiment clar", "text": "Cada visita està documentada amb fotos i informes." },
+    "card3": { "title": "Seguretat", "text": "La vostra casa és controlada i supervisada regularment." },
+    "card4": { "title": "Arrelament local", "text": "Una xarxa de proveïdors fiables a la Costa Brava." }
   },
+
   "testimonials": {
-    "title": "Han precomandat per a una serenitat immediata",
-    "subtitle": "Descobriu com Solenca transformarà el seu dia a dia.",
-    "badge": "Precomandes obertes fins a l’1 de novembre",
-    "test1": "Precomandat per a la meva casa a Calonge: informes clars, intervencions professionals – acabats els trucades pàniques als veïns.",
-    "test2": "Reservat des de l’obertura: concepte tranquil·litzador per viure a distància sense estrès permanent.",
-    "test3": "Convencut pel focus humà i estructurat: adéu artesans aleatoris, hola tranquil·litat real."
+    "title": "Per què Solenca ens ha convençut",
+    "subtitle": "La gestió de residències secundàries a la Costa Brava respon a una necessitat real.",
+    "badge": "Propietaris ja interessats",
+    "test1": "La idea de tenir finalment un servei fiable per vigilar la nostra casa quan no hi som és exactament el que ens faltava.",
+    "test2": "Una subscripció clara, sense sorpreses, és tranquil·litzador. Sabem que podem comptar amb algú a prop.",
+    "test3": "Només venim unes setmanes a l’any. Tenir un seguiment regular ens treu una gran càrrega mental."
   },
+
+  "cta": {
+    "title": "La vostra casa, la nostra missió",
+    "description": "A la Costa Brava, gestionem la vostra residència secundària tot l'any: visites regulars, control de la piscina i el jardí, informes clars després de cada visita.",
+    "button": "Demanar un pressupost en 24h"
+  },
+
+  "banner": {
+    "text": "Oferta de llançament: -20% durant 6 mesos per als 20 pròxims subscriptors"
+  },
+
   "aboutPage": {
+    "metaTitle": "Ens presentem? — Solenca",
     "hero": {
-      "title": "La vostra vila protegida i valorada tot l’any.",
-      "description": "Rebeu informes setmanals, alertes dirigides i intervencions ràpides: el vostre bé roman impecable, sense esforç de la vostra part.",
-      "cta": "Precomandar la meva tranquil·litat →",
-      "badge": "Ja triat per propietaris exigents i agències locals per zero estrès."
+      "title": "Ens presentem? Solenca",
+      "description": "Basats a la Costa Brava, gestionem les vostres cases tot l’any. Visites regulars, informes clars, reactivitat en cas de problema.",
+      "cta": "Descobrir les subscripcions",
+      "alt": "Vista d’una vila a la Costa Brava",
+      "badge": "Ja recolzat per propietaris com vosaltres"
     },
     "kpi": {
       "0": "Precomandes",
       "1": "Satisfacció",
-      "2": "Visites",
-      "3": "Termini"
+      "2": "Visites en fase de prova",
+      "3": "Llançament oficial"
     },
-    "quote": "Us mereixeu una gestió sense falles: proves visuals, accions ràpides, pau d’esperit total.",
+    "quote": "va néixer d’una constatació simple: la majoria dels propietaris de residències secundàries volen tranquil·litat, no gestió quotidiana.",
     "cta": {
-      "title": "Tranquil allà on sigueu",
-      "description": "Fotos setmanals, llistes de verificació detallades, històric accessible: controleu tot a distància, evitant degradacions i costos innecessaris.",
-      "primary": "Precomandar ara -20% →",
-      "secondary": "Descobrir les prestacions"
+      "title": "Preparat per confiar-nos la vostra casa?",
+      "description": "Proposem subscripcions clares, sense sorpreses. La vigilància, el seguiment i les intervencions locals estan inclosos, perquè estigueu tranquils tot l’any.",
+      "primary": "Veure les subscripcions",
+      "secondary": "Veure un exemple d’informe"
     },
     "cards": {
       "monthlyReport": "Informe mensual detallat",
-      "alert": "Alerta immediata",
-      "checklist": "Llista de verificació de manteniment completa",
-      "history": "Històric de visites",
-      "lastVisit": "Última visita visualitzada"
+      "alert": "Alerta immediata en cas de problema",
+      "checklist": "Llista de control després de cada visita",
+      "history": "Històric accessible en tot moment",
+      "lastVisit": "Última visita en foto"
     }
   },
+
   "services": {
+    "faqSection": {
+      "title": "Preguntes freqüents",
+      "intro": "Dubteu? Aquí teniu les respostes a les preguntes més habituals."
+    },
     "hero": {
-      "title": "Serveis per zero estrès diari",
-      "description": "Visites proactives, notificacions push, històrics clars: guanyeu temps, eviteu sorpreses i protegiu la vostra inversió.",
-      "cta": "Precomandar la meva tranquil·litat →"
+      "title": "Tot per a les vostres residències secundàries",
+      "description": "Propietaris o professionals, gestionem els vostres béns a la Costa Brava: visites, seguiment, informes i reactivitat. Un únic interlocutor per a tot.",
+      "cta": "Demanar un pressupost"
     },
     "private": {
-      "title": "Per a propietaris absents: serenitat sense esforç",
-      "description": "Visites, accions, proves: rebeu tot en temps real, alliberat de les trucades i els dubtes.",
-      "cta": "Descobrir Solenca →",
-      "card1": {
-        "title": "Visites regulars",
-        "text": "Controls interior/exterior: informes fotogràfics per a una vila sempre preparada, sense sorpreses costoses."
-      },
-      "card2": {
-        "title": "Urgències gestionades",
-        "text": "Intervenció en 24h: eviteu degradacions i pèrdues, amb l’esperit lliure."
-      },
-      "card3": {
-        "title": "Gestió de claus",
-        "text": "Segura per a accés fàcil: delegueu sense risc ni complicació."
-      },
-      "card4": {
-        "title": "Opcions personalitzades",
-        "text": "Piscina, jardí...: activeu allò que importa, per a un bé a mida sense sobrecost innecessari."
-      }
+      "title": "Per a particulars",
+      "description": "Teniu una residència secundària? Nosaltres ens en fem càrrec completament, tot l’any.",
+      "cta": "Subscriure’s a una subscripció",
+      "card1": { "title": "Visites regulars", "text": "2 o 4 visites per mes segons la fórmula escollida." },
+      "card2": { "title": "Alertes immediates", "text": "Avís directe en cas de problema detectat." },
+      "card3": { "title": "Suport local", "text": "Una xarxa de proveïdors fiables per intervenir ràpidament." },
+      "card4": { "title": "Informes fotogràfics", "text": "Cada visita documentada amb fotos i comentaris." }
     },
-    "quote": "Obteniu un estàndard premium: simple, fiable, que us fa guanyar temps i diners.",
-    "quoteAuthor": "El fundador",
+    "quote": "Hem creat Solenca perquè els propietaris visquin la seva residència secundària com un plaer, mai com una preocupació.",
+    "quoteAuthor": "Equip Solenca",
     "pro": {
-      "title": "Per a professionals: eficiència i ingressos impulsats",
-      "description": "Delegueu l’operatiu en marca blanca: back-office fluid, terreny fiable, clients satisfets sense esforç addicional.",
-      "cta": "Accedir a l’espai professional →",
-      "card1": {
-        "title": "Seguiment delegat complet",
-        "text": "Gestió de A a Z: allibereu temps per a més lloguers i ingressos."
-      },
-      "card2": {
-        "title": "Eines integrades",
-        "text": "Back-office dedicat: piloteu fàcilment, reduïu queixes i impulseu la satisfacció dels clients."
-      },
-      "card3": {
-        "title": "Marca blanca",
-        "text": "Veniu sota el vostre nom: marges addicionals, partenariat sense competència."
-      },
-      "card4": {
-        "title": "Equip local",
-        "text": "Intervencions professionals: fiabilitat al terreny que reforça la vostra reputació."
-      }
+      "title": "Per a professionals",
+      "description": "Agències immobiliàries, consergeries, comunitats: som el vostre soci de confiança a la Costa Brava.",
+      "cta": "Treballar amb nosaltres",
+      "card1": { "title": "Seguiment delegat", "text": "Ens encarreguem de les visites i controls per als vostres clients." },
+      "card2": { "title": "Informes digitalitzats", "text": "Documents clars per compartir directament amb els propietaris." },
+      "card3": { "title": "Reactivitat", "text": "Intervenció ràpida en cas d’urgència o imprevist." },
+      "card4": { "title": "Valor afegit", "text": "Fidelitzeu els vostres clients amb un servei premium sense esforç addicional." }
     },
     "faq": [
-      {
-        "question": "Puc subscriure’m des de l’estranger?",
-        "answer": "Sí: gestió 100% a distància via app – controleu tot sense viatge, pre-llançament obert."
-      },
-      {
-        "question": "En quin termini interveniu?",
-        "answer": "24h màx (4h urgència): eviteu escalades i costos, serenitat immediata des de novembre."
-      },
-      {
-        "question": "Com sóc informat després d’una visita?",
-        "answer": "Informe fotogràfic directe al vostre espai: clar, per zero dubtes."
-      },
-      {
-        "question": "Què passa en cas d’anomalia?",
-        "answer": "Alerta + resolució ràpida: guanyeu en seguretat i economia."
-      },
-      {
-        "question": "Puc personalitzar les visites?",
-        "answer": "Sí, opcions a la carta: adaptat als vostres necessitats per màxima eficiència."
-      },
-      {
-        "question": "Treballau amb les agències?",
-        "answer": "Sí, marca blanca: gestioneu fora de temporada sense esforç, impulseu ingressos."
-      },
-      {
-        "question": "El meu allotjament és elegible?",
-        "answer": "Residències secundàries Costa Brava: validació ràpida, precomanda oberta."
-      },
-      {
-        "question": "Puc aturar la subscripció?",
-        "answer": "Sí, flexible: ajusteu sense restriccions, per a propietaris o professionals."
-      }
+      { "question": "Com funciona la subscripció?", "answer": "Escolliu una fórmula (2 o 4 visites al mes). Cada visita es planifica amb antelació i es documenta amb un informe fotogràfic detallat." },
+      { "question": "Què cobreix exactament una visita?", "answer": "Verifiquem interior i exterior: portes, finestres, humitat, electricitat, piscina, jardí, bústia. Qualsevol problema és notificat immediatament." },
+      { "question": "Què passa en cas de problema?", "answer": "Rebeu una alerta immediata (WhatsApp, correu o trucada). Podem intervenir directament o mobilitzar proveïdors locals de confiança (lampista, electricista, jardiner, piscinista)." },
+      { "question": "Puc rescindir fàcilment?", "answer": "Sí. Les nostres subscripcions són sense permanència. Podeu rescindir en qualsevol moment amb un simple correu, sense costos ocults." },
+      { "question": "Qui té accés a casa meva?", "answer": "Només els nostres agents autoritzats i identificats intervenen. Cada intervenció queda registrada i confirmada amb un informe, per a una transparència total." },
+      { "question": "I per a la seguretat?", "answer": "Cada visita inclou un control complet de l’alarma i dels accessos. En cas d’anomalia, us avisem immediatament i prenem les mesures necessàries." },
+      { "question": "Oferiu també neteja, piscina, jardí?", "answer": "Sí. Nosaltres gestionem la vigilància. Per als serveis complementaris (neteja, manteniment de piscina, jardineria), fem intervenir els nostres socis a tarifes preferents." },
+      { "question": "Com es factura?", "answer": "Se us factura mensualment per domiciliació SEPA o targeta via Stripe. Les vostres factures són accessibles en línia en tot moment." },
+      { "question": "I si només hi vinc a l’estiu?", "answer": "Encara que ocupeu poc la residència, assegurem un seguiment regular per evitar sorpreses desagradables (fuites, humitat, vandalisme)." },
+      { "question": "Treballeu també amb agències immobiliàries?", "answer": "Sí. Oferim un servei en marca blanca: realitzem visites i controls per als vostres clients, però vosaltres continueu essent el seu interlocutor." }
     ]
   },
-  "subscription": {
+
+  "abo": {
+    "seoTitle": "Solenca Care — Pressupost en 24h",
+
     "hero": {
-      "title": "Subscripcions a mida per a la vostra serenitat",
-      "description": "Trieu el vostre pla: inspeccions regulars, informes detallats, flexibilitat total. Resultat: vila protegida, temps alliberat, estalvis en imprevistos.",
-      "cta": "Crear el meu pressupost gratuït",
-      "pro": "Professional/agència loc? Accediu a l’oferta dedicada."
-    }
-  },
-  "catalogue": {
-    "hero": {
-      "title": "Mòduls a la carta per necessitats específiques",
-      "description": "Afegiu jardí, piscina...: executat en 7 dies, per a una vila impecable sense subscripció forçada.",
-      "searchPlaceholder": "Cercar un servei..."
+      "kicker": "Solenca Care",
+      "title": "Des de 129€ / mes",
+      "subtitle": "2 visites mensuals, control i informe. Complements a demanda.",
+      "cta": "Demanar un pressupost (24h)",
+      "hint": "Pressupost en 24h • Sense compromís",
+      "chips": ["Costa Brava", "Assegurat RC Pro", "Coordinació d’intervinents"]
     },
-    "filters": {
-      "label": "Filtrar per categoria"
+
+    "included": {
+      "title": "Què està inclòs",
+      "items": [
+        "2 visites programades / mes",
+        "Controls visuals i registre d’anomalies",
+        "Fotos / vídeos + informe resumit",
+        "Lectura de comptadors",
+        "Gestió de claus i coordinació"
+      ]
     },
-    "price": "A partir de {{price}}€",
-    "book": "Reservar aquest servei →",
-    "upsell": "Prefereix una subscripció regular per més estalvis",
-    "cta": {
-      "title": "Necessitat a mida?",
-      "description": "Adaptem: formulari ràpid, resposta en 24h per resoldre la vostra necessitat exacta.",
-      "button": "Sol·licitud personalitzada"
+
+    "addons": {
+      "title": "Complements (a demanda)",
+      "items": [
+        "Piscina: química, cistelles, petit manteniment",
+        "Jardí: tall lleuger, bufat, petites podes",
+        "Neteja interior puntual",
+        "Roba i bugaderia",
+        "Altres necessitats a mida"
+      ],
+      "note": "Digueu-nos què necessiteu al formulari."
     },
+
+    "callout": {
+      "title": "Simple i clar",
+      "items": [
+        "Pressupost personalitzat en 24h",
+        "Cap compromís, valideu abans d’intervenir",
+        "Cobertura Costa Brava, interlocutor únic"
+      ],
+      "cta": "Demanar un pressupost (24h)"
+    },
+
+    "pro": {
+      "title": "Solenca Care Pro",
+      "subtitle": "Agències, consergeries, comunitats i multipropietaris.",
+      "items": [
+        "Informes PDF marca blanca",
+        "SLAs estacionals i coordinador dedicat",
+        "Tarifes decreixents per volum"
+      ],
+      "cta": "Parlar amb un assessor (24h)"
+    },
+
     "modal": {
-      "date": "Trieu una data",
-      "specs": "Especificacions",
-      "details": "Detalls",
-      "city": "Ciutat d’intervenció",
-      "name": "Nom i cognoms",
-      "email": "Adreça electrònica",
-      "phone": "Telèfon",
-      "address": "Adreça exacta",
-      "adjustedPrice": "Total ajustat: {{price}}€ IVA inclòs",
-      "pay": "Validar la reserva →",
-      "cancel": "Cancel·lar",
-      "switchToSub": "Més aviat una subscripció mensual?"
+      "title": "Demanda de pressupost (resposta en 24h)",
+      "badgePro": "Demanda Pro",
+      "badgePart": "Particular",
+      "badge24h": "Pressupost en 24h"
     },
-    "categories": [
-      "Tots",
-      "Exterior",
-      "Interior",
-      "Administratiu"
-    ],
-    "services": [
-      {
-        "title": "Neteja de vidres",
-        "description": "Vidres impecables per a una vista Costa Brava cristal·lina.",
-        "price": 89,
-        "extra": "Més enllà: pressupost exprés.",
-        "image": "vitreImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "fenetres", "label": "Nombre de finestres", "type": "number", "default": 10 },
-          { "name": "hauteur", "label": "Alçada màx (pisos)", "type": "number", "default": 1 }
-        ],
-        "priceLogic": "Base 89€ ; +8€ per finestra >10 ; +20€ per pis >1 ; +30€ si urgent (<3d) ; +15€ si fora zones principals (Platja d'Aro, S'Agaró, Castell d'Aro). Multiplicar per 1.2 cap de setmana, 0.9 dimarts, +10% si <2 slots."
+
+    "form": {
+      "labels": {
+        "name": "Nom i cognoms",
+        "email": "Email",
+        "phone": "Telèfon",
+        "preferContact": "Preferència de contacte",
+        "address": "Adreça de l’immoble",
+        "city": "Ciutat",
+        "zip": "Codi postal",
+        "propertyType": "Tipus d’immoble",
+        "surface": "Superfície (m²)",
+        "wantedServices": "Serveis desitjats",
+        "company": "Empresa",
+        "siret": "SIRET / CIF",
+        "proRole": "Sou…",
+        "message": "Expliqueu-nos l’essencial",
+        "consent": "Accepto ser contactat sobre aquest pressupost."
       },
-      {
-        "title": "Tallar la gespa",
-        "description": "Un jardí preparat per als vostres retorns.",
-        "price": 89,
-        "extra": "Més enllà: pressupost exprés.",
-        "image": "pelouseImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície terreny (m²)", "type": "number", "default": 300 }
-        ],
-        "priceLogic": "Base 89€ ; +0.2€/m² >300 ; +30€ si urgent ; +15€ fora zones principals. Multiplicar com a dalt."
+      "placeholders": {
+        "message": "Períodes, accessos, restriccions, expectatives…"
       },
-      {
-        "title": "Manteniment terrassa",
-        "description": "El vostre espai exterior, com nou.",
-        "price": 109,
-        "extra": "Més enllà: pressupost exprés.",
-        "image": "terrasseImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície terrassa (m²)", "type": "number", "default": 30 }
-        ],
-        "priceLogic": "Base 109€ ; +3€/m² >30 ; +30€ urgent ; +15€ fora zones."
+      "services": {
+        "pool": "Piscina",
+        "garden": "Jardí",
+        "cleaning": "Neteja",
+        "laundry": "Roba",
+        "other": "Altres"
       },
-      {
-        "title": "Neteja després d’intempèries",
-        "description": "Protecció contra els capritxos mediterranis.",
-        "price": 119,
-        "extra": "Més enllà: pressupost exprés.",
-        "image": "intemperiesImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície exterior impactada (m²)", "type": "number", "default": 200 }
-        ],
-        "priceLogic": "Base 119€ ; +0.5€/m² >200 ; +40€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Verificació habitatge",
-        "description": "La serenitat, capturada en un clic.",
-        "price": 69,
-        "extra": "Pressupost exprés.",
-        "image": "verificationImg",
-        "category": "Interior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície habitatge (m²)", "type": "number", "default": 150 }
-        ],
-        "priceLogic": "Base 69€ ; +0.3€/m² >150 ; +20€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Regar el jardí",
-        "description": "La vostra oasi verda, mantinguda sense esforç.",
-        "price": 49,
-        "extra": "Pressupost exprés.",
-        "image": "arrosageImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície jardí (m²)", "type": "number", "default": 200 }
-        ],
-        "priceLogic": "Base 49€ ; +0.1€/m² >200 ; +15€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Recepció de paquets/comandes",
-        "description": "Lliuraments segurs, com si hi fóssiu.",
-        "price": 59,
-        "extra": "Pressupost exprés.",
-        "image": "colisImg",
-        "category": "Administratiu",
-        "formFields": [
-          { "name": "nombreColis", "label": "Nombre de paquets", "type": "number", "default": 1 }
-        ],
-        "priceLogic": "Base 59€ ; +10€ per paquet >1 ; +20€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Obertura puntual per artesà",
-        "description": "Intervencions fluides, sense problemes.",
-        "price": 59,
-        "extra": "Pressupost exprés.",
-        "image": "artisanImg",
-        "category": "Administratiu",
-        "formFields": [
-          { "name": "duree", "label": "Durada estimada (min)", "type": "number", "default": 30 }
-        ],
-        "priceLogic": "Base 59€ ; +49€/h >30min ; +20€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Remuntada d’anomalia",
-        "description": "Detecció proactiva per a una propietat impecable.",
-        "price": 69,
-        "extra": "Inclou informe fotogràfic i síntesi.",
-        "image": "anomalieImg",
-        "category": "Administratiu",
-        "formFields": [
-          { "name": "surface", "label": "Superfície concernida (m²)", "type": "number", "default": 50 }
-        ],
-        "priceLogic": "Base 69€ ; +0.5€/m² >50 ; +30€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Lectura de comptador",
-        "description": "Precisió absoluta, zero oblit.",
-        "price": 39,
-        "extra": "Per a tots els tipus de comptadors accessibles.",
-        "image": "compteurImg",
-        "category": "Administratiu",
-        "formFields": [
-          { "name": "types", "label": "Tipus de comptadors", "type": "select", "options": ["Aigua", "Gas", "Electricitat", "Tots (+10€)"], "default": "Tots (+10€)" }
-        ],
-        "priceLogic": "Base 39€ ; +10€ si tots els tipus ; +10€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Lliurament urgent",
-        "description": "Urgències gestionades amb elegància.",
-        "price": 79,
-        "extra": "Inclou 1 anada-tornada local.",
-        "image": "livraisonImg",
-        "category": "Administratiu",
-        "formFields": [
-          { "name": "distance", "label": "Distància comerç (km)", "type": "number", "default": 5 }
-        ],
-        "priceLogic": "Base 79€ ; +5€/km >5 ; +40€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Manteniment piscina normal",
-        "description": "Neteja estàndard, tractament aigua. Per a piscines actives.",
-        "price": 99,
-        "extra": "Més enllà: pressupost exprés.",
-        "image": "piscineNormalImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície piscina (m²)", "type": "number", "default": 50 }
-        ],
-        "priceLogic": "Base 99€ ; +2€/m² >50 ; +40€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Neteja piscina en profunditat",
-        "description": "Buidatge, neteja intensiva per a piscines apagades des de mesos (deixalles, algues).",
-        "price": 199,
-        "extra": "Inclou informe fotogràfic.",
-        "image": "piscineDeepImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície piscina (m²)", "type": "number", "default": 50 },
-          { "name": "moisEteinte", "label": "Mesos apagada", "type": "number", "default": 3 }
-        ],
-        "priceLogic": "Base 199€ ; +3€/m² >50 ; +20€/mes >3 ; +50€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Neteja gespa sintètica",
-        "description": "Eliminació de deixalles (agulles de pi, fulles), raspallat.",
-        "price": 79,
-        "extra": "Més enllà: pressupost exprés.",
-        "image": "gazonSynthImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície gespa (m²)", "type": "number", "default": 200 }
-        ],
-        "priceLogic": "Base 79€ ; +0.3€/m² >200 ; +25€ urgent ; +15€ fora zones."
-      },
-      {
-        "title": "Neteja de la llar interior",
-        "description": "Neteja completa sòls/superfícies/sanitari. Ideal post-absència.",
-        "price": 149,
-        "extra": "Productes ecològics inclosos.",
-        "image": "menageImg",
-        "category": "Interior",
-        "formFields": [
-          { "name": "surface", "label": "Superfície habitatge (m²)", "type": "number", "default": 150 }
-        ],
-        "priceLogic": "Base 149€ ; +1€/m² >150 ; +40€ urgent ; +15€ fora zones."
-      }
-    ]
+      "propertyTypes": [
+        { "key": "apartment", "label": "Apartament" },
+        { "key": "house", "label": "Casa" },
+        { "key": "villa", "label": "Vila / Gran propietat" }
+      ],
+      "preferContacts": [
+        { "key": "phone", "label": "Telèfon" },
+        { "key": "email", "label": "Email" },
+        { "key": "whatsapp", "label": "WhatsApp" }
+      ],
+      "proRoles": [
+        { "key": "agency", "label": "Agència immobiliària" },
+        { "key": "concierge", "label": "Consergeria" },
+        { "key": "syndic", "label": "Comunitat" },
+        { "key": "multiowner", "label": "Multipropietari" },
+        { "key": "other", "label": "Altres" }
+      ],
+      "ctaCancel": "Cancel·lar",
+      "ctaSubmit": "Enviar la meva demanda"
+    },
+
+    "toastOk": "Gràcies! La vostra demanda de pressupost ha estat registrada (resposta en 24h)."
   },
-  "conversion": {
-    "metaTitle": "Pressupost Solenca: la vostra tranquil·litat personalitzada",
-    "metaDescription": "Pressupost en 2 min: protecció 365 dies a la Costa Brava, -20% precomanda.",
-    "headline": "Comenceu la vostra tranquil·litat aquí.",
-    "description": "Pressupost personalitzat: manteniment sense estrès, proves visuals, intervencions ràpides.",
-    "promo": " -20% precomanda abans de l’1 de novembre.",
-    "faq": "Veure la FAQ",
-    "back": "Tornar",
-    "step1": {
-      "title": "Detalls del vostre bé",
-      "firstname": "Nom",
-      "lastname": "Cognoms",
-      "email": "Adreça electrònica",
-      "street": "Adreça (carrer)",
-      "zip": "Codi postal",
-      "city": "Ciutat",
-      "houseSurface": "Superfície casa (m²)",
-      "gardenSurface": "Superfície jardí (m²)",
-      "hasPool": "Piscina?",
-      "poolSize": "Superfície piscina (m²)",
-      "next": "Següent"
-    },
-    "step2": {
-      "title": "Mòduls a afegir",
-      "quote": "Generar el pressupost"
-    },
-    "step3": {
-      "title": "Generació del pressupost",
-      "description": "Anàlisi en curs per l’oferta que us allibera realment..."
-    },
-    "step4": {
-      "quoteNumber": "Pressupost N° {{number}}",
-      "client": "Client",
-      "description": "Prestació",
-      "unitPrice": "Preu unitari",
-      "quantity": "Quantitat",
-      "totalHT": "Total HT",
-      "base": "Tranquilidad 365 (base)",
-      "addonDiscount": "Descompte mòduls",
-      "subtotal": "Subtotal",
-      "vat": "IVA (21%)",
-      "total": "Total IVA inclòs",
-      "paymentInfo": "Pagament",
-      "bankTransfer": "Transferència bancària",
-      "account": "Compte: 0123 4567 8901",
-      "date": "Data",
-      "signature": "Signatura",
-      "validity": "Vàlid 1 mes.",
-      "pay": "Confirmar i pagar",
-      "pdf": "Descarregar PDF"
-    },
-    "pricing": {
-      "base": 99,
-      "billingPeriods": {
-        "monthly": {
-          "label": "Mensual",
-          "multiplier": 1,
-          "discount": 0
-        },
-        "semiannual": {
-          "label": "Semestral (6 mesos)",
-          "multiplier": 6,
-          "discount": 0.1
-        },
-        "once": {
-          "label": "Anual (12 mesos)",
-          "multiplier": 12,
-          "discount": 0.2
-        }
-      },
-      "precommandeDiscount": 0.2,
-      "precommandeEndDate": "2025-11-01",
-      "addonDiscountRates": {
-        "3": 0.1,
-        "4": 0.15,
-        "5plus": 0.2
-      },
-      "vatRate": 0.21
-    },
-    "addon": {
-      "garden": {
-        "label": "Manteniment jardí",
-        "info": "Tallar, regar...: jardí perfecte, sense esforç ni degradació.",
-        "priceLogic": "Min(max(surfaceJardin * 0.04, 50), 500)"
-      },
-      "pool": {
-        "label": "Manteniment piscina",
-        "info": "Neteja, equilibri aigua: piscina preparada, eviteu reparacions costoses.",
-        "priceLogic": "Max(taillePiscine * 1.2, 60)"
-      },
-      "house": {
-        "label": "Gestió casa",
-        "info": "Neteja + manteniment: bé sempre acollidor.",
-        "priceLogic": "surfaceMaison * 0.3"
-      },
-      "rental": {
-        "label": "Gestió lloguer",
-        "info": "Check-in/out, planificació: ingressos màxims sense gestió diària.",
-        "priceLogic": "199 (fix)"
-      },
-      "arrival": {
-        "label": "Preparació arribada",
-        "info": "Compres, llits...: acollida perfecta per a vosaltres o llogaters.",
-        "priceLogic": "29 (fix)"
-      },
-      "alarm": {
-        "label": "Integració alarma",
-        "info": "Connexió + alertes: seguretat reforçada, zero intrusió sorpresa.",
-        "priceLogic": "29 (fix)"
-      }
-    }
-  },
-  "banner": {
-    "text": "Pre-llançament: llançament 1 de novembre 2025 – Reserveu -20% off primer mes i oblideu els problemes!"
+  
+  "footer": {
+    "rights": "Tots els drets reservats.",
+    "legal": "Avís legal",
+    "terms": "Condicions generals de venda",
+    "privacy": "Política de privacitat"
   }
 }

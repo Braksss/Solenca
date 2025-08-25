@@ -3,537 +3,245 @@
     "about": "About",
     "services": "Services",
     "abonnements": "Subscriptions",
-    "magazine": "Magazine",
-    "catalogue": "Catalog",
-    "login": "Log in",
-    "club": "Solenca Club"
-  },
-  "hero": {
-    "headline": "Tranquillidad 365",
-    "description": "Your secondary residence on the Costa Brava protected and maintained all year round, without you lifting a finger.",
-    "cta": "Pre-order -20% before launch →"
-  },
-  "about": {
-    "title": "Your villa protected 365 days a year, without stress or surprises.",
-    "description": "Leave with peace of mind: you receive regular visual proofs, immediate alerts, and quick interventions for any unforeseen event. Your property remains impeccable, valued, and ready for use.",
-    "cta": "Get your free quote",
-    "card1": {
-      "title": "Regular local visits",
-      "text": "Your villa checked inside/outside every week: photos and checklists so you know everything in real time, without relying on neighbors or random craftsmen."
-    },
-    "card2": {
-      "title": "Instant visual proofs",
-      "text": "Timestamped photos and push alerts: you visualize the exact state of your property from your phone, avoiding doubts and unforeseen costs."
-    },
-    "card3": {
-      "title": "Immediate interventions",
-      "text": "Problem detected? Resolved in 24h (garden, pool, interior): you save time and money, with a villa always operational."
-    },
-    "card4": {
-      "title": "Tranquillidad 365",
-      "text": "Custom continuous protection: you leave with a free mind, knowing your investment is secure and valued all year."
-    },
-    "testimonials": {
-      "title": "Owners and agencies ready to start",
-      "subtitle": "They pre-ordered for stress-free management from November 2025.",
-      "test1": "Pre-reserved for my villa in Platja d’Aro: finally a solution that frees me from daily stress, with -20% as a bonus!",
-      "test2": "For my agency, Solenca will boost our rental efficiency: reliable photo reports, fewer client complaints.",
-      "test3": "French expat, I secure my house in Begur effortlessly: looking forward to real-time alerts from launch."
+    "club": "Solenca Club",
+    "aria": {
+      "primary_nav": "Main navigation",
+      "open_menu": "Open menu",
+      "close_menu": "Close menu",
+      "logo_home": "Solenca - Home",
+      "language_select": "Choose language"
     }
   },
-  "cta": {
-    "title": "Forget the worries of your secondary home.",
-    "description": "You leave, your villa stays under control: weekly checks, emergency management, clear proofs sent directly. Result: total peace of mind, savings on late repairs.",
-    "button": "Pre-order now →"
+
+  "hero": {
+    "headline": "Peace of Mind 365",
+    "description": "Comprehensive management of second homes on the Costa Brava. Your house in good hands, all year round.",
+    "cta": "Request a quote in 24h"
   },
-  "footer": {
-    "baseline": "Your peace on the Costa Brava: launch November 2025 – pre-order -20% and free yourself from constraints.",
-    "privateTitle": "For individuals",
-    "private": {
-      "why": "Why choose Solenca",
-      "services": "Services that simplify your life",
-      "how": "How it protects you",
-      "reviews": "Reviews from serene owners",
-      "cta": "I pre-order"
-    },
-    "proTitle": "For pros",
-    "pro": {
-      "access": "Partner access",
-      "offer": "B2B offer that boosts your revenues",
-      "press": "Press & media",
-      "contact": "Pro contact"
-    },
-    "connectTitle": "Stay informed",
-    "emailPlaceholder": "Your email",
-    "rights": "All rights reserved.",
-    "legal": "Legal notices",
-    "terms": "T&Cs",
-    "privacy": "Privacy"
+
+  "about": {
+    "title": "Why Solenca?",
+    "description": "We manage your second home on the Costa Brava, all year round.",
+    "cta": "Request a quote",
+    "card1": { "title": "Responsiveness", "text": "We intervene quickly in case of any issue." },
+    "card2": { "title": "Clear tracking", "text": "Every visit is documented with photos and reports." },
+    "card3": { "title": "Security", "text": "Your property is regularly inspected and monitored." },
+    "card4": { "title": "Local roots", "text": "A network of trusted providers on the Costa Brava." }
   },
+
   "testimonials": {
-    "title": "They pre-ordered for immediate serenity",
-    "subtitle": "Discover how Solenca will transform their daily life.",
-    "badge": "Pre-orders open until November 1st",
-    "test1": "Pre-ordered for my house in Calonge: clear reports, pro interventions – no more panicked calls to neighbors.",
-    "test2": "Reserved from the opening: reassuring concept for living remotely without permanent stress.",
-    "test3": "Convinced by the human and structured focus: goodbye random craftsmen, hello real tranquility."
+    "title": "Why Solenca won us over",
+    "subtitle": "Managing second homes on the Costa Brava meets a real need.",
+    "badge": "Homeowners already interested",
+    "test1": "The idea of finally having a reliable service to monitor our home when we are away is exactly what we were missing.",
+    "test2": "A clear subscription, with no surprises, is reassuring. We know we can count on someone locally.",
+    "test3": "We only come for a few weeks a year. Having regular checkups takes a huge mental burden off our shoulders."
   },
+
+  "cta": {
+    "title": "Your home, our mission",
+    "description": "On the Costa Brava, we manage your second home year-round: regular visits, pool and garden checks, clear reports after every visit.",
+    "button": "Request a quote in 24h"
+  },
+
+  "banner": {
+    "text": "Launch offer: -20% for 6 months for the next 20 subscribers"
+  },
+
   "aboutPage": {
+    "metaTitle": "Shall we introduce ourselves? — Solenca",
     "hero": {
-      "title": "Your villa protected and valued all year round.",
-      "description": "Receive weekly reports, targeted alerts, and quick interventions: your property remains impeccable, without any effort on your part.",
-      "cta": "Pre-order my peace →",
-      "badge": "Already chosen by demanding owners and local agencies for zero stress."
+      "title": "Shall we introduce ourselves? Solenca",
+      "description": "Based on the Costa Brava, we manage your properties year-round. Regular visits, clear reports, responsiveness in case of problems.",
+      "cta": "Discover our subscriptions",
+      "alt": "View of a villa on the Costa Brava",
+      "badge": "Already chosen by discerning homeowners"
     },
     "kpi": {
       "0": "Pre-orders",
       "1": "Satisfaction",
-      "2": "Visits",
-      "3": "Deadline"
+      "2": "Test visits",
+      "3": "Official launch"
     },
-    "quote": "You deserve flawless management: visual proofs, quick actions, total peace of mind.",
+    "quote": "was born from a simple observation: most second-home owners want peace of mind, not daily management.",
     "cta": {
-      "title": "Serene wherever you are",
-      "description": "Weekly photos, detailed checklists, accessible history: you control everything remotely, avoiding degradations and unnecessary costs.",
-      "primary": "Pre-order now -20% →",
-      "secondary": "Discover the services"
+      "title": "Ready to entrust us with your home?",
+      "description": "We offer clear, transparent subscriptions. Monitoring, follow-up, and local interventions are included, so you can feel at ease year-round.",
+      "primary": "See subscriptions",
+      "secondary": "See a sample report"
     },
     "cards": {
       "monthlyReport": "Detailed monthly report",
-      "alert": "Immediate alert",
-      "checklist": "Complete maintenance checklist",
-      "history": "Visit history",
-      "lastVisit": "Last visit visualized"
+      "alert": "Immediate alert in case of issues",
+      "checklist": "Checklist after each visit",
+      "history": "History available anytime",
+      "lastVisit": "Last visit in photos"
     }
   },
+
   "services": {
+    "faqSection": {
+      "title": "Frequently Asked Questions",
+      "intro": "Not sure? Here are the answers to the most common questions."
+    },
     "hero": {
-      "title": "Services for zero daily stress",
-      "description": "Proactive visits, push notifications, clear histories: you save time, avoid surprises, and protect your investment.",
-      "cta": "Pre-order my peace →"
+      "title": "Everything for your second homes",
+      "description": "Owners or professionals, we manage your properties on the Costa Brava: visits, follow-up, reports, and responsiveness. A single point of contact for everything.",
+      "cta": "Request a quote"
     },
     "private": {
-      "title": "For absent owners: serenity without effort",
-      "description": "Visits, actions, proofs: you receive everything in real time, freed from calls and doubts.",
-      "cta": "Discover Solenca →",
-      "card1": {
-        "title": "Regular visits",
-        "text": "Inside/outside checks: photo reports for a villa always ready, without costly surprises."
-      },
-      "card2": {
-        "title": "Managed emergencies",
-        "text": "Intervention in 24h: you avoid degradations and losses, with a free mind."
-      },
-      "card3": {
-        "title": "Key management",
-        "text": "Secure for easy access: you delegate without risk or complication."
-      },
-      "card4": {
-        "title": "Custom options",
-        "text": "Pool, garden...: activate what matters, for custom property without unnecessary extra cost."
-      }
+      "title": "For individuals",
+      "description": "Do you own a second home? We handle the complete management, all year round.",
+      "cta": "Subscribe now",
+      "card1": { "title": "Regular visits", "text": "2 or 4 visits per month depending on the chosen plan." },
+      "card2": { "title": "Immediate alerts", "text": "Direct notification in case of issues." },
+      "card3": { "title": "Local support", "text": "A network of trusted providers for quick intervention." },
+      "card4": { "title": "Photo reports", "text": "Every visit documented with photos and comments." }
     },
-    "quote": "You get a premium standard: simple, reliable, that saves you time and money.",
-    "quoteAuthor": "The founder",
+    "quote": "We created Solenca so that homeowners enjoy their second homes as a pleasure, never as a burden.",
+    "quoteAuthor": "Solenca Team",
     "pro": {
-      "title": "For pros: efficiency and boosted revenues",
-      "description": "Delegate operations in white label: smooth back-office, reliable field, satisfied clients without extra effort.",
-      "cta": "Access the pro space →",
-      "card1": {
-        "title": "Complete delegated follow-up",
-        "text": "A to Z management: free up time for more rentals and revenues."
-      },
-      "card2": {
-        "title": "Integrated tools",
-        "text": "Dedicated back-office: pilot easily, reduce complaints, and boost client satisfaction."
-      },
-      "card3": {
-        "title": "White label",
-        "text": "Sell under your name: additional margins, partnership without competition."
-      },
-      "card4": {
-        "title": "Local team",
-        "text": "Pro interventions: field reliability that strengthens your reputation."
-      }
+      "title": "For professionals",
+      "description": "Real estate agencies, concierge services, property managers: we are your local partner on the Costa Brava.",
+      "cta": "Work with us",
+      "card1": { "title": "Delegated follow-up", "text": "We conduct visits and checks for your clients." },
+      "card2": { "title": "Digital reports", "text": "Clear documents ready to share directly with homeowners." },
+      "card3": { "title": "Responsiveness", "text": "Quick intervention in case of emergency or unforeseen events." },
+      "card4": { "title": "Added value", "text": "Build client loyalty with a premium service at no extra effort." }
     },
     "faq": [
-      {
-        "question": "Can I subscribe from abroad?",
-        "answer": "Yes: 100% remote management via app – you control everything without travel, pre-launch open."
-      },
-      {
-        "question": "What is the intervention deadline?",
-        "answer": "24h max (4h emergency): you avoid escalations and costs, immediate serenity from November."
-      },
-      {
-        "question": "How am I informed after a visit?",
-        "answer": "Direct photo report in your space: clear, for zero doubt."
-      },
-      {
-        "question": "What happens in case of anomaly?",
-        "answer": "Alert + quick resolution: you gain in security and savings."
-      },
-      {
-        "question": "Can I customize the visits?",
-        "answer": "Yes, à la carte options: adapted to your needs for max efficiency."
-      },
-      {
-        "question": "Do you work with agencies?",
-        "answer": "Yes, white label: manage off-season without effort, boost revenues."
-      },
-      {
-        "question": "Is my accommodation eligible?",
-        "answer": "Secondary residences Costa Brava: quick validation, pre-order open."
-      },
-      {
-        "question": "Can I stop the subscription?",
-        "answer": "Yes, flexible: adjust without constraint, for owners or pros."
-      }
+      { "question": "How does the subscription work?", "answer": "You choose a plan (2 or 4 visits per month). Each visit is scheduled in advance and documented with a detailed photo report." },
+      { "question": "What exactly does a visit include?", "answer": "We check the interior and exterior: doors, windows, humidity, electricity, pool, garden, mailbox. Any issues are reported immediately." },
+      { "question": "What happens if there is a problem?", "answer": "You are notified immediately (WhatsApp, email, or phone call). We can intervene directly or call in our trusted local providers (plumber, electrician, gardener, pool technician)." },
+      { "question": "Can I cancel easily?", "answer": "Yes. Our subscriptions have no commitment. You can cancel anytime with a simple email, no hidden fees." },
+      { "question": "Who has access to my home?", "answer": "Only our authorized and identified staff intervene. Each intervention is logged and confirmed with a report for full transparency." },
+      { "question": "What about security?", "answer": "Each visit includes a full check of alarms and access points. In case of anomalies, we notify you immediately and take necessary action." },
+      { "question": "Do you also provide cleaning, pool, garden services?", "answer": "Yes. We directly handle monitoring. For additional services (cleaning, pool maintenance, gardening), we use our trusted partners at preferential rates." },
+      { "question": "How am I billed?", "answer": "You are billed monthly by SEPA direct debit or credit card via Stripe. Your invoices are available online anytime." },
+      { "question": "What if I only come in the summer?", "answer": "Even if you rarely occupy your property, we provide regular monitoring to avoid unpleasant surprises (leaks, humidity, vandalism)." },
+      { "question": "Do you also work with real estate agencies?", "answer": "Yes. We offer a white-label service: we perform the visits and checks for your clients, but you remain their contact person." }
     ]
   },
-  "subscription": {
+
+  "abo": {
+    "seoTitle": "Solenca Care — Quote within 24h",
+
     "hero": {
-      "title": "Custom subscriptions for your serenity",
-      "description": "Choose your plan: regular inspections, detailed reports, total flexibility. Result: protected villa, freed time, savings on unforeseen events.",
-      "cta": "Create my free quote",
-      "pro": "Pro/rental agency? Access the dedicated offer."
-    }
-  },
-  "catalogue": {
-    "hero": {
-      "title": "À la carte modules for specific needs",
-      "description": "Add garden, pool...: executed within 7 days, for an impeccable villa without forced subscription.",
-      "searchPlaceholder": "Search for a service..."
+      "kicker": "Solenca Care",
+      "title": "From €129 / month",
+      "subtitle": "2 monthly visits, checks & reports. Add-ons on demand.",
+      "cta": "Request a quote (24h)",
+      "hint": "Quote within 24h • No commitment",
+      "chips": ["Costa Brava", "Insured Professional Liability", "Coordination of providers"]
     },
-    "filters": {
-      "label": "Filter by category"
+
+    "included": {
+      "title": "What's included",
+      "items": [
+        "2 scheduled visits / month",
+        "Visual checks & anomaly reporting",
+        "Photos / videos + summary report",
+        "Meter readings",
+        "Key management & coordination"
+      ]
     },
-    "price": "From {{price}}€",
-    "book": "Book this service →",
-    "upsell": "Prefer a regular subscription for more savings",
-    "cta": {
-      "title": "Custom need?",
-      "description": "We adapt: quick form, response in 24h to solve your exact need.",
-      "button": "Custom request"
+
+    "addons": {
+      "title": "Add-ons (on demand)",
+      "items": [
+        "Pool: chemistry, baskets, light maintenance",
+        "Garden: light mowing, blowing, small trims",
+        "Occasional interior cleaning",
+        "Laundry & linen service",
+        "Other tailored needs"
+      ],
+      "note": "Tell us what you need in the form."
     },
+
+    "callout": {
+      "title": "Simple & clear",
+      "items": [
+        "Personalized quote within 24h",
+        "No commitment, you approve before intervention",
+        "Costa Brava coverage, single point of contact"
+      ],
+      "cta": "Request a quote (24h)"
+    },
+
+    "pro": {
+      "title": "Solenca Care Pro",
+      "subtitle": "Agencies, concierge services, property managers & multi-owners.",
+      "items": [
+        "White-label PDF reports",
+        "Seasonal SLAs & dedicated coordinator",
+        "Volume-based discounts"
+      ],
+      "cta": "Speak to an advisor (24h)"
+    },
+
     "modal": {
-      "date": "Choose a date",
-      "specs": "Specifications",
-      "details": "Details",
-      "city": "Intervention city",
-      "name": "First and last name",
-      "email": "Email address",
-      "phone": "Phone",
-      "address": "Exact address",
-      "adjustedPrice": "Adjusted total: {{price}}€ incl. VAT",
-      "pay": "Validate the booking →",
-      "cancel": "Cancel",
-      "switchToSub": "Rather a monthly subscription?"
+      "title": "Quote request (reply within 24h)",
+      "badgePro": "Pro request",
+      "badgePart": "Individual",
+      "badge24h": "Quote within 24h"
     },
-    "categories": [
-      "All",
-      "Exterior",
-      "Interior",
-      "Administrative"
-    ],
-    "services": [
-      {
-        "title": "Window cleaning",
-        "description": "Impeccable windows for a crystal-clear Costa Brava view.",
-        "price": 89,
-        "extra": "Beyond: express quote.",
-        "image": "vitreImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "fenetres", "label": "Number of windows", "type": "number", "default": 10 },
-          { "name": "hauteur", "label": "Max height (floors)", "type": "number", "default": 1 }
-        ],
-        "priceLogic": "Base 89€; +8€ per window >10; +20€ per floor >1; +30€ if urgent (<3d); +15€ if outside core zones (Platja d'Aro, S'Agaró, Castell d'Aro). Multiply by 1.2 weekend, 0.9 Tuesday, +10% if <2 slots."
+
+    "form": {
+      "labels": {
+        "name": "Full name",
+        "email": "Email",
+        "phone": "Phone",
+        "preferContact": "Preferred contact method",
+        "address": "Property address",
+        "city": "City",
+        "zip": "Postal code",
+        "propertyType": "Property type",
+        "surface": "Surface area (m²)",
+        "wantedServices": "Desired services",
+        "company": "Company",
+        "siret": "Business ID / VAT number",
+        "proRole": "You are…",
+        "message": "Tell us the essentials",
+        "consent": "I agree to be contacted regarding this quote."
       },
-      {
-        "title": "Lawn mowing",
-        "description": "A garden ready for your returns.",
-        "price": 89,
-        "extra": "Beyond: express quote.",
-        "image": "pelouseImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Land surface (m²)", "type": "number", "default": 300 }
-        ],
-        "priceLogic": "Base 89€; +0.2€/m² >300; +30€ if urgent; +15€ outside core zones. Multiply as above."
+      "placeholders": {
+        "message": "Periods, access, restrictions, expectations…"
       },
-      {
-        "title": "Terrace maintenance",
-        "description": "Your outdoor space, like new.",
-        "price": 109,
-        "extra": "Beyond: express quote.",
-        "image": "terrasseImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Terrace surface (m²)", "type": "number", "default": 30 }
-        ],
-        "priceLogic": "Base 109€; +3€/m² >30; +30€ urgent; +15€ outside zones."
+      "services": {
+        "pool": "Pool",
+        "garden": "Garden",
+        "cleaning": "Cleaning",
+        "laundry": "Laundry",
+        "other": "Other"
       },
-      {
-        "title": "Cleaning after bad weather",
-        "description": "Protection against Mediterranean whims.",
-        "price": 119,
-        "extra": "Beyond: express quote.",
-        "image": "intemperiesImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Impacted exterior surface (m²)", "type": "number", "default": 200 }
-        ],
-        "priceLogic": "Base 119€; +0.5€/m² >200; +40€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Housing verification",
-        "description": "Serenity, captured in one click.",
-        "price": 69,
-        "extra": "Express quote.",
-        "image": "verificationImg",
-        "category": "Interior",
-        "formFields": [
-          { "name": "surface", "label": "Housing surface (m²)", "type": "number", "default": 150 }
-        ],
-        "priceLogic": "Base 69€; +0.3€/m² >150; +20€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Garden watering",
-        "description": "Your verdant oasis, maintained effortlessly.",
-        "price": 49,
-        "extra": "Express quote.",
-        "image": "arrosageImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Garden surface (m²)", "type": "number", "default": 200 }
-        ],
-        "priceLogic": "Base 49€; +0.1€/m² >200; +15€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Package/order reception",
-        "description": "Secure deliveries, as if you were there.",
-        "price": 59,
-        "extra": "Express quote.",
-        "image": "colisImg",
-        "category": "Administrative",
-        "formFields": [
-          { "name": "nombreColis", "label": "Number of packages", "type": "number", "default": 1 }
-        ],
-        "priceLogic": "Base 59€; +10€ per package >1; +20€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Punctual opening for craftsman",
-        "description": "Smooth interventions, without hassle.",
-        "price": 59,
-        "extra": "Express quote.",
-        "image": "artisanImg",
-        "category": "Administrative",
-        "formFields": [
-          { "name": "duree", "label": "Estimated duration (min)", "type": "number", "default": 30 }
-        ],
-        "priceLogic": "Base 59€; +49€/h >30min; +20€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Anomaly reporting",
-        "description": "Proactive detection for an impeccable property.",
-        "price": 69,
-        "extra": "Includes photo report and summary.",
-        "image": "anomalieImg",
-        "category": "Administrative",
-        "formFields": [
-          { "name": "surface", "label": "Concerned surface (m²)", "type": "number", "default": 50 }
-        ],
-        "priceLogic": "Base 69€; +0.5€/m² >50; +30€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Meter reading",
-        "description": "Absolute precision, zero forgetfulness.",
-        "price": 39,
-        "extra": "For all types of accessible meters.",
-        "image": "compteurImg",
-        "category": "Administrative",
-        "formFields": [
-          { "name": "types", "label": "Meter types", "type": "select", "options": ["Water", "Gas", "Electricity", "All (+10€)"], "default": "All (+10€)" }
-        ],
-        "priceLogic": "Base 39€; +10€ if all types; +10€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Urgent delivery",
-        "description": "Emergencies handled with elegance.",
-        "price": 79,
-        "extra": "Includes 1 local round trip.",
-        "image": "livraisonImg",
-        "category": "Administrative",
-        "formFields": [
-          { "name": "distance", "label": "Store distance (km)", "type": "number", "default": 5 }
-        ],
-        "priceLogic": "Base 79€; +5€/km >5; +40€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Normal pool maintenance",
-        "description": "Standard cleaning, water treatment. For active pools.",
-        "price": 99,
-        "extra": "Beyond: express quote.",
-        "image": "piscineNormalImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Pool surface (m²)", "type": "number", "default": 50 }
-        ],
-        "priceLogic": "Base 99€; +2€/m² >50; +40€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Deep pool cleaning",
-        "description": "Draining, intensive cleaning for pools off for months (debris, algae).",
-        "price": 199,
-        "extra": "Includes photo report.",
-        "image": "piscineDeepImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Pool surface (m²)", "type": "number", "default": 50 },
-          { "name": "moisEteinte", "label": "Months off", "type": "number", "default": 3 }
-        ],
-        "priceLogic": "Base 199€; +3€/m² >50; +20€/month >3; +50€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Synthetic lawn cleaning",
-        "description": "Debris removal (pine needles, leaves), brushing.",
-        "price": 79,
-        "extra": "Beyond: express quote.",
-        "image": "gazonSynthImg",
-        "category": "Exterior",
-        "formFields": [
-          { "name": "surface", "label": "Lawn surface (m²)", "type": "number", "default": 200 }
-        ],
-        "priceLogic": "Base 79€; +0.3€/m² >200; +25€ urgent; +15€ outside zones."
-      },
-      {
-        "title": "Interior housekeeping cleaning",
-        "description": "Complete cleaning floors/surfaces/sanitary. Ideal post-absence.",
-        "price": 149,
-        "extra": "Eco products included.",
-        "image": "menageImg",
-        "category": "Interior",
-        "formFields": [
-          { "name": "surface", "label": "Housing surface (m²)", "type": "number", "default": 150 }
-        ],
-        "priceLogic": "Base 149€; +1€/m² >150; +40€ urgent; +15€ outside zones."
-      }
-    ]
+      "propertyTypes": [
+        { "key": "apartment", "label": "Apartment" },
+        { "key": "house", "label": "House" },
+        { "key": "villa", "label": "Villa / Large property" }
+      ],
+      "preferContacts": [
+        { "key": "phone", "label": "Phone" },
+        { "key": "email", "label": "Email" },
+        { "key": "whatsapp", "label": "WhatsApp" }
+      ],
+      "proRoles": [
+        { "key": "agency", "label": "Real estate agency" },
+        { "key": "concierge", "label": "Concierge service" },
+        { "key": "syndic", "label": "Property manager" },
+        { "key": "multiowner", "label": "Multi-owner" },
+        { "key": "other", "label": "Other" }
+      ],
+      "ctaCancel": "Cancel",
+      "ctaSubmit": "Send my request"
+    },
+
+    "toastOk": "Thank you! Your quote request has been received (reply within 24h)."
   },
-  "conversion": {
-    "metaTitle": "Solenca Quote: your personalized peace",
-    "metaDescription": "Quote in 2 min: 365-day protection on Costa Brava, -20% pre-order.",
-    "headline": "Start your peace here.",
-    "description": "Personalized quote: stress-free maintenance, visual proofs, quick interventions.",
-    "promo": " -20% pre-order before November 1st.",
-    "faq": "See the FAQ",
-    "back": "Back",
-    "step1": {
-      "title": "Details of your property",
-      "firstname": "First name",
-      "lastname": "Last name",
-      "email": "Email address",
-      "street": "Address (street)",
-      "zip": "Postal code",
-      "city": "City",
-      "houseSurface": "House surface (m²)",
-      "gardenSurface": "Garden surface (m²)",
-      "hasPool": "Pool?",
-      "poolSize": "Pool surface (m²)",
-      "next": "Next"
-    },
-    "step2": {
-      "title": "Modules to add",
-      "quote": "Generate the quote"
-    },
-    "step3": {
-      "title": "Quote generation",
-      "description": "Analysis in progress for the offer that truly frees you..."
-    },
-    "step4": {
-      "quoteNumber": "Quote No. {{number}}",
-      "client": "Client",
-      "description": "Service",
-      "unitPrice": "Unit price",
-      "quantity": "Quantity",
-      "totalHT": "Total excl. VAT",
-      "base": "Tranquillidad 365 (base)",
-      "addonDiscount": "Modules discount",
-      "subtotal": "Subtotal",
-      "vat": "VAT (21%)",
-      "total": "Total incl. VAT",
-      "paymentInfo": "Payment",
-      "bankTransfer": "Bank transfer",
-      "account": "Account: 0123 4567 8901",
-      "date": "Date",
-      "signature": "Signature",
-      "validity": "Valid for 1 month.",
-      "pay": "Confirm and pay",
-      "pdf": "Download PDF"
-    },
-    "pricing": {
-      "base": 99,
-      "billingPeriods": {
-        "monthly": {
-          "label": "Monthly",
-          "multiplier": 1,
-          "discount": 0
-        },
-        "semiannual": {
-          "label": "Semi-annual (6 months)",
-          "multiplier": 6,
-          "discount": 0.1
-        },
-        "once": {
-          "label": "Annual (12 months)",
-          "multiplier": 12,
-          "discount": 0.2
-        }
-      },
-      "precommandeDiscount": 0.2,
-      "precommandeEndDate": "2025-11-01",
-      "addonDiscountRates": {
-        "3": 0.1,
-        "4": 0.15,
-        "5plus": 0.2
-      },
-      "vatRate": 0.21
-    },
-    "addon": {
-      "garden": {
-        "label": "Garden maintenance",
-        "info": "Mowing, watering...: perfect garden, without effort or degradation.",
-        "priceLogic": "Min(max(surfaceJardin * 0.04, 50), 500)"
-      },
-      "pool": {
-        "label": "Pool maintenance",
-        "info": "Cleaning, water balance: pool ready, avoid costly repairs.",
-        "priceLogic": "Max(taillePiscine * 1.2, 60)"
-      },
-      "house": {
-        "label": "House management",
-        "info": "Cleaning + maintenance: property always welcoming.",
-        "priceLogic": "surfaceMaison * 0.3"
-      },
-      "rental": {
-        "label": "Rental management",
-        "info": "Check-in/out, planning: max revenues without daily management.",
-        "priceLogic": "199 (fixed)"
-      },
-      "arrival": {
-        "label": "Arrival preparation",
-        "info": "Shopping, beds...: perfect welcome for you or tenants.",
-        "priceLogic": "29 (fixed)"
-      },
-      "alarm": {
-        "label": "Alarm integration",
-        "info": "Connection + alerts: enhanced security, zero surprise intrusion.",
-        "priceLogic": "29 (fixed)"
-      }
-    }
-  },
-  "banner": {
-    "text": "Pre-launch: launch November 1st 2025 – Book -20% off first month and forget the worries!"
+  
+  "footer": {
+    "rights": "All rights reserved.",
+    "legal": "Legal notice",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy policy"
   }
 }

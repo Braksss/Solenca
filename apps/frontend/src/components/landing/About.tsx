@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import '../../styles/landing/about.scss';
 import Icon1 from '../../assets/icons/reactivite.png';
 import Icon2 from '../../assets/icons/suivi.png';
@@ -17,7 +18,9 @@ const About = () => {
         </div>
         <div className="about-top__right">
           <p>{t('about.description')}</p>
-          <button className="about-btn">{t('about.cta')}</button>
+          <Link to="/abonnement" className="about-btn">
+            {t('about.cta')}
+          </Link>
         </div>
       </div>
 
@@ -45,6 +48,6 @@ const About = () => {
       </div>
     </section>
   );
-}
+};
 
 export default About;

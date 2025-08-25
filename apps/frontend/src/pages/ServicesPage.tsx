@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/pages/servicespage.scss';
-import {
-  Calendar,
-  Camera,
-  AlertTriangle,
-  Users
-} from 'react-feather';
+import { Calendar, Camera, AlertTriangle, Users } from 'react-feather';
 
 import heroImg from '../assets/hero-service.jpg';
 
@@ -20,14 +16,12 @@ const ServicesFAQ = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const faqData = t('services.faq', { returnObjects: true }); // Array from JSON
+  const faqData = t('services.faq', { returnObjects: true });
 
   return (
     <section className="services-faq">
-      <h2>Questions fréquentes</h2>
-      <p className="faq-intro">
-        Vous hésitez ? Voici les réponses aux questions les plus courantes – pré-lancement novembre 2025, réservez early pour 20% off !
-      </p>
+      <h2>{t('services.faqSection.title')}</h2>
+      <p className="faq-intro">{t('services.faqSection.intro')}</p>
 
       <div className="faq-list">
         {faqData.map((faq: { question: string; answer: string }, index: number) => (
@@ -56,8 +50,10 @@ const ServicesPage = () => {
     <>
       <Helmet>
         <title>Solenca : Services - Gestion Biens Secondaires Costa Brava</title>
-        <meta name="description" content="Découvrez nos services Solenca : visites régulières, alertes, rapports photo pour sérénité totale en Costa Brava. Pré-lancement novembre 2025, réservez early pour 20% off !" />
-        {/* Ajoute keywords, OG */}
+        <meta
+          name="description"
+          content="Découvrez nos services Solenca : visites régulières, alertes, rapports photo pour sérénité totale en Costa Brava."
+        />
       </Helmet>
       <Navbar />
 
@@ -66,11 +62,11 @@ const ServicesPage = () => {
         <section className="services-hero">
           <div className="hero-content">
             <h1>{t('services.hero.title')}</h1>
-            <p>
-              {t('services.hero.description')}
-            </p>
+            <p>{t('services.hero.description')}</p>
             <div className="cta-row">
-              <button className="primary-btn">{t('services.hero.cta')}</button>
+              <Link className="primary-btn" to="/abonnement">
+                {t('services.hero.cta')}
+              </Link>
             </div>
           </div>
 
@@ -89,10 +85,10 @@ const ServicesPage = () => {
                 <h2>{t('services.private.title')}</h2>
               </div>
               <div className="about-top__right">
-                <p>
-                  {t('services.private.description')}
-                </p>
-                <button className="about-btn">{t('services.private.cta')}</button>
+                <p>{t('services.private.description')}</p>
+                <Link className="about-btn" to="/abonnement">
+                  {t('services.private.cta')}
+                </Link>
               </div>
             </div>
             <div className="about-cards">
@@ -135,10 +131,10 @@ const ServicesPage = () => {
                 <h2>{t('services.pro.title')}</h2>
               </div>
               <div className="about-top__right">
-                <p>
-                  {t('services.pro.description')}
-                </p>
-                <button className="about-btn">{t('services.pro.cta')}</button>
+                <p>{t('services.pro.description')}</p>
+                <Link className="about-btn" to="/abonnement">
+                  {t('services.pro.cta')}
+                </Link>
               </div>
             </div>
 

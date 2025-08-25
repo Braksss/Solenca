@@ -71,6 +71,7 @@ $grey-300: #e4e7ec;    // Bordures & traits
       font: 18px/1.6 "Montserrat", sans-serif;
       color: $grey-700;
       max-width: 420px;
+      margin-left: 0;
     }
 
     .cta-row {
@@ -299,12 +300,19 @@ $grey-300: #e4e7ec;    // Bordures & traits
 .about-quote {
   max-width: 940px;
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: 54px 24px;
   text-align: center;
 
-  .highlight {
-    color: $primary;
-  }
+.highlight {
+  color: #fff;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-weight: 300;         // fin et élégant
+  font-size: 18px;          // légèrement plus grand pour ressortir
+  letter-spacing: 2px;      // espacement équilibré
+  text-transform: uppercase;// rend plus design
+  text-shadow: 0 1px 4px rgba(0,0,0,0.25); // lisibilité sur fond
+}
+
 
   p {
     font: 600 20px/1.5 "Montserrat";

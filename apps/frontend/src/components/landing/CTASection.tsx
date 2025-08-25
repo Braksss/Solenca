@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/landing/cta.scss';
@@ -54,7 +55,9 @@ const CTASection = () => {
       <div className="cta-section__content" ref={contentRef}>
         <h2 className="cta-section__title">{t('cta.title')}</h2>
         <p className="cta-section__text">{t('cta.description')}</p>
-        <button className="cta-section__btn">{t('cta.button')}</button>
+        <Link to="/abonnement" className="cta-section__btn">
+          {t('cta.button')}
+        </Link>
       </div>
       <div className="cta-section__image" ref={imageRef}>
         <img src={catIllustration} alt="Illustration Solenca" />
