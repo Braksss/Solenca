@@ -12,21 +12,26 @@ const Navbar = () => {
   const location = useLocation();
 
   const toggleMenu = () => {
-    setIsOpen((open) => {
-      const next = !open;
-      if (typeof document !== 'undefined') {
-        document.body.classList.toggle('no-scroll', next);
+    setIsOpen(prevIsOpen => {
+      const nextIsOpen = !prevIsOpen;
+      if (nextIsOpen) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
       }
-      return next;
+      return nextIsOpen;
     });
   };
 
-  // ferme auto le menu quand on change de page
-  useEffect(() => {
+  const closeMenu = () => {
     if (isOpen) {
       setIsOpen(false);
       document.body.classList.remove('no-scroll');
     }
+  };
+
+  useEffect(() => {
+    closeMenu();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
@@ -35,46 +40,25 @@ const Navbar = () => {
       <div className="navbar__container">
         {/* Logo */}
         <div className="navbar__left">
-          <Link to="/" className="navbar__logo" aria-label="Solenca - Accueil">
+          <Link to="/" className="navbar__logo" aria-label="Solenca - Accueil" onClick={closeMenu}>
             <img src={logo} alt="Solenca logo" className="navbar__logo-img" />
           </Link>
         </div>
 
-        {/* Liens centraux (burger en mobile) */}
+        {/* Liens centraux (menu déroulant en mobile) */}
         <div className={`navbar__center ${isOpen ? 'open' : ''}`} id="primary-menu">
           <ul className="navbar__links" role="menu" aria-label="Navigation principale">
-            <li role="none">
-              <Link role="menuitem" to="/about" onClick={() => setIsOpen(false)}>
-                {t('navbar.about')}
-              </Link>
-            </li>
-            <li role="none">
-              <Link role="menuitem" to="/services" onClick={() => setIsOpen(false)}>
-                {t('navbar.services')}
-              </Link>
-            </li>
-            <li role="none">
-              <Link role="menuitem" to="/abonnement" onClick={() => setIsOpen(false)}>
-                {t('navbar.abonnements')}
-              </Link>
-            </li>
-            {/* Optionnel : /catalogue si tu veux le garder plus tard */}
-            {/* <li role="none"><Link role="menuitem" to="/catalogue" onClick={() => setIsOpen(false)}>{t('navbar.catalogue')}</Link></li> */}
-
-            {/* Club (masqué tant que le flag n'est pas activé) */}
+            <li role="none"><Link role="menuitem" to="/about" onClick={closeMenu}>{t('navbar.about')}</Link></li>
+            <li role="none"><Link role="menuitem" to="/services" onClick={closeMenu}>{t('navbar.services')}</Link></li>
+            <li role="none"><Link role="menuitem" to="/abonnement" onClick={closeMenu}>{t('navbar.abonnements')}</Link></li>
             {SHOW_CLUB && (
-              <li role="none">
-                <Link role="menuitem" to="/club" onClick={() => setIsOpen(false)}>
-                  {t('navbar.club')}
-                </Link>
-              </li>
+              <li role="none"><Link role="menuitem" to="/club" onClick={closeMenu}>{t('navbar.club')}</Link></li>
             )}
           </ul>
         </div>
 
-        {/* Droite : sélecteur de langue + burger (PAS de login) */}
+        {/* Droite : Sélecteur de langue + Burger */}
         <div className="navbar__right">
-          <label className="sr-only" htmlFor="lang-select">Langue</label>
           <select
             id="lang-select"
             className="navbar__lang-select"
