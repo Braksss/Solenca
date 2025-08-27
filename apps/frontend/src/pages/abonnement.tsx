@@ -1,546 +1,197 @@
 import React, { useEffect, useState } from "react";
 import "../styles/pages/abonnement.scss";
 import { useTranslation } from "react-i18next";
-
 import Navbar from "../components/landing/Navbar";
 import Footer from "../components/landing/Footer";
 
+// --- Icônes ---
+const CheckIcon = () => <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>;
+const PlusIcon = () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>;
+
+// --- Type pour le client ---
 type ClientType = "particulier" | "pro";
 
-declare global {
-  interface Window {
-    $crisp?: any[];
-    CRISP_WEBSITE_ID?: string;
-  }
-}
-
+// --- ID Formspree ---
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
 
-const AbonnementPage: React.FC = () => {
-  const { t, i18n } = useTranslation();
+const AbonnementPageFinal: React.FC = () => {
+    const { t } = useTranslation();
+    
+    // --- State de la page ---
+    const [clientType, setClientType] = useState<ClientType>("particulier");
+    const [submitting, setSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [animationKey, setAnimationKey] = useState(0);
 
-  /* ---------- Helpers i18n (mono-fichier fr.json) ---------- */
-  const pickKey = (primary: string, fallback?: string) =>
-    i18n.exists(primary) ? primary : (fallback || primary);
+    // --- State complet du formulaire ---
+    const [form, setForm] = useState({
+        nom: "", email: "", phone: "", cp: "",
+        services: { piscine: false, jardin: false, nettoyage: false, gestionLocative: false, conciergerie: false, autre: false },
+        message: "",
+        societe: "", siret: "",
+        consent: false,
+        utm_source: "", utm_medium: "", utm_campaign: "", gotcha: ""
+    });
 
-  const tText = (primary: string, fallback?: string) => t(pickKey(primary, fallback));
+    // --- Récupération des listes depuis i18n ---
+    const baseOfferIncludes = t('abo_page.base_offer_includes', { returnObjects: true }) as string[] || [];
+    const addonsList = t('abo_page.addons_list', { returnObjects: true }) as { name: string, price: string }[] || [];
+    const proServices = t('abo_page.pro_services', { returnObjects: true }) as string[] || [];
+    const formServices = t('abo_page.form_services', { returnObjects: true }) as { key: keyof typeof form.services, label: string }[] || [];
 
-  function tList<T = string>(primary: string, fallback?: string): T[] {
-    const key = pickKey(primary, fallback);
-    const v = t(key, { returnObjects: true }) as unknown;
-    if (Array.isArray(v)) return v as T[];
-    if (v && typeof v === "object") return Object.values(v) as T[];
-    if (typeof v === "string") {
-      if (v.includes(".")) return [];
-      return [v] as unknown as T[];
-    }
-    return [];
-  }
-
-  /* ---------- State ---------- */
-  const [open, setOpen] = useState(false);
-  const [clientType, setClientType] = useState<ClientType>("particulier");
-  const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({
-    nom: "",
-    email: "",
-    phone: "",
-    preferContact: "phone", // phone | email | whatsapp
-    adresse: "",
-    ville: "",
-    cp: "",
-    typeBien: "house", // apartment | house | villa
-    surface: "",
-    services: { piscine: false, jardin: false, nettoyage: false, linge: false, autre: false },
-    message: "",
-    // PRO
-    societe: "",
-    siret: "",
-    rolePro: "agency",
-    // consent
-    consent: false,
-    // UTM
-    utm_source: "",
-    utm_medium: "",
-    utm_campaign: "",
-    // anti-spam (honeypot)
-    gotcha: ""
-  });
-
-  useEffect(() => {
-    document.title = (t("abo.seoTitle") as string) || "Solenca Care";
-    const p = new URLSearchParams(window.location.search);
-    setForm((f) => ({
-      ...f,
-      utm_source: p.get("utm_source") || f.utm_source,
-      utm_medium: p.get("utm_medium") || f.utm_medium,
-      utm_campaign: p.get("utm_campaign") || f.utm_campaign
-    }));
-  }, [i18n.language, t]);
-
-  /* ---------- Handlers ---------- */
-  const onField = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value, type, checked } = e.target as any;
-    if (name.startsWith("services.")) {
-      const key = name.split(".")[1] as keyof typeof form.services;
-      setForm((f) => ({ ...f, services: { ...f.services, [key]: !!checked } }));
-      return;
-    }
-    setForm((f) => ({ ...f, [name]: type === "checkbox" ? checked : value }));
-  };
-
-  const openDevis = (type: ClientType) => {
-    setClientType(type);
-    setOpen(true);
-  };
-
-  /** Construit un texte lisible pour email / stockage */
-  const buildPrettyText = () => {
-    const servicesList = Object.entries(form.services)
-      .filter(([, v]) => v)
-      .map(([k]) => k)
-      .join(", ") || "—";
-
-    return [
-      `Type client: ${clientType}`,
-      `Nom: ${form.nom}`,
-      `Email: ${form.email}`,
-      `Téléphone: ${form.phone}`,
-      `Préférence: ${form.preferContact}`,
-      `Adresse: ${form.adresse}, ${form.cp} ${form.ville}`,
-      `Type de bien: ${form.typeBien}, Surface: ${form.surface}`,
-      `Services: ${servicesList}`,
-      `Société: ${form.societe || "—"}`,
-      `SIRET/CIF: ${form.siret || "—"}`,
-      `Rôle pro: ${form.rolePro || "—"}`,
-      `Message:\n${form.message || "—"}`,
-      `UTM: ${form.utm_source || "—"} / ${form.utm_medium || "—"} / ${form.utm_campaign || "—"}`,
-      `Consentement: ${form.consent ? "Oui" : "Non"}`
-    ].join("\n");
-  };
-
-  /** Envoi Formspree si configuré, sinon fallback mailto */
-  const submitQuote = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (submitting) return;
-
-    // honeypot simple
-    if (form.gotcha) return;
-
-    const payload = {
-      clientType,
-      ...form,
-      services: Object.keys(form.services).filter((k) => (form.services as any)[k]),
-      createdAt: new Date().toISOString(),
-      locale: i18n.language || "fr",
-      pretty: buildPrettyText()
+    useEffect(() => {
+        document.title = t('abo_page.seo_title');
+        const p = new URLSearchParams(window.location.search);
+        setForm(f => ({ ...f, utm_source: p.get("utm_source") || "", utm_medium: p.get("utm_medium") || "", utm_campaign: p.get("utm_campaign") || "" }));
+    }, [t]);
+    
+    const handleClientTypeChange = (type: ClientType) => {
+        setClientType(type);
+        setAnimationKey(prev => prev + 1);
     };
 
-    setSubmitting(true);
-
-    // 1) Envoi vers Formspree si ID présent
-    if (FORMSPREE_ID) {
-      try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(payload)
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        alert(t("abo.toastOk"));
-        setOpen(false);
-        setSubmitting(false);
-        return;
-      } catch (err) {
-        console.warn("Formspree failed, falling back to mailto:", err);
-      }
-    }
-
-    // 2) Fallback mailto
-    try {
-      const subject = encodeURIComponent("Demande de devis — Solenca Care");
-      const body = encodeURIComponent(buildPrettyText());
-      window.location.href = `mailto:benjamin@solenca.es?subject=${subject}&body=${body}`;
-      alert(t("abo.toastOk"));
-    } finally {
-      setOpen(false);
-      setSubmitting(false);
-    }
-  };
-
-  const openCrisp = () => {
-    if (window.$crisp) {
-      window.$crisp.push(["do", "chat:open"]);
-      window.$crisp.push(["do", "chat:show"]);
-    } else {
-      alert("Merci ! Un conseiller vous répondra très vite (24h).");
-    }
-  };
-
-  /* ---------- Données i18n (tout sous `abo.*`) ---------- */
-  const hero = {
-    kicker: tText("abo.hero.kicker", "hero.headline"),
-    title: tText("abo.hero.title"),
-    subtitle: tText("abo.hero.subtitle", "hero.description"),
-    cta: tText("abo.hero.cta", "hero.cta"),
-    hint: tText("abo.hero.hint"),
-    chips: tList<string>("abo.hero.chips")
-  };
-
-  const included = tList<string>("abo.included.items");
-  const addons = tList<string>("abo.addons.items");
-  const calloutList = tList<string>("abo.callout.items");
-  const propertyTypes = tList<{ key: string; label: string }>("abo.form.propertyTypes");
-  const preferContacts = tList<{ key: string; label: string }>("abo.form.preferContacts");
-  const proItems = tList<string>("abo.pro.items");
-
-  /* ---------- Render ---------- */
-  return (
-    <div className="care-page">
-      <Navbar />
-
-      {/* HERO */}
-      <header className="care-hero care-hero--vivid">
-        <div className="shell">
-          <div className="kicker">{hero.kicker}</div>
-          <h1>{hero.title}</h1>
-          <p className="sub">{hero.subtitle}</p>
-          <div className="cta-row">
-            <button
-              className="primary-btn"
-              data-cta="hero-devis"
-              onClick={() => openDevis("particulier")}
-            >
-              {hero.cta}
-            </button>
-            <button className="secondary-btn secondary-btn--ghost" onClick={openCrisp}>
-              {t("abo.pro.cta")}
-            </button>
-            {hero.hint && <span className="hint">{hero.hint}</span>}
-          </div>
-
-          <div className="chips">
-            {hero.chips.map((c, i) => (
-              <span className="chip" key={i}>
-                {c}
-              </span>
-            ))}
-          </div>
-        </div>
-      </header>
-
-      {/* Abonnement Particuliers – groupé dans une carte */}
-      <section className="shell abo-group">
-        <div className="abo-card">
-          <div className="care-grid">
-            <section className="card card--glow">
-              <h2 className="card-title">{t("abo.included.title")}</h2>
-              <ul className="list list--check">
-                {included.map((li, i) => (
-                  <li key={i}>{li}</li>
-                ))}
-              </ul>
-            </section>
-
-            <section className="card card--glow">
-              <h2 className="card-title">{t("abo.addons.title")}</h2>
-              <ul className="list list--check">
-                {addons.map((li, i) => (
-                  <li key={i}>{li}</li>
-                ))}
-              </ul>
-              <div className="soft-note">{t("abo.addons.note")}</div>
-            </section>
-
-            <aside className="callout callout--accent">
-              <div className="callout__left">
-                <div className="callout-title">{t("abo.callout.title")}</div>
-                <ul className="callout-list list--bullets">
-                  {calloutList.map((li, i) => (
-                    <li key={i}>{li}</li>
-                  ))}
-                </ul>
-              </div>
-              <button className="primary-btn" onClick={() => openDevis("particulier")}>
-                {t("abo.callout.cta")}
-              </button>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      {/* PRO */}
-      <section className="pro-section">
-        <div className="shell">
-          <div className="pro-card pro-card--glow">
-            <div className="pro-badge">B2B</div>
-            <h3>{t("abo.pro.title")}</h3>
-            <p className="pro-sub">{t("abo.pro.subtitle")}</p>
-            <ul className="pro-list list--bullets">
-              {proItems.map((li, i) => (
-                <li key={i}>{li}</li>
-              ))}
-            </ul>
-            <button className="primary-btn" onClick={openCrisp}>
-              {t("abo.pro.cta")}
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* MODAL devis */}
-      {open && (
-        <Modal onClose={() => setOpen(false)} title={t("abo.modal.title") as string}>
-          <form className="form" onSubmit={submitQuote}>
-            {/* honeypot anti-spam */}
-            <input
-              type="text"
-              name="gotcha"
-              value={form.gotcha}
-              onChange={onField}
-              tabIndex={-1}
-              autoComplete="off"
-              style={{ position: "absolute", left: "-5000px", height: 0, width: 0 }}
-              aria-hidden="true"
-            />
-
-            <div className="form-tags">
-              <span className={`tag ${clientType === "pro" ? "tag-dark" : ""}`}>
-                {clientType === "pro" ? t("abo.modal.badgePro") : t("abo.modal.badgePart")}
-              </span>
-              <span className="tag">{t("abo.modal.badge24h")}</span>
-            </div>
-
-            <div className="grid">
-              <div className="field">
-                <label htmlFor="nom">{t("abo.form.labels.name")} *</label>
-                <input id="nom" name="nom" required value={form.nom} onChange={onField} />
-              </div>
-              <div className="field">
-                <label htmlFor="email">{t("abo.form.labels.email")} *</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={onField}
-                />
-              </div>
-              <div className="field">
-                <label htmlFor="phone">{t("abo.form.labels.phone")} *</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  value={form.phone}
-                  onChange={onField}
-                />
-              </div>
-              <div className="field">
-                <label htmlFor="preferContact">{t("abo.form.labels.preferContact")}</label>
-                <select
-                  id="preferContact"
-                  name="preferContact"
-                  value={form.preferContact}
-                  onChange={onField}
-                >
-                  {preferContacts.map((o) => (
-                    <option key={o.key} value={o.key}>
-                      {o.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="field field--full">
-                <label htmlFor="adresse">{t("abo.form.labels.address")} *</label>
-                <input
-                  id="adresse"
-                  name="adresse"
-                  required
-                  value={form.adresse}
-                  onChange={onField}
-                />
-              </div>
-              <div className="field">
-                <label htmlFor="ville">{t("abo.form.labels.city")} *</label>
-                <input id="ville" name="ville" required value={form.ville} onChange={onField} />
-              </div>
-              <div className="field">
-                <label htmlFor="cp">{t("abo.form.labels.zip")} *</label>
-                <input id="cp" name="cp" required value={form.cp} onChange={onField} />
-              </div>
-
-              <div className="field">
-                <label htmlFor="typeBien">{t("abo.form.labels.propertyType")}</label>
-                <select id="typeBien" name="typeBien" value={form.typeBien} onChange={onField}>
-                  {propertyTypes.map((o) => (
-                    <option key={o.key} value={o.key}>
-                      {o.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="field">
-                <label htmlFor="surface">{t("abo.form.labels.surface")}</label>
-                <input id="surface" name="surface" value={form.surface} onChange={onField} />
-              </div>
-
-              <div className="field field--full">
-                <div className="legend">{t("abo.form.labels.wantedServices")}</div>
-                <div className="checks">
-                  <label className="check">
-                    <input
-                      type="checkbox"
-                      name="services.piscine"
-                      checked={form.services.piscine}
-                      onChange={onField}
-                    />
-                    <span>{t("abo.form.services.pool")}</span>
-                  </label>
-                  <label className="check">
-                    <input
-                      type="checkbox"
-                      name="services.jardin"
-                      checked={form.services.jardin}
-                      onChange={onField}
-                    />
-                    <span>{t("abo.form.services.garden")}</span>
-                  </label>
-                  <label className="check">
-                    <input
-                      type="checkbox"
-                      name="services.nettoyage"
-                      checked={form.services.nettoyage}
-                      onChange={onField}
-                    />
-                    <span>{t("abo.form.services.cleaning")}</span>
-                  </label>
-                  <label className="check">
-                    <input
-                      type="checkbox"
-                      name="services.linge"
-                      checked={form.services.linge}
-                      onChange={onField}
-                    />
-                    <span>{t("abo.form.services.laundry")}</span>
-                  </label>
-                  <label className="check">
-                    <input
-                      type="checkbox"
-                      name="services.autre"
-                      checked={form.services.autre}
-                      onChange={onField}
-                    />
-                    <span>{t("abo.form.services.other")}</span>
-                  </label>
-                </div>
-              </div>
-
-              {clientType === "pro" && (
-                <>
-                  <div className="field">
-                    <label htmlFor="societe">{t("abo.form.labels.company")}</label>
-                    <input
-                      id="societe"
-                      name="societe"
-                      value={form.societe}
-                      onChange={onField}
-                    />
-                  </div>
-                  <div className="field">
-                    <label htmlFor="siret">{t("abo.form.labels.siret")}</label>
-                    <input id="siret" name="siret" value={form.siret} onChange={onField} />
-                  </div>
-                  <div className="field">
-                    <label htmlFor="rolePro">{t("abo.form.labels.proRole")}</label>
-                    <select id="rolePro" name="rolePro" value={form.rolePro} onChange={onField}>
-                      {tList<{ key: string; label: string }>("abo.form.proRoles").map((o) => (
-                        <option key={o.key} value={o.key}>
-                          {o.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </>
-              )}
-
-              {/* consent pleine largeur */}
-              <label className="check check--block field field--full">
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={form.consent}
-                  onChange={onField}
-                  required
-                />
-                <span>{t("abo.form.labels.consent")}</span>
-              </label>
-
-              <div className="field field--full">
-                <label htmlFor="message">{t("abo.form.labels.message")}</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={form.message}
-                  onChange={onField}
-                  placeholder={(t("abo.form.placeholders.message") as string) || ""}
-                />
-              </div>
-            </div>
-
-            <div className="form-actions">
-              <button className="secondary-btn" type="button" onClick={() => setOpen(false)}>
-                {t("abo.form.ctaCancel")}
-              </button>
-              <button className="primary-btn" type="submit" disabled={submitting}>
-                {submitting ? "…" : t("abo.form.ctaSubmit")}
-              </button>
-            </div>
-          </form>
-        </Modal>
-      )}
-
-      <Footer />
-    </div>
-  );
-};
-
-/* Modal minimal */
-const Modal: React.FC<{ onClose: () => void; title?: string; children: React.ReactNode }> = ({
-  onClose,
-  title,
-  children
-}) => {
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKey);
+    const onField = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value, type } = e.target;
+        const checked = (e.target as HTMLInputElement).checked;
+        if (name.startsWith("services.")) {
+            const key = name.split(".")[1] as keyof typeof form.services;
+            setForm(f => ({ ...f, services: { ...f.services, [key]: checked } }));
+        } else {
+            setForm(f => ({ ...f, [name]: type === "checkbox" ? checked : value }));
+        }
     };
-  }, [onClose]);
 
-  return (
-    <div className="modal" role="dialog" aria-modal="true" aria-label={title || "Modal"}>
-      <div className="modal__backdrop" onClick={onClose} />
-      <div className="modal__card" role="document">
-        <div className="modal__head">
-          <h3 className="modal__title">{title}</h3>
-          <button className="iconbtn" aria-label="Close" onClick={onClose}>
-            ×
-          </button>
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (submitting || form.gotcha) return;
+        setSubmitting(true);
+        const payload = { ...form, clientType };
+
+        if (FORMSPREE_ID) {
+            try {
+                const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload)
+                });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                setSubmitted(true);
+                window.scrollTo({ top: document.getElementById('form-section')?.offsetTop, behavior: 'smooth' });
+            } catch (err) {
+                console.error("Formspree failed:", err); alert("Une erreur est survenue.");
+            } finally {
+                setSubmitting(false);
+            }
+        } else {
+            console.error("FORMSPREE_ID is not configured."); alert("Le service de formulaire n'est pas configuré."); setSubmitting(false);
+        }
+    };
+
+    return (
+        <div className="abo-page-final">
+            <Navbar />
+            <main>
+                <header className="abo-hero">
+                    <div className="shell">
+                        <span className="kicker">{t('abo_page.hero_kicker')}</span>
+                        <h1>{t('abo_page.hero_title')}</h1>
+                        <p>{t('abo_page.hero_subtitle')}</p>
+                    </div>
+                </header>
+
+                <section className="shell offers-section">
+                    <div className="client-type-toggle">
+                        <button onClick={() => handleClientTypeChange('particulier')} className={clientType === 'particulier' ? 'active' : ''}>{t('abo_page.toggle_particulier')}</button>
+                        <button onClick={() => handleClientTypeChange('pro')} className={clientType === 'pro' ? 'active' : ''}>{t('abo_page.toggle_pro')}</button>
+                    </div>
+
+                    <div className="offers-content" key={animationKey}>
+                        {clientType === 'particulier' ? (
+                            <div className="particulier-view">
+                                <div className="pricing-flow">
+                                    <div className="card base-offer">
+                                        <h3>{t('abo_page.base_offer_title')}</h3>
+                                        <div className="price">{t('abo_page.base_offer_price')}<span className="period">/{t('abo_page.base_offer_period')}</span></div>
+                                        <p className="card-desc">{t('abo_page.base_offer_desc')}</p>
+                                        <ul className="features-list">
+                                            {baseOfferIncludes.map((item, i) => <li key={i}><CheckIcon /> {item}</li>)}
+                                        </ul>
+                                    </div>
+                                    <div className="plus-separator"><PlusIcon /></div>
+                                    <div className="card addons-offer">
+                                        <h3>{t('abo_page.addons_offer_title')}</h3>
+                                        <p className="card-desc">{t('abo_page.addons_offer_desc')}</p>
+                                        <ul className="features-list modules">
+                                            {addonsList.map((item, i) => <li key={i}><span className="module-name">{item.name}</span><span className="module-price">{item.price}</span></li>)}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="pro-view">
+                                <h3>{t('abo_page.pro_title')}</h3>
+                                <p className="pro-subtitle">{t('abo_page.pro_subtitle')}</p>
+                                <div className="pro-features-grid">
+                                    {proServices.map((item, i) => <div key={i} className="pro-feature-item"><CheckIcon /> {item}</div>)}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </section>
+
+                <section id="form-section" className="form-section-wrapper">
+                    <div className="shell">
+                        {submitted ? (
+                            <div className="thank-you-card">
+                                <h3>{t('abo_page.thank_you_title')}</h3>
+                                <p>{t('abo_page.thank_you_desc')}</p>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="devis-form">
+                                <fieldset>
+                                    <legend>{clientType === 'particulier' ? t('abo_page.form_title_particulier') : t('abo_page.form_title_pro')}</legend>
+                                    <div className="form-grid">
+                                        <input name="nom" required value={form.nom} onChange={onField} placeholder={t('abo_page.form_placeholder_name')} />
+                                        <input name="email" type="email" required value={form.email} onChange={onField} placeholder={t('abo_page.form_placeholder_email')} />
+                                        <input name="phone" type="tel" required value={form.phone} onChange={onField} placeholder={t('abo_page.form_placeholder_phone')} />
+                                        <input name="cp" required value={form.cp} onChange={onField} placeholder={clientType === 'particulier' ? t('abo_page.form_placeholder_cp_particulier') : t('abo_page.form_placeholder_cp_pro')} />
+                                        {clientType === 'pro' && (
+                                            <>
+                                                <input name="societe" value={form.societe} onChange={onField} placeholder={t('abo_page.form_placeholder_company')} />
+                                                <input name="siret" value={form.siret} onChange={onField} placeholder={t('abo_page.form_placeholder_siret')} />
+                                            </>
+                                        )}
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>{t('abo_page.form_subtitle_needs')}</legend>
+                                    <div className="checks">
+                                        {formServices.map(service => (
+                                            <label key={service.key}>
+                                                <input type="checkbox" name={`services.${service.key}`} checked={form.services[service.key]} onChange={onField} />
+                                                <span>{service.label}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                    <textarea name="message" rows={4} value={form.message} onChange={onField} placeholder={t('abo_page.form_placeholder_message')} />
+                                </fieldset>
+
+                                <div className="form-footer">
+                                    <button type="submit" className="primary-btn" disabled={submitting}>
+                                        {submitting ? t('abo_page.form_submitting_button') : t('abo_page.form_submit_button')}
+                                    </button>
+                                    <label className="check-consent">
+                                        <input type="checkbox" name="consent" checked={form.consent} onChange={onField} required />
+                                        <span>{t('abo_page.form_consent_label')}</span>
+                                    </label>
+                                </div>
+                            </form>
+                        )}
+                    </div>
+                </section>
+            </main>
+            <Footer />
         </div>
-        <div className="modal__body">{children}</div>
-      </div>
-    </div>
-  );
+    );
 };
 
-export default AbonnementPage;
+export default AbonnementPageFinal;

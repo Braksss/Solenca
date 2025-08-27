@@ -18,7 +18,7 @@ const About = () => {
         </div>
         <div className="about-top__right">
           <p>{t('about.description')}</p>
-          <Link to="/abonnement" className="about-btn">
+          <Link to="/devis-solenca" className="about-btn">
             {t('about.cta')}
           </Link>
         </div>

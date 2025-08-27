@@ -3,59 +3,69 @@
     "about": "Sobre nosaltres",
     "services": "Serveis",
     "abonnements": "Subscripcions",
+    "blog": "Revista",
     "club": "Solenca Club",
     "aria": {
       "primary_nav": "Navegació principal",
-      "open_menu": "Obrir el menú",
-      "close_menu": "Tancar el menú",
+      "open_menu": "Obrir menú",
+      "close_menu": "Tancar menú",
       "logo_home": "Solenca - Inici",
-      "language_select": "Triar idioma"
+      "language_select": "Seleccionar idioma"
     }
   },
-
-  "hero": {
-    "headline": "Tranquil·litat 365",
-    "description": "Gestió completa de residències secundàries a la Costa Brava. La vostra casa en bones mans, tot l'any.",
-    "cta": "Demanar un pressupost en 24h"
+  "footer": {
+    "rights": "Tots els drets reservats.",
+    "legal": "Avís legal",
+    "terms": "Condicions generals de venda",
+    "privacy": "Política de privacitat"
   },
-
-  "about": {
-    "title": "Per què Solenca?",
-    "description": "Gestionem la vostra residència secundària a la Costa Brava, tot l'any.",
-    "cta": "Demanar un pressupost",
-    "card1": { "title": "Reactivitat", "text": "Intervenim ràpidament en cas de problema." },
-    "card2": { "title": "Seguiment clar", "text": "Cada visita està documentada amb fotos i informes." },
-    "card3": { "title": "Seguretat", "text": "La vostra casa és controlada i supervisada regularment." },
-    "card4": { "title": "Arrelament local", "text": "Una xarxa de proveïdors fiables a la Costa Brava." }
-  },
-
-  "testimonials": {
-    "title": "Per què Solenca ens ha convençut",
-    "subtitle": "La gestió de residències secundàries a la Costa Brava respon a una necessitat real.",
-    "badge": "Propietaris ja interessats",
-    "test1": "La idea de tenir finalment un servei fiable per vigilar la nostra casa quan no hi som és exactament el que ens faltava.",
-    "test2": "Una subscripció clara, sense sorpreses, és tranquil·litzador. Sabem que podem comptar amb algú a prop.",
-    "test3": "Només venim unes setmanes a l’any. Tenir un seguiment regular ens treu una gran càrrega mental."
-  },
-
   "cta": {
-    "title": "La vostra casa, la nostra missió",
-    "description": "A la Costa Brava, gestionem la vostra residència secundària tot l'any: visites regulars, control de la piscina i el jardí, informes clars després de cada visita.",
+    "title": "Casa teva, la nostra missió",
+    "description": "A la Costa Brava, gestionem la teva segona residència tot l'any: visites regulars, control de la piscina i del jardí, informes clars després de cada visita.",
     "button": "Demanar un pressupost en 24h"
   },
-
-  "banner": {
-    "text": "Oferta de llançament: -20% durant 6 mesos per als 20 pròxims subscriptors"
+  "hero": {
+    "headline": "Tranquil·litat 365",
+    "description": "Visites de control, informes fotogràfics, intervencions locals: ens ocupem de tot durant la teva absència.",
+    "cta": "Demanar un pressupost en 24h"
   },
-
+  "about": {
+    "title": "Per què escollir Solenca?",
+    "description": "Jove empresa local de home care a la Costa Brava, combinem seguiment digital i presència sobre el terreny per protegir la teva propietat i simplificar-te la vida.",
+    "cta": "Obtenir el meu pressupost",
+    "card1": {
+      "title": "Reactivitat garantida",
+      "text": "Basats a la zona, actuem ràpidament i t’informem en temps real."
+    },
+    "card2": {
+      "title": "Seguiment digitalitzat",
+      "text": "Cada visita queda registrada: llistes de control, fotos, informes i historial accessibles en qualsevol moment."
+    },
+    "card3": {
+      "title": "Control i seguretat",
+      "text": "Verificacions interiors/exteriors, detecció d’anomalies i alertes immediates."
+    },
+    "card4": {
+      "title": "Xarxa d’experts locals",
+      "text": "Piscina, jardí, neteja, petites reparacions: col·laboradors seleccionats i coordinats per nosaltres."
+    }
+  },
+  "testimonials": {
+    "title": "Confien en nosaltres",
+    "subtitle": "Propietaris tranquils tot l’any a la Costa Brava.",
+    "badge": "Clients satisfets",
+    "test1": "Servei fiable i ràpid: els nostres informes mensuals amb fotos són molt tranquil·litzadors.",
+    "test2": "Finalment un únic interlocutor per gestionar-ho tot a distància, és una veritable comoditat.",
+    "test3": "Check-in, neteja, piscina: tot és fluid. Gaudim de la casa sense estrès."
+  },
   "aboutPage": {
     "metaTitle": "Ens presentem? — Solenca",
     "hero": {
       "title": "Ens presentem? Solenca",
-      "description": "Basats a la Costa Brava, gestionem les vostres cases tot l’any. Visites regulars, informes clars, reactivitat en cas de problema.",
-      "cta": "Descobrir les subscripcions",
+      "description": "Amb seu a la Costa Brava, gestionem les teves cases tot l’any. Visites regulars, informes clars, rapidesa davant qualsevol problema.",
+      "cta": "Descobrir les nostres subscripcions",
       "alt": "Vista d’una vila a la Costa Brava",
-      "badge": "Ja recolzat per propietaris com vosaltres"
+      "badge": "Ja confien en nosaltres propietaris com tu"
     },
     "kpi": {
       "0": "Precomandes",
@@ -63,185 +73,147 @@
       "2": "Visites en fase de prova",
       "3": "Llançament oficial"
     },
-    "quote": "va néixer d’una constatació simple: la majoria dels propietaris de residències secundàries volen tranquil·litat, no gestió quotidiana.",
+    "founder_story": {
+      "title": "La nostra història, la nostra missió",
+      "name": "Benjamin Brassart, fundador de Solenca",
+      "p1": "En arribar a la Costa Brava, vam descobrir un paradís... i els reptes que comporta per a un propietari d’una segona residència. Gestionar a distància, trobar professionals de confiança, assegurar-se que tot està bé en la seva absència: aquestes qüestions van esdevenir ràpidament una evidència.",
+      "p2": "Solenca va néixer d’aquesta experiència personal. La nostra missió és senzilla: oferir-te la tranquil·litat que hauríem somiat tenir. Posem el client i la confiança al cor del nostre projecte, perquè la teva única preocupació sigui gaudir de casa teva."
+    },
+    "our_values": {
+      "title": "El que ens guia cada dia",
+      "values": [
+        { "icon": "Shield", "title": "Confiança", "text": "La transparència és la nostra base. Cada acció està documentada, cada decisió és clara. La teva propietat està en bones mans." },
+        { "icon": "Award", "title": "Excel·lència", "text": "Aspirem al nivell més alt de qualitat en cada servei, des d’una simple visita de control fins a la coordinació d’artesans." },
+        { "icon": "MapPin", "title": "Proximitat", "text": "Arrelats localment a la Costa Brava, som ràpids i coneixem els millors professionals per a cada necessitat." },
+        { "icon": "Smile", "title": "Serenor", "text": "El nostre objectiu final és la teva tranquil·litat. Gestionem les preocupacions perquè només et quedi el plaer." }
+      ]
+    },
+    "quote": "va néixer d’una constatació senzilla: la majoria de propietaris de segones residències volen tranquil·litat, no gestió diària.",
     "cta": {
-      "title": "Preparat per confiar-nos la vostra casa?",
-      "description": "Proposem subscripcions clares, sense sorpreses. La vigilància, el seguiment i les intervencions locals estan inclosos, perquè estigueu tranquils tot l’any.",
-      "primary": "Veure les subscripcions",
+      "title": "Preparat per confiar-nos casa teva?",
+      "description": "Oferim subscripcions clares, sense sorpreses. La vigilància, el seguiment i les intervencions locals estan inclosos, perquè estiguis tranquil tot l’any.",
+      "primary": "Veure subscripcions",
       "secondary": "Veure un exemple d’informe"
     },
     "cards": {
       "monthlyReport": "Informe mensual detallat",
       "alert": "Alerta immediata en cas de problema",
       "checklist": "Llista de control després de cada visita",
-      "history": "Històric accessible en tot moment",
+      "history": "Historial accessible en qualsevol moment",
       "lastVisit": "Última visita en foto"
     }
   },
-
-  "services": {
-    "faqSection": {
-      "title": "Preguntes freqüents",
-      "intro": "Dubteu? Aquí teniu les respostes a les preguntes més habituals."
-    },
-    "hero": {
-      "title": "Tot per a les vostres residències secundàries",
-      "description": "Propietaris o professionals, gestionem els vostres béns a la Costa Brava: visites, seguiment, informes i reactivitat. Un únic interlocutor per a tot.",
-      "cta": "Demanar un pressupost"
-    },
-    "private": {
-      "title": "Per a particulars",
-      "description": "Teniu una residència secundària? Nosaltres ens en fem càrrec completament, tot l’any.",
-      "cta": "Subscriure’s a una subscripció",
-      "card1": { "title": "Visites regulars", "text": "2 o 4 visites per mes segons la fórmula escollida." },
-      "card2": { "title": "Alertes immediates", "text": "Avís directe en cas de problema detectat." },
-      "card3": { "title": "Suport local", "text": "Una xarxa de proveïdors fiables per intervenir ràpidament." },
-      "card4": { "title": "Informes fotogràfics", "text": "Cada visita documentada amb fotos i comentaris." }
-    },
-    "quote": "Hem creat Solenca perquè els propietaris visquin la seva residència secundària com un plaer, mai com una preocupació.",
-    "quoteAuthor": "Equip Solenca",
-    "pro": {
-      "title": "Per a professionals",
-      "description": "Agències immobiliàries, consergeries, comunitats: som el vostre soci de confiança a la Costa Brava.",
-      "cta": "Treballar amb nosaltres",
-      "card1": { "title": "Seguiment delegat", "text": "Ens encarreguem de les visites i controls per als vostres clients." },
-      "card2": { "title": "Informes digitalitzats", "text": "Documents clars per compartir directament amb els propietaris." },
-      "card3": { "title": "Reactivitat", "text": "Intervenció ràpida en cas d’urgència o imprevist." },
-      "card4": { "title": "Valor afegit", "text": "Fidelitzeu els vostres clients amb un servei premium sense esforç addicional." }
-    },
-    "faq": [
-      { "question": "Com funciona la subscripció?", "answer": "Escolliu una fórmula (2 o 4 visites al mes). Cada visita es planifica amb antelació i es documenta amb un informe fotogràfic detallat." },
-      { "question": "Què cobreix exactament una visita?", "answer": "Verifiquem interior i exterior: portes, finestres, humitat, electricitat, piscina, jardí, bústia. Qualsevol problema és notificat immediatament." },
-      { "question": "Què passa en cas de problema?", "answer": "Rebeu una alerta immediata (WhatsApp, correu o trucada). Podem intervenir directament o mobilitzar proveïdors locals de confiança (lampista, electricista, jardiner, piscinista)." },
-      { "question": "Puc rescindir fàcilment?", "answer": "Sí. Les nostres subscripcions són sense permanència. Podeu rescindir en qualsevol moment amb un simple correu, sense costos ocults." },
-      { "question": "Qui té accés a casa meva?", "answer": "Només els nostres agents autoritzats i identificats intervenen. Cada intervenció queda registrada i confirmada amb un informe, per a una transparència total." },
-      { "question": "I per a la seguretat?", "answer": "Cada visita inclou un control complet de l’alarma i dels accessos. En cas d’anomalia, us avisem immediatament i prenem les mesures necessàries." },
-      { "question": "Oferiu també neteja, piscina, jardí?", "answer": "Sí. Nosaltres gestionem la vigilància. Per als serveis complementaris (neteja, manteniment de piscina, jardineria), fem intervenir els nostres socis a tarifes preferents." },
-      { "question": "Com es factura?", "answer": "Se us factura mensualment per domiciliació SEPA o targeta via Stripe. Les vostres factures són accessibles en línia en tot moment." },
-      { "question": "I si només hi vinc a l’estiu?", "answer": "Encara que ocupeu poc la residència, assegurem un seguiment regular per evitar sorpreses desagradables (fuites, humitat, vandalisme)." },
-      { "question": "Treballeu també amb agències immobiliàries?", "answer": "Sí. Oferim un servei en marca blanca: realitzem visites i controls per als vostres clients, però vosaltres continueu essent el seu interlocutor." }
-    ]
+  "abo_page": {
+    "seo_title": "Subscripcions i Serveis a mida | Solenca",
+    "hero_kicker": "SOLENCA CARE",
+    "hero_title": "Serenor, amb subscripció.",
+    "hero_subtitle": "Solucions clares i flexibles per a una gestió sense complicacions de la teva propietat.",
+    "toggle_particulier": "Oferta particulars",
+    "toggle_pro": "Oferta professionals",
+    "base_offer_title": "Pas 1: La Subscripció Serenor",
+    "base_offer_price": "129€",
+    "base_offer_period": "mes",
+    "base_offer_desc": "La base de la teva tranquil·litat. És el requisit previ per accedir a tots els nostres serveis a la carta.",
+    "base_offer_includes": [
+      "2 visites de control mensuals",
+      "Informe detallat després de cada visita",
+      "Gestió i recollida del correu",
+      "Ventilació de la propietat",
+      "Revisió preventiva (fuites, plagues)",
+      "Alerta immediata en cas d’anomalia"
+    ],
+    "addons_offer_title": "Pas 2: Els teus mòduls a mida",
+    "addons_offer_desc": "Afegeix només els serveis que necessitis.",
+    "addons_list": [
+      { "name": "Manteniment de piscina", "price": "des de 79€/mes" },
+      { "name": "Manteniment de jardí", "price": "des de 99€/mes" },
+      { "name": "Neteja i roba", "price": "a mida" },
+      { "name": "Gestió de lloguers", "price": "a mida" },
+      { "name": "Consergeria Premium", "price": "a mida" }
+    ],
+    "pro_title": "Un soci de confiança per al teu negoci",
+    "pro_subtitle": "Oferim una gamma completa de serveis en marca blanca perquè et puguis centrar en el teu negoci principal: la satisfacció dels teus clients.",
+    "pro_services": [
+      "Intervencions d’urgència 7d/7 durant els lloguers",
+      "Manteniment preventiu dels equips",
+      "Substitució i instal·lació d’electrodomèstics",
+      "Gestió dels serveis (piscina, jardí) per als teus clients",
+      "Informes en marca blanca per als teus propietaris",
+      "Coordinació d’obres i professionals qualificats"
+    ],
+    "form_title_particulier": "Demana el teu pressupost personalitzat",
+    "form_title_pro": "Inicia el contacte per a una col·laboració",
+    "form_subtitle_needs": "Les teves necessitats",
+    "form_placeholder_name": "Nom complet *",
+    "form_placeholder_email": "Correu electrònic *",
+    "form_placeholder_phone": "Telèfon *",
+    "form_placeholder_cp_particulier": "Codi postal de l’immoble *",
+    "form_placeholder_cp_pro": "Codi postal de l’empresa *",
+    "form_placeholder_company": "Nom de l’empresa",
+    "form_placeholder_siret": "CIF",
+    "form_placeholder_message": "Un missatge per concretar el teu projecte? (tipus de bé, superfície, col·laboració B2B...)",
+    "form_services": [
+      { "key": "piscine", "label": "Piscina" },
+      { "key": "jardin", "label": "Jardí" },
+      { "key": "nettoyage", "label": "Neteja" },
+      { "key": "gestionLocative", "label": "Gestió de lloguers" },
+      { "key": "conciergerie", "label": "Consergeria" },
+      { "key": "autre", "label": "Altres" }
+    ],
+    "form_consent_label": "Accepto ser contactat/da per Solenca en relació amb la meva sol·licitud.",
+    "form_submit_button": "Rebre la meva proposta",
+    "form_submitting_button": "Enviant...",
+    "thank_you_title": "Perfecte, ho hem rebut tot!",
+    "thank_you_desc": "Un membre del nostre equip es posarà en contacte amb tu personalment en 24h per concretar el teu projecte. Gràcies per la confiança."
   },
-
-  "abo": {
-    "seoTitle": "Solenca Care — Pressupost en 24h",
-
-    "hero": {
-      "kicker": "Solenca Care",
-      "title": "Des de 129€ / mes",
-      "subtitle": "2 visites mensuals, control i informe. Complements a demanda.",
-      "cta": "Demanar un pressupost (24h)",
-      "hint": "Pressupost en 24h • Sense compromís",
-      "chips": ["Costa Brava", "Assegurat RC Pro", "Coordinació d’intervinents"]
-    },
-
-    "included": {
-      "title": "Què està inclòs",
-      "items": [
-        "2 visites programades / mes",
-        "Controls visuals i registre d’anomalies",
-        "Fotos / vídeos + informe resumit",
-        "Lectura de comptadors",
-        "Gestió de claus i coordinació"
-      ]
-    },
-
-    "addons": {
-      "title": "Complements (a demanda)",
-      "items": [
-        "Piscina: química, cistelles, petit manteniment",
-        "Jardí: tall lleuger, bufat, petites podes",
-        "Neteja interior puntual",
-        "Roba i bugaderia",
-        "Altres necessitats a mida"
-      ],
-      "note": "Digueu-nos què necessiteu al formulari."
-    },
-
-    "callout": {
-      "title": "Simple i clar",
-      "items": [
-        "Pressupost personalitzat en 24h",
-        "Cap compromís, valideu abans d’intervenir",
-        "Cobertura Costa Brava, interlocutor únic"
-      ],
-      "cta": "Demanar un pressupost (24h)"
-    },
-
-    "pro": {
-      "title": "Solenca Care Pro",
-      "subtitle": "Agències, consergeries, comunitats i multipropietaris.",
-      "items": [
-        "Informes PDF marca blanca",
-        "SLAs estacionals i coordinador dedicat",
-        "Tarifes decreixents per volum"
-      ],
-      "cta": "Parlar amb un assessor (24h)"
-    },
-
-    "modal": {
-      "title": "Demanda de pressupost (resposta en 24h)",
-      "badgePro": "Demanda Pro",
-      "badgePart": "Particular",
-      "badge24h": "Pressupost en 24h"
-    },
-
-    "form": {
-      "labels": {
-        "name": "Nom i cognoms",
-        "email": "Email",
-        "phone": "Telèfon",
-        "preferContact": "Preferència de contacte",
-        "address": "Adreça de l’immoble",
-        "city": "Ciutat",
-        "zip": "Codi postal",
-        "propertyType": "Tipus d’immoble",
-        "surface": "Superfície (m²)",
-        "wantedServices": "Serveis desitjats",
-        "company": "Empresa",
-        "siret": "SIRET / CIF",
-        "proRole": "Sou…",
-        "message": "Expliqueu-nos l’essencial",
-        "consent": "Accepto ser contactat sobre aquest pressupost."
-      },
-      "placeholders": {
-        "message": "Períodes, accessos, restriccions, expectatives…"
-      },
-      "services": {
-        "pool": "Piscina",
-        "garden": "Jardí",
-        "cleaning": "Neteja",
-        "laundry": "Roba",
-        "other": "Altres"
-      },
-      "propertyTypes": [
-        { "key": "apartment", "label": "Apartament" },
-        { "key": "house", "label": "Casa" },
-        { "key": "villa", "label": "Vila / Gran propietat" }
-      ],
-      "preferContacts": [
-        { "key": "phone", "label": "Telèfon" },
-        { "key": "email", "label": "Email" },
-        { "key": "whatsapp", "label": "WhatsApp" }
-      ],
-      "proRoles": [
-        { "key": "agency", "label": "Agència immobiliària" },
-        { "key": "concierge", "label": "Consergeria" },
-        { "key": "syndic", "label": "Comunitat" },
-        { "key": "multiowner", "label": "Multipropietari" },
-        { "key": "other", "label": "Altres" }
-      ],
-      "ctaCancel": "Cancel·lar",
-      "ctaSubmit": "Enviar la meva demanda"
-    },
-
-    "toastOk": "Gràcies! La vostra demanda de pressupost ha estat registrada (resposta en 24h)."
+  "services_page": {
+    "seo_title": "Els nostres serveis de gestió | Solenca",
+    "hero_title": "Un servei per a cada necessitat.",
+    "hero_subtitle": "Des de la vigilància essencial fins a serveis a mida, descobreix com cuidem de la teva propietat durant la teva absència.",
+    "hero_cta": "Veure les nostres subscripcions",
+    "private_title": "Per a particulars",
+    "private_desc": "Una oferta completa que gira al voltant de la nostra Subscripció Serenor, donant-te accés a un ecosistema de serveis per a una tranquil·litat absoluta.",
+    "private_cta": "Compondre el meu servei",
+    "private_cards": [
+      { "icon": "Home", "title": "Vigilància i intendència", "text": "Visites regulars, informes fotogràfics, gestió del correu i alertes immediates." },
+      { "icon": "Droplet", "title": "Manteniment de piscina i jardí", "text": "Anàlisi de l’aigua, neteja, tall de gespa, poda... Un exterior impecable tot l’any." },
+      { "icon": "Key", "title": "Gestió de lloguers", "text": "Check-in/out, assistència 7d/7 durant les estades i posada a punt entre lloguers." },
+      { "icon": "Wind", "title": "Neteja i roba", "text": "Serveis complets de neteja abans de la teva arribada, després de la teva sortida o de manera regular." },
+      { "icon": "Tool", "title": "Petites reparacions", "text": "Canvi d’una bombeta, reparació d’una maneta... gestionem els petits imprevistos del dia a dia." },
+      { "icon": "Star", "title": "Consergeria Premium", "text": "Compres, reserves, preparació de la casa... Un servei a mida per a un confort absolut." }
+    ],
+    "quote": "Vam crear Solenca perquè els propietaris visquin la seva segona residència com un plaer, mai com una preocupació.",
+    "quote_author": "L’equip Solenca",
+    "pro_title": "Per a professionals",
+    "pro_desc": "Agències, consergeries, administradors: som el teu soci de confiança al territori per oferir un servei excel·lent als teus clients.",
+    "pro_cta": "Parlar d’una col·laboració",
+    "pro_cards": [
+      { "icon": "Briefcase", "title": "Servei en marca blanca", "text": "Intervenim pels teus clients en el teu nom. Reps informes clars per transmetre’ls-hi." },
+      { "icon": "Tool", "title": "Manteniment i urgències", "text": "Intervenció ràpida en cas d’incidència durant un lloguer, petites reparacions i coordinació de professionals." },
+      { "icon": "Key", "title": "Gestió d’accessos i claus", "text": "Coordinem l’accés per a professionals, entregues o intervencions tècniques amb total seguretat." },
+      { "icon": "Camera", "title": "Inventaris detallats", "text": "Informes d’entrada i sortida precisos i fotos per protegir els béns dels teus propietaris." },
+      { "icon": "Package", "title": "Subministrament de consumibles", "text": "Gestió d’estocs i subministrament de productes de benvinguda (cafè, gel, etc.)." },
+      { "icon": "Users", "title": "Soci de creixement", "text": "Fidelitza els teus propietaris i augmenta el valor dels teus mandats gràcies als nostres serveis premium." }
+    ],
+    "faq_title": "Preguntes freqüents",
+    "faq_intro": "Tens dubtes? Aquí tens les respostes a les preguntes més habituals."
   },
-  
-  "footer": {
-    "rights": "Tots els drets reservats.",
-    "legal": "Avís legal",
-    "terms": "Condicions generals de venda",
-    "privacy": "Política de privacitat"
+  "faq": [
+    { "question": "Com funciona la subscripció?", "answer": "Et subscrius al nostre pla Serenor que inclou visites de control. Després pots afegir els mòduls que vulguis (piscina, jardí, etc.). La subscripció és la base obligatòria per accedir als altres serveis." },
+    { "question": "Què cobreix exactament una visita de control?", "answer": "Verifiquem interior i exterior: portes, finestres, humitat, electricitat, piscina, jardí, bústia. Qualsevol problema és informat immediatament amb fotos adjuntes." },
+    { "question": "Què passa en cas de problema?", "answer": "Se t’avisa immediatament. Segons la naturalesa del problema, podem resoldre’l directament o mobilitzar ràpidament un dels nostres col·laboradors de confiança amb la teva validació." },
+    { "question": "Puc cancel·lar fàcilment?", "answer": "Sí. Les nostres subscripcions són sense permanència. Pots cancel·lar en qualsevol moment per correu electrònic, sense costos ocults." }
+ ],
+  "blog_page": {
+    "seo_title": "Revista i Consells | Solenca",
+    "hero_title": "Revista Solenca",
+    "hero_subtitle": "Consells, inspiració i actualitat sobre la Costa Brava i la vida en una segona residència.",
+    "read_more": "Llegir més"
+  },
+  "articles_page": {
+    "seo_title": "Articles | Solenca"
+  },
+  "banner": {
+    "text": "🎉 Aprofita un -20% amb la nostra oferta de prevenda abans del llançament oficial l’1 de novembre!"
   }
 }

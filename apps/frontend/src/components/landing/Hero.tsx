@@ -53,7 +53,7 @@ const Hero = () => {
           <h1 className="hero__headline">{t('hero.headline')}</h1>
           <p>{t('hero.description')}</p>
           <div className="hero__cta-buttons">
-            <Link to="/abonnement" className="hero__button hero__button--main">
+            <Link to="/devis-solenca" className="hero__button hero__button--main">
               {t('hero.cta')}
             </Link>
           </div>

@@ -5,171 +5,137 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/landing/NavBar';
 import Footer from '../components/landing/Footer';
 import '../styles/pages/servicespage.scss';
-import { Calendar, Camera, AlertTriangle, Users } from 'react-feather';
+import { Home, Droplet, Key, Star, Briefcase, Tool, Users, ChevronDown, Wind, Camera, Package } from 'react-feather';
+import heroImg from '../assets/service-hero.png';
 
-import heroImg from '../assets/hero-service.jpg';
+const ServicesFAQ: React.FC = () => {
+    const { t } = useTranslation();
+    const [activeIndex, setActiveIndex] = useState<number | null>(0);
+    const faqData = t('faq', { returnObjects: true }) as { question: string, answer: string }[];
+    const toggle = (index: number) => setActiveIndex(activeIndex === index ? null : index);
 
-const ServicesFAQ = () => {
-  const { t } = useTranslation();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const toggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+    if (!Array.isArray(faqData)) return null;
 
-  const faqData = t('services.faq', { returnObjects: true });
-
-  return (
-    <section className="services-faq">
-      <h2>{t('services.faqSection.title')}</h2>
-      <p className="faq-intro">{t('services.faqSection.intro')}</p>
-
-      <div className="faq-list">
-        {faqData.map((faq: { question: string; answer: string }, index: number) => (
-          <div className="faq-item" key={index}>
-            <div className="faq-question" onClick={() => toggle(index)}>
-              <span className="faq-number">{index + 1}</span>
-              <span className="faq-text">{faq.question}</span>
-              <span className={`faq-toggle ${activeIndex === index ? 'open' : ''}`}>
-                {activeIndex === index ? '−' : '+'}
-              </span>
+    return (
+        <section className="services-faq">
+            <div className="shell">
+                <h2>{t('services_page.faq_title')}</h2>
+                <p className="faq-intro">{t('services_page.faq_intro')}</p>
+                <div className="faq-list">
+                    {faqData.map((faq, index) => (
+                        <div className="faq-item" key={index}>
+                            <div className="faq-question" onClick={() => toggle(index)}>
+                                <span className="faq-text">{faq.question}</span>
+                                <ChevronDown className={`faq-toggle ${activeIndex === index ? 'open' : ''}`} />
+                            </div>
+                            <div className={`faq-answer ${activeIndex === index ? 'visible' : ''}`}>
+                                <p>{faq.answer}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div className={`faq-answer ${activeIndex === index ? 'visible' : ''}`}>
-              {faq.answer}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
-const ServicesPage = () => {
-  const { t } = useTranslation();
+const ServicesPage: React.FC = () => {
+    const { t } = useTranslation();
+    const privateCards = t('services_page.private_cards', { returnObjects: true }) as { icon: string, title: string, text: string }[];
+    const proCards = t('services_page.pro_cards', { returnObjects: true }) as { icon: string, title: string, text: string }[];
 
-  return (
-    <>
-      <Helmet>
-        <title>Solenca : Services - Gestion Biens Secondaires Costa Brava</title>
-        <meta
-          name="description"
-          content="Découvrez nos services Solenca : visites régulières, alertes, rapports photo pour sérénité totale en Costa Brava."
-        />
-      </Helmet>
-      <Navbar />
+    const iconMap: { [key: string]: React.ReactNode } = {
+        Home: <Home />, Droplet: <Droplet />, Key: <Key />, Star: <Star />, Wind: <Wind />,
+        Briefcase: <Briefcase />, Tool: <Tool />, Users: <Users />, Camera: <Camera />, Package: <Package/>
+    };
 
-      <main className="services-page">
-        {/* HERO */}
-        <section className="services-hero">
-          <div className="hero-content">
-            <h1>{t('services.hero.title')}</h1>
-            <p>{t('services.hero.description')}</p>
-            <div className="cta-row">
-              <Link className="primary-btn" to="/abonnement">
-                {t('services.hero.cta')}
-              </Link>
-            </div>
-          </div>
+    return (
+        <>
+            <Helmet>
+                <title>{t('services_page.seo_title')}</title>
+            </Helmet>
+            <Navbar />
+            <main className="services-page">
+                {/* HERO */}
+                <section className="services-hero">
+                    <div className="shell">
+                        <div className="hero-content">
+                            <h1>{t('services_page.hero_title')}</h1>
+                            <p>{t('services_page.hero_subtitle')}</p>
+                            <div className="cta-row">
+                                <Link className="primary-btn" to="/abonnement">{t('services_page.hero_cta')}</Link>
+                            </div>
+                        </div>
+                        <div className="hero-visual">
+                            <div className="hero-image">
+                                <img src={heroImg} alt="Villa en bord de mer" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-          <div className="hero-visual">
-            <div className="hero-image">
-              <img src={heroImg} alt="Aperçu application Solenca" />
-            </div>
-          </div>
-        </section>
+                {/* BLOC PARTICULIERS */}
+                <section className="features-block">
+                    <div className="shell">
+                        <div className="block-top">
+                            <div className="block-top__left">
+                                <h2>{t('services_page.private_title')}</h2>
+                            </div>
+                            <div className="block-top__right">
+                                <p>{t('services_page.private_desc')}</p>
+                                <Link className="block-btn" to="/abonnement">{t('services_page.private_cta')}</Link>
+                            </div>
+                        </div>
+                        <div className="block-cards">
+                            {privateCards.map((card, index) => (
+                                <div className="feature-card" key={index}>
+                                    <div className="feature-icon">{iconMap[card.icon]}</div>
+                                    <h3>{card.title}</h3>
+                                    <p>{card.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
-        <section className="mobile-swap">
-          {/* BLOC PARTICULIERS */}
-          <section className="about-section features-block">
-            <div className="about-top">
-              <div className="about-top__left">
-                <h2>{t('services.private.title')}</h2>
-              </div>
-              <div className="about-top__right">
-                <p>{t('services.private.description')}</p>
-                <Link className="about-btn" to="/abonnement">
-                  {t('services.private.cta')}
-                </Link>
-              </div>
-            </div>
-            <div className="about-cards">
-              <div className="about-card">
-                <Calendar size={40} color="#ff8700" />
-                <h3>{t('services.private.card1.title')}</h3>
-                <p>{t('services.private.card1.text')}</p>
-              </div>
-              <div className="about-card">
-                <AlertTriangle size={40} color="#ff8700" />
-                <h3>{t('services.private.card2.title')}</h3>
-                <p>{t('services.private.card2.text')}</p>
-              </div>
-              <div className="about-card">
-                <Users size={40} color="#ff8700" />
-                <h3>{t('services.private.card3.title')}</h3>
-                <p>{t('services.private.card3.text')}</p>
-              </div>
-              <div className="about-card">
-                <Camera size={40} color="#ff8700" />
-                <h3>{t('services.private.card4.title')}</h3>
-                <p>{t('services.private.card4.text')}</p>
-              </div>
-            </div>
-          </section>
+                {/* QUOTE */}
+                <section className="quote-section">
+                    <div className="shell">
+                        <p>“{t('services_page.quote')}”</p>
+                        <span>— {t('services_page.quote_author')}</span>
+                    </div>
+                </section>
 
-          {/* QUOTE */}
-          <section className="about-quote">
-            <p>
-              “{t('services.quote')}”<br />
-              <span className="highlight">— {t('services.quoteAuthor')}</span>
-            </p>
-          </section>
+                {/* BLOC PRO */}
+                <section className="features-block pro-block">
+                    <div className="shell">
+                        <div className="pro-badge">B2B</div>
+                        <div className="block-top">
+                            <div className="block-top__left">
+                                <h2>{t('services_page.pro_title')}</h2>
+                            </div>
+                            <div className="block-top__right">
+                                <p>{t('services_page.pro_desc')}</p>
+                                <Link className="block-btn" to="/abonnement">{t('services_page.pro_cta')}</Link>
+                            </div>
+                        </div>
+                        <div className="block-cards">
+                            {proCards.map((card, index) => (
+                                <div className="feature-card" key={index}>
+                                    <div className="feature-icon">{iconMap[card.icon]}</div>
+                                    <h3>{card.title}</h3>
+                                    <p>{card.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
-          {/* BLOC PRO */}
-          <section className="about-section features-block">
-            <div className="pro-badge">PRO</div>
-            <div className="about-top">
-              <div className="about-top__left">
-                <h2>{t('services.pro.title')}</h2>
-              </div>
-              <div className="about-top__right">
-                <p>{t('services.pro.description')}</p>
-                <Link className="about-btn" to="/abonnement">
-                  {t('services.pro.cta')}
-                </Link>
-              </div>
-            </div>
-
-            <div className="about-cards">
-              <div className="about-card">
-                <Calendar size={40} color="#ff8700" />
-                <h3>{t('services.pro.card1.title')}</h3>
-                <p>{t('services.pro.card1.text')}</p>
-              </div>
-              <div className="about-card">
-                <Camera size={40} color="#ff8700" />
-                <h3>{t('services.pro.card2.title')}</h3>
-                <p>{t('services.pro.card2.text')}</p>
-              </div>
-              <div className="about-card">
-                <AlertTriangle size={40} color="#ff8700" />
-                <h3>{t('services.pro.card3.title')}</h3>
-                <p>{t('services.pro.card3.text')}</p>
-              </div>
-              <div className="about-card">
-                <Users size={40} color="#ff8700" />
-                <h3>{t('services.pro.card4.title')}</h3>
-                <p>{t('services.pro.card4.text')}</p>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQ */}
-          <ServicesFAQ />
-        </section>
-      </main>
-
-      <Footer />
-    </>
-  );
+                <ServicesFAQ />
+            </main>
+            <Footer />
+        </>
+    );
 };
 
 export default ServicesPage;

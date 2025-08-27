@@ -51,6 +51,8 @@ const Navbar = () => {
             <li role="none"><Link role="menuitem" to="/about" onClick={closeMenu}>{t('navbar.about')}</Link></li>
             <li role="none"><Link role="menuitem" to="/services" onClick={closeMenu}>{t('navbar.services')}</Link></li>
             <li role="none"><Link role="menuitem" to="/abonnement" onClick={closeMenu}>{t('navbar.abonnements')}</Link></li>
+            {/* --- Lien vers le blog ajouté ici --- */}
+            <li role="none"><Link role="menuitem" to="/articles" onClick={closeMenu}>{t('navbar.blog')}</Link></li>
             {SHOW_CLUB && (
               <li role="none"><Link role="menuitem" to="/club" onClick={closeMenu}>{t('navbar.club')}</Link></li>
             )}

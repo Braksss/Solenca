@@ -1,436 +1,333 @@
-/* ------------------------------------------------------------------
-   Solenca – Abonnement (épuré + visuel + responsive)
------------------------------------------------------------------- */
-@import '../_variables';
+/* --- Variables --- */
+$primary-orange: #ff8700;
+$light-orange-bg: #fff5e6;
+$dark-text: #212121; // Un noir plus doux que #000
+$light-text: #757575;
+$background-color: #ffffff;
+$border-color: #eeeeee;
+$border-radius: 16px;
+$shell-width: 1100px;
 
-.care-page {
-  background: #fff;
-  color: $secondary;
-  font-family: $font-family;
+/* --- Animation --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.shell {
-  max-width: $container-width;
-  margin: 0 auto;
-  padding: 0 24px;
+/* --- Structure générale --- */
+.abo-page-final {
+    background-color: $background-color;
+    font-family: 'Poppins', sans-serif;
+    color: $dark-text;
+    .shell { max-width: $shell-width; margin: 0 auto; padding: 0 1.5rem; }
 }
 
-/* === HERO plus visuel === */
-.care-hero {
-  position: relative;
-  padding: 108px 0 56px;
-  border-bottom: 1px solid $grey-300;
+/* --- Hero --- */
+.abo-hero {
+    padding: 5rem 0;
+    text-align: center;
+    border-bottom: 1px solid $border-color;
+    .kicker { color: $primary-orange; font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    h1 { font-size: 3.2rem; font-weight: 700; color: $dark-text; margin-bottom: 1rem; }
+    p { font-size: 1.15rem; color: $light-text; max-width: 650px; margin: 0 auto; }
+}
 
-  &--vivid {
-    background:
-      radial-gradient(1100px 320px at 10% -10%, rgba($primary, .10), transparent 50%),
-      linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
-  }
+/* --- Section des offres avec sélecteur --- */
+.offers-section {
+    padding: 5rem 1.5rem;
+}
 
-  .kicker {
-    display: inline-block;
-    background: rgba($primary, .10);
-    color: $primary;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font: 700 $font-xs;
-    letter-spacing: .3px;
-    border: 1px solid rgba($primary, .18);
-  }
-
-  h1 {
-    margin: 12px 0 6px;
-    font: $font-h1;
-    font-size: clamp(32px, 5vw, 48px);
-    background: linear-gradient(90deg, #1a1a1a, #3a3a3a);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-
-  .sub { margin: 0; color: $grey-700; font: $font-p; }
-
-  .cta-row {
-    margin-top: 18px;
-    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
-
-    .hint { color: $grey-500; font: $font-xs; }
-    .secondary-btn--ghost {
-      background: #fff; border-color: $grey-300; color: $secondary;
+.client-type-toggle {
+    display: flex;
+    justify-content: center;
+    background-color: $light-orange-bg;
+    border: 1px solid darken($light-orange-bg, 5%);
+    border-radius: 50px;
+    padding: 6px;
+    max-width: 450px;
+    margin: 0 auto 3.5rem auto;
+    
+    button {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        background-color: transparent;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        color: lighten($primary-orange, 15%);
+        transition: all 0.3s ease;
+        &.active {
+            background-color: $primary-orange;
+            color: white;
+            box-shadow: 0 4px 15px rgba($primary-orange, 0.25);
+        }
     }
-  }
+}
 
-  .chips {
-    margin-top: 18px;
-    display: flex; gap: 8px; flex-wrap: wrap;
+.offers-content {
+    animation: fadeIn 0.5s ease-out;
+}
 
-    .chip {
-      background: #fff;
-      border: 1px solid $grey-300;
-      color: $secondary;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font: 600 $font-xs;
-      box-shadow: $shadow-sm;
+/* --- Vue Particulier --- */
+.pricing-flow {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .plus-separator {
+        svg { width: 40px; height: 40px; color: black; }
     }
-  }
 }
 
-/* === GRID (2 cartes + callout) === */
-.care-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $gap;
-  padding: 0;
-
-  @media (max-width: 960px) { grid-template-columns: 1fr; }
-}
-
-/* cards */
 .card {
-  background: #fff;
-  border: 1px solid $grey-300;
-  border-radius: $radius-xl;
-  box-shadow: $shadow-md;
-  padding: 26px 26px 20px;
-
-  &--glow {
-    border: 1px solid transparent;
-    background:
-      linear-gradient(#fff, #fff) padding-box,
-      linear-gradient(135deg, rgba($primary, .25), rgba(#9aa4b2, .2)) border-box;
-  }
-
-  .card-title { margin: 0 0 10px; font: $font-h4; }
-
-  .list {
-    margin: 0; padding-left: 18px;
-
-    li { margin: 10px 0; color: $secondary; font: $font-p; }
-  }
-
-  .soft-note { margin-top: 16px; font: $font-xs; color: $grey-700; }
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: 2.5rem;
+    flex: 1;
+    h3 { font-size: 1.2rem; margin-bottom: 1.5rem; color: $dark-text; font-weight: 600; }
+    .card-desc { font-size: 1rem; color: $light-text; line-height: 1.6; margin-bottom: 2rem; }
 }
 
-/* puces “check” dégradé orange */
-.list--check {
-  list-style: none;
-  padding: 0;
-
-  li {
-    position: relative;
-    padding-left: 30px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 3px;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, $primary, lighten($primary, 12%));
-      box-shadow: 0 6px 14px rgba($primary, .25);
+.base-offer {
+    .price {
+        font-size: 2.8rem; font-weight: 700; color: $dark-text; margin-bottom: 1.5rem;
+        .period { font-size: 1rem; font-weight: 500; color: $light-text; margin-left: 0.5rem; }
     }
-    &::after {
-      content: "✓";
-      position: absolute;
-      left: 5px; top: 1px;
-      font-weight: 900;
-      font-size: 13px;
-      color: #fff;
-      line-height: 20px;
+}
+
+.features-list {
+    list-style: none; padding: 0; text-align: left;
+    li {
+        display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; font-weight: 500; color: $dark-text;
+        svg { width: 24px; height: 24px; flex-shrink: 0; path { fill: $primary-orange; } }
     }
-  }
+    &.modules li {
+        justify-content: space-between;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid $border-color;
+        &:last-child { border-bottom: none; }
+        .module-price { font-weight: 600; color: $primary-orange; }
+    }
 }
 
-/* callout */
-.callout {
-  grid-column: 1 / -1;
-  position: relative;
-  background: #fff;
-  border: 1px solid $grey-300;
-  border-radius: $radius-xl;
-  padding: 22px;
-  display: flex; gap: 16px; align-items: center; justify-content: space-between;
-  box-shadow: $shadow-md;
-
-  &--accent {
-    border-left: 6px solid transparent;
-    background:
-      linear-gradient(#fff, #fff) padding-box,
-      linear-gradient(180deg, rgba($primary, .45), rgba($primary, .15)) border-box;
-  }
-
-  .callout__left { display: grid; gap: 8px; }
-  .callout-title { font: 800 18px/1.2 $font-family; }
-  .callout-list {
-    margin: 0; padding-left: 18px;
-    li { font: $font-small; color: $grey-700; }
-  }
+/* --- Vue Pro --- */
+.pro-view {
+    text-align: center;
+    background-color: white;
+    padding: 4rem;
+    border-radius: $border-radius;
+    h3 { font-size: 2.5rem; color: $dark-text; margin-bottom: 1rem; }
+    .pro-subtitle { max-width: 700px; margin: 0 auto 3rem auto; font-size: 1.1rem; color: $light-text; }
+    
+    .pro-features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        text-align: left;
+        
+        .pro-feature-item {
+            display: flex; align-items: flex-start; gap: 0.8rem; font-weight: 500;
+            background-color: $background-color; padding: 1.5rem; border-radius: $border-radius;
+            border: 1px solid $border-color;
+            svg { width: 24px; height: 24px; flex-shrink: 0; path { fill: $primary-orange; } margin-top: 2px; }
+        }
+    }
 }
 
-/* bullets simples */
-.list--bullets { li { list-style: disc; margin-left: 18px; } }
-
-/* === PRO section === */
-.pro-section {
-  padding: 0 0 88px;
-
-  .pro-card {
-    background: linear-gradient(180deg, #0f1114, #0c0e11);
-    border: 1px solid rgba(255,255,255,.08);
-    color: #e6ebf3;
-    border-radius: $radius-xl;
-    box-shadow: $shadow-lg;
-    padding: 30px;
-
-    &--glow {
-      border: 1px solid transparent;
-      background:
-        linear-gradient(180deg, #101215, #0b0d10) padding-box,
-        linear-gradient(135deg, rgba(255,255,255,.12), rgba($primary, .35)) border-box;
+/* ===================================
+--- SECTION FORMULAIRE (MODIFIÉE) ---
+===================================
+*/
+.form-section-wrapper {
+    padding: 5rem 1.5rem;
+    background-color: white; // Fond légèrement grisé pour la section
+    
+    .devis-form { 
+        max-width: 800px; 
+        margin: 0 auto; 
+        background-color: $background-color; // Fond blanc pour le formulaire
+        padding: 2.5rem;
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
-    .pro-badge {
-      display: inline-block;
-      font: 900 $font-xxs;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #000;
-      border: 1px solid rgba(255,255,255,.12);
+    fieldset {
+        border: none; 
+        padding: 0; 
+        margin: 0 0 2.5rem 0;
+        
+        &:last-of-type {
+            margin-bottom: 0; // Pas de marge sur le dernier fieldset
+        }
+
+        legend {
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            color: $dark-text;
+            width: 100%; 
+            text-align: left; 
+            margin-bottom: 2rem;
+            padding-bottom: 1rem; 
+            border-bottom: 1px solid $border-color;
+        }
+    }
+    
+    .form-grid {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 1.5rem;
+    }
+    
+    input, textarea {
+        width: 100%; 
+        padding: 14px; 
+        border: 1px solid darken($border-color, 5%);
+        border-radius: $border-radius / 2; 
+        background-color: $background-color; 
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        &::placeholder { color: #bdbdbd; }
+        &:focus {
+            outline: none; 
+            border-color: $primary-orange;
+            box-shadow: 0 0 0 3px rgba($primary-orange, 0.15);
+        }
+    }
+    
+    .checks {
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+        gap: 1rem; 
+        margin-bottom: 1.5rem;
+        label {
+            cursor: pointer;
+            input { display: none; }
+            span {
+                display: block; 
+                padding: 12px; 
+                border: 1px solid $border-color;
+                border-radius: 50px; 
+                font-weight: 500; 
+                transition: all 0.2s ease; 
+                text-align: center;
+            }
+            &:hover span { border-color: $primary-orange; color: $primary-orange; }
+            input:checked + span { background-color: $primary-orange; border-color: $primary-orange; color: white; }
+        }
     }
 
-    h3 { margin: 12px 0 6px; font: $font-h3; color: #fff; }
-    .pro-sub { margin: 0 0 10px; color: #a8b1c2; font: $font-small; }
+    textarea { resize: vertical; margin-top: 1rem; }
 
-    .pro-list { margin: 10px 0 16px; }
-  }
-}
-
-/* === Modal === */
-.modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; }
-.modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.35); }
-.modal__card {
-  position: relative;
-  width: min(880px, 92vw);
-  max-height: 92vh;
-  overflow: auto;
-  background: #fff;
-  border: 1px solid $grey-300;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-md;
-}
-.modal__head {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 18px; border-bottom: 1px solid $grey-300;
-}
-.modal__title { margin: 0; font: 700 16px/1.2 $font-family; }
-.modal__body { padding: 16px 18px; }
-
-.iconbtn {
-  width: 36px; height: 36px; border-radius: $radius-sm;
-  border: 1px solid $grey-300; background: #fff; cursor: pointer; font-size: 20px;
-}
-
-/* === Form === */
-.form {
-  .form-tags {
-    display: flex; gap: 8px; margin-bottom: 12px;
-
-    .tag {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid $grey-300;
-      font: 600 $font-xs;
-      color: $grey-700;
-
-      &.tag-dark { background: #111; color: #fff; border-color: #111; }
+    .form-footer {
+        text-align: center;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid $border-color;
+        
+        .primary-btn {
+            width: 100%; 
+            max-width: 400px; 
+            padding: 16px; 
+            background-color: $primary-orange;
+            color: white; 
+            border: none; 
+            border-radius: 50px; 
+            font-size: 1.1rem;
+            font-weight: 600; 
+            cursor: pointer; 
+            display: block; 
+            margin: 0 auto; 
+            transition: all 0.2s ease;
+            &:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba($primary-orange, 0.3); }
+            &:disabled { background-color: #ccc; cursor: not-allowed; }
+        }
+        .check-consent {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 0.85rem; 
+            color: $light-text; 
+            margin-top: 1.5rem; 
+            cursor: pointer;
+            input { margin-right: 10px; flex-shrink: 0; }
+        }
     }
-  }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    gap: 14px;
-    @media (max-width: 640px) { grid-template-columns: 1fr; }
-  }
-
-  .field--full { grid-column: 1 / -1; }
-
-  .field label { font: 600 $font-xs; color: $grey-700; display: block; margin-bottom: 6px; }
-  .field input, .field select, .field textarea {
-    width: 100%; padding: 12px 14px;
-    border: 1px solid $grey-300; border-radius: $radius-md; font: $font-p; background: #fff;
-    &:focus { outline: none; border-color: darken($grey-300, 8%); box-shadow: 0 0 0 4px rgba($primary, .10); }
-  }
-
-  .legend { font: 700 14px/1.2 $font-family; margin-bottom: 8px; }
-  .checks { display: flex; gap: 12px; flex-wrap: wrap; }
-
-  /* consent pleine largeur */
-  .check {
-    display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font: $font-p;
-    span { flex: 1; }
-    &.check--block { display: flex; width: 100%; align-items: flex-start; input { margin-top: 3px; } }
-  }
-
-  .form-actions {
-    margin-top: 14px; padding-top: 12px; border-top: 1px solid $grey-300;
-    display: flex; justify-content: flex-end; gap: 10px;
-  }
-}
-
-/* ====== Groupement Abonnement Particuliers ====== */
-.abo-group {
-  margin-top: 24px;
-  margin-bottom: 72px;
-
-  .abo-card {
-    background: #fff;
-    border: 1px solid $grey-300;
-    border-radius: $radius-xl;
-    box-shadow: $shadow-lg;
-    padding: 28px;
-
-    border: 1px solid transparent;
-    background:
-      linear-gradient(#fff, #fff) padding-box,
-      linear-gradient(135deg, rgba($primary, .25), rgba(#9aa4b2, .2)) border-box;
-
-    .care-grid {
-      padding: 0;
-      gap: $gap;
-
-      @media (max-width: 960px) { gap: 24px; }
-      @media (max-width: 480px) { gap: 18px; }
+    .thank-you-card {
+        padding: 3rem; 
+        border: 1px solid $border-color;
+        border-radius: $border-radius; 
+        text-align: center;
+        h3 { font-size: 2rem; color: $dark-text; }
     }
-  }
+}
 
-  @media (max-width: 768px) {
-    margin-bottom: 56px;
 
-    .abo-card {
-      padding: 20px;
-      border-radius: $radius-lg;
-      box-shadow: $shadow-md;
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .pricing-flow { 
+        flex-direction: column; 
+        .plus-separator { 
+            transform: rotate(90deg);
+            margin: 1rem 0;
+        } 
     }
-  }
-
-  @media (max-width: 480px) {
-    .abo-card { padding: 16px; }
-  }
 }
 
-/* ===============================================================
-   Responsive — Mobile-friendly
-================================================================ */
-$bp-lg: 1200px;
-$bp-md: 960px;
-$bp-sm: 768px;
-$bp-xs: 480px;
-
-@mixin respond($bp) {
-  @if $bp == lg { @media (max-width: $bp-lg) { @content; } }
-  @else if $bp == md { @media (max-width: $bp-md) { @content; } }
-  @else if $bp == sm { @media (max-width: $bp-sm) { @content; } }
-  @else if $bp == xs { @media (max-width: $bp-xs) { @content; } }
-}
-
-.shell {
-  @include respond(sm) { padding: 0 18px; }
-  @include respond(xs) { padding: 0 14px; }
-}
-
-.care-hero {
-  @include respond(md) { padding: 88px 0 44px; }
-  @include respond(sm) { padding: 72px 0 36px; }
-  @include respond(xs) { padding: 64px 0 28px; }
-
-  .sub { @include respond(xs) { font-size: 15px; } }
-
-  .cta-row {
-    @include respond(sm) {
-      flex-direction: column;
-      align-items: stretch;
-      .primary-btn,
-      .secondary-btn { width: 100%; min-height: 46px; }
-      .hint { text-align: center; }
+@media (max-width: 768px) {
+    .shell {
+        padding: 0 1rem;
     }
-  }
-
-  .chips {
-    @include respond(xs) {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 6px;
-      scrollbar-width: thin;
-
-      .chip { flex: 0 0 auto; }
+    .abo-hero {
+        padding: 3.5rem 0; 
+        h1 { font-size: 2.2rem; }
+        p { font-size: 1rem; }
     }
-  }
-}
-
-.callout {
-  @include respond(sm) {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: left;
-
-    .callout__left { order: 1; }
-    .primary-btn { order: 2; width: 100%; min-height: 46px; }
-  }
-}
-
-.pro-section {
-  @include respond(sm) { padding-bottom: 64px; }
-  @include respond(xs) { padding-bottom: 48px; }
-
-  .pro-card {
-    @include respond(sm) { padding: 22px; }
-    @include respond(xs) { padding: 18px; }
-    @include respond(sm) { .primary-btn { width: 100%; min-height: 46px; } }
-  }
-}
-
-/* Modal plein écran en mobile */
-.modal__card {
-  @include respond(sm) {
-    width: 100vw;
-    height: 100vh;
-    max-height: none;
-    border-radius: 0;
-  }
-}
-.modal__head {
-  @include respond(sm) {
-    position: sticky; top: 0; z-index: 2; background: #fff;
-  }
-}
-.modal__body { @include respond(xs) { padding-bottom: calc(16px + env(safe-area-inset-bottom)); } }
-
-/* Form grid 1 colonne en mobile */
-.form {
-  .grid { @include respond(sm) { grid-template-columns: 1fr; gap: 12px; } }
-
-  .checks {
-    @include respond(sm) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+    .offers-section, .form-section-wrapper {
+        padding: 3.5rem 1rem;
     }
-    @include respond(xs) { grid-template-columns: 1fr; }
-  }
-
-  .form-actions {
-    @include respond(sm) {
-      position: sticky; bottom: 0; z-index: 2;
-      background: #fff; padding: 12px 0; border-top: 1px solid $grey-300; gap: 8px;
-
-      .secondary-btn, .primary-btn { width: 100%; min-height: 46px; }
+    .client-type-toggle {
+        max-width: 100%;
+        button { font-size: 0.9rem; padding: 10px 15px; }
     }
-  }
+    .card, .devis-form {
+        padding: 1.5rem;
+    }
+    .pro-view {
+        padding: 2.5rem 1.5rem;
+        h3 { font-size: 2rem; }
+    }
+    .form-section-wrapper {
+        fieldset legend { font-size: 1.6rem; margin-bottom: 2rem; }
+        .form-grid { grid-template-columns: 1fr; gap: 1rem; }
+    }
 }
 
-/* Ergonomie mobile globale */
-.primary-btn, .secondary-btn { @include respond(xs) { min-height: 44px; } }
-* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
-html, body { scroll-behavior: smooth; }
+@media (max-width: 480px) {
+    .abo-hero {
+        padding: 3rem 0;
+        h1 { font-size: 1.8rem; }
+    }
+    .client-type-toggle {
+        padding: 4px;
+        button { font-size: 0.8rem; }
+    }
+    .card {
+        padding: 1.2rem;
+        .price { font-size: 2.2rem; }
+    }
+    .checks {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        span { padding: 10px; font-size: 0.85rem; }
+    }
+    .form-section-wrapper fieldset legend {
+        font-size: 1.4rem;
+    }
+    .form-footer .primary-btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}

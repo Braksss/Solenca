@@ -55,7 +55,7 @@ const CTASection = () => {
       <div className="cta-section__content" ref={contentRef}>
         <h2 className="cta-section__title">{t('cta.title')}</h2>
         <p className="cta-section__text">{t('cta.description')}</p>
-        <Link to="/abonnement" className="cta-section__btn">
+        <Link to="/devis-solenca" className="cta-section__btn">
           {t('cta.button')}
         </Link>
       </div>

@@ -3,6 +3,7 @@
     "about": "Über uns",
     "services": "Dienstleistungen",
     "abonnements": "Abonnements",
+    "blog": "Magazin",
     "club": "Solenca Club",
     "aria": {
       "primary_nav": "Hauptnavigation",
@@ -12,48 +13,57 @@
       "language_select": "Sprache auswählen"
     }
   },
-
-  "hero": {
-    "headline": "Ruhe 365",
-    "description": "Umfassende Verwaltung von Zweitwohnsitzen an der Costa Brava. Ihr Haus in guten Händen, das ganze Jahr über.",
-    "cta": "Angebot in 24h anfordern"
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "legal": "Impressum",
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "privacy": "Datenschutzrichtlinie"
   },
-
-  "about": {
-    "title": "Warum Solenca?",
-    "description": "Wir verwalten Ihr Ferienhaus an der Costa Brava, das ganze Jahr über.",
-    "cta": "Angebot anfordern",
-    "card1": { "title": "Reaktionsfähigkeit", "text": "Wir greifen im Problemfall schnell ein." },
-    "card2": { "title": "Klare Nachverfolgung", "text": "Jeder Besuch wird mit Fotos und Berichten dokumentiert." },
-    "card3": { "title": "Sicherheit", "text": "Ihr Haus wird regelmäßig überprüft und überwacht." },
-    "card4": { "title": "Lokale Verankerung", "text": "Ein Netzwerk zuverlässiger Dienstleister an der Costa Brava." }
-  },
-
-  "testimonials": {
-    "title": "Warum uns Solenca überzeugt hat",
-    "subtitle": "Die Verwaltung von Zweitwohnsitzen an der Costa Brava deckt ein echtes Bedürfnis ab.",
-    "badge": "Bereits interessierte Eigentümer",
-    "test1": "Die Idee, endlich einen zuverlässigen Service zu haben, der unser Haus überwacht, wenn wir nicht da sind, ist genau das, was uns gefehlt hat.",
-    "test2": "Ein klares Abonnement ohne Überraschungen ist beruhigend. Wir wissen, dass wir uns auf jemanden vor Ort verlassen können.",
-    "test3": "Wir kommen nur ein paar Wochen im Jahr. Eine regelmäßige Kontrolle nimmt uns eine große mentale Last ab."
-  },
-
   "cta": {
-    "title": "Ihr Haus, unsere Mission",
-    "description": "An der Costa Brava verwalten wir Ihr Ferienhaus das ganze Jahr: regelmäßige Besuche, Kontrolle von Pool und Garten, klare Berichte nach jedem Besuch.",
-    "button": "Angebot in 24h anfordern"
+    "title": "Ihr Zuhause, unsere Mission",
+    "description": "An der Costa Brava betreuen wir Ihr Ferienhaus das ganze Jahr über: regelmäßige Kontrollen, Pool- und Gartenpflege, klare Berichte nach jedem Besuch.",
+    "button": "In 24h ein Angebot anfordern"
   },
-
-  "banner": {
-    "text": "Einführungsangebot: -20% für 6 Monate für die nächsten 20 Abonnenten"
+  "hero": {
+    "headline": "Sorglos 365",
+    "description": "Kontrollbesuche, Fotoberichte, lokale Einsätze: Wir kümmern uns um alles während Ihrer Abwesenheit.",
+    "cta": "In 24h ein Angebot anfordern"
   },
-
+  "about": {
+    "title": "Warum Solenca wählen?",
+    "description": "Junges lokales Home-Care-Unternehmen an der Costa Brava, wir kombinieren digitale Nachverfolgung und Präsenz vor Ort, um Ihr Eigentum zu schützen und Ihr Leben zu erleichtern.",
+    "cta": "Mein Angebot erhalten",
+    "card1": {
+      "title": "Garantierte Reaktionsfähigkeit",
+      "text": "Vor Ort ansässig, handeln wir schnell und halten Sie in Echtzeit informiert."
+    },
+    "card2": {
+      "title": "Digitalisierte Nachverfolgung",
+      "text": "Jeder Besuch wird dokumentiert: Checklisten, Fotos, Berichte und Historie jederzeit abrufbar."
+    },
+    "card3": {
+      "title": "Kontrolle & Sicherheit",
+      "text": "Innen- und Außenkontrollen, Erkennung von Anomalien und sofortige Benachrichtigungen."
+    },
+    "card4": {
+      "title": "Netzwerk lokaler Experten",
+      "text": "Pool, Garten, Reinigung, kleine Wartung: sorgfältig ausgewählte Partner, von uns koordiniert."
+    }
+  },
+  "testimonials": {
+    "title": "Sie vertrauen uns",
+    "subtitle": "Entspannte Eigentümer das ganze Jahr über an der Costa Brava.",
+    "badge": "Zufriedene Kunden",
+    "test1": "Zuverlässiger und reaktionsschneller Service: Unsere monatlichen Fotoberichte sind sehr beruhigend.",
+    "test2": "Endlich ein einziger Ansprechpartner für alles aus der Ferne – ein echter Komfort.",
+    "test3": "Check-in, Reinigung, Pool: alles läuft reibungslos. Wir genießen das Haus ohne Stress."
+  },
   "aboutPage": {
     "metaTitle": "Dürfen wir uns vorstellen? — Solenca",
     "hero": {
       "title": "Dürfen wir uns vorstellen? Solenca",
-      "description": "Mit Sitz an der Costa Brava verwalten wir Ihre Häuser das ganze Jahr über. Regelmäßige Besuche, klare Berichte, schnelle Reaktion im Problemfall.",
-      "cta": "Abonnements entdecken",
+      "description": "Mit Sitz an der Costa Brava betreuen wir Ihr Zuhause das ganze Jahr über. Regelmäßige Besuche, klare Berichte, schnelle Reaktion im Problemfall.",
+      "cta": "Unsere Abonnements entdecken",
       "alt": "Blick auf eine Villa an der Costa Brava",
       "badge": "Bereits unterstützt von Eigentümern wie Ihnen"
     },
@@ -63,185 +73,147 @@
       "2": "Besuche in der Testphase",
       "3": "Offizieller Start"
     },
-    "quote": "entstand aus einer einfachen Feststellung: Die meisten Eigentümer von Zweitwohnsitzen wollen Ruhe, keine tägliche Verwaltung.",
+    "founder_story": {
+      "title": "Unsere Geschichte, unsere Mission",
+      "name": "Benjamin Brassart, Gründer von Solenca",
+      "p1": "Als wir an die Costa Brava kamen, entdeckten wir ein Paradies... und die Herausforderungen, die es für Eigentümer eines Ferienhauses mit sich bringt. Aus der Ferne verwalten, vertrauenswürdige Handwerker finden, sicherstellen, dass alles in Ordnung ist während der Abwesenheit: Diese Themen wurden schnell offensichtlich.",
+      "p2": "Solenca entstand aus dieser persönlichen Erfahrung. Unsere Mission ist einfach: Ihnen die Ruhe zu geben, die wir uns selbst gewünscht hätten. Wir stellen den Kunden und das Vertrauen in den Mittelpunkt unseres Projekts, damit Sie nur eines tun müssen: Ihr Zuhause genießen."
+    },
+    "our_values": {
+      "title": "Was uns im Alltag leitet",
+      "values": [
+        { "icon": "Shield", "title": "Vertrauen", "text": "Transparenz ist unser Fundament. Jede Handlung wird dokumentiert, jede Entscheidung ist klar. Ihr Eigentum ist in sicheren Händen." },
+        { "icon": "Award", "title": "Exzellenz", "text": "Wir streben nach höchster Qualität in jedem Service, von der einfachen Kontrolle bis zur Koordination von Handwerkern." },
+        { "icon": "MapPin", "title": "Nähe", "text": "Lokal an der Costa Brava verankert, reagieren wir schnell und kennen die besten Fachkräfte für jedes Bedürfnis." },
+        { "icon": "Smile", "title": "Gelassenheit", "text": "Unser oberstes Ziel ist Ihre Ruhe. Wir übernehmen die Mühen, damit Ihnen nur das Vergnügen bleibt." }
+      ]
+    },
+    "quote": "entstand aus einer einfachen Erkenntnis: Die meisten Eigentümer von Ferienhäusern wollen Ruhe, nicht tägliche Verwaltung.",
     "cta": {
-      "title": "Bereit, uns Ihr Haus anzuvertrauen?",
-      "description": "Wir bieten klare Abonnements ohne Überraschungen. Überwachung, Nachverfolgung und lokale Eingriffe sind enthalten, damit Sie das ganze Jahr über beruhigt sind.",
+      "title": "Bereit, Ihr Haus anzuvertrauen?",
+      "description": "Wir bieten klare Abonnements ohne Überraschungen. Überwachung, Nachverfolgung und lokale Einsätze sind inklusive, damit Sie das ganze Jahr über entspannt sind.",
       "primary": "Abonnements ansehen",
-      "secondary": "Ein Beispielbericht ansehen"
+      "secondary": "Beispielbericht ansehen"
     },
     "cards": {
       "monthlyReport": "Detaillierter Monatsbericht",
-      "alert": "Sofortige Benachrichtigung bei Problemen",
+      "alert": "Sofortige Benachrichtigung im Problemfall",
       "checklist": "Checkliste nach jedem Besuch",
-      "history": "Historie jederzeit zugänglich",
-      "lastVisit": "Letzter Besuch mit Foto"
+      "history": "Historie jederzeit abrufbar",
+      "lastVisit": "Letzter Besuch im Foto"
     }
   },
-
-  "services": {
-    "faqSection": {
-      "title": "Häufige Fragen",
-      "intro": "Sie sind unsicher? Hier finden Sie die Antworten auf die häufigsten Fragen."
-    },
-    "hero": {
-      "title": "Alles für Ihre Zweitwohnsitze",
-      "description": "Eigentümer oder Profi – wir verwalten Ihre Immobilien an der Costa Brava: Besuche, Nachverfolgung, Berichte und Reaktionsfähigkeit. Ein einziger Ansprechpartner für alles.",
-      "cta": "Angebot anfordern"
-    },
-    "private": {
-      "title": "Für Privatkunden",
-      "description": "Sie besitzen ein Ferienhaus? Wir übernehmen die vollständige Verwaltung, das ganze Jahr.",
-      "cta": "Abonnement abschließen",
-      "card1": { "title": "Regelmäßige Besuche", "text": "2 oder 4 Besuche pro Monat je nach gewähltem Tarif." },
-      "card2": { "title": "Sofortige Benachrichtigungen", "text": "Direkte Meldung im Problemfall." },
-      "card3": { "title": "Lokale Unterstützung", "text": "Ein Netzwerk zuverlässiger Partner für schnellen Einsatz." },
-      "card4": { "title": "Fotoberichte", "text": "Jeder Besuch wird mit Fotos und Kommentaren dokumentiert." }
-    },
-    "quote": "Wir haben Solenca geschaffen, damit Eigentümer ihr Ferienhaus als Freude erleben – niemals als Belastung.",
-    "quoteAuthor": "Team Solenca",
-    "pro": {
-      "title": "Für Profis",
-      "description": "Immobilienagenturen, Hausverwaltungen, Concierge-Services: Wir sind Ihr Partner vor Ort an der Costa Brava.",
-      "cta": "Mit uns zusammenarbeiten",
-      "card1": { "title": "Delegierte Nachverfolgung", "text": "Wir übernehmen Besuche und Kontrollen für Ihre Kunden." },
-      "card2": { "title": "Digitalisierte Berichte", "text": "Klare Dokumente direkt zum Teilen mit Eigentümern." },
-      "card3": { "title": "Reaktionsfähigkeit", "text": "Schnelles Eingreifen bei Notfällen oder Unvorhergesehenem." },
-      "card4": { "title": "Mehrwert", "text": "Binden Sie Ihre Kunden mit einem Premium-Service ohne zusätzlichen Aufwand." }
-    },
-    "faq": [
-      { "question": "Wie funktioniert das Abonnement?", "answer": "Sie wählen ein Paket (2 oder 4 Besuche pro Monat). Jeder Besuch wird im Voraus geplant und mit einem detaillierten Fotobericht dokumentiert." },
-      { "question": "Was deckt ein Besuch genau ab?", "answer": "Wir prüfen Innen- und Außenbereich: Türen, Fenster, Feuchtigkeit, Elektrik, Pool, Garten, Briefkasten. Jedes Problem wird sofort gemeldet." },
-      { "question": "Was passiert im Problemfall?", "answer": "Sie erhalten sofort eine Benachrichtigung (WhatsApp, E-Mail oder Anruf). Wir können direkt eingreifen oder unsere vertrauenswürdigen lokalen Partner mobilisieren (Klempner, Elektriker, Gärtner, Poolservice)." },
-      { "question": "Kann ich einfach kündigen?", "answer": "Ja. Unsere Abonnements sind ohne Mindestlaufzeit. Sie können jederzeit per einfacher E-Mail kündigen, ohne versteckte Kosten." },
-      { "question": "Wer hat Zugang zu meinem Haus?", "answer": "Nur unsere autorisierten und identifizierten Mitarbeiter greifen ein. Jeder Einsatz wird nachverfolgt und mit einem Bericht bestätigt – volle Transparenz." },
-      { "question": "Und die Sicherheit?", "answer": "Jeder Besuch beinhaltet eine vollständige Kontrolle der Alarmanlage und der Zugänge. Bei Anomalien informieren wir Sie sofort und ergreifen Maßnahmen." },
-      { "question": "Bieten Sie auch Reinigung, Pool, Garten an?", "answer": "Ja. Wir kümmern uns direkt um die Überwachung. Für Zusatzleistungen (Reinigung, Poolpflege, Gartenarbeit) setzen wir unsere Partner zu Vorzugspreisen ein." },
-      { "question": "Wie werde ich abgerechnet?", "answer": "Sie werden monatlich per SEPA-Lastschrift oder Kreditkarte über Stripe abgerechnet. Ihre Rechnungen sind jederzeit online zugänglich." },
-      { "question": "Und wenn ich nur im Sommer komme?", "answer": "Auch wenn Sie Ihre Residenz selten nutzen, sorgen wir für regelmäßige Kontrollen, um böse Überraschungen (Lecks, Feuchtigkeit, Vandalismus) zu vermeiden." },
-      { "question": "Arbeiten Sie auch mit Immobilienagenturen?", "answer": "Ja. Wir bieten einen White-Label-Service: Wir führen die Besuche und Kontrollen für Ihre Kunden durch, Sie bleiben deren Ansprechpartner." }
-    ]
+  "abo_page": {
+    "seo_title": "Abonnements & maßgeschneiderte Services | Solenca",
+    "hero_kicker": "SOLENCA CARE",
+    "hero_title": "Gelassenheit im Abo.",
+    "hero_subtitle": "Klare und flexible Lösungen für die mühelose Verwaltung Ihrer Immobilie.",
+    "toggle_particulier": "Privatangebot",
+    "toggle_pro": "Firmenangebot",
+    "base_offer_title": "Schritt 1: Das Serenity-Abo",
+    "base_offer_price": "129€",
+    "base_offer_period": "Monat",
+    "base_offer_desc": "Die Basis Ihrer Ruhe. Es ist die Voraussetzung für den Zugang zu allen unseren à-la-carte-Dienstleistungen.",
+    "base_offer_includes": [
+      "2 Kontrollbesuche pro Monat",
+      "Detaillierter Bericht nach jedem Besuch",
+      "Verwaltung und Abholung Ihrer Post",
+      "Belüftung der Immobilie",
+      "Präventive Kontrolle (Lecks, Schädlinge)",
+      "Sofortige Benachrichtigung bei Anomalien"
+    ],
+    "addons_offer_title": "Schritt 2: Ihre maßgeschneiderten Module",
+    "addons_offer_desc": "Fügen Sie nur die Services hinzu, die Sie benötigen.",
+    "addons_list": [
+      { "name": "Poolpflege", "price": "ab 79€/Monat" },
+      { "name": "Gartenpflege", "price": "ab 99€/Monat" },
+      { "name": "Reinigung & Wäsche", "price": "auf Anfrage" },
+      { "name": "Mietverwaltung", "price": "auf Anfrage" },
+      { "name": "Premium-Concierge", "price": "auf Anfrage" }
+    ],
+    "pro_title": "Ein vertrauenswürdiger Partner für Ihr Geschäft",
+    "pro_subtitle": "Wir bieten eine komplette Palette von White-Label-Services, damit Sie sich auf Ihr Kerngeschäft konzentrieren können: die Zufriedenheit Ihrer Kunden.",
+    "pro_services": [
+      "Notfalleinsätze 7/7 während der Vermietung",
+      "Präventive Wartung der Ausstattung",
+      "Austausch und Installation von Haushaltsgeräten",
+      "Verwaltung von Dienstleistungen (Pool, Garten) für Ihre Kunden",
+      "White-Label-Berichte für Ihre Eigentümer",
+      "Koordination von Arbeiten und qualifizierten Handwerkern"
+    ],
+    "form_title_particulier": "Fordern Sie Ihr persönliches Angebot an",
+    "form_title_pro": "Kontakt für eine Partnerschaft aufnehmen",
+    "form_subtitle_needs": "Ihre Bedürfnisse",
+    "form_placeholder_name": "Vollständiger Name *",
+    "form_placeholder_email": "E-Mail-Adresse *",
+    "form_placeholder_phone": "Telefon *",
+    "form_placeholder_cp_particulier": "Postleitzahl der Immobilie *",
+    "form_placeholder_cp_pro": "Postleitzahl Ihres Unternehmens *",
+    "form_placeholder_company": "Firmenname",
+    "form_placeholder_siret": "USt-IdNr.",
+    "form_placeholder_message": "Eine Nachricht zur Präzisierung Ihres Projekts? (Immobilientyp, Fläche, B2B-Partnerschaft...)",
+    "form_services": [
+      { "key": "piscine", "label": "Pool" },
+      { "key": "jardin", "label": "Garten" },
+      { "key": "nettoyage", "label": "Reinigung" },
+      { "key": "gestionLocative", "label": "Mietverwaltung" },
+      { "key": "conciergerie", "label": "Concierge" },
+      { "key": "autre", "label": "Andere" }
+    ],
+    "form_consent_label": "Ich bin damit einverstanden, dass Solenca mich bezüglich meiner Anfrage kontaktiert.",
+    "form_submit_button": "Mein Angebot erhalten",
+    "form_submitting_button": "Wird gesendet...",
+    "thank_you_title": "Perfekt, wir haben alles erhalten!",
+    "thank_you_desc": "Ein Teammitglied wird Sie innerhalb von 24h persönlich kontaktieren, um Ihr Projekt zu verfeinern. Vielen Dank für Ihr Vertrauen."
   },
-
-  "abo": {
-    "seoTitle": "Solenca Care — Angebot in 24h",
-
-    "hero": {
-      "kicker": "Solenca Care",
-      "title": "Ab 129€ / Monat",
-      "subtitle": "2 Besuche monatlich, Kontrolle & Bericht. Ergänzungen nach Bedarf.",
-      "cta": "Angebot anfordern (24h)",
-      "hint": "Angebot in 24h • Keine Verpflichtung",
-      "chips": ["Costa Brava", "Haftpflichtversicherung", "Koordination von Dienstleistern"]
-    },
-
-    "included": {
-      "title": "Was enthalten ist",
-      "items": [
-        "2 geplante Besuche / Monat",
-        "Visuelle Kontrollen & Erfassung von Anomalien",
-        "Fotos / Videos + Kurzbericht",
-        "Zählerablesung",
-        "Schlüsselverwaltung & Koordination"
-      ]
-    },
-
-    "addons": {
-      "title": "Ergänzungen (auf Anfrage)",
-      "items": [
-        "Pool: Chemie, Körbe, kleine Wartung",
-        "Garten: leichter Schnitt, Laubblasen, kleine Pflegearbeiten",
-        "Punktuelle Innenreinigung",
-        "Wäsche & Wäscherei",
-        "Andere maßgeschneiderte Bedürfnisse"
-      ],
-      "note": "Teilen Sie uns im Formular mit, was Sie benötigen."
-    },
-
-    "callout": {
-      "title": "Einfach & klar",
-      "items": [
-        "Personalisierte Angebote innerhalb von 24h",
-        "Keine Verpflichtung, Sie bestätigen vor dem Einsatz",
-        "Abdeckung Costa Brava, ein einziger Ansprechpartner"
-      ],
-      "cta": "Angebot anfordern (24h)"
-    },
-
-    "pro": {
-      "title": "Solenca Care Pro",
-      "subtitle": "Agenturen, Concierge-Services, Hausverwaltungen & Multi-Eigentümer.",
-      "items": [
-        "White-Label PDF-Berichte",
-        "Saisonale SLAs & dedizierter Koordinator",
-        "Mengenrabatte"
-      ],
-      "cta": "Mit einem Berater sprechen (24h)"
-    },
-
-    "modal": {
-      "title": "Angebotsanfrage (Antwort innerhalb 24h)",
-      "badgePro": "Pro-Anfrage",
-      "badgePart": "Privat",
-      "badge24h": "Angebot in 24h"
-    },
-
-    "form": {
-      "labels": {
-        "name": "Name und Vorname",
-        "email": "E-Mail",
-        "phone": "Telefon",
-        "preferContact": "Bevorzugter Kontaktweg",
-        "address": "Adresse der Immobilie",
-        "city": "Stadt",
-        "zip": "Postleitzahl",
-        "propertyType": "Art der Immobilie",
-        "surface": "Fläche (m²)",
-        "wantedServices": "Gewünschte Dienstleistungen",
-        "company": "Firma",
-        "siret": "USt-IdNr. / Handelsregisternr.",
-        "proRole": "Sie sind…",
-        "message": "Teilen Sie uns das Wesentliche mit",
-        "consent": "Ich stimme zu, bezüglich dieses Angebots kontaktiert zu werden."
-      },
-      "placeholders": {
-        "message": "Zeiträume, Zugänge, Einschränkungen, Erwartungen…"
-      },
-      "services": {
-        "pool": "Pool",
-        "garden": "Garten",
-        "cleaning": "Reinigung",
-        "laundry": "Wäsche",
-        "other": "Andere"
-      },
-      "propertyTypes": [
-        { "key": "apartment", "label": "Wohnung" },
-        { "key": "house", "label": "Haus" },
-        { "key": "villa", "label": "Villa / Großes Anwesen" }
-      ],
-      "preferContacts": [
-        { "key": "phone", "label": "Telefon" },
-        { "key": "email", "label": "E-Mail" },
-        { "key": "whatsapp", "label": "WhatsApp" }
-      ],
-      "proRoles": [
-        { "key": "agency", "label": "Immobilienagentur" },
-        { "key": "concierge", "label": "Concierge-Service" },
-        { "key": "syndic", "label": "Hausverwaltung" },
-        { "key": "multiowner", "label": "Multi-Eigentümer" },
-        { "key": "other", "label": "Andere" }
-      ],
-      "ctaCancel": "Abbrechen",
-      "ctaSubmit": "Meine Anfrage senden"
-    },
-
-    "toastOk": "Danke! Ihre Angebotsanfrage wurde registriert (Antwort innerhalb von 24h)."
+  "services_page": {
+    "seo_title": "Unsere Verwaltungsservices | Solenca",
+    "hero_title": "Ein Service für jedes Bedürfnis.",
+    "hero_subtitle": "Von der grundlegenden Überwachung bis zu maßgeschneiderten Leistungen – entdecken Sie, wie wir uns um Ihr Eigentum während Ihrer Abwesenheit kümmern.",
+    "hero_cta": "Unsere Abonnements ansehen",
+    "private_title": "Für Privatkunden",
+    "private_desc": "Ein komplettes Angebot rund um unser Serenity-Abo, das Ihnen Zugang zu einem Service-Ökosystem für absolute Ruhe verschafft.",
+    "private_cta": "Meinen Service zusammenstellen",
+    "private_cards": [
+      { "icon": "Home", "title": "Überwachung & Verwaltung", "text": "Regelmäßige Besuche, Fotoberichte, Postverwaltung und sofortige Benachrichtigungen." },
+      { "icon": "Droplet", "title": "Pool- & Gartenpflege", "text": "Wasseranalyse, Reinigung, Rasenmähen, Beschneiden... Ein makelloser Außenbereich das ganze Jahr." },
+      { "icon": "Key", "title": "Mietverwaltung", "text": "Check-in/out, 7/7 Unterstützung während der Aufenthalte und Vorbereitung zwischen Vermietungen." },
+      { "icon": "Wind", "title": "Reinigung & Wäsche", "text": "Komplette Reinigungsservices vor Ankunft, nach Abreise oder regelmäßig." },
+      { "icon": "Tool", "title": "Kleine Wartung", "text": "Glühbirne wechseln, Griff reparieren... Wir kümmern uns um die kleinen Alltagsprobleme." },
+      { "icon": "Star", "title": "Premium-Concierge", "text": "Einkäufe, Reservierungen, Hausvorbereitung... Maßgeschneiderter Service für absoluten Komfort." }
+    ],
+    "quote": "Wir haben Solenca gegründet, damit Eigentümer ihr Ferienhaus als Freude erleben, niemals als Belastung.",
+    "quote_author": "Das Solenca-Team",
+    "pro_title": "Für Profis",
+    "pro_desc": "Agenturen, Concierges, Verwalter: Wir sind Ihr vertrauensvoller Partner vor Ort, um Ihren Kunden exzellenten Service zu bieten.",
+    "pro_cta": "Partnerschaft besprechen",
+    "pro_cards": [
+      { "icon": "Briefcase", "title": "White-Label-Service", "text": "Wir handeln für Ihre Kunden in Ihrem Namen. Sie erhalten klare Berichte zur Weitergabe." },
+      { "icon": "Tool", "title": "Wartung & Notfälle", "text": "Schnelle Eingriffe bei Problemen während einer Vermietung, kleine Reparaturen und Handwerkerkoordination." },
+      { "icon": "Key", "title": "Zugangs- & Schlüsselmanagement", "text": "Wir koordinieren den Zugang für Handwerker, Lieferungen oder technische Eingriffe in voller Sicherheit." },
+      { "icon": "Camera", "title": "Detaillierte Übergaben", "text": "Präzise Ein- und Auszugsberichte und Fotos zum Schutz des Eigentums Ihrer Kunden." },
+      { "icon": "Package", "title": "Bereitstellung von Verbrauchsmaterialien", "text": "Bestandsmanagement und Versorgung mit Willkommensprodukten (Kaffee, Duschgel usw.)." },
+      { "icon": "Users", "title": "Wachstumspartner", "text": "Binden Sie Eigentümer langfristig und steigern Sie den Wert Ihrer Mandate mit unseren Premium-Services." }
+    ],
+    "faq_title": "Häufige Fragen",
+    "faq_intro": "Sie sind unsicher? Hier finden Sie Antworten auf die häufigsten Fragen."
   },
-  
-  "footer": {
-    "rights": "Alle Rechte vorbehalten.",
-    "legal": "Rechtliche Hinweise",
-    "terms": "Allgemeine Geschäftsbedingungen",
-    "privacy": "Datenschutzrichtlinie"
+  "faq": [
+    { "question": "Wie funktioniert das Abo?", "answer": "Sie abonnieren unser Serenity-Paket, das Kontrollbesuche umfasst. Anschließend können Sie die gewünschten Module hinzufügen (Pool, Garten usw.). Das Abo ist die Pflichtbasis für den Zugang zu weiteren Dienstleistungen." },
+    { "question": "Was umfasst genau ein Kontrollbesuch?", "answer": "Wir prüfen innen und außen: Türen, Fenster, Feuchtigkeit, Elektrik, Pool, Garten, Briefkasten. Jedes Problem wird sofort mit Fotos gemeldet." },
+    { "question": "Was passiert im Problemfall?", "answer": "Sie werden sofort benachrichtigt. Je nach Art des Problems können wir es direkt lösen oder nach Ihrer Bestätigung einen unserer vertrauenswürdigen Partner hinzuziehen." },
+    { "question": "Kann ich einfach kündigen?", "answer": "Ja. Unsere Abos sind ohne Verpflichtung. Sie können jederzeit per E-Mail kündigen, ohne versteckte Kosten." }
+  ],
+  "blog_page": {
+    "seo_title": "Magazin & Tipps | Solenca",
+    "hero_title": "Solenca Magazin",
+    "hero_subtitle": "Tipps, Inspiration und Neuigkeiten rund um die Costa Brava und das Leben im Ferienhaus.",
+    "read_more": "Mehr lesen"
+  },
+  "articles_page": {
+    "seo_title": "Artikel | Solenca"
+  },
+  "banner": {
+    "text": "🎉 Profitieren Sie von -20% mit unserem Vorverkaufsangebot vor dem offiziellen Start am 1. November!"
   }
 }
